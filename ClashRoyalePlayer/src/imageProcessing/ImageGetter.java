@@ -56,6 +56,14 @@ public class ImageGetter{
 		BufferedImage capturedImage = getImage(captureRect);
 		return capturedImage;
 	
-}
+	}
+	
+	public BufferedImage captureBattleButton() throws AWTException {
+		
+		Rectangle captureRect = new Rectangle(831, 619, 222, 108);
+		BufferedImage capturedImage = getImage(captureRect);
+		return capturedImage;
+		
+	}
 	
 }
