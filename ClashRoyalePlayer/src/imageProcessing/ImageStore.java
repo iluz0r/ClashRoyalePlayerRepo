@@ -12,18 +12,21 @@ public class ImageStore {
 	private BufferedImage emptyChestSlot;
 	private BufferedImage lockedSilverChestA9;
 	private BufferedImage lockingSilverChest;
+	private BufferedImage openSilverChest;
 	
 	public ImageStore(
 			String battleButtonPath, 
 			String emptyChestSlotPath, 
 			String lockedSilverChestA9Path,
-			String lockingSilverChestPath) 
+			String lockingSilverChestPath,
+			String openSilverChestPath) 
 					throws IOException
 	{
 		this.battleButton = ImageIO.read(new File(battleButtonPath));
 		this.emptyChestSlot = ImageIO.read(new File(emptyChestSlotPath));
 		this.lockedSilverChestA9 = ImageIO.read(new File(lockedSilverChestA9Path));
 		this.lockingSilverChest = ImageIO.read(new File(lockingSilverChestPath));
+		this.openSilverChest = ImageIO.read(new File(openSilverChestPath));
 	}
 	
 	public ImageStore(){
@@ -31,6 +34,7 @@ public class ImageStore {
 		this.emptyChestSlot = null;
 		this.lockedSilverChestA9 = null;
 		this.lockingSilverChest = null;
+		this.openSilverChest= null;
 	}
 	
 	public BufferedImage getBattleButton() {
@@ -63,6 +67,14 @@ public class ImageStore {
 	
 	public void setLockingSilverChest(String lockingSilverChestPath) throws IOException{
 		this.lockingSilverChest = ImageIO.read(new File(lockingSilverChestPath));
+	}
+	
+	public BufferedImage getOpenSilverChest() {
+		return this.openSilverChest;
+	}
+	
+	public void setOpenSilverChest(String openSilverChestPath) throws IOException{
+		this.openSilverChest = ImageIO.read(new File(openSilverChestPath));
 	}
 	
 }
