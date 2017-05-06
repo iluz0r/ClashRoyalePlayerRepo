@@ -19,7 +19,11 @@ public class Driver {
 		Robot robot = new Robot();
 		ImageGetter imageGetter = new ImageGetter();
 		ImageComparison imageComparison = new ImageComparison();
-		ImageStore imageStore = new ImageStore();
+		ImageStore imageStore = new ImageStore(
+				".\\images\\battleButton.jpg", 
+				".\\images\\emptyChestSlot.jpg", 
+				".\\images\\lockedSilverChestA9.jpg", 
+				".\\images\\lockingSilverChest.jpg");
 		AutoPlayer player = new AutoPlayer();
 		
 		/*
@@ -46,12 +50,10 @@ public class Driver {
 		*/
 		
 		/*
-		//populate imageStore with battle button, get battleButton and compare the two images
 		robot.delay(10000);
-		imageStore.setBattleButton(".\\images\\battleButton.jpg");
-		BufferedImage battleButtonStored = imageStore.getBattleButton();
-		BufferedImage battleButtonNow = imageGetter.captureBattleButton();
-		double difference = imageComparison.compare(battleButtonStored, battleButtonNow);
+		BufferedImage lockedSilverChestA9 = imageStore.getLockedSilverChestA9();
+		BufferedImage secondChest = imageGetter.captureSecondChest();
+		double difference = imageComparison.compare(lockedSilverChestA9, secondChest);
 		System.out.println("Le immagini si differenziano del: " + difference + "%");
 		*/
 		
