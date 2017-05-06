@@ -9,6 +9,7 @@ import java.io.IOException;
 
 import imageProcessing.ImageComparison;
 import imageProcessing.ImageGetter;
+import imageProcessing.ImageStore;
 
 public class Driver {
 
@@ -17,6 +18,7 @@ public class Driver {
 		Robot robot = new Robot();
 		ImageGetter imageGetter = new ImageGetter();
 		ImageComparison imageComparison = new ImageComparison();
+		ImageStore imageStore = new ImageStore();
 		
 		/*
 		//compare two images
@@ -30,8 +32,8 @@ public class Driver {
 		/*
 		robot.delay(10000);
 		//save first chest
-		BufferedImage firstChest = imageGetter.captureFirstChest();
-		imageGetter.saveImage(firstChest, "firstChest", "jpg");
+		BufferedImage battleButton = imageGetter.captureBattleButton();
+		imageGetter.saveImage(battleButton, "battleButton", "jpg");
 		*/
 		
 		/*
@@ -41,7 +43,15 @@ public class Driver {
 		System.out.println("X: " + coord.getX() + " Y: " + coord.getY());
 		*/
 		
-		
+		/*
+		//populate imageStore with battle button, get battleButton and compare the two images
+		robot.delay(10000);
+		imageStore.setBattleButton(".\\images\\battleButton.jpg");
+		BufferedImage battleButtonStored = imageStore.getBattleButton();
+		BufferedImage battleButtonNow = imageGetter.captureBattleButton();
+		double difference = imageComparison.compare(battleButtonStored, battleButtonNow);
+		System.out.println("Le immagini si differenziano del: " + difference + "%");
+		*/
 		
 	}
 
