@@ -32,10 +32,10 @@ public class Driver {
 		*/
 		
 		/*
+		//save image
 		robot.delay(10000);
-		//save first chest
-		BufferedImage battleButton = imageGetter.captureBattleButton();
-		imageGetter.saveImage(battleButton, "battleButton", "jpg");
+		BufferedImage firstChest = imageGetter.captureFirstChest();
+		imageGetter.saveImage(firstChest, "lockingSilverChest", "jpg");
 		*/
 		
 		/*
