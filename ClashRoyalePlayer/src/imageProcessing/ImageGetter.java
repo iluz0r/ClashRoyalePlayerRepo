@@ -28,10 +28,34 @@ public class ImageGetter{
 	
 	public BufferedImage captureFirstChest() throws AWTException{
 		
-		Rectangle captureRect = new Rectangle(100, 100, 100, 100);
+		Rectangle captureRect = new Rectangle(676, 767, 123, 152);
 		BufferedImage capturedImage = getImage(captureRect);
 		return capturedImage;
 		
 	}
+	
+	public BufferedImage captureSecondChest() throws AWTException{
+		
+		Rectangle captureRect = new Rectangle(814, 767, 123, 152);
+		BufferedImage capturedImage = getImage(captureRect);
+		return capturedImage;
+		
+	}
+	
+	public BufferedImage captureThirdChest() throws AWTException{
+		
+		Rectangle captureRect = new Rectangle(952, 767, 123, 152);
+		BufferedImage capturedImage = getImage(captureRect);
+		return capturedImage;
+		
+	}
+
+	public BufferedImage captureFourthChest() throws AWTException{
+	
+		Rectangle captureRect = new Rectangle(1090, 767, 123, 152);
+		BufferedImage capturedImage = getImage(captureRect);
+		return capturedImage;
+	
+}
 	
 }
