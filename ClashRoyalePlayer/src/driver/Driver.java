@@ -7,6 +7,7 @@ import java.awt.Robot;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
+import autoPlayer.AutoPlayer;
 import imageProcessing.ImageComparison;
 import imageProcessing.ImageGetter;
 import imageProcessing.ImageStore;
@@ -19,6 +20,7 @@ public class Driver {
 		ImageGetter imageGetter = new ImageGetter();
 		ImageComparison imageComparison = new ImageComparison();
 		ImageStore imageStore = new ImageStore();
+		AutoPlayer player = new AutoPlayer();
 		
 		/*
 		//compare two images
@@ -52,6 +54,7 @@ public class Driver {
 		double difference = imageComparison.compare(battleButtonStored, battleButtonNow);
 		System.out.println("Le immagini si differenziano del: " + difference + "%");
 		*/
+		
 		
 	}
 

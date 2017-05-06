@@ -11,9 +11,13 @@ import javax.imageio.ImageIO;
 
 public class ImageGetter{
 
+	private Robot robot = new Robot();
+	
+	public ImageGetter() throws AWTException {
+	}
+
 	private BufferedImage getImage(Rectangle captureRect) throws AWTException {
 		
-		Robot robot = new Robot();
 		BufferedImage bufferedImage = robot.createScreenCapture(captureRect);
 		return bufferedImage;
 		
