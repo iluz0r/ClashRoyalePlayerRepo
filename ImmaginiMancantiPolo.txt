@@ -9,7 +9,7 @@ GOLD
 OpenGoldChest.
 
 MAGIC
-LockedMagicChest, UnlockingMagicChest, OpenMagicChest, CollectingMagicChest, CollectedMagicChest.
+LockedMagicChest(solo immagine), UnlockingMagicChest(solo immagine), OpenMagicChest, CollectingMagicChest, CollectedMagicChest.
 
 SUPERMAGIC
 LockedSuperMagicChest, UnlockingSuperMagicChest, OpenSuperMagicChest, CollectingSuperMagicChest, 
