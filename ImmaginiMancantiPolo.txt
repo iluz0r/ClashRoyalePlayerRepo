@@ -1,8 +1,7 @@
 
-
 					MENU
 
-BattleMenu, CardsMenu, ShopMenu, SocialMenu, TournamentsMenu.
+BattleMenu(solo immagine), CardsMenu(solo immagine), ShopMenu(solo immagine), SocialMenu(solo immagine), TournamentsMenu(solo immagine).
 
 					CHESTS
 

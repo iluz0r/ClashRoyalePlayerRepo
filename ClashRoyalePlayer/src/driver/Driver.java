@@ -5,7 +5,10 @@ import java.awt.MouseInfo;
 import java.awt.Point;
 import java.awt.Robot;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 import autoPlayer.AutoPlayer;
 import imageProcessing.ImageComparison;
@@ -67,9 +70,9 @@ public class Driver {
 		
 		/*
 		robot.delay(10000);
-		BufferedImage lockedSilverChestA9 = imageStore.getLockedSilverChestA9();
-		BufferedImage secondChest = imageCapturer.captureSecondChest();
-		double difference = imageComparison.compare(lockedSilverChestA9, secondChest);
+		BufferedImage image1 = ImageIO.read(new File(".\\images\\battleMenu.jpg"));
+		BufferedImage image2 = imageCapturer.captureBattleMenu();
+		double difference = imageComparison.compare(image1, image2);
 		System.out.println("Le immagini si differenziano del: " + difference + "%");
 		*/
 		
