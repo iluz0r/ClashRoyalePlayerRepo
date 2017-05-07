@@ -86,4 +86,18 @@ public class ImageCapturer{
 		
 	}
 	
+	public BufferedImage captureCollectingChest() throws AWTException {
+		
+		Rectangle captureRect = new Rectangle(822, 579, 223, 166);
+		BufferedImage capturedImage = captureImage(captureRect);
+		return capturedImage;
+	}
+	
+	public BufferedImage captureCollectedChest() throws AWTException {
+		
+		Rectangle captureRect = new Rectangle(818, 267, 222, 217);
+		BufferedImage capturedImage = captureImage(captureRect);
+		return capturedImage;
+	}
+	
 }

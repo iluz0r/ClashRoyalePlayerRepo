@@ -8,18 +8,24 @@ import javax.imageio.ImageIO;
 
 public class ImageStore {
 
-	private BufferedImage battleButton;
-	private BufferedImage emptyChestSlot;
-	private BufferedImage lockedSilverChestA9;
-	private BufferedImage unlockingSilverChest;
-	private BufferedImage openSilverChest;
-	private BufferedImage openCrownChest;
-	private BufferedImage openFreeChestx1;
-	private BufferedImage lockedCrownChest;
-	private BufferedImage lockedFreeChest;
-	private BufferedImage lockedGoldChestA9;
-	private BufferedImage unlockingGoldChest;
-	private BufferedImage openFreeChestx2;
+	private BufferedImage battleButton = null;
+	private BufferedImage emptyChestSlot = null;
+	private BufferedImage lockedSilverChestA9 = null;
+	private BufferedImage unlockingSilverChest = null;
+	private BufferedImage openSilverChest = null;
+	private BufferedImage openCrownChest = null;
+	private BufferedImage openFreeChestx1 = null;
+	private BufferedImage lockedCrownChest = null;
+	private BufferedImage lockedFreeChest = null;
+	private BufferedImage lockedGoldChestA9 = null;
+	private BufferedImage unlockingGoldChest = null;
+	private BufferedImage openFreeChestx2 = null;
+	private BufferedImage collectingFreeChest = null;
+	private BufferedImage collectedFreeChest = null;
+	private BufferedImage collectingGoldChest = null;
+	private BufferedImage collectedGoldChest = null;
+	private BufferedImage collectingCrwonChest = null;
+	private BufferedImage collectedCrownChest = null;
 	
 	public ImageStore(
 			String battleButtonPath, 
@@ -33,36 +39,36 @@ public class ImageStore {
 			String lockedFreeChestPath,
 			String lockedGoldChestA9Path,
 			String unlockingGoldChestPath,
-			String openFreeChestx2Path) 
+			String openFreeChestx2Path,
+			String collectingFreeChestPath,
+			String collectedFreeChestPath,
+			String collectingGoldChestPath,
+			String collectedGoldChestPath,
+			String collectingCrownChestPath,
+			String collectedCrownChestPath) 
 					throws IOException
 	{
-		this.battleButton = ImageIO.read(new File(battleButtonPath));
-		this.emptyChestSlot = ImageIO.read(new File(emptyChestSlotPath));
-		this.lockedSilverChestA9 = ImageIO.read(new File(lockedSilverChestA9Path));
-		this.unlockingSilverChest = ImageIO.read(new File(unlockingSilverChestPath));
-		this.openSilverChest = ImageIO.read(new File(openSilverChestPath));
-		this.openCrownChest = ImageIO.read(new File(openCrownChestPath));
-		this.lockedCrownChest = ImageIO.read(new File(lockedCrownChestPath));
-		this.lockedFreeChest = ImageIO.read(new File(lockedFreeChestPath));
-		this.lockedGoldChestA9 = ImageIO.read(new File(lockedGoldChestA9Path));
-		this.openFreeChestx1 = ImageIO.read(new File(openFreeChestx1Path));
-		this.unlockingGoldChest = ImageIO.read(new File(unlockingGoldChestPath));
-		this.openFreeChestx2 = ImageIO.read(new File(openFreeChestx2Path));
+		this.setBattleButton(battleButtonPath);
+		this.setEmptyChestSlot(emptyChestSlotPath);
+		this.setLockedSilverChestA9(lockedSilverChestA9Path);
+		this.setUnlockingSilverChest(unlockingSilverChestPath);
+		this.setOpenSilverChest(openSilverChestPath);
+		this.setOpenCrownChest(openCrownChestPath);
+		this.setLockedCrownChest(lockedCrownChestPath);
+		this.setLockedFreeChest(lockedFreeChestPath);
+		this.setLockedGoldChestA9(lockedGoldChestA9Path);
+		this.setOpenFreeChestx1(openFreeChestx1Path);
+		this.setUnlockingGoldChest(unlockingGoldChestPath);
+		this.setOpenFreeChestx2(openFreeChestx2Path);
+		this.setCollectingFreeChest(collectingFreeChestPath);
+		this.setCollectedFreeChest(collectedFreeChestPath);
+		this.setCollectingGoldChest(collectingGoldChestPath);
+		this.setCollectedGoldChest(collectedGoldChestPath);
+		this.setCollectingCrwonChest(collectingCrownChestPath);
+		this.setCollectedCrownChest(collectedCrownChestPath);
 	}
 	
 	public ImageStore(){
-		this.battleButton = null;
-		this.emptyChestSlot = null;
-		this.lockedSilverChestA9 = null;
-		this.unlockingSilverChest = null;
-		this.openSilverChest = null;
-		this.lockedCrownChest = null;
-		this.lockedGoldChestA9 = null;
-		this.openCrownChest = null;
-		this.lockedFreeChest = null;
-		this.openFreeChestx1 = null;
-		this.unlockingGoldChest = null;
-		this.openFreeChestx2 = null;
 	}
 	
 	public BufferedImage getBattleButton() {
@@ -159,5 +165,53 @@ public class ImageStore {
 	
 	public void setOpenFreeChestx2(String openFreeChestx2Path) throws IOException{
 		this.openFreeChestx2 = ImageIO.read(new File(openFreeChestx2Path));
+	}
+
+	public BufferedImage getCollectingFreeChest() {
+		return collectingFreeChest;
+	}
+
+	public void setCollectingFreeChest(String collectingFreeChestPath) throws IOException {
+		this.collectingFreeChest = ImageIO.read(new File(collectingFreeChestPath));
+	}
+
+	public BufferedImage getCollectedFreeChest() {
+		return collectedFreeChest;
+	}
+
+	public void setCollectedFreeChest(String collectedFreeChestPath) throws IOException {
+		this.collectedFreeChest = ImageIO.read(new File(collectedFreeChestPath));
+	}
+
+	public BufferedImage getCollectingGoldChest() {
+		return collectingGoldChest;
+	}
+
+	public void setCollectingGoldChest(String collectingGoldChestPath) throws IOException {
+		this.collectingGoldChest = ImageIO.read(new File(collectingGoldChestPath));
+	}
+
+	public BufferedImage getCollectedGoldChest() {
+		return collectedGoldChest;
+	}
+
+	public void setCollectedGoldChest(String collectedGoldChestPath) throws IOException {
+		this.collectedGoldChest = ImageIO.read(new File(collectedGoldChestPath));
+	}
+
+	public BufferedImage getCollectingCrwonChest() {
+		return collectingCrwonChest;
+	}
+
+	public void setCollectingCrwonChest(String collectingCrwonChestPath) throws IOException {
+		this.collectingCrwonChest = ImageIO.read(new File(collectingCrwonChestPath));
+	}
+
+	public BufferedImage getCollectedCrownChest() {
+		return collectedCrownChest;
+	}
+
+	public void setCollectedCrownChest(String collectedCrownChestPath) throws IOException {
+		this.collectedCrownChest = ImageIO.read(new File(collectedCrownChestPath));
 	}
 }

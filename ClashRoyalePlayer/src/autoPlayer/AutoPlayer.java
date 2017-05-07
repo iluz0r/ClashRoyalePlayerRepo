@@ -1,23 +1,50 @@
 package autoPlayer;
 
 import java.awt.AWTException;
-import java.awt.Point;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
+import java.io.IOException;
+
+import imageProcessing.*;
 
 public class AutoPlayer{
 
-	private Robot robot = new Robot();
-	
-	public AutoPlayer() throws AWTException {
+	private Robot robot;
+	private ImageCapturer imageCapturer;
+	private ImageComparison imageComparison;
+	private ImageStore imageStore;
+
+	private void init() throws AWTException, IOException{
+		robot = new Robot();
+		imageCapturer = new ImageCapturer();
+		imageComparison = new ImageComparison();
+		imageStore = new ImageStore(
+				".\\images\\battleButton.jpg", 
+				".\\images\\emptyChestSlot.jpg", 
+				".\\images\\lockedSilverChestA9.jpg", 
+				".\\images\\unlockingSilverChest.jpg",
+				".\\images\\openSilverChest.jpg",
+				".\\images\\openCrownChest.jpg",
+				".\\images\\openFreeChestx1.jpg",
+				".\\images\\lockedCrownChest.jpg",
+				".\\images\\lockedFreeChest.jpg",
+				".\\images\\lockedGoldChestA9.jpg",
+				".\\images\\unlockingGoldChest.jpg",
+				".\\images\\openFreeChestx2.jpg",
+				".\\images\\collectingFreeChest.jpg",
+				".\\images\\collectedFreeChest.jpg",
+				".\\images\\collectingGoldChest.jpg",
+				".\\images\\collectedGoldChest.jpg",
+				".\\images\\collectingCrownChest.jpg",
+				".\\images\\collectedCrownChest.jpg"); 
 	}
 
-	public void start(){
-		
+	public void start() throws AWTException, IOException{
+		this.init();
 	}
 	
 	public void stop(){
-		
+		System.exit(0);
 	}
 	
 	private void tap(int x, int y){
@@ -26,6 +53,7 @@ public class AutoPlayer{
 		robot.delay(250);
 		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
 	}
+	
 	
 	private void tapBattleButton(){
 		this.tap(944, 668);

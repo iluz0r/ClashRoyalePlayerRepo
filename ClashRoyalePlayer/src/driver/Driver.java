@@ -21,14 +21,25 @@ public class Driver {
 		ImageComparison imageComparison = new ImageComparison();
 		/*
 		ImageStore imageStore = new ImageStore(
-		 
 				".\\images\\battleButton.jpg", 
 				".\\images\\emptyChestSlot.jpg", 
 				".\\images\\lockedSilverChestA9.jpg", 
 				".\\images\\unlockingSilverChest.jpg",
-				".\\images\\openSilverChest.jpg");
+				".\\images\\openSilverChest.jpg",
+				".\\images\\openCrownChest.jpg",
+				".\\images\\openFreeChestx1.jpg",
+				".\\images\\lockedCrownChest.jpg",
+				".\\images\\lockedFreeChest.jpg",
+				".\\images\\lockedGoldChestA9.jpg",
+				".\\images\\unlockingGoldChest.jpg",
+				".\\images\\openFreeChestx2.jpg",
+				".\\images\\collectingFreeChest.jpg",
+				".\\images\\collectedFreeChest.jpg",
+				".\\images\\collectingGoldChest.jpg",
+				".\\images\\collectedGoldChest.jpg",
+				".\\images\\collectingCrownChest.jpg",
+				".\\images\\collectedCrownChest.jpg"); 
 		*/
-		
 		AutoPlayer player = new AutoPlayer();
 		
 		/*
@@ -43,8 +54,8 @@ public class Driver {
 		/*
 		//save image
 		robot.delay(10000);
-		BufferedImage firstChest = imageCapturer.captureFreeChest();
-		imageCapturer.saveImage(firstChest, "openFreeChestx2", "jpg");
+		BufferedImage image = imageCapturer.captureCollectedChest();
+		imageCapturer.saveImage(image, "collectedCrownChest", "jpg");
 		*/
 		
 		/*
