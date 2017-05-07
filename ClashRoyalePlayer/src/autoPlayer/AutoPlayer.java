@@ -3,6 +3,7 @@ package autoPlayer;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import imageProcessing.*;
@@ -52,12 +53,37 @@ public class AutoPlayer{
 				".\\images\\tournamentsMenu.jpg",
 				".\\images\\lockedMagicChest.jpg",
 				".\\images\\unlockingMagicChest.jpg");
-		status = checkStatus();
+		robot.delay(10000);
+		checkStatus();
 	}
 
 	// da fare
 	public void start() throws AWTException, IOException{
 		this.init();
+		System.out.println("Stato iniziale: " + status.toString());
+		
+		while(status.toString() != Status.UNKNOWN.toString()){
+			switch(status.toString()){
+			
+				case "UNKNOWN" : break;
+			
+				case "BATTLEMENU" : {
+					tapTournamentsButton();
+					robot.delay(3000);
+					checkStatus();
+					System.out.println("Da BATTLEMENU a: " + status.toString());
+				}
+				
+				case "TOURNAMENTSMENU" : {
+					tapBattleMenu();
+					robot.delay(3000);
+					checkStatus();
+					System.out.println("Da TOURNAMENTSMENU a: " + status.toString());
+				}
+			
+			}
+		}
+		System.out.println("Stato Finale: " + status.toString());
 		this.stop();
 	}
 	
@@ -65,9 +91,31 @@ public class AutoPlayer{
 		System.exit(0);
 	}
 	
-	// da fare
-	private Status checkStatus(){
-		return Status.UNKNOWN;
+	private void checkStatus() throws AWTException{
+		
+		BufferedImage capturedBattleMenu = imageCapturer.captureBattleMenu();
+		BufferedImage capturedTournamentsMenu = imageCapturer.captureTournamentsMenu();
+		BufferedImage capturedSocialMenu = imageCapturer.captureSocialMenu();
+		BufferedImage capturedShopMenu = imageCapturer.captureShopMenu();
+		BufferedImage capturedCardsMenu = imageCapturer.captureCardsMenu();
+		
+		BufferedImage battleMenu = imageStore.getBattleMenu();
+		BufferedImage tournamentsMenu = imageStore.getTournamentsMenu();
+		BufferedImage socialMenu = imageStore.getSocialMenu();
+		BufferedImage shopMenu = imageStore.getShopMenu();
+		BufferedImage cardsMenu = imageStore.getCardsMenu();
+		
+		if (imageComparison.imgEqual(battleMenu, capturedBattleMenu)) status = Status.BATTLEMENU;
+		else
+			if(imageComparison.imgEqual(shopMenu, capturedShopMenu)) status = Status.SHOPMENU;
+			else
+				if(imageComparison.imgEqual(socialMenu, capturedSocialMenu)) status = Status.SOCIALMENU;
+				else
+					if(imageComparison.imgEqual(tournamentsMenu, capturedTournamentsMenu)) status = Status.TOURNAMENTSMENU;
+					else
+						if(imageComparison.imgEqual(cardsMenu, capturedCardsMenu)) status = Status.CARDSMENU;
+						else
+							status = Status.UNKNOWN;
 	}
 	
 	private void tap(int x, int y){
@@ -80,6 +128,10 @@ public class AutoPlayer{
 	
 	private void tapBattleButton(){
 		this.tap(944, 668);
+	}
+	
+	private void tapTournamentsButton() {
+		this.tap(1173, 982);
 	}
 	
 	private void tapFirstChest(){
@@ -98,7 +150,7 @@ public class AutoPlayer{
 		this.tap(1153, 847);
 	}
 	
-	private void tapBattleSection(){
+	private void tapBattleMenu(){
 		this.tap(945, 975);
 	}
 	

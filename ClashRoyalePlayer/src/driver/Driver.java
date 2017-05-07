@@ -17,12 +17,21 @@ import imageProcessing.ImageStore;
 
 public class Driver {
 	
+	/*
+	private enum Status {
+		BATTLEMENU, TOURNAMENTSMENU, SOCIALMENU, SHOPMENU, 
+		CARDSMENU, BATTLE, UNKNOWN
+	}
+	*/
+	
 	public static void main(String[] args) throws AWTException, IOException {
 
+		/*
 		Robot robot = new Robot();
 		ImageCapturer imageCapturer = new ImageCapturer();
 		ImageComparison imageComparison = new ImageComparison();
-		/*
+		ImageStore imageStore;
+		
 		imageStore = new ImageStore(
 				".\\images\\battleButton.jpg", 
 				".\\images\\emptyChestSlot.jpg", 
@@ -49,8 +58,9 @@ public class Driver {
 				".\\images\\tournamentsMenu.jpg",
 				".\\images\\lockedMagicChest.jpg",
 				".\\images\\unlockingMagicChest.jpg"); 
-		*/
+		
 		AutoPlayer player = new AutoPlayer();
+		*/
 		
 		/*
 		//compare two images
@@ -81,6 +91,43 @@ public class Driver {
 		BufferedImage image2 = imageCapturer.captureBattleMenu();
 		double difference = imageComparison.compare(image1, image2);
 		System.out.println("Le immagini si differenziano del: " + difference + "%");
+		*/
+		
+		/*
+		//check status
+		robot.delay(000);
+		BufferedImage capturedBattleMenu = imageCapturer.captureBattleMenu();
+		BufferedImage capturedTournamentsMenu = imageCapturer.captureTournamentsMenu();
+		BufferedImage capturedSocialMenu = imageCapturer.captureSocialMenu();
+		BufferedImage capturedShopMenu = imageCapturer.captureShopMenu();
+		BufferedImage capturedCardsMenu = imageCapturer.captureCardsMenu();
+		
+		BufferedImage battleMenu = imageStore.getBattleMenu();
+		BufferedImage tournamentsMenu = imageStore.getTournamentsMenu();
+		BufferedImage socialMenu = imageStore.getSocialMenu();
+		BufferedImage shopMenu = imageStore.getShopMenu();
+		BufferedImage cardsMenu = imageStore.getCardsMenu();
+		
+		Status status;
+		
+		if (imageComparison.imgEqual(battleMenu, capturedBattleMenu)) status = Status.BATTLEMENU;
+		else
+			if(imageComparison.imgEqual(shopMenu, capturedShopMenu)) status = Status.SHOPMENU;
+			else
+				if(imageComparison.imgEqual(socialMenu, capturedSocialMenu)) status = Status.SOCIALMENU;
+				else
+					if(imageComparison.imgEqual(tournamentsMenu, capturedTournamentsMenu)) status = Status.TOURNAMENTSMENU;
+					else
+						if(imageComparison.imgEqual(cardsMenu, capturedCardsMenu)) status = Status.CARDSMENU;
+						else
+							status = Status.UNKNOWN;
+		
+		System.out.println("Lo stato in cui siamo è: " + status.toString() + "\n");
+		*/
+		
+		/*
+		AutoPlayer player = new AutoPlayer();
+		player.start();
 		*/
 		
 	}
