@@ -13,6 +13,14 @@ public class AutoPlayer{
 	private ImageCapturer imageCapturer;
 	private ImageComparison imageComparison;
 	private ImageStore imageStore;
+	
+	private enum Status {
+		BATTLEMENU, TOURNAMENTSMENU, SOCIALMENU, SHOPMENU, 
+		CARDSMENU, BATTLE, UNKNOWN
+	}
+	
+	private Status status;
+	
 
 	private void init() throws AWTException, IOException{
 		robot = new Robot();
@@ -36,15 +44,23 @@ public class AutoPlayer{
 				".\\images\\collectingGoldChest.jpg",
 				".\\images\\collectedGoldChest.jpg",
 				".\\images\\collectingCrownChest.jpg",
-				".\\images\\collectedCrownChest.jpg"); 
+				".\\images\\collectedCrownChest.jpg");
+		status = checkStatus();
 	}
 
+	// da fare
 	public void start() throws AWTException, IOException{
 		this.init();
+		this.stop();
 	}
 	
 	public void stop(){
 		System.exit(0);
+	}
+	
+	// da fare
+	private Status checkStatus(){
+		return Status.UNKNOWN;
 	}
 	
 	private void tap(int x, int y){

@@ -16,7 +16,7 @@ import imageProcessing.ImageCapturer;
 import imageProcessing.ImageStore;
 
 public class Driver {
-
+	
 	public static void main(String[] args) throws AWTException, IOException {
 
 		Robot robot = new Robot();
@@ -75,7 +75,6 @@ public class Driver {
 		double difference = imageComparison.compare(image1, image2);
 		System.out.println("Le immagini si differenziano del: " + difference + "%");
 		*/
-		
 		
 	}
 
