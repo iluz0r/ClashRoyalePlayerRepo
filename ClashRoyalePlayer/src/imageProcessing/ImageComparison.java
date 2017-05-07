@@ -7,6 +7,7 @@ import java.awt.image.BufferedImage;
 
 public class ImageComparison {
 
+	private final double DEFAULT_TOLLERANCE = 10.0;
 
 	public double compare(BufferedImage img1, BufferedImage img2)
 	{
@@ -52,5 +53,23 @@ public class ImageComparison {
 		double p = diff / n / 255.0;
 		
 		return p * 100.0;
+	}
+	
+	public boolean imgEqual(BufferedImage img1, BufferedImage img2, double tollerance){
+		
+		boolean isEqual;
+		double difference = this.compare(img1, img2);
+		
+		if(difference < tollerance) isEqual = true;
+		else isEqual = false;
+		
+		return isEqual;
+	}
+	
+	public boolean imgEqual(BufferedImage img1, BufferedImage img2){
+		
+		boolean isEqual = this.imgEqual(img1, img2, this.DEFAULT_TOLLERANCE);
+		
+		return isEqual;
 	}
 }

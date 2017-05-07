@@ -18,7 +18,6 @@ public class ImageStore {
 	private BufferedImage lockedCrownChest;
 	private BufferedImage lockedFreeChest;
 	private BufferedImage lockedGoldChestA9;
-	
 	private BufferedImage unlockingGoldChest;
 	private BufferedImage openFreeChestx2;
 	
