@@ -19,12 +19,16 @@ public class Driver {
 		Robot robot = new Robot();
 		ImageCapturer imageCapturer = new ImageCapturer();
 		ImageComparison imageComparison = new ImageComparison();
+		/*
 		ImageStore imageStore = new ImageStore(
+		 
 				".\\images\\battleButton.jpg", 
 				".\\images\\emptyChestSlot.jpg", 
 				".\\images\\lockedSilverChestA9.jpg", 
-				".\\images\\lockingSilverChest.jpg",
+				".\\images\\unlockingSilverChest.jpg",
 				".\\images\\openSilverChest.jpg");
+		*/
+		
 		AutoPlayer player = new AutoPlayer();
 		
 		/*
@@ -39,8 +43,8 @@ public class Driver {
 		/*
 		//save image
 		robot.delay(10000);
-		BufferedImage firstChest = imageCapturer.captureFirstChest();
-		imageGetter.saveImage(firstChest, "openSilverChest", "jpg");
+		BufferedImage firstChest = imageCapturer.captureFreeChest();
+		imageCapturer.saveImage(firstChest, "openFreeChestx2", "jpg");
 		*/
 		
 		/*

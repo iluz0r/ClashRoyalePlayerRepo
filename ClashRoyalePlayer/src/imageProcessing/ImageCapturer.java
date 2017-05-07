@@ -70,4 +70,20 @@ public class ImageCapturer{
 		
 	}
 	
+	public BufferedImage captureFreeChest() throws AWTException {
+		
+		Rectangle captureRect = new Rectangle(674, 174, 261, 83);
+		BufferedImage capturedImage = captureImage(captureRect);
+		return capturedImage;
+		
+	}
+	
+	public BufferedImage captureCrownChest() throws AWTException {
+		
+		Rectangle captureRect = new Rectangle(950, 175, 259, 83);
+		BufferedImage capturedImage = captureImage(captureRect);
+		return capturedImage;
+		
+	}
+	
 }
