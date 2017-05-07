@@ -57,8 +57,8 @@ public class Driver {
 		/*
 		//save image
 		robot.delay(10000);
-		BufferedImage image = imageCapturer.captureTournamentsMenu();
-		imageCapturer.saveImage(image, "tournamentsMenu", "jpg");
+		BufferedImage image = imageCapturer.captureSecondChest();
+		imageCapturer.saveImage(image, "unlockingMagicChest", "jpg");
 		*/
 		
 		/*
