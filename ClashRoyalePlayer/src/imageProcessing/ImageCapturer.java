@@ -100,4 +100,41 @@ public class ImageCapturer{
 		return capturedImage;
 	}
 	
+	
+	//da fare!!
+	public BufferedImage captureBattleMenu() throws AWTException {
+		
+		Rectangle captureRect = new Rectangle(851, 953, 182, 73);
+		BufferedImage capturedImage = captureImage(captureRect);
+		return capturedImage;
+	}
+	
+	public BufferedImage captureCardsMenu() throws AWTException {
+		
+		Rectangle captureRect = new Rectangle(756, 953, 182, 73);
+		BufferedImage capturedImage = captureImage(captureRect);
+		return capturedImage;
+	}
+	
+	public BufferedImage captureShopMenu() throws AWTException {
+		
+		Rectangle captureRect = new Rectangle(662, 953, 182, 73);
+		BufferedImage capturedImage = captureImage(captureRect);
+		return capturedImage;
+	}
+	
+	public BufferedImage captureSocialMenu() throws AWTException {
+		
+		Rectangle captureRect = new Rectangle(944, 953, 182, 73);
+		BufferedImage capturedImage = captureImage(captureRect);
+		return capturedImage;
+	}
+	
+	public BufferedImage captureTournamentsMenu() throws AWTException {
+		
+		Rectangle captureRect = new Rectangle(1038, 953, 182, 73);
+		BufferedImage capturedImage = captureImage(captureRect);
+		return capturedImage;
+	}
+	
 }
