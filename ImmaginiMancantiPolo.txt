@@ -1,15 +1,10 @@
-
-					MENU
-
-BattleMenu(solo immagine), CardsMenu(solo immagine), ShopMenu(solo immagine), SocialMenu(solo immagine), TournamentsMenu(solo immagine).
-
 					CHESTS
 
 GOLD
 OpenGoldChest.
 
 MAGIC
-LockedMagicChest(solo immagine), UnlockingMagicChest(solo immagine), OpenMagicChest, CollectingMagicChest, CollectedMagicChest.
+OpenMagicChest, CollectingMagicChest, CollectedMagicChest.
 
 SUPERMAGIC
 LockedSuperMagicChest, UnlockingSuperMagicChest, OpenSuperMagicChest, CollectingSuperMagicChest, 
