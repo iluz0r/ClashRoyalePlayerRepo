@@ -10,14 +10,14 @@ public class ImageStore {
 
 	private BufferedImage battleButton = null;
 	private BufferedImage emptyChestSlot = null;
-	private BufferedImage lockedSilverChestA9 = null;
+	private BufferedImage lockedSilverChest = null;
 	private BufferedImage unlockingSilverChest = null;
 	private BufferedImage openSilverChest = null;
 	private BufferedImage openCrownChest = null;
 	private BufferedImage openFreeChestx1 = null;
 	private BufferedImage lockedCrownChest = null;
 	private BufferedImage lockedFreeChest = null;
-	private BufferedImage lockedGoldChestA9 = null;
+	private BufferedImage lockedGoldChest = null;
 	private BufferedImage unlockingGoldChest = null;
 	private BufferedImage openFreeChestx2 = null;
 	private BufferedImage collectingFreeChest = null;
@@ -30,14 +30,14 @@ public class ImageStore {
 	public ImageStore(
 			String battleButtonPath, 
 			String emptyChestSlotPath, 
-			String lockedSilverChestA9Path,
+			String lockedSilverChestPath,
 			String unlockingSilverChestPath,
 			String openSilverChestPath,
 			String openCrownChestPath,
 			String openFreeChestx1Path,
 			String lockedCrownChestPath,
 			String lockedFreeChestPath,
-			String lockedGoldChestA9Path,
+			String lockedGoldChestPath,
 			String unlockingGoldChestPath,
 			String openFreeChestx2Path,
 			String collectingFreeChestPath,
@@ -50,13 +50,13 @@ public class ImageStore {
 	{
 		this.setBattleButton(battleButtonPath);
 		this.setEmptyChestSlot(emptyChestSlotPath);
-		this.setLockedSilverChestA9(lockedSilverChestA9Path);
+		this.setLockedSilverChest(lockedSilverChestPath);
 		this.setUnlockingSilverChest(unlockingSilverChestPath);
 		this.setOpenSilverChest(openSilverChestPath);
 		this.setOpenCrownChest(openCrownChestPath);
 		this.setLockedCrownChest(lockedCrownChestPath);
 		this.setLockedFreeChest(lockedFreeChestPath);
-		this.setLockedGoldChestA9(lockedGoldChestA9Path);
+		this.setLockedGoldChest(lockedGoldChestPath);
 		this.setOpenFreeChestx1(openFreeChestx1Path);
 		this.setUnlockingGoldChest(unlockingGoldChestPath);
 		this.setOpenFreeChestx2(openFreeChestx2Path);
@@ -79,12 +79,12 @@ public class ImageStore {
 		this.battleButton = ImageIO.read(new File(battleButtonPath));
 	}
 	
-	public BufferedImage getLockedSilverChestA9(){
-		return this.lockedSilverChestA9;
+	public BufferedImage getLockedSilverChest(){
+		return this.lockedSilverChest;
 	}
 	
-	public void setLockedSilverChestA9(String lockedSilverChestA9Path) throws IOException{
-		this.lockedSilverChestA9 = ImageIO.read(new File(lockedSilverChestA9Path));
+	public void setLockedSilverChest(String lockedSilverChestPath) throws IOException{
+		this.lockedSilverChest = ImageIO.read(new File(lockedSilverChestPath));
 	}
 	
 	public BufferedImage getEmptyChestSlot(){
@@ -135,12 +135,12 @@ public class ImageStore {
 		this.lockedFreeChest = ImageIO.read(new File(lockedFreeChestPath));
 	}
 	
-	public BufferedImage getLockedGoldChestA9() {
-		return this.lockedGoldChestA9;
+	public BufferedImage getLockedGoldChest() {
+		return this.lockedGoldChest;
 	}
 	
-	public void setLockedGoldChestA9(String lockedGoldChestA9Path) throws IOException{
-		this.lockedGoldChestA9 = ImageIO.read(new File(lockedGoldChestA9Path));
+	public void setLockedGoldChest(String lockedGoldChestPath) throws IOException{
+		this.lockedGoldChest = ImageIO.read(new File(lockedGoldChestPath));
 	}
 	
 	public BufferedImage getOpenFreeChestx1() {
