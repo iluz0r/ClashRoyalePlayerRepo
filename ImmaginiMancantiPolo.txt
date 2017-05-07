@@ -1,0 +1,23 @@
+
+
+					MENU
+
+BattleMenu, CardsMenu, ShopMenu, SocialMenu, TournamentsMenu.
+
+					CHESTS
+
+GOLD
+OpenGoldChest.
+
+MAGIC
+LockedMagicChest, UnlockingMagicChest, OpenMagicChest, CollectingMagicChest, CollectedMagicChest.
+
+SUPERMAGIC
+LockedSuperMagicChest, UnlockingSuperMagicChest, OpenSuperMagicChest, CollectingSuperMagicChest, 
+CollectedSuperMagicChest.
+
+GIANT
+LockedGiantChest, UnlockingGiantChest, OpenGiantChest, CollectingGiantChest, CollectedGiantChest.
+
+LEGENDARY
+LockedLegendaryChest, UnlockingLegendaryChest, OpenLegendaryChest, CollectingLegendaryChest, CollectedLegendaryChest.
