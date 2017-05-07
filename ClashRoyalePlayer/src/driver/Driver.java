@@ -23,7 +23,7 @@ public class Driver {
 		ImageCapturer imageCapturer = new ImageCapturer();
 		ImageComparison imageComparison = new ImageComparison();
 		/*
-		ImageStore imageStore = new ImageStore(
+		imageStore = new ImageStore(
 				".\\images\\battleButton.jpg", 
 				".\\images\\emptyChestSlot.jpg", 
 				".\\images\\lockedSilverChest.jpg", 
@@ -41,7 +41,14 @@ public class Driver {
 				".\\images\\collectingGoldChest.jpg",
 				".\\images\\collectedGoldChest.jpg",
 				".\\images\\collectingCrownChest.jpg",
-				".\\images\\collectedCrownChest.jpg"); 
+				".\\images\\collectedCrownChest.jpg",
+				".\\images\\battleMenu.jpg",
+				".\\images\\cardsMenu.jpg",
+				".\\images\\shopMenu.jpg",
+				".\\images\\socialMenu.jpg",
+				".\\images\\tournamentsMenu.jpg",
+				".\\images\\lockedMagicChest.jpg",
+				".\\images\\unlockingMagicChest.jpg"); 
 		*/
 		AutoPlayer player = new AutoPlayer();
 		

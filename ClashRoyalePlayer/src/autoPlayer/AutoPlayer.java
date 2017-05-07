@@ -44,7 +44,14 @@ public class AutoPlayer{
 				".\\images\\collectingGoldChest.jpg",
 				".\\images\\collectedGoldChest.jpg",
 				".\\images\\collectingCrownChest.jpg",
-				".\\images\\collectedCrownChest.jpg");
+				".\\images\\collectedCrownChest.jpg",
+				".\\images\\battleMenu.jpg",
+				".\\images\\cardsMenu.jpg",
+				".\\images\\shopMenu.jpg",
+				".\\images\\socialMenu.jpg",
+				".\\images\\tournamentsMenu.jpg",
+				".\\images\\lockedMagicChest.jpg",
+				".\\images\\unlockingMagicChest.jpg");
 		status = checkStatus();
 	}
 

@@ -26,6 +26,13 @@ public class ImageStore {
 	private BufferedImage collectedGoldChest = null;
 	private BufferedImage collectingCrwonChest = null;
 	private BufferedImage collectedCrownChest = null;
+	private BufferedImage battleMenu = null;
+	private BufferedImage cardsMenu = null;
+	private BufferedImage shopMenu = null;
+	private BufferedImage socialMenu = null;
+	private BufferedImage tournamentsMenu = null;
+	private BufferedImage lockedMagicChest = null;
+	private BufferedImage unlockingMagicChest = null;
 	
 	public ImageStore(
 			String battleButtonPath, 
@@ -45,7 +52,14 @@ public class ImageStore {
 			String collectingGoldChestPath,
 			String collectedGoldChestPath,
 			String collectingCrownChestPath,
-			String collectedCrownChestPath) 
+			String collectedCrownChestPath,
+			String battleMenuPath,
+			String cardsMenuPath,
+			String shopMenuPath,
+			String socialMenuPath, 
+			String tournamentsMenuPath,
+			String lockedMagicChestPath,
+			String unlockingMagicChestPath) 
 					throws IOException
 	{
 		this.setBattleButton(battleButtonPath);
@@ -66,6 +80,14 @@ public class ImageStore {
 		this.setCollectedGoldChest(collectedGoldChestPath);
 		this.setCollectingCrwonChest(collectingCrownChestPath);
 		this.setCollectedCrownChest(collectedCrownChestPath);
+		this.setBattleMenu(battleMenuPath);
+		this.setCardsMenu(cardsMenuPath);
+		this.setShopMenu(shopMenuPath);
+		this.setSocialMenu(socialMenuPath);
+		this.setTournamentsMenu(tournamentsMenuPath);
+		this.setLockedMagicChest(lockedMagicChestPath);
+		this.setUnlockingMagicChest(unlockingMagicChestPath);
+		
 	}
 	
 	public ImageStore(){
@@ -213,5 +235,61 @@ public class ImageStore {
 
 	public void setCollectedCrownChest(String collectedCrownChestPath) throws IOException {
 		this.collectedCrownChest = ImageIO.read(new File(collectedCrownChestPath));
+	}
+
+	public BufferedImage getBattleMenu() {
+		return battleMenu;
+	}
+
+	public void setBattleMenu(String battleMenuPath) throws IOException {
+		this.battleMenu = ImageIO.read(new File(battleMenuPath));
+	}
+
+	public BufferedImage getCardsMenu() {
+		return cardsMenu;
+	}
+
+	public void setCardsMenu(String cardsMenuPath) throws IOException {
+		this.cardsMenu = ImageIO.read(new File(cardsMenuPath));
+	}
+
+	public BufferedImage getShopMenu() {
+		return shopMenu;
+	}
+
+	public void setShopMenu(String shopMenuPath) throws IOException {
+		this.shopMenu = ImageIO.read(new File(shopMenuPath));
+	}
+
+	public BufferedImage getSocialMenu() {
+		return socialMenu;
+	}
+
+	public void setSocialMenu(String socialMenuPath) throws IOException {
+		this.socialMenu = ImageIO.read(new File(socialMenuPath));
+	}
+
+	public BufferedImage getTournamentsMenu() {
+		return tournamentsMenu;
+	}
+
+	public void setTournamentsMenu(String tournamentsMenuPath) throws IOException {
+		this.tournamentsMenu = ImageIO.read(new File(tournamentsMenuPath));
+	}
+
+	public BufferedImage getLockedMagicChest() {
+		return lockedMagicChest;
+	}
+
+	public void setLockedMagicChest(String lockedMagicChestPath) throws IOException {
+		this.lockedMagicChest = ImageIO.read(new File(lockedMagicChestPath));
+	}
+
+	public BufferedImage getUnlockingMagicChest() {
+		return unlockingMagicChest;
+	}
+
+	public void setUnlockingMagicChest(String unlockingMagicChestPath) throws IOException {
+		this.unlockingMagicChest = ImageIO.read(new File(unlockingMagicChestPath));
 	}
 }
