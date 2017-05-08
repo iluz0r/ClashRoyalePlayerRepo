@@ -36,9 +36,9 @@ public class AutoPlayer{
 		resolution = DEFAULT_RESOLUTION;
 	}
 
-	private void init() throws AWTException, IOException{
+	private void init() throws Exception{
 		robot = new Robot();
-		imageCapturer = new ImageCapturer();
+		imageCapturer = new ImageCapturer(resolution);
 		imageComparison = new ImageComparison();
 		switch(resolution){
 		
@@ -68,7 +68,8 @@ public class AutoPlayer{
 					".\\images" + resolution + "\\socialMenu.jpg",
 					".\\images" + resolution + "\\tournamentsMenu.jpg",
 					".\\images" + resolution + "\\lockedMagicChest.jpg",
-					".\\images" + resolution + "\\unlockingMagicChest.jpg");
+					".\\images" + resolution + "\\unlockingMagicChest.jpg",
+					".\\images" + resolution + "\\openGoldChest.jpg");
 			break;
 		case "1366x768" : 
 			imageStore = new ImageStore();
@@ -81,7 +82,7 @@ public class AutoPlayer{
 	}
 
 	
-	public void start() throws AWTException, IOException{
+	public void start() throws Exception{
 		this.init();
 		System.out.println("Stato iniziale: " + status.toString());
 		
