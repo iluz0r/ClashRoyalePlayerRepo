@@ -69,11 +69,11 @@ public class AutoPlayer{
 					".\\images" + resolution + "\\tournamentsMenu.jpg",
 					".\\images" + resolution + "\\lockedMagicChest.jpg",
 					".\\images" + resolution + "\\unlockingMagicChest.jpg");
+			break;
 		case "1366x768" : 
 			imageStore = new ImageStore();
-			
-		default : 
-			imageStore = new ImageStore();
+			break;
+
 		}
 		
 		robot.delay(10000);
@@ -152,56 +152,84 @@ public class AutoPlayer{
 	
 	private void tapBattleButton(){
 		switch(resolution){
-		case "1920x1080" : this.tap(944, 668);
-		case "1366x768" : this.tap(0, 0);
+		case "1920x1080" : 
+			this.tap(944, 668);
+			break;
+		case "1366x768" : 
+			this.tap(0, 0);
+			break;
 		default: break;
 		}
 	}
 	
 	private void tapTournamentsButton() {
 		switch(resolution){
-		case "1920x1080" : this.tap(1173, 982);
-		case "1366x768" : this.tap(0, 0);
+		case "1920x1080" : 
+			this.tap(1173, 982);
+			break;
+		case "1366x768" : 
+			this.tap(0, 0);
+			break;
 		default: break;
 		}
 	}
 	
 	private void tapFirstChest(){
 		switch(resolution){
-		case "1920x1080" : this.tap(739, 847);
-		case "1366x768" : this.tap(0, 0);
+		case "1920x1080" : 
+			this.tap(739, 847);
+			break;
+		case "1366x768" : 
+			this.tap(0, 0);
+			break;
 		default: break;
 		}
 	}
 	
 	private void tapSecondChest(){
 		switch(resolution){
-		case "1920x1080" : this.tap(873, 847);
-		case "1366x768" : this.tap(0, 0);
+		case "1920x1080" : 
+			this.tap(873, 847);
+			break;
+		case "1366x768" : 
+			this.tap(0, 0);
+			break;
 		default: break;
 		}
 	}
 	
 	private void tapThirdChest(){
 		switch(resolution){
-		case "1920x1080" : this.tap(1013, 847);
-		case "1366x768" : this.tap(0, 0);
+		case "1920x1080" : 
+			this.tap(1013, 847);
+			break;
+		case "1366x768" : 
+			this.tap(0, 0);
+			break;
 		default: break;
 		}
 	}
 	
 	private void tapFourthChest(){
 		switch(resolution){
-		case "1920x1080" : this.tap(1153, 847);
-		case "1366x768" : this.tap(0, 0);
+		case "1920x1080" : 
+			this.tap(1153, 847);
+			break;
+		case "1366x768" : 
+			this.tap(0, 0);
+			break;
 		default: break;
 		}
 	}
 	
 	private void tapBattleMenu(){
 		switch(resolution){
-		case "1920x1080" : this.tap(945, 975);
-		case "1366x768" : this.tap(0, 0);
+		case "1920x1080" : 
+			this.tap(945, 975);
+			break;
+		case "1366x768" : 
+			this.tap(0, 0);
+			break;
 		default: break;
 		}
 	}

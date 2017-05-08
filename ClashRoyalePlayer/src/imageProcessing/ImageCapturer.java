@@ -42,15 +42,17 @@ public class ImageCapturer{
 	}
 	
 	public BufferedImage captureFirstChest() throws AWTException{
-		Rectangle captureRect;
+		Rectangle captureRect = null;
 		
 		switch(resolution){
 		
-		case "1920x1080" : captureRect = new Rectangle(676, 767, 123, 152);
-		
-		case "1366x768" : captureRect = new Rectangle(0, 0, 0, 0);
-
-		default : captureRect = new Rectangle(0, 0, 0, 0);
+		case "1920x1080" : 
+			captureRect = new Rectangle(676, 767, 123, 152);
+			break;
+			
+		case "1366x768" : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
 		
 		}
 		
@@ -61,15 +63,17 @@ public class ImageCapturer{
 	
 	public BufferedImage captureSecondChest() throws AWTException{
 		
-		Rectangle captureRect;
+		Rectangle captureRect = null;
 		
 		switch(resolution){
 		
-		case "1920x1080" : captureRect = new Rectangle(814, 767, 123, 152);
+		case "1920x1080" : 
+			captureRect = new Rectangle(814, 767, 123, 152);
+			break;
 		
-		case "1366x768" : captureRect = new Rectangle(0, 0, 0, 0);
-
-		default : captureRect = new Rectangle(0, 0, 0, 0);
+		case "1366x768" : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
 		
 		}
 		
@@ -81,15 +85,17 @@ public class ImageCapturer{
 	
 	public BufferedImage captureThirdChest() throws AWTException{
 		
-		Rectangle captureRect;
+		Rectangle captureRect = null;
 		
 		switch(resolution){
 		
-		case "1920x1080" : captureRect = new Rectangle(952, 767, 123, 152);
+		case "1920x1080" : 
+			captureRect = new Rectangle(952, 767, 123, 152);
+			break;
 		
-		case "1366x768" : captureRect = new Rectangle(0, 0, 0, 0);
-
-		default : captureRect = new Rectangle(0, 0, 0, 0);
+		case "1366x768" : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
 		
 		}
 		
@@ -100,15 +106,17 @@ public class ImageCapturer{
 
 	public BufferedImage captureFourthChest() throws AWTException{
 		
-		Rectangle captureRect;
+		Rectangle captureRect = null;
 		
 		switch(resolution){
 		
-		case "1920x1080" : captureRect = new Rectangle(1090, 767, 123, 152);
+		case "1920x1080" : 
+			captureRect = new Rectangle(1090, 767, 123, 152);
+			break;
 		
-		case "1366x768" : captureRect = new Rectangle(0, 0, 0, 0);
-
-		default : captureRect = new Rectangle(0, 0, 0, 0);
+		case "1366x768" : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
 		
 		}
 		
@@ -119,15 +127,17 @@ public class ImageCapturer{
 	
 	public BufferedImage captureBattleButton() throws AWTException {
 		
-		Rectangle captureRect;
+		Rectangle captureRect = null;
 		
 		switch(resolution){
 		
-		case "1920x1080" : captureRect = new Rectangle(831, 619, 222, 108);
+		case "1920x1080" : 
+			captureRect = new Rectangle(831, 619, 222, 108);
+			break;
 		
-		case "1366x768" : captureRect = new Rectangle(0, 0, 0, 0);
-
-		default : captureRect = new Rectangle(0, 0, 0, 0);
+		case "1366x768" : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
 		
 		}
 		
@@ -138,15 +148,18 @@ public class ImageCapturer{
 	
 	public BufferedImage captureFreeChest() throws AWTException {
 		
-		Rectangle captureRect;
+		Rectangle captureRect = null;
 		
 		switch(resolution){
 		
-		case "1920x1080" : captureRect = new Rectangle(674, 174, 261, 83);
+		case "1920x1080" : 
+			captureRect = new Rectangle(674, 174, 261, 83);
+			break;
 		
-		case "1366x768" : captureRect = new Rectangle(0, 0, 0, 0);
+		case "1366x768" : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
 
-		default : captureRect = new Rectangle(0, 0, 0, 0);
 		
 		}
 		
@@ -154,18 +167,21 @@ public class ImageCapturer{
 		return capturedImage;
 		
 	}
-	//a
+	
 	public BufferedImage captureCrownChest() throws AWTException {
 		
-		Rectangle captureRect;
+		Rectangle captureRect = null;
 		
 		switch(resolution){
 		
-		case "1920x1080" : captureRect = new Rectangle(950, 175, 259, 83);
+		case "1920x1080" : 
+			captureRect = new Rectangle(950, 175, 259, 83);
+			break;
 		
-		case "1366x768" : captureRect = new Rectangle(0, 0, 0, 0);
-
-		default : captureRect = new Rectangle(0, 0, 0, 0);
+		case "1366x768" : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
+			
 		
 		}
 		
@@ -176,16 +192,18 @@ public class ImageCapturer{
 	
 	public BufferedImage captureCollectingChest() throws AWTException {
 		
-		Rectangle captureRect;
+		Rectangle captureRect = null;
 		
 		switch(resolution){
 		
-		case "1920x1080" : captureRect = new Rectangle(822, 579, 223, 166);
-		
-		case "1366x768" : captureRect = new Rectangle(0, 0, 0, 0);
-
-		default : captureRect = new Rectangle(0, 0, 0, 0);
-		
+		case "1920x1080" : 
+			captureRect = new Rectangle(822, 579, 223, 166);
+			break;
+			
+		case "1366x768" : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
+			
 		}
 		
 		BufferedImage capturedImage = captureImage(captureRect);
@@ -194,15 +212,17 @@ public class ImageCapturer{
 	
 	public BufferedImage captureCollectedChest() throws AWTException {
 		
-		Rectangle captureRect;
+		Rectangle captureRect = null;
 		
 		switch(resolution){
 		
-		case "1920x1080" : captureRect = new Rectangle(818, 267, 222, 217);
-		
-		case "1366x768" : captureRect = new Rectangle(0, 0, 0, 0);
-
-		default : captureRect = new Rectangle(0, 0, 0, 0);
+		case "1920x1080" : 
+			captureRect = new Rectangle(818, 267, 222, 217);
+			break;
+			
+		case "1366x768" : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
 		
 		}
 		
@@ -212,15 +232,17 @@ public class ImageCapturer{
 	
 	public BufferedImage captureBattleMenu() throws AWTException {
 		
-		Rectangle captureRect;
+		Rectangle captureRect = null;
 		
 		switch(resolution){
 		
-		case "1920x1080" : captureRect = new Rectangle(851, 953, 182, 73);
+		case "1920x1080" : 
+			captureRect = new Rectangle(851, 953, 182, 73);
+			break;
 		
-		case "1366x768" : captureRect = new Rectangle(0, 0, 0, 0);
-
-		default : captureRect = new Rectangle(0, 0, 0, 0);
+		case "1366x768" : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
 		
 		}
 		
@@ -230,15 +252,17 @@ public class ImageCapturer{
 	
 	public BufferedImage captureCardsMenu() throws AWTException {
 		
-		Rectangle captureRect;
+		Rectangle captureRect = null;
 		
 		switch(resolution){
 		
-		case "1920x1080" : captureRect = new Rectangle(756, 953, 182, 73);
+		case "1920x1080" : 
+			captureRect = new Rectangle(756, 953, 182, 73);
+			break;
 		
-		case "1366x768" : captureRect = new Rectangle(0, 0, 0, 0);
-
-		default : captureRect = new Rectangle(0, 0, 0, 0);
+		case "1366x768" : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
 		
 		}
 		
@@ -248,15 +272,17 @@ public class ImageCapturer{
 	
 	public BufferedImage captureShopMenu() throws AWTException {
 		
-		Rectangle captureRect;
+		Rectangle captureRect = null;
 		
 		switch(resolution){
 		
-		case "1920x1080" : captureRect = new Rectangle(662, 953, 182, 73);
+		case "1920x1080" : 
+			captureRect = new Rectangle(662, 953, 182, 73);
+			break;
 		
-		case "1366x768" : captureRect = new Rectangle(0, 0, 0, 0);
-
-		default : captureRect = new Rectangle(0, 0, 0, 0);
+		case "1366x768" : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
 		
 		}
 		
@@ -266,15 +292,17 @@ public class ImageCapturer{
 	
 	public BufferedImage captureSocialMenu() throws AWTException {
 		
-		Rectangle captureRect;
+		Rectangle captureRect = null;
 		
 		switch(resolution){
 		
-		case "1920x1080" : captureRect = new Rectangle(944, 953, 182, 73);
+		case "1920x1080" : 
+			captureRect = new Rectangle(944, 953, 182, 73);
+			break;
 		
-		case "1366x768" : captureRect = new Rectangle(0, 0, 0, 0);
-
-		default : captureRect = new Rectangle(0, 0, 0, 0);
+		case "1366x768" : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
 		
 		}
 		
@@ -284,15 +312,17 @@ public class ImageCapturer{
 	
 	public BufferedImage captureTournamentsMenu() throws AWTException {
 		
-		Rectangle captureRect;
+		Rectangle captureRect = null;
 		
 		switch(resolution){
 		
-		case "1920x1080" : captureRect = new Rectangle(1038, 953, 182, 73);
+		case "1920x1080" : 
+			captureRect = new Rectangle(1038, 953, 182, 73);
+			break;
 		
-		case "1366x768" : captureRect = new Rectangle(0, 0, 0, 0);
-
-		default : captureRect = new Rectangle(0, 0, 0, 0);
+		case "1366x768" : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
 		
 		}
 		
