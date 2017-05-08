@@ -25,6 +25,16 @@ public class AutoPlayer{
 	
 	private Status status;
 	
+	public AutoPlayer(String screenResolution) throws Exception{
+		if(screenResolution == "1920x1080" || screenResolution == "1366x768")
+			this.resolution = screenResolution;
+		else
+			throw new Exception("Risoluzione non gestita");
+	}
+	
+	public AutoPlayer(){
+		resolution = DEFAULT_RESOLUTION;
+	}
 
 	private void init() throws AWTException, IOException{
 		robot = new Robot();
@@ -70,7 +80,7 @@ public class AutoPlayer{
 		checkStatus();
 	}
 
-	/*
+	
 	public void start() throws AWTException, IOException{
 		this.init();
 		System.out.println("Stato iniziale: " + status.toString());
@@ -99,7 +109,7 @@ public class AutoPlayer{
 		System.out.println("Stato Finale: " + status.toString());
 		this.stop();
 	}
-	*/
+	
 	
 	public void stop(){
 		System.exit(0);

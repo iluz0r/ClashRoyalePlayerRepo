@@ -125,10 +125,10 @@ public class Driver {
 		System.out.println("Lo stato in cui siamo è: " + status.toString() + "\n");
 		*/
 		
-		/*
+		
 		AutoPlayer player = new AutoPlayer();
 		player.start();
-		*/
+		
 		
 	}
 
