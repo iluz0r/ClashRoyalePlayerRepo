@@ -17,20 +17,13 @@ import imageProcessing.ImageStore;
 
 public class Driver {
 	
-	/*
-	private enum Status {
-		BATTLEMENU, TOURNAMENTSMENU, SOCIALMENU, SHOPMENU, 
-		CARDSMENU, BATTLE, UNKNOWN
-	}
-	*/
-	
-	public static void main(String[] args) throws AWTException, IOException {
+	public static void main(String[] args) throws Exception {
 
 		
-		Robot robot = new Robot();
-		ImageCapturer imageCapturer = new ImageCapturer();
-		ImageComparison imageComparison = new ImageComparison();
-		ImageStore imageStore;
+		//Robot robot = new Robot();
+		//ImageCapturer imageCapturer = new ImageCapturer();
+		//ImageComparison imageComparison = new ImageComparison();
+		//ImageStore imageStore;
 		/*
 		imageStore = new ImageStore(
 				".\\images\\battleButton.jpg", 
@@ -59,7 +52,8 @@ public class Driver {
 				".\\images\\lockedMagicChest.jpg",
 				".\\images\\unlockingMagicChest.jpg"); 
 		*/
-		AutoPlayer player = new AutoPlayer();
+		
+		//AutoPlayer player = new AutoPlayer();
 		
 		
 		/*
@@ -73,9 +67,11 @@ public class Driver {
 		
 		/*
 		//save image
+		Robot robot = new Robot();
+		ImageCapturer imageCapturer = new ImageCapturer("1366x768");
 		robot.delay(10000);
-		BufferedImage image = imageCapturer.captureCollectedChest();
-		imageCapturer.saveImage(image, "collectedMagicChest", "jpg");
+		BufferedImage image = imageCapturer.captureBattleButton();
+		imageCapturer.saveImage(image, "immagine", "jpg");
 		*/
 		
 		/*
@@ -126,7 +122,7 @@ public class Driver {
 		*/
 		
 		/*
-		AutoPlayer player = new AutoPlayer();
+		AutoPlayer player = new AutoPlayer("1366x768");
 		player.start();
 		*/
 		

@@ -29,7 +29,7 @@ public class AutoPlayer{
 		if(screenResolution == "1920x1080" || screenResolution == "1366x768")
 			this.resolution = screenResolution;
 		else
-			throw new Exception("Risoluzione non gestita");
+			throw new Exception("Resolution mismatch");
 	}
 	
 	public AutoPlayer(){
