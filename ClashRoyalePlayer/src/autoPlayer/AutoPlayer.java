@@ -15,6 +15,9 @@ public class AutoPlayer{
 	private ImageComparison imageComparison;
 	private ImageStore imageStore;
 	
+	private String resolution;
+	private final String DEFAULT_RESOLUTION = "1920x1080";
+	
 	private enum Status {
 		BATTLEMENU, TOURNAMENTSMENU, SOCIALMENU, SHOPMENU, 
 		CARDSMENU, BATTLE, UNKNOWN
@@ -27,37 +30,47 @@ public class AutoPlayer{
 		robot = new Robot();
 		imageCapturer = new ImageCapturer();
 		imageComparison = new ImageComparison();
-		imageStore = new ImageStore(
-				".\\images\\battleButton.jpg", 
-				".\\images\\emptyChestSlot.jpg", 
-				".\\images\\lockedSilverChest.jpg", 
-				".\\images\\unlockingSilverChest.jpg",
-				".\\images\\openSilverChest.jpg",
-				".\\images\\openCrownChest.jpg",
-				".\\images\\openFreeChestx1.jpg",
-				".\\images\\lockedCrownChest.jpg",
-				".\\images\\lockedFreeChest.jpg",
-				".\\images\\lockedGoldChest.jpg",
-				".\\images\\unlockingGoldChest.jpg",
-				".\\images\\openFreeChestx2.jpg",
-				".\\images\\collectingFreeChest.jpg",
-				".\\images\\collectedFreeChest.jpg",
-				".\\images\\collectingGoldChest.jpg",
-				".\\images\\collectedGoldChest.jpg",
-				".\\images\\collectingCrownChest.jpg",
-				".\\images\\collectedCrownChest.jpg",
-				".\\images\\battleMenu.jpg",
-				".\\images\\cardsMenu.jpg",
-				".\\images\\shopMenu.jpg",
-				".\\images\\socialMenu.jpg",
-				".\\images\\tournamentsMenu.jpg",
-				".\\images\\lockedMagicChest.jpg",
-				".\\images\\unlockingMagicChest.jpg");
+		switch(resolution){
+		
+		case "1920x1080" : 
+			imageStore = new ImageStore(
+					".\\images" + resolution + "\\battleButton.jpg", 
+					".\\images" + resolution + "\\emptyChestSlot.jpg", 
+					".\\images" + resolution + "\\lockedSilverChest.jpg", 
+					".\\images" + resolution + "\\unlockingSilverChest.jpg",
+					".\\images" + resolution + "\\openSilverChest.jpg",
+					".\\images" + resolution + "\\openCrownChest.jpg",
+					".\\images" + resolution + "\\openFreeChestx1.jpg",
+					".\\images" + resolution + "\\lockedCrownChest.jpg",
+					".\\images" + resolution + "\\lockedFreeChest.jpg",
+					".\\images" + resolution + "\\lockedGoldChest.jpg",
+					".\\images" + resolution + "\\unlockingGoldChest.jpg",
+					".\\images" + resolution + "\\openFreeChestx2.jpg",
+					".\\images" + resolution + "\\collectingFreeChest.jpg",
+					".\\images" + resolution + "\\collectedFreeChest.jpg",
+					".\\images" + resolution + "\\collectingGoldChest.jpg",
+					".\\images" + resolution + "\\collectedGoldChest.jpg",
+					".\\images" + resolution + "\\collectingCrownChest.jpg",
+					".\\images" + resolution + "\\collectedCrownChest.jpg",
+					".\\images" + resolution + "\\battleMenu.jpg",
+					".\\images" + resolution + "\\cardsMenu.jpg",
+					".\\images" + resolution + "\\shopMenu.jpg",
+					".\\images" + resolution + "\\socialMenu.jpg",
+					".\\images" + resolution + "\\tournamentsMenu.jpg",
+					".\\images" + resolution + "\\lockedMagicChest.jpg",
+					".\\images" + resolution + "\\unlockingMagicChest.jpg");
+		case "1366x768" : 
+			imageStore = new ImageStore();
+			
+		default : 
+			imageStore = new ImageStore();
+		}
+		
 		robot.delay(10000);
 		checkStatus();
 	}
 
-	// da fare
+	/*
 	public void start() throws AWTException, IOException{
 		this.init();
 		System.out.println("Stato iniziale: " + status.toString());
@@ -86,6 +99,7 @@ public class AutoPlayer{
 		System.out.println("Stato Finale: " + status.toString());
 		this.stop();
 	}
+	*/
 	
 	public void stop(){
 		System.exit(0);
@@ -127,31 +141,59 @@ public class AutoPlayer{
 	
 	
 	private void tapBattleButton(){
-		this.tap(944, 668);
+		switch(resolution){
+		case "1920x1080" : this.tap(944, 668);
+		case "1366x768" : this.tap(0, 0);
+		default: break;
+		}
 	}
 	
 	private void tapTournamentsButton() {
-		this.tap(1173, 982);
+		switch(resolution){
+		case "1920x1080" : this.tap(1173, 982);
+		case "1366x768" : this.tap(0, 0);
+		default: break;
+		}
 	}
 	
 	private void tapFirstChest(){
-		this.tap(739, 847);
+		switch(resolution){
+		case "1920x1080" : this.tap(739, 847);
+		case "1366x768" : this.tap(0, 0);
+		default: break;
+		}
 	}
 	
 	private void tapSecondChest(){
-		this.tap(873, 847);
+		switch(resolution){
+		case "1920x1080" : this.tap(873, 847);
+		case "1366x768" : this.tap(0, 0);
+		default: break;
+		}
 	}
 	
 	private void tapThirdChest(){
-		this.tap(1013, 847);
+		switch(resolution){
+		case "1920x1080" : this.tap(1013, 847);
+		case "1366x768" : this.tap(0, 0);
+		default: break;
+		}
 	}
 	
 	private void tapFourthChest(){
-		this.tap(1153, 847);
+		switch(resolution){
+		case "1920x1080" : this.tap(1153, 847);
+		case "1366x768" : this.tap(0, 0);
+		default: break;
+		}
 	}
 	
 	private void tapBattleMenu(){
-		this.tap(945, 975);
+		switch(resolution){
+		case "1920x1080" : this.tap(945, 975);
+		case "1366x768" : this.tap(0, 0);
+		default: break;
+		}
 	}
 	
 }
