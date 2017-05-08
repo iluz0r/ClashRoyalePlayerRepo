@@ -76,6 +76,7 @@ public class Driver {
 		
 		/*
 		//get pointed coord
+		Robot robot = new Robot();
 		robot.delay(10000);
 		Point coord = MouseInfo.getPointerInfo().getLocation();
 		System.out.println("X: " + coord.getX() + " Y: " + coord.getY());
@@ -122,7 +123,7 @@ public class Driver {
 		*/
 		
 		/*
-		AutoPlayer player = new AutoPlayer("1366x768");
+		AutoPlayer player = new AutoPlayer();
 		player.start();
 		*/
 		

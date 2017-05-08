@@ -96,6 +96,7 @@ public class AutoPlayer{
 		}
 		
 		robot.delay(10000);
+		pointOutside();
 		checkGameStatus();
 	}
 
@@ -105,6 +106,7 @@ public class AutoPlayer{
 		log += "Initial state: " + gameStatus.toString() + ";\n";
 		
 		while(gameStatus.toString() != GameStatus.UNKNOWN.toString()){
+			pointOutside();
 			switch(gameStatus.toString()){
 			
 				case "UNKNOWN" : break;
@@ -121,34 +123,48 @@ public class AutoPlayer{
 					
 					robot.delay(3000);
 					checkGameStatus();
+					log += "Game state: " + gameStatus.toString() + ";\n";
+					break;
 				}
 				
 				case "TOURNAMENTSMENU" : {
 					tapBattleMenu();
 					robot.delay(3000);
+					pointOutside();
 					checkGameStatus();
 					log += "Action: from TOURNAMENTSMENU to " + gameStatus.toString() + ";\n";
+					log += "Game state: " + gameStatus.toString() + ";\n";
+					break;
 				}
 				
 				case "SOCIALMENU" : {
 					tapBattleMenu();
 					robot.delay(3000);
+					pointOutside();
 					checkGameStatus();
-					log += "Action from SOCIALMENU to " + gameStatus.toString() + ";\n";
+					log += "Action: from SOCIALMENU to " + gameStatus.toString() + ";\n";
+					log += "Game state: " + gameStatus.toString() + ";\n";
+					break;
 				}
 				
 				case "SHOPMENU" : {
 					tapBattleMenu();
 					robot.delay(3000);
+					pointOutside();
 					checkGameStatus();
-					log += "Action from SHOPMENU to " + gameStatus.toString() + ";\n";
+					log += "Action: from SHOPMENU to " + gameStatus.toString() + ";\n";
+					log += "Game state: " + gameStatus.toString() + ";\n";
+					break;
 				}
 				
 				case "CARDSMENU" : {
 					tapBattleMenu();
 					robot.delay(3000);
+					pointOutside();
 					checkGameStatus();
-					log += "Action: from SHOPMENU to " + gameStatus.toString() + ";\n";
+					log += "Action: from CARDSMENU to " + gameStatus.toString() + ";\n";
+					log += "Game state: " + gameStatus.toString() + ";\n";
+					break;
 				}
 			
 			}
@@ -182,19 +198,19 @@ public class AutoPlayer{
 		BufferedImage shopMenu = imageStore.getShopMenu();
 		BufferedImage cardsMenu = imageStore.getCardsMenu();
 		
-		if (imageComparison.imgEqual(battleMenu, capturedBattleMenu)) 
+		if (imageComparison.imgEqual(battleMenu, capturedBattleMenu, 3)) 
 			gameStatus = GameStatus.BATTLEMENU;
 		else
-			if(imageComparison.imgEqual(shopMenu, capturedShopMenu)) 
+			if(imageComparison.imgEqual(shopMenu, capturedShopMenu, 3)) 
 				gameStatus = GameStatus.SHOPMENU;
 			else
-				if(imageComparison.imgEqual(socialMenu, capturedSocialMenu)) 
+				if(imageComparison.imgEqual(socialMenu, capturedSocialMenu, 3)) 
 					gameStatus = GameStatus.SOCIALMENU;
 				else
-					if(imageComparison.imgEqual(tournamentsMenu, capturedTournamentsMenu)) 
+					if(imageComparison.imgEqual(tournamentsMenu, capturedTournamentsMenu, 3)) 
 						gameStatus = GameStatus.TOURNAMENTSMENU;
 					else
-						if(imageComparison.imgEqual(cardsMenu, capturedCardsMenu)) 
+						if(imageComparison.imgEqual(cardsMenu, capturedCardsMenu, 3)) 
 							gameStatus = GameStatus.CARDSMENU;
 						else
 							gameStatus = GameStatus.UNKNOWN;
@@ -260,24 +276,24 @@ public class AutoPlayer{
 		BufferedImage capturedSecondChest = imageCapturer.captureSecondChest();
 		
 		if(
-				imageComparison.imgEqual(lockedSilverChest, capturedSecondChest) ||
-				imageComparison.imgEqual(lockedGoldChest, capturedSecondChest) ||
-				imageComparison.imgEqual(lockedMagicChest, capturedSecondChest)) 
+				imageComparison.imgEqual(lockedSilverChest, capturedSecondChest, 10) ||
+				imageComparison.imgEqual(lockedGoldChest, capturedSecondChest, 10) ||
+				imageComparison.imgEqual(lockedMagicChest, capturedSecondChest, 10)) 
 			secondChestStatus = ChestStatus.LOCKED;
 		else
 			if(
-					imageComparison.imgEqual(unlockingSilverChest, capturedSecondChest) ||
-					imageComparison.imgEqual(unlockingGoldChest, capturedSecondChest) ||
-					imageComparison.imgEqual(unlockingMagicChest, capturedSecondChest))
+					imageComparison.imgEqual(unlockingSilverChest, capturedSecondChest, 10) ||
+					imageComparison.imgEqual(unlockingGoldChest, capturedSecondChest, 10) ||
+					imageComparison.imgEqual(unlockingMagicChest, capturedSecondChest, 10))
 				secondChestStatus = ChestStatus.UNLOCKING;
 			else
 				if(
-						imageComparison.imgEqual(openSilverChest, capturedSecondChest) ||
-						imageComparison.imgEqual(openGoldChest, capturedSecondChest) ||
-						imageComparison.imgEqual(openMagicChest, capturedSecondChest))
+						imageComparison.imgEqual(openSilverChest, capturedSecondChest, 10) ||
+						imageComparison.imgEqual(openGoldChest, capturedSecondChest, 10) ||
+						imageComparison.imgEqual(openMagicChest, capturedSecondChest, 10))
 					secondChestStatus = ChestStatus.UNLOCKABLE;
 				else
-					if(imageComparison.imgEqual(emptyChest, capturedSecondChest))
+					if(imageComparison.imgEqual(emptyChest, capturedSecondChest, 10))
 						secondChestStatus = ChestStatus.EMPTY;
 		
 		
@@ -375,6 +391,10 @@ public class AutoPlayer{
 		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
 	}
 	
+	private void point(int x, int y){
+		robot.mouseMove(x, y);
+	}
+	
 	
 	private void tapBattleButton(){
 		switch(resolution){
@@ -455,6 +475,18 @@ public class AutoPlayer{
 			break;
 		case "1366x768" : 
 			this.tap(0, 0);
+			break;
+		default: break;
+		}
+	}
+	
+	private void pointOutside(){
+		switch(resolution){
+		case "1920x1080" : 
+			this.point(1400, 500);
+			break;
+		case "1366x768" : 
+			this.point(0, 0);
 			break;
 		default: break;
 		}
