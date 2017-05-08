@@ -4,7 +4,9 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
 import java.awt.image.BufferedImage;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 
 import imageProcessing.*;
 
@@ -19,6 +21,7 @@ public class AutoPlayer{
 	private final String DEFAULT_RESOLUTION = "1920x1080";
 	
 	private String log = "";
+	private PrintStream writeLog;
 	
 	private enum GameStatus {
 		BATTLEMENU, TOURNAMENTSMENU, SOCIALMENU, SHOPMENU, 
@@ -99,7 +102,7 @@ public class AutoPlayer{
 	
 	public void start() throws Exception{
 		this.init();
-		log += "Initial state: " + gameStatus.toString() + "\n";
+		log += "Initial state: " + gameStatus.toString() + ";\n";
 		
 		while(gameStatus.toString() != GameStatus.UNKNOWN.toString()){
 			switch(gameStatus.toString()){
@@ -107,48 +110,61 @@ public class AutoPlayer{
 				case "UNKNOWN" : break;
 			
 				case "BATTLEMENU" : {
-					 
+					checkFirstChestStatus();
+					log += "Action: checkFirstChestStatus, the state is " + firstChestStatus.toString() + ";\n";
+					checkSecondChestStatus();
+					log += "Action: checkSecondChestStatus, the state is " + secondChestStatus.toString() + ";\n";
+					checkThirdChestStatus();
+					log += "Action: checkThirdChestStatus, the state is " + thirdChestStatus.toString() + ";\n";
+					checkFourthChestStatus();
+					log += "Action: checkFourthChestStatus, the state is " + fourthChestStatus.toString() + ";\n";
+					
 					robot.delay(3000);
 					checkGameStatus();
-					log += "Action:  " + gameStatus.toString();
 				}
 				
 				case "TOURNAMENTSMENU" : {
 					tapBattleMenu();
 					robot.delay(3000);
 					checkGameStatus();
-					System.out.println("Da TOURNAMENTSMENU a: " + gameStatus.toString());
+					log += "Action: from TOURNAMENTSMENU to " + gameStatus.toString() + ";\n";
 				}
 				
 				case "SOCIALMENU" : {
 					tapBattleMenu();
 					robot.delay(3000);
 					checkGameStatus();
-					System.out.println("Da SOCIALMENU a: " + gameStatus.toString());
+					log += "Action from SOCIALMENU to " + gameStatus.toString() + ";\n";
 				}
 				
 				case "SHOPMENU" : {
 					tapBattleMenu();
 					robot.delay(3000);
 					checkGameStatus();
-					System.out.println("Da SHOPMENU a: " + gameStatus.toString());
+					log += "Action from SHOPMENU to " + gameStatus.toString() + ";\n";
 				}
 				
 				case "CARDSMENU" : {
 					tapBattleMenu();
 					robot.delay(3000);
 					checkGameStatus();
-					System.out.println("Da SHOPMENU a: " + gameStatus.toString());
+					log += "Action: from SHOPMENU to " + gameStatus.toString() + ";\n";
 				}
 			
 			}
 		}
-		System.out.println("Stato Finale: " + gameStatus.toString());
+		log += "Final state: " + gameStatus.toString() + ";\n";
 		this.stop();
 	}
 	
 	
-	public void stop(){
+	public void stop() throws IOException{
+		String path = ".\\log.txt";
+		FileOutputStream logFile = new FileOutputStream(path);
+        writeLog = new PrintStream(logFile);
+        writeLog.print(log);
+		System.out.println(log);
+
 		System.exit(0);
 	}
 	
