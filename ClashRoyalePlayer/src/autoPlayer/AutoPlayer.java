@@ -69,7 +69,8 @@ public class AutoPlayer{
 					".\\images" + resolution + "\\tournamentsMenu.jpg",
 					".\\images" + resolution + "\\lockedMagicChest.jpg",
 					".\\images" + resolution + "\\unlockingMagicChest.jpg",
-					".\\images" + resolution + "\\openGoldChest.jpg");
+					".\\images" + resolution + "\\openGoldChest.jpg",
+					".\\images" + resolution + "\\openMagicChest.jpg");
 			break;
 		case "1366x768" : 
 			imageStore = new ImageStore();

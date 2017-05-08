@@ -34,6 +34,7 @@ public class ImageStore {
 	private BufferedImage lockedMagicChest = null;
 	private BufferedImage unlockingMagicChest = null;
 	private BufferedImage openGoldChest = null;
+	private BufferedImage openMagicChest = null;
 	
 	public ImageStore(
 			String battleButtonPath, 
@@ -61,7 +62,8 @@ public class ImageStore {
 			String tournamentsMenuPath,
 			String lockedMagicChestPath,
 			String unlockingMagicChestPath,
-			String openGoldChestPath) 
+			String openGoldChestPath,
+			String openMagicChestPath) 
 					throws IOException
 	{
 		this.setBattleButton(battleButtonPath);
@@ -90,6 +92,7 @@ public class ImageStore {
 		this.setLockedMagicChest(lockedMagicChestPath);
 		this.setUnlockingMagicChest(unlockingMagicChestPath);
 		this.setOpenGoldChest(openGoldChestPath);
+		this.setOpenMagicChest(openMagicChestPath);
 		
 	}
 	
@@ -302,5 +305,13 @@ public class ImageStore {
 
 	public void setOpenGoldChest(String openGoldChestPath) throws IOException {
 		this.openGoldChest = ImageIO.read(new File(openGoldChestPath));
+	}
+
+	public BufferedImage getOpenMagicChest() {
+		return openMagicChest;
+	}
+
+	public void setOpenMagicChest(String openMagicChestPath) throws IOException {
+		this.openMagicChest = ImageIO.read(new File(openMagicChestPath));
 	}
 }
