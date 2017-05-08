@@ -234,24 +234,24 @@ public class AutoPlayer{
 		BufferedImage capturedFirstChest = imageCapturer.captureFirstChest();
 		
 		if(
-				imageComparison.imgEqual(lockedSilverChest, capturedFirstChest) ||
-				imageComparison.imgEqual(lockedGoldChest, capturedFirstChest) ||
-				imageComparison.imgEqual(lockedMagicChest, capturedFirstChest)) 
+				imageComparison.imgEqual(lockedSilverChest, capturedFirstChest, 10) ||
+				imageComparison.imgEqual(lockedGoldChest, capturedFirstChest, 10) ||
+				imageComparison.imgEqual(lockedMagicChest, capturedFirstChest, 10)) 
 			firstChestStatus = ChestStatus.LOCKED;
 		else
 			if(
-					imageComparison.imgEqual(unlockingSilverChest, capturedFirstChest) ||
-					imageComparison.imgEqual(unlockingGoldChest, capturedFirstChest) ||
-					imageComparison.imgEqual(unlockingMagicChest, capturedFirstChest))
+					imageComparison.imgEqual(unlockingSilverChest, capturedFirstChest, 10) ||
+					imageComparison.imgEqual(unlockingGoldChest, capturedFirstChest, 10) ||
+					imageComparison.imgEqual(unlockingMagicChest, capturedFirstChest, 10))
 				firstChestStatus = ChestStatus.UNLOCKING;
 			else
 				if(
-						imageComparison.imgEqual(openSilverChest, capturedFirstChest) ||
-						imageComparison.imgEqual(openGoldChest, capturedFirstChest) ||
-						imageComparison.imgEqual(openMagicChest, capturedFirstChest))
+						imageComparison.imgEqual(openSilverChest, capturedFirstChest, 10) ||
+						imageComparison.imgEqual(openGoldChest, capturedFirstChest, 10) ||
+						imageComparison.imgEqual(openMagicChest, capturedFirstChest, 10))
 					firstChestStatus = ChestStatus.UNLOCKABLE;
 				else
-					if(imageComparison.imgEqual(emptyChest, capturedFirstChest))
+					if(imageComparison.imgEqual(emptyChest, capturedFirstChest, 10))
 						firstChestStatus = ChestStatus.EMPTY;
 		
 		
@@ -318,24 +318,24 @@ public class AutoPlayer{
 	BufferedImage capturedThirdChest = imageCapturer.captureThirdChest();
 	
 	if(
-			imageComparison.imgEqual(lockedSilverChest, capturedThirdChest) ||
-			imageComparison.imgEqual(lockedGoldChest, capturedThirdChest) ||
-			imageComparison.imgEqual(lockedMagicChest, capturedThirdChest)) 
+			imageComparison.imgEqual(lockedSilverChest, capturedThirdChest, 10) ||
+			imageComparison.imgEqual(lockedGoldChest, capturedThirdChest, 10) ||
+			imageComparison.imgEqual(lockedMagicChest, capturedThirdChest, 10)) 
 		thirdChestStatus = ChestStatus.LOCKED;
 	else
 		if(
-				imageComparison.imgEqual(unlockingSilverChest, capturedThirdChest) ||
-				imageComparison.imgEqual(unlockingGoldChest, capturedThirdChest) ||
-				imageComparison.imgEqual(unlockingMagicChest, capturedThirdChest))
+				imageComparison.imgEqual(unlockingSilverChest, capturedThirdChest, 10) ||
+				imageComparison.imgEqual(unlockingGoldChest, capturedThirdChest, 10) ||
+				imageComparison.imgEqual(unlockingMagicChest, capturedThirdChest, 10))
 			thirdChestStatus = ChestStatus.UNLOCKING;
 		else
 			if(
-					imageComparison.imgEqual(openSilverChest, capturedThirdChest) ||
-					imageComparison.imgEqual(openGoldChest, capturedThirdChest) ||
-					imageComparison.imgEqual(openMagicChest, capturedThirdChest))
+					imageComparison.imgEqual(openSilverChest, capturedThirdChest, 10) ||
+					imageComparison.imgEqual(openGoldChest, capturedThirdChest, 10) ||
+					imageComparison.imgEqual(openMagicChest, capturedThirdChest, 10))
 				thirdChestStatus = ChestStatus.UNLOCKABLE;
 			else
-				if(imageComparison.imgEqual(emptyChest, capturedThirdChest))
+				if(imageComparison.imgEqual(emptyChest, capturedThirdChest, 10))
 					thirdChestStatus = ChestStatus.EMPTY;
 	
 	
@@ -360,24 +360,24 @@ public class AutoPlayer{
 	BufferedImage capturedFourthChest = imageCapturer.captureFourthChest();
 	
 	if(
-			imageComparison.imgEqual(lockedSilverChest, capturedFourthChest) ||
-			imageComparison.imgEqual(lockedGoldChest, capturedFourthChest) ||
-			imageComparison.imgEqual(lockedMagicChest, capturedFourthChest)) 
+			imageComparison.imgEqual(lockedSilverChest, capturedFourthChest, 10) ||
+			imageComparison.imgEqual(lockedGoldChest, capturedFourthChest, 10) ||
+			imageComparison.imgEqual(lockedMagicChest, capturedFourthChest, 10)) 
 		fourthChestStatus = ChestStatus.LOCKED;
 	else
 		if(
-				imageComparison.imgEqual(unlockingSilverChest, capturedFourthChest) ||
-				imageComparison.imgEqual(unlockingGoldChest, capturedFourthChest) ||
-				imageComparison.imgEqual(unlockingMagicChest, capturedFourthChest))
+				imageComparison.imgEqual(unlockingSilverChest, capturedFourthChest, 10) ||
+				imageComparison.imgEqual(unlockingGoldChest, capturedFourthChest, 10) ||
+				imageComparison.imgEqual(unlockingMagicChest, capturedFourthChest, 10))
 			fourthChestStatus = ChestStatus.UNLOCKING;
 		else
 			if(
-					imageComparison.imgEqual(openSilverChest, capturedFourthChest) ||
-					imageComparison.imgEqual(openGoldChest, capturedFourthChest) ||
-					imageComparison.imgEqual(openMagicChest, capturedFourthChest))
+					imageComparison.imgEqual(openSilverChest, capturedFourthChest, 10) ||
+					imageComparison.imgEqual(openGoldChest, capturedFourthChest, 10) ||
+					imageComparison.imgEqual(openMagicChest, capturedFourthChest, 10))
 				fourthChestStatus = ChestStatus.UNLOCKABLE;
 			else
-				if(imageComparison.imgEqual(emptyChest, capturedFourthChest))
+				if(imageComparison.imgEqual(emptyChest, capturedFourthChest, 10))
 					fourthChestStatus = ChestStatus.EMPTY;
 	
 	
