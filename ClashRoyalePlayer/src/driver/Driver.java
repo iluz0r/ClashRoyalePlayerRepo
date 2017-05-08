@@ -26,12 +26,12 @@ public class Driver {
 	
 	public static void main(String[] args) throws AWTException, IOException {
 
-		/*
+		
 		Robot robot = new Robot();
 		ImageCapturer imageCapturer = new ImageCapturer();
 		ImageComparison imageComparison = new ImageComparison();
 		ImageStore imageStore;
-		
+		/*
 		imageStore = new ImageStore(
 				".\\images\\battleButton.jpg", 
 				".\\images\\emptyChestSlot.jpg", 
@@ -58,9 +58,9 @@ public class Driver {
 				".\\images\\tournamentsMenu.jpg",
 				".\\images\\lockedMagicChest.jpg",
 				".\\images\\unlockingMagicChest.jpg"); 
-		
-		AutoPlayer player = new AutoPlayer();
 		*/
+		AutoPlayer player = new AutoPlayer();
+		
 		
 		/*
 		//compare two images
@@ -74,8 +74,8 @@ public class Driver {
 		/*
 		//save image
 		robot.delay(10000);
-		BufferedImage image = imageCapturer.captureSecondChest();
-		imageCapturer.saveImage(image, "unlockingMagicChest", "jpg");
+		BufferedImage image = imageCapturer.captureCollectedChest();
+		imageCapturer.saveImage(image, "collectedMagicChest", "jpg");
 		*/
 		
 		/*
@@ -125,10 +125,10 @@ public class Driver {
 		System.out.println("Lo stato in cui siamo è: " + status.toString() + "\n");
 		*/
 		
-		
+		/*
 		AutoPlayer player = new AutoPlayer();
 		player.start();
-		
+		*/
 		
 	}
 
