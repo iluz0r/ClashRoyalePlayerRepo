@@ -65,14 +65,14 @@ public class Driver {
 		System.out.println("Le immagini si differenziano del: " + difference + "%");
 		*/
 		
-		/*
+		
 		//save image
 		Robot robot = new Robot();
 		ImageCapturer imageCapturer = new ImageCapturer("1366x768");
 		robot.delay(10000);
-		BufferedImage image = imageCapturer.captureBattleButton();
-		imageCapturer.saveImage(image, "immagine", "jpg");
-		*/
+		BufferedImage image = imageCapturer.captureCollectedChest();
+		imageCapturer.saveImage(image, "collectedGoldChest", "jpg");
+		
 		
 		/*
 		//get pointed coord

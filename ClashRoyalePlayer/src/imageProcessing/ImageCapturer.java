@@ -51,7 +51,7 @@ public class ImageCapturer{
 			break;
 			
 		case "1366x768" : 
-			captureRect = new Rectangle(0, 0, 0, 0);
+			captureRect = new Rectangle(479, 542, 87, 110);
 			break;
 		
 		}
@@ -72,7 +72,7 @@ public class ImageCapturer{
 			break;
 		
 		case "1366x768" : 
-			captureRect = new Rectangle(0, 0, 0, 0);
+			captureRect = new Rectangle(575, 542, 87, 110);
 			break;
 		
 		}
@@ -94,7 +94,7 @@ public class ImageCapturer{
 			break;
 		
 		case "1366x768" : 
-			captureRect = new Rectangle(0, 0, 0, 0);
+			captureRect = new Rectangle(671, 542, 87, 110);
 			break;
 		
 		}
@@ -115,7 +115,7 @@ public class ImageCapturer{
 			break;
 		
 		case "1366x768" : 
-			captureRect = new Rectangle(0, 0, 0, 0);
+			captureRect = new Rectangle(767, 542, 87, 110);
 			break;
 		
 		}
@@ -136,7 +136,7 @@ public class ImageCapturer{
 			break;
 		
 		case "1366x768" : 
-			captureRect = new Rectangle(0, 0, 0, 0);
+			captureRect = new Rectangle(587, 440, 157, 76);
 			break;
 		
 		}
@@ -157,7 +157,7 @@ public class ImageCapturer{
 			break;
 		
 		case "1366x768" : 
-			captureRect = new Rectangle(0, 0, 0, 0);
+			captureRect = new Rectangle(478, 130, 183, 60);
 			break;
 
 		
@@ -179,7 +179,7 @@ public class ImageCapturer{
 			break;
 		
 		case "1366x768" : 
-			captureRect = new Rectangle(0, 0, 0, 0);
+			captureRect = new Rectangle(668, 130, 183, 60);
 			break;
 			
 		
@@ -201,7 +201,7 @@ public class ImageCapturer{
 			break;
 			
 		case "1366x768" : 
-			captureRect = new Rectangle(0, 0, 0, 0);
+			captureRect = new Rectangle(588, 404, 143, 127);
 			break;
 			
 		}
@@ -221,7 +221,7 @@ public class ImageCapturer{
 			break;
 			
 		case "1366x768" : 
-			captureRect = new Rectangle(0, 0, 0, 0);
+			captureRect = new Rectangle(580, 200, 150, 150);
 			break;
 		
 		}
@@ -241,7 +241,7 @@ public class ImageCapturer{
 			break;
 		
 		case "1366x768" : 
-			captureRect = new Rectangle(0, 0, 0, 0);
+			captureRect = new Rectangle(602, 661, 128, 65);
 			break;
 		
 		}
@@ -261,7 +261,7 @@ public class ImageCapturer{
 			break;
 		
 		case "1366x768" : 
-			captureRect = new Rectangle(0, 0, 0, 0);
+			captureRect = new Rectangle(536, 661, 128, 65);
 			break;
 		
 		}
@@ -281,7 +281,7 @@ public class ImageCapturer{
 			break;
 		
 		case "1366x768" : 
-			captureRect = new Rectangle(0, 0, 0, 0);
+			captureRect = new Rectangle(470, 661, 128, 65);
 			break;
 		
 		}
@@ -301,7 +301,7 @@ public class ImageCapturer{
 			break;
 		
 		case "1366x768" : 
-			captureRect = new Rectangle(0, 0, 0, 0);
+			captureRect = new Rectangle(668, 661, 128, 65);
 			break;
 		
 		}
@@ -321,7 +321,7 @@ public class ImageCapturer{
 			break;
 		
 		case "1366x768" : 
-			captureRect = new Rectangle(0, 0, 0, 0);
+			captureRect = new Rectangle(734, 661, 128, 65);
 			break;
 		
 		}
