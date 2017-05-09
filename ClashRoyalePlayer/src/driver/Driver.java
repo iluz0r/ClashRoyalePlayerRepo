@@ -57,9 +57,9 @@ public class Driver {
 		Robot robot = new Robot();
 		ImageCapturer imageCapturer = new ImageCapturer();
 		ImageComparison imageComparison = new ImageComparison();
-		robot.delay(10000);
+		robot.delay(3000);
 		BufferedImage image1 = imageCapturer.captureCollectingChest();
-		BufferedImage image2 = imageStore.getCollectingSilverChest();
+		BufferedImage image2 = imageStore.getCollectingFreeChest();
 		double difference = imageComparison.compare(image1, image2);
 		System.out.println("Le immagini si differenziano del: " + difference + "%");
 		*/

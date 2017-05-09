@@ -444,19 +444,19 @@ public class AutoPlayer{
 		BufferedImage collectedCrownChest = imageStore.getCollectedCrownChest();
 		
 		if(
-				imageComparison.imgEqual(capturedCollectingChest, collectingSilverChest) ||
-				imageComparison.imgEqual(capturedCollectingChest, collectingGoldChest) ||
-				imageComparison.imgEqual(capturedCollectingChest, collectingMagicChest) ||
-				imageComparison.imgEqual(capturedCollectingChest, collectingCrownChest) ||
-				imageComparison.imgEqual(capturedCollectingChest, collectingFreeChest))
+				imageComparison.imgEqual(capturedCollectingChest, collectingSilverChest, 15) ||
+				imageComparison.imgEqual(capturedCollectingChest, collectingGoldChest, 15) ||
+				imageComparison.imgEqual(capturedCollectingChest, collectingMagicChest, 15) ||
+				imageComparison.imgEqual(capturedCollectingChest, collectingCrownChest, 15) ||
+				imageComparison.imgEqual(capturedCollectingChest, collectingFreeChest,15))
 			collectingStatus = CollectingStatus.COLLECTING;
 			else
 				if(
-						imageComparison.imgEqual(capturedCollectedChest, collectedSilverChest) ||
-						imageComparison.imgEqual(capturedCollectedChest, collectedGoldChest) ||
-						imageComparison.imgEqual(capturedCollectedChest, collectedMagicChest) ||
-						imageComparison.imgEqual(capturedCollectedChest, collectedCrownChest) ||
-						imageComparison.imgEqual(capturedCollectedChest, collectedFreeChest))
+						imageComparison.imgEqual(capturedCollectedChest, collectedSilverChest, 15) ||
+						imageComparison.imgEqual(capturedCollectedChest, collectedGoldChest,15) ||
+						imageComparison.imgEqual(capturedCollectedChest, collectedMagicChest, 15) ||
+						imageComparison.imgEqual(capturedCollectedChest, collectedCrownChest, 15) ||
+						imageComparison.imgEqual(capturedCollectedChest, collectedFreeChest, 15))
 					collectingStatus = CollectingStatus.COLLECTED;
 		
 		log += "Action: checkCollectingStatus, the state is " + collectingStatus.toString() + ";\n";
