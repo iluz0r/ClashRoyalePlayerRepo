@@ -101,21 +101,21 @@ public class AutoPlayer{
 		case "1366x768" : 
 			imageStore = new ImageStore();
 			break;
-
+			
 		}
 		
 		robot.delay(10000);
-		pointOutside();
 		checkGameStatus();
+		
+		log += "Initial state: " + gameStatus.toString() + ";\n";
 	}
 
 	
 	public void start() throws Exception{
 		this.init();
-		log += "Initial state: " + gameStatus.toString() + ";\n";
+
 		
 		while(gameStatus != GameStatus.UNKNOWN){
-			pointOutside();
 			checkGameStatus();
 			switch(gameStatus.toString()){
 			
@@ -181,12 +181,14 @@ public class AutoPlayer{
 			
 			}
 		}
-		log += "Final state: " + gameStatus.toString() + ";\n";
 		this.stop();
 	}
 	
 	
 	public void stop() throws IOException{
+		
+		log += "Final state: " + gameStatus.toString() + ";\n";
+		
 		String path = ".\\log.txt";
 		FileOutputStream logFile = new FileOutputStream(path);
         writeLog = new PrintStream(logFile);
@@ -209,6 +211,8 @@ public class AutoPlayer{
 		BufferedImage socialMenu = imageStore.getSocialMenu();
 		BufferedImage shopMenu = imageStore.getShopMenu();
 		BufferedImage cardsMenu = imageStore.getCardsMenu();
+		
+		pointOutside();
 		
 		if (imageComparison.imgEqual(battleMenu, capturedBattleMenu, 3)) 
 			gameStatus = GameStatus.BATTLE_MENU;
@@ -245,6 +249,8 @@ public class AutoPlayer{
 		BufferedImage emptyChest = imageStore.getEmptyChestSlot();
 		
 		BufferedImage capturedFirstChest = imageCapturer.captureFirstChest();
+		
+		pointOutside();
 		
 		if(
 				imageComparison.imgEqual(lockedSilverChest, capturedFirstChest, 10) ||
@@ -287,6 +293,8 @@ public class AutoPlayer{
 		
 		BufferedImage capturedSecondChest = imageCapturer.captureSecondChest();
 		
+		pointOutside();
+		
 		if(
 				imageComparison.imgEqual(lockedSilverChest, capturedSecondChest, 10) ||
 				imageComparison.imgEqual(lockedGoldChest, capturedSecondChest, 10) ||
@@ -327,6 +335,8 @@ public class AutoPlayer{
 		BufferedImage emptyChest = imageStore.getEmptyChestSlot();
 	
 		BufferedImage capturedThirdChest = imageCapturer.captureThirdChest();
+		
+		pointOutside();
 	
 		if(
 				imageComparison.imgEqual(lockedSilverChest, capturedThirdChest, 10) ||
@@ -368,6 +378,8 @@ public class AutoPlayer{
 		BufferedImage emptyChest = imageStore.getEmptyChestSlot();
 	
 		BufferedImage capturedFourthChest = imageCapturer.captureFourthChest();
+		
+		pointOutside();
 	
 		if(
 				imageComparison.imgEqual(lockedSilverChest, capturedFourthChest, 10) ||
@@ -400,6 +412,8 @@ public class AutoPlayer{
 		
 		BufferedImage capturedFreeChest = imageCapturer.captureFreeChest();
 		
+		pointOutside();
+		
 		if(
 				imageComparison.imgEqual(capturedFreeChest, openFreeChestx1) ||
 				imageComparison.imgEqual(capturedFreeChest, openFreeChestx2))
@@ -417,6 +431,8 @@ public class AutoPlayer{
 		
 		BufferedImage capturedCrownChest = imageCapturer.captureCrownChest();
 		
+		pointOutside();
+		
 		if(imageComparison.imgEqual(capturedCrownChest, openCrownChest))
 			crownChestStatus = ChestStatus.UNLOCKABLE;
 		else
@@ -427,6 +443,7 @@ public class AutoPlayer{
 	}
 	
 	private void checkCollectingStatus() throws AWTException{
+		
 		collectingStatus = CollectingStatus.UNKNOWN;
 		
 		BufferedImage capturedCollectingChest = imageCapturer.captureCollectingChest();
@@ -442,6 +459,8 @@ public class AutoPlayer{
 		BufferedImage collectedMagicChest = imageStore.getCollectedMagicChest();
 		BufferedImage collectedFreeChest = imageStore.getCollectedFreeChest();
 		BufferedImage collectedCrownChest = imageStore.getCollectedCrownChest();
+		
+		pointOutside();
 		
 		if(
 				imageComparison.imgEqual(capturedCollectingChest, collectingSilverChest, 15) ||
@@ -584,7 +603,6 @@ public class AutoPlayer{
 	
 	private void openFirstChest() throws AWTException{
 		tapFirstChest();
-		pointOutside();
 		log += "Action: open first chest;\n";
 		robot.delay(3000);
 		checkCollectingStatus();
@@ -597,7 +615,6 @@ public class AutoPlayer{
 	
 	private void openSecondChest() throws AWTException{
 		tapSecondChest();
-		pointOutside();
 		log += "Action: open second chest;\n";
 		robot.delay(3000);
 		checkCollectingStatus();
@@ -610,7 +627,6 @@ public class AutoPlayer{
 	
 	private void openThirdChest() throws AWTException{
 		tapThirdChest();
-		pointOutside();
 		log += "Action: open third chest;\n";
 		robot.delay(3000);
 		checkCollectingStatus();
@@ -623,7 +639,6 @@ public class AutoPlayer{
 	
 	private void openFourthChest() throws AWTException{
 		tapFourthChest();
-		pointOutside();
 		log += "Action: open fourth chest;\n";
 		robot.delay(3000);
 		checkCollectingStatus();
@@ -636,7 +651,6 @@ public class AutoPlayer{
 	
 	private void openFreeChest() throws AWTException{
 		tapFreeChest();
-		pointOutside();
 		log += "Action: open free chest;\n";
 		robot.delay(3000);
 		checkCollectingStatus();
@@ -649,7 +663,6 @@ public class AutoPlayer{
 	
 	private void openCrownChest() throws AWTException{
 		tapCrownChest();
-		pointOutside();
 		log += "Action: open crown chest;\n";
 		robot.delay(3000);
 		checkCollectingStatus();
@@ -670,7 +683,6 @@ public class AutoPlayer{
 			if(gameStatus != GameStatus.BATTLE_MENU){
 				tapBattleMenu();
 				robot.delay(3000);
-				pointOutside();
 				checkGameStatus();
 				log += "Action: from " + oldMenu + " to " + gameStatus.toString() + ";\n";
 			}
@@ -681,7 +693,6 @@ public class AutoPlayer{
 			if(gameStatus != GameStatus.TOURNAMENTS_MENU){
 				tapTournamentsMenu();
 				robot.delay(3000);
-				pointOutside();
 				checkGameStatus();
 				log += "Action: from " + oldMenu + " to " + gameStatus.toString() + ";\n";
 			}
@@ -691,7 +702,6 @@ public class AutoPlayer{
 			if(gameStatus != GameStatus.SOCIAL_MENU){
 				tapSocialMenu();
 				robot.delay(3000);
-				pointOutside();
 				checkGameStatus();
 				log += "Action: from " + oldMenu + " to " + gameStatus.toString() + ";\n";
 			}
@@ -701,7 +711,6 @@ public class AutoPlayer{
 			if(gameStatus != GameStatus.SHOP_MENU){
 				tapShopMenu();
 				robot.delay(3000);
-				pointOutside();
 				checkGameStatus();
 				log += "Action: from " + oldMenu + " to " + gameStatus.toString() + ";\n";
 			}
@@ -711,7 +720,6 @@ public class AutoPlayer{
 			if(gameStatus != GameStatus.CARDS_MENU){
 				tapCardsMenu();
 				robot.delay(3000);
-				pointOutside();
 				checkGameStatus();
 				log += "Action: from " + oldMenu + " to " + gameStatus.toString() + ";\n";
 			}
