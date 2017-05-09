@@ -73,13 +73,13 @@ public class Driver {
 		imageCapturer.saveImage(image, "collectedSilverChest", "jpg");
 		*/
 		
-		
+		/*
 		//get pointed coord
 		Robot robot = new Robot();
 		robot.delay(10000);
 		Point coord = MouseInfo.getPointerInfo().getLocation();
 		System.out.println("X: " + coord.getX() + " Y: " + coord.getY());
-		
+		*/
 		
 		/*
 		robot.delay(10000);
@@ -121,10 +121,10 @@ public class Driver {
 		System.out.println("Lo stato in cui siamo è: " + status.toString() + "\n");
 		*/
 		
-		/*
-		AutoPlayer player = new AutoPlayer();
+		
+		AutoPlayer player = new AutoPlayer("1366x768");
 		player.start();
-		*/
+		
 		
 	}
 

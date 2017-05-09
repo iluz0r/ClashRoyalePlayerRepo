@@ -56,53 +56,45 @@ public class AutoPlayer{
 	
 	public AutoPlayer(){
 		resolution = DEFAULT_RESOLUTION;
+		log += "ScreenResolution: " + resolution + "\n";
 	}
 
 	private void init() throws Exception{
 		robot = new Robot();
 		imageCapturer = new ImageCapturer(resolution);
 		imageComparison = new ImageComparison();
-		switch(resolution){
-		
-		case "1920x1080" : 
-			imageStore = new ImageStore(
-					".\\images" + resolution + "\\battleButton.jpg", 
-					".\\images" + resolution + "\\emptyChestSlot.jpg", 
-					".\\images" + resolution + "\\lockedSilverChest.jpg", 
-					".\\images" + resolution + "\\unlockingSilverChest.jpg",
-					".\\images" + resolution + "\\openSilverChest.jpg",
-					".\\images" + resolution + "\\openCrownChest.jpg",
-					".\\images" + resolution + "\\openFreeChestx1.jpg",
-					".\\images" + resolution + "\\lockedCrownChest.jpg",
-					".\\images" + resolution + "\\lockedFreeChest.jpg",
-					".\\images" + resolution + "\\lockedGoldChest.jpg",
-					".\\images" + resolution + "\\unlockingGoldChest.jpg",
-					".\\images" + resolution + "\\openFreeChestx2.jpg",
-					".\\images" + resolution + "\\collectingFreeChest.jpg",
-					".\\images" + resolution + "\\collectedFreeChest.jpg",
-					".\\images" + resolution + "\\collectingGoldChest.jpg",
-					".\\images" + resolution + "\\collectedGoldChest.jpg",
-					".\\images" + resolution + "\\collectingCrownChest.jpg",
-					".\\images" + resolution + "\\collectedCrownChest.jpg",
-					".\\images" + resolution + "\\battleMenu.jpg",
-					".\\images" + resolution + "\\cardsMenu.jpg",
-					".\\images" + resolution + "\\shopMenu.jpg",
-					".\\images" + resolution + "\\socialMenu.jpg",
-					".\\images" + resolution + "\\tournamentsMenu.jpg",
-					".\\images" + resolution + "\\lockedMagicChest.jpg",
-					".\\images" + resolution + "\\unlockingMagicChest.jpg",
-					".\\images" + resolution + "\\openGoldChest.jpg",
-					".\\images" + resolution + "\\openMagicChest.jpg",
-					".\\images" + resolution + "\\collectingMagicChest.jpg",
-					".\\images" + resolution + "\\collectedMagicChest.jpg",
-					".\\images" + resolution + "\\collectingSilverChest.jpg",
-					".\\images" + resolution + "\\collectedSilverChest.jpg");
-			break;
-		case "1366x768" : 
-			imageStore = new ImageStore();
-			break;
-			
-		}
+		imageStore = new ImageStore(
+				".\\images" + resolution + "\\battleButton.jpg", 
+				".\\images" + resolution + "\\emptyChestSlot.jpg", 
+				".\\images" + resolution + "\\lockedSilverChest.jpg", 
+				".\\images" + resolution + "\\unlockingSilverChest.jpg",
+				".\\images" + resolution + "\\openSilverChest.jpg",
+				".\\images" + resolution + "\\openCrownChest.jpg",
+				".\\images" + resolution + "\\openFreeChestx1.jpg",
+				".\\images" + resolution + "\\lockedCrownChest.jpg",
+				".\\images" + resolution + "\\lockedFreeChest.jpg",
+				".\\images" + resolution + "\\lockedGoldChest.jpg",
+				".\\images" + resolution + "\\unlockingGoldChest.jpg",
+				".\\images" + resolution + "\\openFreeChestx2.jpg",
+				".\\images" + resolution + "\\collectingFreeChest.jpg",
+				".\\images" + resolution + "\\collectedFreeChest.jpg",
+				".\\images" + resolution + "\\collectingGoldChest.jpg",
+				".\\images" + resolution + "\\collectedGoldChest.jpg",
+				".\\images" + resolution + "\\collectingCrownChest.jpg",
+				".\\images" + resolution + "\\collectedCrownChest.jpg",
+				".\\images" + resolution + "\\battleMenu.jpg",
+				".\\images" + resolution + "\\cardsMenu.jpg",
+				".\\images" + resolution + "\\shopMenu.jpg",
+				".\\images" + resolution + "\\socialMenu.jpg",
+				".\\images" + resolution + "\\tournamentsMenu.jpg",
+				".\\images" + resolution + "\\lockedMagicChest.jpg",
+				".\\images" + resolution + "\\unlockingMagicChest.jpg",
+				".\\images" + resolution + "\\openGoldChest.jpg",
+				".\\images" + resolution + "\\openMagicChest.jpg",
+				".\\images" + resolution + "\\collectingMagicChest.jpg",
+				".\\images" + resolution + "\\collectedMagicChest.jpg",
+				".\\images" + resolution + "\\collectingSilverChest.jpg",
+				".\\images" + resolution + "\\collectedSilverChest.jpg");
 		
 		robot.delay(10000);
 		checkGameStatus();
