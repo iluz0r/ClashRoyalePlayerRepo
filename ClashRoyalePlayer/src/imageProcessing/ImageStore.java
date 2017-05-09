@@ -37,6 +37,8 @@ public class ImageStore {
 	private BufferedImage openMagicChest = null;
 	private BufferedImage collectingMagicChest = null;
 	private BufferedImage collectedMagicChest = null;
+	private BufferedImage collectingSilverChest = null;
+	private BufferedImage collectedSilverChest = null;
 	
 	public ImageStore(
 			String battleButtonPath, 
@@ -67,7 +69,9 @@ public class ImageStore {
 			String openGoldChestPath,
 			String openMagicChestPath,
 			String collectingMagicChestPath,
-			String collectedMagicChestPath) 
+			String collectedMagicChestPath,
+			String collectingSilverChestPath,
+			String collectedSilverChestPath) 
 					throws IOException
 	{
 		this.setBattleButton(battleButtonPath);
@@ -99,6 +103,8 @@ public class ImageStore {
 		this.setOpenMagicChest(openMagicChestPath);
 		this.setCollectingMagicChest(collectingMagicChestPath);
 		this.setCollectedMagicChest(collectedMagicChestPath);
+		this.setCollectingSilverChest(collectingSilverChestPath);
+		this.setCollectedSilverChest(collectedSilverChestPath);
 		
 	}
 	
@@ -335,5 +341,21 @@ public class ImageStore {
 
 	public void setCollectedMagicChest(String collectedMagicChestPath) throws IOException {
 		this.collectedMagicChest = ImageIO.read(new File(collectedMagicChestPath));
+	}
+
+	public BufferedImage getCollectingSilverChest() {
+		return collectingSilverChest;
+	}
+
+	public void setCollectingSilverChest(String collectingSilverChestPath) throws IOException {
+		this.collectingSilverChest = ImageIO.read(new File(collectingSilverChestPath));
+	}
+
+	public BufferedImage getCollectedSilverChest() {
+		return collectedSilverChest;
+	}
+
+	public void setCollectedSilverChest(String collectedSilverChestPath) throws IOException {
+		this.collectedSilverChest = ImageIO.read(new File(collectedSilverChestPath));
 	}
 }

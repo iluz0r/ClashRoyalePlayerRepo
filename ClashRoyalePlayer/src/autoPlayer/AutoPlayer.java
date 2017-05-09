@@ -24,12 +24,16 @@ public class AutoPlayer{
 	private PrintStream writeLog;
 	
 	private enum GameStatus {
-		BATTLEMENU, TOURNAMENTSMENU, SOCIALMENU, SHOPMENU, 
-		CARDSMENU, BATTLE, UNKNOWN
+		BATTLE_MENU, TOURNAMENTS_MENU, SOCIAL_MENU, SHOP_MENU, 
+		CARDS_MENU, BATTLE, COLLECTING_CHEST, COLLECTED_CHEST, UNKNOWN
 	}
 	
 	private enum ChestStatus {
 		UNLOCKING, UNLOCKABLE, LOCKED, EMPTY, UNKNOWN
+	}
+	
+	private enum CollectingStatus{
+		COLLECTING, COLLECTED, UNKNOWN
 	}
 	
 	private GameStatus gameStatus;
@@ -37,6 +41,9 @@ public class AutoPlayer{
 	private ChestStatus secondChestStatus;
 	private ChestStatus thirdChestStatus;
 	private ChestStatus fourthChestStatus;
+	private ChestStatus freeChestStatus;
+	private ChestStatus crownChestStatus;
+	private CollectingStatus collectingStatus;
 	
 	public AutoPlayer(String screenResolution) throws Exception{
 		if(screenResolution == "1920x1080" || screenResolution == "1366x768")
@@ -87,7 +94,9 @@ public class AutoPlayer{
 					".\\images" + resolution + "\\openGoldChest.jpg",
 					".\\images" + resolution + "\\openMagicChest.jpg",
 					".\\images" + resolution + "\\collectingMagicChest.jpg",
-					".\\images" + resolution + "\\collectedMagicChest.jpg");
+					".\\images" + resolution + "\\collectedMagicChest.jpg",
+					".\\images" + resolution + "\\collectingSilverChest.jpg",
+					".\\images" + resolution + "\\collectedSilverChest.jpg");
 			break;
 		case "1366x768" : 
 			imageStore = new ImageStore();
@@ -105,65 +114,68 @@ public class AutoPlayer{
 		this.init();
 		log += "Initial state: " + gameStatus.toString() + ";\n";
 		
-		while(gameStatus.toString() != GameStatus.UNKNOWN.toString()){
+		while(gameStatus != GameStatus.UNKNOWN){
 			pointOutside();
+			checkGameStatus();
 			switch(gameStatus.toString()){
 			
 				case "UNKNOWN" : break;
 			
-				case "BATTLEMENU" : {
+				case "BATTLE_MENU" : {
 					checkFirstChestStatus();
-					log += "Action: checkFirstChestStatus, the state is " + firstChestStatus.toString() + ";\n";
 					checkSecondChestStatus();
-					log += "Action: checkSecondChestStatus, the state is " + secondChestStatus.toString() + ";\n";
 					checkThirdChestStatus();
-					log += "Action: checkThirdChestStatus, the state is " + thirdChestStatus.toString() + ";\n";
 					checkFourthChestStatus();
-					log += "Action: checkFourthChestStatus, the state is " + fourthChestStatus.toString() + ";\n";
+					checkFreeChestStatus();
+					checkCrownChestStatus();
+					
+					if(firstChestStatus == ChestStatus.UNLOCKABLE){
+						openFirstChest();
+						break;
+					}
+					if(secondChestStatus == ChestStatus.UNLOCKABLE){
+						openSecondChest();
+						break;
+					}
+					if(thirdChestStatus == ChestStatus.UNLOCKABLE){
+						openThirdChest();
+						break;
+					}
+					if(fourthChestStatus == ChestStatus.UNLOCKABLE){
+						openFourthChest();
+						break;
+					}
+					if(freeChestStatus == ChestStatus.UNLOCKABLE){
+						openFreeChest();
+						break;
+					}
+					if(crownChestStatus == ChestStatus.UNLOCKABLE){
+						openCrownChest();
+						break;
+					}
 					
 					robot.delay(3000);
 					checkGameStatus();
-					log += "Game state: " + gameStatus.toString() + ";\n";
 					break;
 				}
 				
-				case "TOURNAMENTSMENU" : {
-					tapBattleMenu();
-					robot.delay(3000);
-					pointOutside();
-					checkGameStatus();
-					log += "Action: from TOURNAMENTSMENU to " + gameStatus.toString() + ";\n";
-					log += "Game state: " + gameStatus.toString() + ";\n";
+				case "TOURNAMENTS_MENU" : {
+					switchMenu("BATTLE_MENU");
 					break;
 				}
 				
-				case "SOCIALMENU" : {
-					tapBattleMenu();
-					robot.delay(3000);
-					pointOutside();
-					checkGameStatus();
-					log += "Action: from SOCIALMENU to " + gameStatus.toString() + ";\n";
-					log += "Game state: " + gameStatus.toString() + ";\n";
+				case "SOCIAL_MENU" : {
+					switchMenu("BATTLE_MENU");
 					break;
 				}
 				
-				case "SHOPMENU" : {
-					tapBattleMenu();
-					robot.delay(3000);
-					pointOutside();
-					checkGameStatus();
-					log += "Action: from SHOPMENU to " + gameStatus.toString() + ";\n";
-					log += "Game state: " + gameStatus.toString() + ";\n";
+				case "SHOP_MENU" : {
+					switchMenu("BATTLE_MENU");
 					break;
 				}
 				
-				case "CARDSMENU" : {
-					tapBattleMenu();
-					robot.delay(3000);
-					pointOutside();
-					checkGameStatus();
-					log += "Action: from CARDSMENU to " + gameStatus.toString() + ";\n";
-					log += "Game state: " + gameStatus.toString() + ";\n";
+				case "CARDS_MENU" : {
+					switchMenu("BATTLE_MENU");
 					break;
 				}
 			
@@ -199,26 +211,27 @@ public class AutoPlayer{
 		BufferedImage cardsMenu = imageStore.getCardsMenu();
 		
 		if (imageComparison.imgEqual(battleMenu, capturedBattleMenu, 3)) 
-			gameStatus = GameStatus.BATTLEMENU;
+			gameStatus = GameStatus.BATTLE_MENU;
 		else
 			if(imageComparison.imgEqual(shopMenu, capturedShopMenu, 3)) 
-				gameStatus = GameStatus.SHOPMENU;
+				gameStatus = GameStatus.SHOP_MENU;
 			else
 				if(imageComparison.imgEqual(socialMenu, capturedSocialMenu, 3)) 
-					gameStatus = GameStatus.SOCIALMENU;
+					gameStatus = GameStatus.SOCIAL_MENU;
 				else
 					if(imageComparison.imgEqual(tournamentsMenu, capturedTournamentsMenu, 3)) 
-						gameStatus = GameStatus.TOURNAMENTSMENU;
+						gameStatus = GameStatus.TOURNAMENTS_MENU;
 					else
 						if(imageComparison.imgEqual(cardsMenu, capturedCardsMenu, 3)) 
-							gameStatus = GameStatus.CARDSMENU;
+							gameStatus = GameStatus.CARDS_MENU;
 						else
 							gameStatus = GameStatus.UNKNOWN;
+		log += "Action: check gameStatus, game state: " + gameStatus.toString() + ";\n";
 	}
 	
 	private void checkFirstChestStatus() throws AWTException{
 		
-		ChestStatus firstChestStatus = ChestStatus.UNKNOWN;
+		firstChestStatus = ChestStatus.UNKNOWN;
 		
 		BufferedImage lockedSilverChest = imageStore.getLockedSilverChest();
 		BufferedImage unlockingSilverChest = imageStore.getUnlockingSilverChest();
@@ -254,13 +267,12 @@ public class AutoPlayer{
 					if(imageComparison.imgEqual(emptyChest, capturedFirstChest, 10))
 						firstChestStatus = ChestStatus.EMPTY;
 		
-		
-		this.firstChestStatus = firstChestStatus;
+		log += "Action: checkFirstChestStatus, the state is " + firstChestStatus.toString() + ";\n";
 	}
 	
 	private void checkSecondChestStatus() throws AWTException{
 		
-		ChestStatus secondChestStatus = ChestStatus.UNKNOWN;
+		secondChestStatus = ChestStatus.UNKNOWN;
 		
 		BufferedImage lockedSilverChest = imageStore.getLockedSilverChest();
 		BufferedImage unlockingSilverChest = imageStore.getUnlockingSilverChest();
@@ -296,92 +308,158 @@ public class AutoPlayer{
 					if(imageComparison.imgEqual(emptyChest, capturedSecondChest, 10))
 						secondChestStatus = ChestStatus.EMPTY;
 		
-		
-		this.secondChestStatus = secondChestStatus;
+		log += "Action: checkSecondChestStatus, the state is " + secondChestStatus.toString() + ";\n";
 	}
 
 	private void checkThirdChestStatus() throws AWTException{
 	
-	ChestStatus thirdChestStatus = ChestStatus.UNKNOWN;
+		thirdChestStatus = ChestStatus.UNKNOWN;
 	
-	BufferedImage lockedSilverChest = imageStore.getLockedSilverChest();
-	BufferedImage unlockingSilverChest = imageStore.getUnlockingSilverChest();
-	BufferedImage openSilverChest = imageStore.getOpenSilverChest();
-	BufferedImage lockedGoldChest = imageStore.getLockedGoldChest();
-	BufferedImage unlockingGoldChest = imageStore.getUnlockingGoldChest();
-	BufferedImage openGoldChest = imageStore.getOpenGoldChest();
-	BufferedImage lockedMagicChest = imageStore.getLockedMagicChest();
-	BufferedImage unlockingMagicChest = imageStore.getUnlockingMagicChest();
-	BufferedImage openMagicChest = imageStore.getOpenMagicChest();
-	BufferedImage emptyChest = imageStore.getEmptyChestSlot();
+		BufferedImage lockedSilverChest = imageStore.getLockedSilverChest();
+		BufferedImage unlockingSilverChest = imageStore.getUnlockingSilverChest();
+		BufferedImage openSilverChest = imageStore.getOpenSilverChest();
+		BufferedImage lockedGoldChest = imageStore.getLockedGoldChest();
+		BufferedImage unlockingGoldChest = imageStore.getUnlockingGoldChest();
+		BufferedImage openGoldChest = imageStore.getOpenGoldChest();
+		BufferedImage lockedMagicChest = imageStore.getLockedMagicChest();
+		BufferedImage unlockingMagicChest = imageStore.getUnlockingMagicChest();
+		BufferedImage openMagicChest = imageStore.getOpenMagicChest();
+		BufferedImage emptyChest = imageStore.getEmptyChestSlot();
 	
-	BufferedImage capturedThirdChest = imageCapturer.captureThirdChest();
+		BufferedImage capturedThirdChest = imageCapturer.captureThirdChest();
 	
-	if(
-			imageComparison.imgEqual(lockedSilverChest, capturedThirdChest, 10) ||
-			imageComparison.imgEqual(lockedGoldChest, capturedThirdChest, 10) ||
-			imageComparison.imgEqual(lockedMagicChest, capturedThirdChest, 10)) 
-		thirdChestStatus = ChestStatus.LOCKED;
-	else
 		if(
-				imageComparison.imgEqual(unlockingSilverChest, capturedThirdChest, 10) ||
-				imageComparison.imgEqual(unlockingGoldChest, capturedThirdChest, 10) ||
-				imageComparison.imgEqual(unlockingMagicChest, capturedThirdChest, 10))
-			thirdChestStatus = ChestStatus.UNLOCKING;
+				imageComparison.imgEqual(lockedSilverChest, capturedThirdChest, 10) ||
+				imageComparison.imgEqual(lockedGoldChest, capturedThirdChest, 10) ||
+				imageComparison.imgEqual(lockedMagicChest, capturedThirdChest, 10)) 
+			thirdChestStatus = ChestStatus.LOCKED;
 		else
 			if(
-					imageComparison.imgEqual(openSilverChest, capturedThirdChest, 10) ||
-					imageComparison.imgEqual(openGoldChest, capturedThirdChest, 10) ||
-					imageComparison.imgEqual(openMagicChest, capturedThirdChest, 10))
-				thirdChestStatus = ChestStatus.UNLOCKABLE;
+					imageComparison.imgEqual(unlockingSilverChest, capturedThirdChest, 10) ||
+					imageComparison.imgEqual(unlockingGoldChest, capturedThirdChest, 10) ||
+					imageComparison.imgEqual(unlockingMagicChest, capturedThirdChest, 10))
+				thirdChestStatus = ChestStatus.UNLOCKING;
 			else
-				if(imageComparison.imgEqual(emptyChest, capturedThirdChest, 10))
-					thirdChestStatus = ChestStatus.EMPTY;
+				if(
+						imageComparison.imgEqual(openSilverChest, capturedThirdChest, 10) ||
+						imageComparison.imgEqual(openGoldChest, capturedThirdChest, 10) ||
+						imageComparison.imgEqual(openMagicChest, capturedThirdChest, 10))
+					thirdChestStatus = ChestStatus.UNLOCKABLE;
+				else
+					if(imageComparison.imgEqual(emptyChest, capturedThirdChest, 10))
+						thirdChestStatus = ChestStatus.EMPTY;
 	
-	
-	this.thirdChestStatus = thirdChestStatus;
+		log += "Action: checkThirdChestStatus, the state is " + thirdChestStatus.toString() + ";\n";
 	}
 	
 	private void checkFourthChestStatus() throws AWTException{
 		
-	ChestStatus fourthChestStatus = ChestStatus.UNKNOWN;
+		fourthChestStatus = ChestStatus.UNKNOWN;
 	
-	BufferedImage lockedSilverChest = imageStore.getLockedSilverChest();
-	BufferedImage unlockingSilverChest = imageStore.getUnlockingSilverChest();
-	BufferedImage openSilverChest = imageStore.getOpenSilverChest();
-	BufferedImage lockedGoldChest = imageStore.getLockedGoldChest();
-	BufferedImage unlockingGoldChest = imageStore.getUnlockingGoldChest();
-	BufferedImage openGoldChest = imageStore.getOpenGoldChest();
-	BufferedImage lockedMagicChest = imageStore.getLockedMagicChest();
-	BufferedImage unlockingMagicChest = imageStore.getUnlockingMagicChest();
-	BufferedImage openMagicChest = imageStore.getOpenMagicChest();
-	BufferedImage emptyChest = imageStore.getEmptyChestSlot();
+		BufferedImage lockedSilverChest = imageStore.getLockedSilverChest();
+		BufferedImage unlockingSilverChest = imageStore.getUnlockingSilverChest();
+		BufferedImage openSilverChest = imageStore.getOpenSilverChest();
+		BufferedImage lockedGoldChest = imageStore.getLockedGoldChest();
+		BufferedImage unlockingGoldChest = imageStore.getUnlockingGoldChest();
+		BufferedImage openGoldChest = imageStore.getOpenGoldChest();
+		BufferedImage lockedMagicChest = imageStore.getLockedMagicChest();
+		BufferedImage unlockingMagicChest = imageStore.getUnlockingMagicChest();
+		BufferedImage openMagicChest = imageStore.getOpenMagicChest();
+		BufferedImage emptyChest = imageStore.getEmptyChestSlot();
 	
-	BufferedImage capturedFourthChest = imageCapturer.captureFourthChest();
+		BufferedImage capturedFourthChest = imageCapturer.captureFourthChest();
 	
-	if(
-			imageComparison.imgEqual(lockedSilverChest, capturedFourthChest, 10) ||
-			imageComparison.imgEqual(lockedGoldChest, capturedFourthChest, 10) ||
-			imageComparison.imgEqual(lockedMagicChest, capturedFourthChest, 10)) 
-		fourthChestStatus = ChestStatus.LOCKED;
-	else
 		if(
-				imageComparison.imgEqual(unlockingSilverChest, capturedFourthChest, 10) ||
-				imageComparison.imgEqual(unlockingGoldChest, capturedFourthChest, 10) ||
-				imageComparison.imgEqual(unlockingMagicChest, capturedFourthChest, 10))
-			fourthChestStatus = ChestStatus.UNLOCKING;
+				imageComparison.imgEqual(lockedSilverChest, capturedFourthChest, 10) ||
+				imageComparison.imgEqual(lockedGoldChest, capturedFourthChest, 10) ||
+				imageComparison.imgEqual(lockedMagicChest, capturedFourthChest, 10)) 
+			fourthChestStatus = ChestStatus.LOCKED;
 		else
 			if(
-					imageComparison.imgEqual(openSilverChest, capturedFourthChest, 10) ||
-					imageComparison.imgEqual(openGoldChest, capturedFourthChest, 10) ||
-					imageComparison.imgEqual(openMagicChest, capturedFourthChest, 10))
-				fourthChestStatus = ChestStatus.UNLOCKABLE;
+					imageComparison.imgEqual(unlockingSilverChest, capturedFourthChest, 10) ||
+					imageComparison.imgEqual(unlockingGoldChest, capturedFourthChest, 10) ||
+					imageComparison.imgEqual(unlockingMagicChest, capturedFourthChest, 10))
+				fourthChestStatus = ChestStatus.UNLOCKING;
 			else
-				if(imageComparison.imgEqual(emptyChest, capturedFourthChest, 10))
-					fourthChestStatus = ChestStatus.EMPTY;
+				if(
+						imageComparison.imgEqual(openSilverChest, capturedFourthChest, 10) ||
+						imageComparison.imgEqual(openGoldChest, capturedFourthChest, 10) ||
+						imageComparison.imgEqual(openMagicChest, capturedFourthChest, 10))
+					fourthChestStatus = ChestStatus.UNLOCKABLE;
+				else
+					if(imageComparison.imgEqual(emptyChest, capturedFourthChest, 10))
+						fourthChestStatus = ChestStatus.EMPTY;
+		log += "Action: checkFouthChestStatus, the state is " + fourthChestStatus.toString() + ";\n";
+	}
 	
+	private void checkFreeChestStatus() throws AWTException{
+		freeChestStatus = ChestStatus.UNKNOWN;
+		
+		BufferedImage openFreeChestx1 = imageStore.getOpenFreeChestx1();
+		BufferedImage openFreeChestx2 = imageStore.getOpenFreeChestx2();
+		
+		BufferedImage capturedFreeChest = imageCapturer.captureFreeChest();
+		
+		if(
+				imageComparison.imgEqual(capturedFreeChest, openFreeChestx1) ||
+				imageComparison.imgEqual(capturedFreeChest, openFreeChestx2))
+			freeChestStatus = ChestStatus.UNLOCKABLE;
+		else
+			freeChestStatus = ChestStatus.UNLOCKING;
+		
+		log += "Action: checkFreeChestStatus, the state is " + freeChestStatus.toString() + ";\n";
+	}
 	
-	this.fourthChestStatus = fourthChestStatus;
+	private void checkCrownChestStatus() throws AWTException{
+		crownChestStatus = ChestStatus.UNKNOWN;
+		
+		BufferedImage openCrownChest = imageStore.getOpenCrownChest();
+		
+		BufferedImage capturedCrownChest = imageCapturer.captureCrownChest();
+		
+		if(imageComparison.imgEqual(capturedCrownChest, openCrownChest))
+			crownChestStatus = ChestStatus.UNLOCKABLE;
+		else
+			crownChestStatus = ChestStatus.UNLOCKING;
+		
+		log += "Action: checkCrownChestStatus, the state is " + crownChestStatus.toString() + ";\n";
+		
+	}
+	
+	private void checkCollectingStatus() throws AWTException{
+		collectingStatus = CollectingStatus.UNKNOWN;
+		
+		BufferedImage capturedCollectingChest = imageCapturer.captureCollectingChest();
+		BufferedImage capturedCollectedChest = imageCapturer.captureCollectedChest();
+		
+		BufferedImage collectingSilverChest = imageStore.getCollectingSilverChest();
+		BufferedImage collectingGoldChest = imageStore.getCollectingGoldChest();
+		BufferedImage collectingMagicChest = imageStore.getCollectingMagicChest();
+		BufferedImage collectingFreeChest = imageStore.getCollectingFreeChest();
+		BufferedImage collectingCrownChest = imageStore.getCollectingCrwonChest();
+		BufferedImage collectedSilverChest = imageStore.getCollectedSilverChest();
+		BufferedImage collectedGoldChest = imageStore.getCollectedGoldChest();
+		BufferedImage collectedMagicChest = imageStore.getCollectedMagicChest();
+		BufferedImage collectedFreeChest = imageStore.getCollectedFreeChest();
+		BufferedImage collectedCrownChest = imageStore.getCollectedCrownChest();
+		
+		if(
+				imageComparison.imgEqual(capturedCollectingChest, collectingSilverChest) ||
+				imageComparison.imgEqual(capturedCollectingChest, collectingGoldChest) ||
+				imageComparison.imgEqual(capturedCollectingChest, collectingMagicChest) ||
+				imageComparison.imgEqual(capturedCollectingChest, collectingCrownChest) ||
+				imageComparison.imgEqual(capturedCollectingChest, collectingFreeChest))
+			collectingStatus = CollectingStatus.COLLECTING;
+			else
+				if(
+						imageComparison.imgEqual(capturedCollectedChest, collectedSilverChest) ||
+						imageComparison.imgEqual(capturedCollectedChest, collectedGoldChest) ||
+						imageComparison.imgEqual(capturedCollectedChest, collectedMagicChest) ||
+						imageComparison.imgEqual(capturedCollectedChest, collectedCrownChest) ||
+						imageComparison.imgEqual(capturedCollectedChest, collectedFreeChest))
+					collectingStatus = CollectingStatus.COLLECTED;
+		
+		log += "Action: checkCollectingStatus, the state is " + collectingStatus.toString() + ";\n";
 	}
 	
 	private void tap(int x, int y){
@@ -400,18 +478,6 @@ public class AutoPlayer{
 		switch(resolution){
 		case "1920x1080" : 
 			this.tap(944, 668);
-			break;
-		case "1366x768" : 
-			this.tap(0, 0);
-			break;
-		default: break;
-		}
-	}
-	
-	private void tapTournamentsButton() {
-		switch(resolution){
-		case "1920x1080" : 
-			this.tap(1173, 982);
 			break;
 		case "1366x768" : 
 			this.tap(0, 0);
@@ -468,6 +534,192 @@ public class AutoPlayer{
 		}
 	}
 	
+	private void pointOutside(){
+		switch(resolution){
+		case "1920x1080" : 
+			this.point(1400, 500);
+			break;
+		case "1366x768" : 
+			this.point(0, 0);
+			break;
+		default: break;
+		}
+	}
+	
+	private void tapCentre(){
+		switch(resolution){
+		case "1920x1080" : 
+			this.tap(937, 465);
+			break;
+		case "1366x768" : 
+			this.tap(0, 0);
+			break;
+		default: break;
+		}
+	}
+	
+	private void tapFreeChest(){
+		switch(resolution){
+		case "1920x1080" : 
+			this.tap(811, 214);
+			break;
+		case "1366x768" : 
+			this.tap(0, 0);
+			break;
+		default: break;
+		}
+	}
+	
+	private void tapCrownChest(){
+		switch(resolution){
+		case "1920x1080" : 
+			this.tap(1070, 214);
+			break;
+		case "1366x768" : 
+			this.tap(0, 0);
+			break;
+		default: break;
+		}
+	}
+	
+	private void openFirstChest() throws AWTException{
+		tapFirstChest();
+		pointOutside();
+		log += "Action: open first chest;\n";
+		robot.delay(3000);
+		checkCollectingStatus();
+		while(collectingStatus != CollectingStatus.UNKNOWN){
+			robot.delay(3000);
+			tapCentre();
+			checkCollectingStatus();
+		}
+	}
+	
+	private void openSecondChest() throws AWTException{
+		tapSecondChest();
+		pointOutside();
+		log += "Action: open second chest;\n";
+		robot.delay(3000);
+		checkCollectingStatus();
+		while(collectingStatus != CollectingStatus.UNKNOWN){
+			robot.delay(3000);
+			tapCentre();
+			checkCollectingStatus();
+		}
+	}
+	
+	private void openThirdChest() throws AWTException{
+		tapThirdChest();
+		pointOutside();
+		log += "Action: open third chest;\n";
+		robot.delay(3000);
+		checkCollectingStatus();
+		while(collectingStatus != CollectingStatus.UNKNOWN){
+			robot.delay(3000);
+			tapCentre();
+			checkCollectingStatus();
+		}
+	}
+	
+	private void openFourthChest() throws AWTException{
+		tapFourthChest();
+		pointOutside();
+		log += "Action: open fourth chest;\n";
+		robot.delay(3000);
+		checkCollectingStatus();
+		while(collectingStatus != CollectingStatus.UNKNOWN){
+			robot.delay(3000);
+			tapCentre();
+			checkCollectingStatus();
+		}
+	}
+	
+	private void openFreeChest() throws AWTException{
+		tapFreeChest();
+		pointOutside();
+		log += "Action: open free chest;\n";
+		robot.delay(3000);
+		checkCollectingStatus();
+		while(collectingStatus != CollectingStatus.UNKNOWN){
+			robot.delay(3000);
+			tapCentre();
+			checkCollectingStatus();
+		}
+	}
+	
+	private void openCrownChest() throws AWTException{
+		tapCrownChest();
+		pointOutside();
+		log += "Action: open crown chest;\n";
+		robot.delay(3000);
+		checkCollectingStatus();
+		while(collectingStatus != CollectingStatus.UNKNOWN){
+			robot.delay(3000);
+			tapCentre();
+			checkCollectingStatus();
+		}
+	}
+	
+	private void switchMenu(String menuToGo) throws AWTException{
+		checkGameStatus();
+		String oldMenu = gameStatus.toString();
+		
+		switch(menuToGo){
+		
+		case "BATTLE_MENU" : {
+			if(gameStatus != GameStatus.BATTLE_MENU){
+				tapBattleMenu();
+				robot.delay(3000);
+				pointOutside();
+				checkGameStatus();
+				log += "Action: from " + oldMenu + " to " + gameStatus.toString() + ";\n";
+			}
+			break;
+		}
+		
+		case "TOURNAMENTS_MENU" : {
+			if(gameStatus != GameStatus.TOURNAMENTS_MENU){
+				tapTournamentsMenu();
+				robot.delay(3000);
+				pointOutside();
+				checkGameStatus();
+				log += "Action: from " + oldMenu + " to " + gameStatus.toString() + ";\n";
+			}
+		}
+		
+		case "SOCIAL_MENU" : {
+			if(gameStatus != GameStatus.SOCIAL_MENU){
+				tapSocialMenu();
+				robot.delay(3000);
+				pointOutside();
+				checkGameStatus();
+				log += "Action: from " + oldMenu + " to " + gameStatus.toString() + ";\n";
+			}
+		}
+		
+		case "SHOP_MENU" : {
+			if(gameStatus != GameStatus.SHOP_MENU){
+				tapShopMenu();
+				robot.delay(3000);
+				pointOutside();
+				checkGameStatus();
+				log += "Action: from " + oldMenu + " to " + gameStatus.toString() + ";\n";
+			}
+		}
+		
+		case "CARDS_MENU" : {
+			if(gameStatus != GameStatus.CARDS_MENU){
+				tapCardsMenu();
+				robot.delay(3000);
+				pointOutside();
+				checkGameStatus();
+				log += "Action: from " + oldMenu + " to " + gameStatus.toString() + ";\n";
+			}
+		}
+		}
+	}
+
+	
 	private void tapBattleMenu(){
 		switch(resolution){
 		case "1920x1080" : 
@@ -480,13 +732,52 @@ public class AutoPlayer{
 		}
 	}
 	
-	private void pointOutside(){
+	private void tapCardsMenu() {
 		switch(resolution){
 		case "1920x1080" : 
-			this.point(1400, 500);
+			this.tap(861, 990);
 			break;
 		case "1366x768" : 
-			this.point(0, 0);
+			this.tap(0, 0);
+			break;
+		default: break;
+		}
+		
+	}
+
+	private void tapShopMenu() {
+		switch(resolution){
+		case "1920x1080" : 
+			this.tap(685, 918);
+			break;
+		case "1366x768" : 
+			this.tap(0, 0);
+			break;
+		default: break;
+		}
+		
+	}
+
+	private void tapSocialMenu() {
+		switch(resolution){
+		case "1920x1080" : 
+			this.tap(945, 975);
+			break;
+		case "1366x768" : 
+			this.tap(0, 0);
+			break;
+		default: break;
+		}
+		
+	}
+
+	private void tapTournamentsMenu() {
+		switch(resolution){
+		case "1920x1080" : 
+			this.tap(1017, 1004);
+			break;
+		case "1366x768" : 
+			this.tap(0, 0);
 			break;
 		default: break;
 		}

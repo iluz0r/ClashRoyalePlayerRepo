@@ -18,49 +18,48 @@ import imageProcessing.ImageStore;
 public class Driver {
 	
 	public static void main(String[] args) throws Exception {
-
-		
-		//Robot robot = new Robot();
-		//ImageCapturer imageCapturer = new ImageCapturer();
-		//ImageComparison imageComparison = new ImageComparison();
-		//ImageStore imageStore;
-		/*
-		imageStore = new ImageStore(
-				".\\images\\battleButton.jpg", 
-				".\\images\\emptyChestSlot.jpg", 
-				".\\images\\lockedSilverChest.jpg", 
-				".\\images\\unlockingSilverChest.jpg",
-				".\\images\\openSilverChest.jpg",
-				".\\images\\openCrownChest.jpg",
-				".\\images\\openFreeChestx1.jpg",
-				".\\images\\lockedCrownChest.jpg",
-				".\\images\\lockedFreeChest.jpg",
-				".\\images\\lockedGoldChest.jpg",
-				".\\images\\unlockingGoldChest.jpg",
-				".\\images\\openFreeChestx2.jpg",
-				".\\images\\collectingFreeChest.jpg",
-				".\\images\\collectedFreeChest.jpg",
-				".\\images\\collectingGoldChest.jpg",
-				".\\images\\collectedGoldChest.jpg",
-				".\\images\\collectingCrownChest.jpg",
-				".\\images\\collectedCrownChest.jpg",
-				".\\images\\battleMenu.jpg",
-				".\\images\\cardsMenu.jpg",
-				".\\images\\shopMenu.jpg",
-				".\\images\\socialMenu.jpg",
-				".\\images\\tournamentsMenu.jpg",
-				".\\images\\lockedMagicChest.jpg",
-				".\\images\\unlockingMagicChest.jpg"); 
-		*/
-		
-		//AutoPlayer player = new AutoPlayer();
-		
 		
 		/*
 		//compare two images
+		String resolution = "1920x1080";
+		ImageStore imageStore = new ImageStore(
+					".\\images" + resolution + "\\battleButton.jpg", 
+					".\\images" + resolution + "\\emptyChestSlot.jpg", 
+					".\\images" + resolution + "\\lockedSilverChest.jpg", 
+					".\\images" + resolution + "\\unlockingSilverChest.jpg",
+					".\\images" + resolution + "\\openSilverChest.jpg",
+					".\\images" + resolution + "\\openCrownChest.jpg",
+					".\\images" + resolution + "\\openFreeChestx1.jpg",
+					".\\images" + resolution + "\\lockedCrownChest.jpg",
+					".\\images" + resolution + "\\lockedFreeChest.jpg",
+					".\\images" + resolution + "\\lockedGoldChest.jpg",
+					".\\images" + resolution + "\\unlockingGoldChest.jpg",
+					".\\images" + resolution + "\\openFreeChestx2.jpg",
+					".\\images" + resolution + "\\collectingFreeChest.jpg",
+					".\\images" + resolution + "\\collectedFreeChest.jpg",
+					".\\images" + resolution + "\\collectingGoldChest.jpg",
+					".\\images" + resolution + "\\collectedGoldChest.jpg",
+					".\\images" + resolution + "\\collectingCrownChest.jpg",
+					".\\images" + resolution + "\\collectedCrownChest.jpg",
+					".\\images" + resolution + "\\battleMenu.jpg",
+					".\\images" + resolution + "\\cardsMenu.jpg",
+					".\\images" + resolution + "\\shopMenu.jpg",
+					".\\images" + resolution + "\\socialMenu.jpg",
+					".\\images" + resolution + "\\tournamentsMenu.jpg",
+					".\\images" + resolution + "\\lockedMagicChest.jpg",
+					".\\images" + resolution + "\\unlockingMagicChest.jpg",
+					".\\images" + resolution + "\\openGoldChest.jpg",
+					".\\images" + resolution + "\\openMagicChest.jpg",
+					".\\images" + resolution + "\\collectingMagicChest.jpg",
+					".\\images" + resolution + "\\collectedMagicChest.jpg",
+					".\\images" + resolution + "\\collectingSilverChest.jpg",
+					".\\images" + resolution + "\\collectedSilverChest.jpg");
+		Robot robot = new Robot();
+		ImageCapturer imageCapturer = new ImageCapturer();
+		ImageComparison imageComparison = new ImageComparison();
 		robot.delay(10000);
-		BufferedImage image1 = imageCapturer.captureFirstChest();
-		BufferedImage image2 = imageCapturer.captureSecondChest();
+		BufferedImage image1 = imageCapturer.captureCollectingChest();
+		BufferedImage image2 = imageStore.getCollectingSilverChest();
 		double difference = imageComparison.compare(image1, image2);
 		System.out.println("Le immagini si differenziano del: " + difference + "%");
 		*/
@@ -68,10 +67,10 @@ public class Driver {
 		/*
 		//save image
 		Robot robot = new Robot();
-		ImageCapturer imageCapturer = new ImageCapturer("1366x768");
+		ImageCapturer imageCapturer = new ImageCapturer();
 		robot.delay(10000);
-		BufferedImage image = imageCapturer.captureBattleButton();
-		imageCapturer.saveImage(image, "immagine", "jpg");
+		BufferedImage image = imageCapturer.captureCollectedChest();
+		imageCapturer.saveImage(image, "collectedSilverChest", "jpg");
 		*/
 		
 		/*
