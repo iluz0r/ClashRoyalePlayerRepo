@@ -589,8 +589,8 @@ public class AutoPlayer{
 		robot.delay(3000);
 		checkCollectingStatus();
 		while(collectingStatus != CollectingStatus.UNKNOWN){
-			robot.delay(3000);
 			tapCentre();
+			robot.delay(3000);
 			checkCollectingStatus();
 		}
 	}
@@ -602,8 +602,8 @@ public class AutoPlayer{
 		robot.delay(3000);
 		checkCollectingStatus();
 		while(collectingStatus != CollectingStatus.UNKNOWN){
-			robot.delay(3000);
 			tapCentre();
+			robot.delay(3000);
 			checkCollectingStatus();
 		}
 	}
@@ -615,8 +615,8 @@ public class AutoPlayer{
 		robot.delay(3000);
 		checkCollectingStatus();
 		while(collectingStatus != CollectingStatus.UNKNOWN){
-			robot.delay(3000);
 			tapCentre();
+			robot.delay(3000);
 			checkCollectingStatus();
 		}
 	}
@@ -628,8 +628,8 @@ public class AutoPlayer{
 		robot.delay(3000);
 		checkCollectingStatus();
 		while(collectingStatus != CollectingStatus.UNKNOWN){
-			robot.delay(3000);
 			tapCentre();
+			robot.delay(3000);
 			checkCollectingStatus();
 		}
 	}
@@ -641,8 +641,8 @@ public class AutoPlayer{
 		robot.delay(3000);
 		checkCollectingStatus();
 		while(collectingStatus != CollectingStatus.UNKNOWN){
-			robot.delay(3000);
 			tapCentre();
+			robot.delay(3000);
 			checkCollectingStatus();
 		}
 	}
@@ -654,8 +654,8 @@ public class AutoPlayer{
 		robot.delay(3000);
 		checkCollectingStatus();
 		while(collectingStatus != CollectingStatus.UNKNOWN){
-			robot.delay(3000);
 			tapCentre();
+			robot.delay(3000);
 			checkCollectingStatus();
 		}
 	}
