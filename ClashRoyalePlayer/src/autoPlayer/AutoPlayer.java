@@ -145,6 +145,24 @@ public class AutoPlayer{
 						openCrownChest();
 						break;
 					}
+					if(
+							firstChestStatus != ChestStatus.UNLOCKING &&
+							secondChestStatus != ChestStatus.UNLOCKING &&
+							thirdChestStatus != ChestStatus.UNLOCKING &&
+							fourthChestStatus != ChestStatus.UNLOCKING)
+					{
+						if(firstChestStatus == ChestStatus.LOCKED)
+							unlockFirstChest();
+						else
+							if(secondChestStatus == ChestStatus.LOCKED)
+								unlockSecondChest();
+							else
+								if(thirdChestStatus == ChestStatus.LOCKED)
+									unlockThirdChest();
+								else
+									if(fourthChestStatus == ChestStatus.LOCKED)
+										unlockFourthChest();
+					}
 					
 					robot.delay(3000);
 					checkGameStatus();
@@ -175,8 +193,7 @@ public class AutoPlayer{
 		}
 		this.stop();
 	}
-	
-	
+
 	public void stop() throws IOException{
 		
 		updateLog("Final state: " + gameStatus.toString());
@@ -569,6 +586,18 @@ public class AutoPlayer{
 		}
 	}
 	
+	private void tapStartUnlock(){
+		switch(resolution){
+		case "1920x1080" : 
+			this.tap(939, 684);
+			break;
+		case "1366x768" : 
+			this.tap(0, 0);
+			break;
+		default: break;
+		}
+	}
+	
 	private void tapFreeChest(){
 		switch(resolution){
 		case "1920x1080" : 
@@ -728,6 +757,38 @@ public class AutoPlayer{
 		}
 	}
 	
+	private void unlockFourthChest() {
+		tapFourthChest();
+		robot.delay(2000);
+		tapStartUnlock();
+		robot.delay(2000);
+		updateLog("Action: unlocking fourth chest");
+	}
+
+	private void unlockThirdChest() {
+		tapThirdChest();
+		robot.delay(2000);
+		tapStartUnlock();
+		robot.delay(2000);
+		updateLog("Action: unlocking third chest");
+	}
+
+	private void unlockSecondChest() {
+		tapSecondChest();
+		robot.delay(2000);
+		tapStartUnlock();
+		robot.delay(2000);
+		updateLog("Action: unlocking second chest");
+	}
+
+	private void unlockFirstChest() {
+		tapFirstChest();
+		robot.delay(2000);
+		tapStartUnlock();
+		robot.delay(2000);
+		updateLog("Action: unlocking first chest");
+	}
+	
 	private void switchMenu(String menuToGo) throws AWTException{
 		checkGameStatus();
 		String oldMenu = gameStatus.toString();
@@ -777,7 +838,7 @@ public class AutoPlayer{
 		}
 		}
 	}
-	
+		
 	private void updateLog(String update){
 		log += update + ";\n";
 	}
