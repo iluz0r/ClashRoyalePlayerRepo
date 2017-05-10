@@ -51,12 +51,12 @@ public class AutoPlayer{
 		else
 			throw new Exception("Resolution mismatch");
 		
-		log += "ScreenResolution: " + resolution + "\n";
+		updateLog("ScreenResolution: " + resolution);
 	}
 	
 	public AutoPlayer(){
 		resolution = DEFAULT_RESOLUTION;
-		log += "ScreenResolution: " + resolution + "\n";
+		updateLog("ScreenResolution: " + resolution);
 	}
 
 	private void init() throws Exception{
@@ -99,7 +99,7 @@ public class AutoPlayer{
 		robot.delay(10000);
 		checkGameStatus();
 		
-		log += "Initial state: " + gameStatus.toString() + ";\n";
+		updateLog("Initial state: " + gameStatus.toString());
 	}
 
 	
@@ -179,7 +179,7 @@ public class AutoPlayer{
 	
 	public void stop() throws IOException{
 		
-		log += "Final state: " + gameStatus.toString() + ";\n";
+		updateLog("Final state: " + gameStatus.toString());
 		
 		String path = ".\\log.txt";
 		FileOutputStream logFile = new FileOutputStream(path);
@@ -222,7 +222,7 @@ public class AutoPlayer{
 							gameStatus = GameStatus.CARDS_MENU;
 						else
 							gameStatus = GameStatus.UNKNOWN;
-		log += "Action: check gameStatus, game state: " + gameStatus.toString() + ";\n";
+		updateLog("Action: check gameStatus, game state: " + gameStatus.toString());
 	}
 	
 	private void checkFirstChestStatus() throws AWTException{
@@ -265,7 +265,7 @@ public class AutoPlayer{
 					if(imageComparison.imgEqual(emptyChest, capturedFirstChest, 10))
 						firstChestStatus = ChestStatus.EMPTY;
 		
-		log += "Action: checkFirstChestStatus, the state is " + firstChestStatus.toString() + ";\n";
+		updateLog("Action: checkFirstChestStatus, the state is " + firstChestStatus.toString());
 	}
 	
 	private void checkSecondChestStatus() throws AWTException{
@@ -308,7 +308,7 @@ public class AutoPlayer{
 					if(imageComparison.imgEqual(emptyChest, capturedSecondChest, 10))
 						secondChestStatus = ChestStatus.EMPTY;
 		
-		log += "Action: checkSecondChestStatus, the state is " + secondChestStatus.toString() + ";\n";
+		updateLog("Action: checkSecondChestStatus, the state is " + secondChestStatus.toString());
 	}
 
 	private void checkThirdChestStatus() throws AWTException{
@@ -351,7 +351,7 @@ public class AutoPlayer{
 					if(imageComparison.imgEqual(emptyChest, capturedThirdChest, 10))
 						thirdChestStatus = ChestStatus.EMPTY;
 	
-		log += "Action: checkThirdChestStatus, the state is " + thirdChestStatus.toString() + ";\n";
+		updateLog("Action: checkThirdChestStatus, the state is " + thirdChestStatus.toString());
 	}
 	
 	private void checkFourthChestStatus() throws AWTException{
@@ -393,7 +393,7 @@ public class AutoPlayer{
 				else
 					if(imageComparison.imgEqual(emptyChest, capturedFourthChest, 10))
 						fourthChestStatus = ChestStatus.EMPTY;
-		log += "Action: checkFouthChestStatus, the state is " + fourthChestStatus.toString() + ";\n";
+		updateLog("Action: checkFouthChestStatus, the state is " + fourthChestStatus.toString());
 	}
 	
 	private void checkFreeChestStatus() throws AWTException{
@@ -413,7 +413,7 @@ public class AutoPlayer{
 		else
 			freeChestStatus = ChestStatus.UNLOCKING;
 		
-		log += "Action: checkFreeChestStatus, the state is " + freeChestStatus.toString() + ";\n";
+		updateLog("Action: checkFreeChestStatus, the state is " + freeChestStatus.toString());
 	}
 	
 	private void checkCrownChestStatus() throws AWTException{
@@ -430,7 +430,7 @@ public class AutoPlayer{
 		else
 			crownChestStatus = ChestStatus.UNLOCKING;
 		
-		log += "Action: checkCrownChestStatus, the state is " + crownChestStatus.toString() + ";\n";
+		updateLog("Action: checkCrownChestStatus, the state is " + crownChestStatus.toString());
 		
 	}
 	
@@ -470,7 +470,7 @@ public class AutoPlayer{
 						imageComparison.imgEqual(capturedCollectedChest, collectedFreeChest, 15))
 					collectingStatus = CollectingStatus.COLLECTED;
 		
-		log += "Action: checkCollectingStatus, the state is " + collectingStatus.toString() + ";\n";
+		updateLog("Action: checkCollectingStatus, the state is " + collectingStatus.toString());
 	}
 	
 	private void tap(int x, int y){
@@ -658,7 +658,7 @@ public class AutoPlayer{
 	
 	private void openFirstChest() throws AWTException{
 		tapFirstChest();
-		log += "Action: open first chest;\n";
+		updateLog("Action: open first chest");
 		robot.delay(3000);
 		checkCollectingStatus();
 		while(collectingStatus != CollectingStatus.UNKNOWN){
@@ -670,7 +670,7 @@ public class AutoPlayer{
 	
 	private void openSecondChest() throws AWTException{
 		tapSecondChest();
-		log += "Action: open second chest;\n";
+		updateLog("Action: open second chest");
 		robot.delay(3000);
 		checkCollectingStatus();
 		while(collectingStatus != CollectingStatus.UNKNOWN){
@@ -682,7 +682,7 @@ public class AutoPlayer{
 	
 	private void openThirdChest() throws AWTException{
 		tapThirdChest();
-		log += "Action: open third chest;\n";
+		updateLog("Action: open third chest");
 		robot.delay(3000);
 		checkCollectingStatus();
 		while(collectingStatus != CollectingStatus.UNKNOWN){
@@ -694,7 +694,7 @@ public class AutoPlayer{
 	
 	private void openFourthChest() throws AWTException{
 		tapFourthChest();
-		log += "Action: open fourth chest;\n";
+		updateLog("Action: open fourth chest");
 		robot.delay(3000);
 		checkCollectingStatus();
 		while(collectingStatus != CollectingStatus.UNKNOWN){
@@ -706,7 +706,7 @@ public class AutoPlayer{
 	
 	private void openFreeChest() throws AWTException{
 		tapFreeChest();
-		log += "Action: open free chest;\n";
+		updateLog("Action: open free chest");
 		robot.delay(3000);
 		checkCollectingStatus();
 		while(collectingStatus != CollectingStatus.UNKNOWN){
@@ -718,7 +718,7 @@ public class AutoPlayer{
 	
 	private void openCrownChest() throws AWTException{
 		tapCrownChest();
-		log += "Action: open crown chest;\n";
+		updateLog("Action: open crown chest");
 		robot.delay(3000);
 		checkCollectingStatus();
 		while(collectingStatus != CollectingStatus.UNKNOWN){
@@ -739,8 +739,7 @@ public class AutoPlayer{
 				tapBattleMenu();
 				robot.delay(3000);
 				checkGameStatus();
-				log += "Action: from " + oldMenu + " to " + gameStatus.toString() + ";\n";
-			}
+				updateLog("Action: switched from " + oldMenu + " to " + gameStatus.toString());			}
 			break;
 		}
 		
@@ -749,8 +748,7 @@ public class AutoPlayer{
 				tapTournamentsMenu();
 				robot.delay(3000);
 				checkGameStatus();
-				log += "Action: from " + oldMenu + " to " + gameStatus.toString() + ";\n";
-			}
+				updateLog("Action: switched from " + oldMenu + " to " + gameStatus.toString());			}
 		}
 		
 		case "SOCIAL_MENU" : {
@@ -758,8 +756,7 @@ public class AutoPlayer{
 				tapSocialMenu();
 				robot.delay(3000);
 				checkGameStatus();
-				log += "Action: from " + oldMenu + " to " + gameStatus.toString() + ";\n";
-			}
+				updateLog("Action: switched from " + oldMenu + " to " + gameStatus.toString());			}
 		}
 		
 		case "SHOP_MENU" : {
@@ -767,8 +764,7 @@ public class AutoPlayer{
 				tapShopMenu();
 				robot.delay(3000);
 				checkGameStatus();
-				log += "Action: from " + oldMenu + " to " + gameStatus.toString() + ";\n";
-			}
+				updateLog("Action: switched from " + oldMenu + " to " + gameStatus.toString());			}
 		}
 		
 		case "CARDS_MENU" : {
@@ -776,10 +772,14 @@ public class AutoPlayer{
 				tapCardsMenu();
 				robot.delay(3000);
 				checkGameStatus();
-				log += "Action: from " + oldMenu + " to " + gameStatus.toString() + ";\n";
+				updateLog("Action: switched from " + oldMenu + " to " + gameStatus.toString());
 			}
 		}
 		}
+	}
+	
+	private void updateLog(String update){
+		log += update + ";\n";
 	}
 	
 }
