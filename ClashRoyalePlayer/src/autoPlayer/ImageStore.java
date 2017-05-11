@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class ImageStore extends imageProcessing.ImageStore{
 
-	protected ImageStore(String resolution) 
+	public ImageStore(String resolution) 
 			throws IOException
 	{
 		super("." + File.separator + "images" + resolution + File.separator);

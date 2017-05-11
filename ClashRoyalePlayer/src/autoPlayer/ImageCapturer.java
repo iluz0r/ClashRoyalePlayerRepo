@@ -9,7 +9,7 @@ public class ImageCapturer extends imageProcessing.ImageCapturer{
 	private String resolution;
 	private final static String DEFAULT_RESOLUTION = "1920x1080";
 	
-	protected ImageCapturer(String screenResolution) throws Exception {
+	public ImageCapturer(String screenResolution) throws Exception {
 		super();
 		if(screenResolution == "1920x1080" || screenResolution == "1366x768")
 			this.resolution = screenResolution;
@@ -212,7 +212,7 @@ public class ImageCapturer extends imageProcessing.ImageCapturer{
 		return capturedImage;
 	}
 	
-	protected BufferedImage captureBattleMenu() throws AWTException {
+	public BufferedImage captureBattleMenu() throws AWTException {
 		
 		Rectangle captureRect = null;
 		
@@ -232,7 +232,7 @@ public class ImageCapturer extends imageProcessing.ImageCapturer{
 		return capturedImage;
 	}
 	
-	protected BufferedImage captureCardsMenu() throws AWTException {
+	public BufferedImage captureCardsMenu() throws AWTException {
 		
 		Rectangle captureRect = null;
 		
@@ -252,7 +252,7 @@ public class ImageCapturer extends imageProcessing.ImageCapturer{
 		return capturedImage;
 	}
 	
-	protected BufferedImage captureShopMenu() throws AWTException {
+	public BufferedImage captureShopMenu() throws AWTException {
 		
 		Rectangle captureRect = null;
 		
@@ -272,7 +272,7 @@ public class ImageCapturer extends imageProcessing.ImageCapturer{
 		return capturedImage;
 	}
 	
-	protected BufferedImage captureSocialMenu() throws AWTException {
+	public BufferedImage captureSocialMenu() throws AWTException {
 		
 		Rectangle captureRect = null;
 		
@@ -292,7 +292,7 @@ public class ImageCapturer extends imageProcessing.ImageCapturer{
 		return capturedImage;
 	}
 	
-	protected BufferedImage captureTournamentsMenu() throws AWTException {
+	public BufferedImage captureTournamentsMenu() throws AWTException {
 		
 		Rectangle captureRect = null;
 		
