@@ -125,6 +125,7 @@ public class ImageCapturer{
 	
 	}
 	
+	
 	public BufferedImage captureBattleButton() throws AWTException {
 		
 		Rectangle captureRect = null;

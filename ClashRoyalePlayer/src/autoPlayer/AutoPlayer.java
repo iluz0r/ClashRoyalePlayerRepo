@@ -25,7 +25,8 @@ public class AutoPlayer{
 	
 	private enum GameStatus {
 		BATTLE_MENU, TOURNAMENTS_MENU, SOCIAL_MENU, SHOP_MENU, 
-		CARDS_MENU, BATTLE, COLLECTING_CHEST, COLLECTED_CHEST, UNKNOWN
+		CARDS_MENU, BATTLE, COLLECTING_CHEST, COLLECTED_CHEST,
+		ARENA_INFO, UNKNOWN
 	}
 	
 	private enum ChestStatus {
@@ -104,7 +105,7 @@ public class AutoPlayer{
 
 	
 	public void start() throws Exception{
-		this.init();
+		init();
 
 		
 		while(gameStatus != GameStatus.UNKNOWN){
@@ -800,7 +801,8 @@ public class AutoPlayer{
 				tapBattleMenu();
 				robot.delay(3000);
 				checkGameStatus();
-				updateLog("Action: switched from " + oldMenu + " to " + gameStatus.toString());			}
+				updateLog("Action: switched from " + oldMenu + " to " + gameStatus.toString());
+			}
 			break;
 		}
 		
@@ -809,7 +811,8 @@ public class AutoPlayer{
 				tapTournamentsMenu();
 				robot.delay(3000);
 				checkGameStatus();
-				updateLog("Action: switched from " + oldMenu + " to " + gameStatus.toString());			}
+				updateLog("Action: switched from " + oldMenu + " to " + gameStatus.toString());
+			}
 		}
 		
 		case "SOCIAL_MENU" : {
@@ -817,7 +820,8 @@ public class AutoPlayer{
 				tapSocialMenu();
 				robot.delay(3000);
 				checkGameStatus();
-				updateLog("Action: switched from " + oldMenu + " to " + gameStatus.toString());			}
+				updateLog("Action: switched from " + oldMenu + " to " + gameStatus.toString());
+			}
 		}
 		
 		case "SHOP_MENU" : {
@@ -825,7 +829,8 @@ public class AutoPlayer{
 				tapShopMenu();
 				robot.delay(3000);
 				checkGameStatus();
-				updateLog("Action: switched from " + oldMenu + " to " + gameStatus.toString());			}
+				updateLog("Action: switched from " + oldMenu + " to " + gameStatus.toString());
+				}
 		}
 		
 		case "CARDS_MENU" : {
