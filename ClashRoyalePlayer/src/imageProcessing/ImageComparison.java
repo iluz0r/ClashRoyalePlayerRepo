@@ -1,9 +1,6 @@
 package imageProcessing;
 
 import java.awt.image.BufferedImage;
-// import javax.imageio.ImageIO;
-// import java.io.IOException;
-// import java.net.URL;
 
 public class ImageComparison {
 
@@ -11,16 +8,6 @@ public class ImageComparison {
 
 	public double compare(BufferedImage img1, BufferedImage img2)
 	{
-		/*
-		try {
-			URL url1 = new URL("http://rosettacode.org/mw/images/3/3c/Lenna50.jpg");
-			URL url2 = new URL("http://rosettacode.org/mw/images/b/b6/Lenna100.jpg");
-			img1 = ImageIO.read(url1);
-			img2 = ImageIO.read(url2);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		*/
 		
 		int width1 = img1.getWidth(null);
 		int width2 = img2.getWidth(null);
@@ -68,7 +55,7 @@ public class ImageComparison {
 	
 	public boolean imgEqual(BufferedImage img1, BufferedImage img2){
 		
-		boolean isEqual = this.imgEqual(img1, img2, this.DEFAULT_TOLLERANCE);
+		boolean isEqual = this.imgEqual(img1, img2, DEFAULT_TOLLERANCE);
 		
 		return isEqual;
 	}

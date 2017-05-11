@@ -40,40 +40,39 @@ public class ImageStore {
 	private BufferedImage collectingSilverChest;
 	private BufferedImage collectedSilverChest;
 	
-	public ImageStore(String basePath) 
-					throws IOException
-	{
-		this.setBattleButton(basePath + "battleButton.img");
-		this.setEmptyChestSlot(basePath + "emptyChestSlot");
-		this.setLockedSilverChest(basePath + "lockedSilverChest");
-		this.setUnlockingSilverChest(basePath + "unlockingSilverChest");
-		this.setOpenSilverChest(basePath + "openSilverChest");
-		this.setOpenCrownChest(basePath + "openCrownChest");
-		this.setLockedCrownChest(basePath + "lockedCrownChest");
-		this.setLockedFreeChest(basePath + "lockedFreeChest");
-		this.setLockedGoldChest(basePath + "lockedGoldChest");
-		this.setOpenFreeChestx1(basePath + "openFreeChestx1");
-		this.setUnlockingGoldChest(basePath + "unlockingGoldChest");
-		this.setOpenFreeChestx2(basePath + "openFreeChestx2");
-		this.setCollectingFreeChest(basePath + "collectingFreeChest");
-		this.setCollectedFreeChest(basePath + "collectedFreeChest");
-		this.setCollectingGoldChest(basePath + "collectingGoldChest");
-		this.setCollectedGoldChest(basePath + "collectedGoldChest");
-		this.setCollectingCrwonChest(basePath + "collectingCrownChest");
-		this.setCollectedCrownChest(basePath + "collectedCrownChest");
-		this.setBattleMenu(basePath + "battleMenu");
-		this.setCardsMenu(basePath + "cardsMenu");
-		this.setShopMenu(basePath + "shopMenu");
-		this.setSocialMenu(basePath + "socialMenu");
-		this.setTournamentsMenu(basePath + "tournamentsMenu");
-		this.setLockedMagicChest(basePath + "lockedMagicChest");
-		this.setUnlockingMagicChest(basePath + "unlockingMagicChest");
-		this.setOpenGoldChest(basePath + "openGoldChest");
-		this.setOpenMagicChest(basePath + "openMagicChest");
-		this.setCollectingMagicChest(basePath + "collectingMagicChest");
-		this.setCollectedMagicChest(basePath + "collectedMagicChest");
-		this.setCollectingSilverChest(basePath + "collectingSilverChest");
-		this.setCollectedSilverChest(basePath + "collectedSilverChest");
+	public ImageStore(String basePath) throws IOException {
+		
+		this.setBattleButton(basePath + "battleButton.jpg");
+		this.setEmptyChestSlot(basePath + "emptyChestSlot.jpg");
+		this.setLockedSilverChest(basePath + "lockedSilverChest.jpg");
+		this.setUnlockingSilverChest(basePath + "unlockingSilverChest.jpg");
+		this.setOpenSilverChest(basePath + "openSilverChest.jpg");
+		this.setOpenCrownChest(basePath + "openCrownChest.jpg");
+		this.setLockedCrownChest(basePath + "lockedCrownChest.jpg");
+		this.setLockedFreeChest(basePath + "lockedFreeChest.jpg");
+		this.setLockedGoldChest(basePath + "lockedGoldChest.jpg");
+		this.setOpenFreeChestx1(basePath + "openFreeChestx1.jpg");
+		this.setUnlockingGoldChest(basePath + "unlockingGoldChest.jpg");
+		this.setOpenFreeChestx2(basePath + "openFreeChestx2.jpg");
+		this.setCollectingFreeChest(basePath + "collectingFreeChest.jpg");
+		this.setCollectedFreeChest(basePath + "collectedFreeChest.jpg");
+		this.setCollectingGoldChest(basePath + "collectingGoldChest.jpg");
+		this.setCollectedGoldChest(basePath + "collectedGoldChest.jpg");
+		this.setCollectingCrwonChest(basePath + "collectingCrownChest.jpg");
+		this.setCollectedCrownChest(basePath + "collectedCrownChest.jpg");
+		this.setBattleMenu(basePath + "battleMenu.jpg");
+		this.setCardsMenu(basePath + "cardsMenu.jpg");
+		this.setShopMenu(basePath + "shopMenu.jpg");
+		this.setSocialMenu(basePath + "socialMenu.jpg");
+		this.setTournamentsMenu(basePath + "tournamentsMenu.jpg");
+		this.setLockedMagicChest(basePath + "lockedMagicChest.jpg");
+		this.setUnlockingMagicChest(basePath + "unlockingMagicChest.jpg");
+		this.setOpenGoldChest(basePath + "openGoldChest.jpg");
+		this.setOpenMagicChest(basePath + "openMagicChest.jpg");
+		this.setCollectingMagicChest(basePath + "collectingMagicChest.jpg");
+		this.setCollectedMagicChest(basePath + "collectedMagicChest.jpg");
+		this.setCollectingSilverChest(basePath + "collectingSilverChest.jpg");
+		this.setCollectedSilverChest(basePath + "collectedSilverChest.jpg");
 		
 	}
 	
