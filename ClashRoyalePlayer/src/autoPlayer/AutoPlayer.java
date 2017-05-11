@@ -4,12 +4,11 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 
-import imageProcessing.*;
+import imageProcessing.ImageComparison;
 
 public class AutoPlayer{
 
