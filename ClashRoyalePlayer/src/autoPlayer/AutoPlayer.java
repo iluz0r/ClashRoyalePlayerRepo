@@ -25,15 +25,14 @@ public class AutoPlayer{
 	
 	private enum GameStatus {
 		BATTLE_MENU, TOURNAMENTS_MENU, SOCIAL_MENU, SHOP_MENU, 
-		CARDS_MENU, BATTLE, COLLECTING_CHEST, COLLECTED_CHEST,
-		ARENA_INFO, UNKNOWN
+		CARDS_MENU, BATTLE, ARENA_INFO, UNKNOWN
 	}
 	
 	private enum ChestStatus {
 		UNLOCKING, UNLOCKABLE, LOCKED, EMPTY, UNKNOWN
 	}
 	
-	private enum CollectingStatus{
+	private enum CollectingStatus {
 		COLLECTING, COLLECTED, UNKNOWN
 	}
 	
@@ -57,7 +56,6 @@ public class AutoPlayer{
 	
 	public AutoPlayer() throws Exception{
 		this(DEFAULT_RESOLUTION);
-		updateLog("ScreenResolution: " + resolution);
 	}
 
 	private void init() throws Exception{
@@ -79,11 +77,11 @@ public class AutoPlayer{
 		
 		while(gameStatus != GameStatus.UNKNOWN){
 			checkGameStatus();
-			switch(gameStatus.toString()){
+			switch(gameStatus){
 			
-				case "UNKNOWN" : break;
+				case UNKNOWN : break;
 			
-				case "BATTLE_MENU" : {
+				case BATTLE_MENU : {
 					checkFirstChestStatus();
 					checkSecondChestStatus();
 					checkThirdChestStatus();
@@ -139,22 +137,22 @@ public class AutoPlayer{
 					break;
 				}
 				
-				case "TOURNAMENTS_MENU" : {
+				case TOURNAMENTS_MENU : {
 					switchMenu("BATTLE_MENU");
 					break;
 				}
 				
-				case "SOCIAL_MENU" : {
+				case SOCIAL_MENU : {
 					switchMenu("BATTLE_MENU");
 					break;
 				}
 				
-				case "SHOP_MENU" : {
+				case SHOP_MENU : {
 					switchMenu("BATTLE_MENU");
 					break;
 				}
 				
-				case "CARDS_MENU" : {
+				case CARDS_MENU : {
 					switchMenu("BATTLE_MENU");
 					break;
 				}
