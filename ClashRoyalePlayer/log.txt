@@ -1,0 +1,5 @@
+ScreenResolution: 1920x1080;
+ScreenResolution: 1920x1080;
+Action: check gameStatus, game state: UNKNOWN;
+Initial state: UNKNOWN;
+Final state: UNKNOWN;

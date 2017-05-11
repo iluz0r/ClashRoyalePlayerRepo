@@ -8,35 +8,29 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 
+import autoPlayer.controller.BaseController;
 import imageProcessing.ImageComparison;
 
 public class AutoPlayer{
 
-	private Robot robot;
+    public enum GameStatus {
+	BATTLE_MENU, TOURNAMENTS_MENU, SOCIAL_MENU, SHOP_MENU, CARDS_MENU, BATTLE, COLLECTING_CHEST, COLLECTED_CHEST, ARENA_INFO, UNKNOWN
+    }
+
+    public enum ChestStatus {
+	UNLOCKING, UNLOCKABLE, LOCKED, EMPTY, UNKNOWN
+    }
+
+    public enum CollectingStatus {
+	COLLECTING, COLLECTED, UNKNOWN
+    }
+    public class GameStatusController extends BaseController {
+
+
 	private ImageCapturer imageCapturer;
 	private ImageComparison imageComparison;
 	private ImageStore imageStore;
-	
-	private String resolution;
-	private final static String DEFAULT_RESOLUTION = "1920x1080";
-	
-	private String log = "";
-	private PrintStream writeLog;
-	
-	private enum GameStatus {
-		BATTLE_MENU, TOURNAMENTS_MENU, SOCIAL_MENU, SHOP_MENU, 
-		CARDS_MENU, BATTLE, COLLECTING_CHEST, COLLECTED_CHEST,
-		ARENA_INFO, UNKNOWN
-	}
-	
-	private enum ChestStatus {
-		UNLOCKING, UNLOCKABLE, LOCKED, EMPTY, UNKNOWN
-	}
-	
-	private enum CollectingStatus{
-		COLLECTING, COLLECTED, UNKNOWN
-	}
-	
+
 	private GameStatus gameStatus;
 	private ChestStatus firstChestStatus;
 	private ChestStatus secondChestStatus;
@@ -46,138 +40,62 @@ public class AutoPlayer{
 	private ChestStatus crownChestStatus;
 	private CollectingStatus collectingStatus;
 	
-	public AutoPlayer(String screenResolution) throws Exception{
-		if(screenResolution == "1920x1080" || screenResolution == "1366x768")
-			this.resolution = screenResolution;
-		else
-			throw new Exception("Resolution mismatch");
-		
-		updateLog("ScreenResolution: " + resolution);
-	}
-	
-	public AutoPlayer() throws Exception{
-		this(DEFAULT_RESOLUTION);
-		updateLog("ScreenResolution: " + resolution);
-	}
-
-	private void init() throws Exception{
-		robot = new Robot();
+	public GameStatusController(String resolution) throws Exception{
 		imageCapturer = new ImageCapturer(resolution);
 		imageComparison = new ImageComparison();
 		imageStore = new ImageStore(resolution);
-		
-		robot.delay(10000);
-		checkGameStatus();
-		
-		updateLog("Initial state: " + gameStatus.toString());
-	}
-
-	
-	public void start() throws Exception{
-		init();
-
-		
-		while(gameStatus != GameStatus.UNKNOWN){
-			checkGameStatus();
-			switch(gameStatus.toString()){
-			
-				case "UNKNOWN" : break;
-			
-				case "BATTLE_MENU" : {
-					checkFirstChestStatus();
-					checkSecondChestStatus();
-					checkThirdChestStatus();
-					checkFourthChestStatus();
-					checkFreeChestStatus();
-					checkCrownChestStatus();
-					
-					if(firstChestStatus == ChestStatus.UNLOCKABLE){
-						openFirstChest();
-						break;
-					}
-					if(secondChestStatus == ChestStatus.UNLOCKABLE){
-						openSecondChest();
-						break;
-					}
-					if(thirdChestStatus == ChestStatus.UNLOCKABLE){
-						openThirdChest();
-						break;
-					}
-					if(fourthChestStatus == ChestStatus.UNLOCKABLE){
-						openFourthChest();
-						break;
-					}
-					if(freeChestStatus == ChestStatus.UNLOCKABLE){
-						openFreeChest();
-						break;
-					}
-					if(crownChestStatus == ChestStatus.UNLOCKABLE){
-						openCrownChest();
-						break;
-					}
-					if(
-							firstChestStatus != ChestStatus.UNLOCKING &&
-							secondChestStatus != ChestStatus.UNLOCKING &&
-							thirdChestStatus != ChestStatus.UNLOCKING &&
-							fourthChestStatus != ChestStatus.UNLOCKING)
-					{
-						if(firstChestStatus == ChestStatus.LOCKED)
-							unlockFirstChest();
-						else
-							if(secondChestStatus == ChestStatus.LOCKED)
-								unlockSecondChest();
-							else
-								if(thirdChestStatus == ChestStatus.LOCKED)
-									unlockThirdChest();
-								else
-									if(fourthChestStatus == ChestStatus.LOCKED)
-										unlockFourthChest();
-					}
-					
-					robot.delay(3000);
-					checkGameStatus();
-					break;
-				}
-				
-				case "TOURNAMENTS_MENU" : {
-					switchMenu("BATTLE_MENU");
-					break;
-				}
-				
-				case "SOCIAL_MENU" : {
-					switchMenu("BATTLE_MENU");
-					break;
-				}
-				
-				case "SHOP_MENU" : {
-					switchMenu("BATTLE_MENU");
-					break;
-				}
-				
-				case "CARDS_MENU" : {
-					switchMenu("BATTLE_MENU");
-					break;
-				}
-			
-			}
-		}
-		this.stop();
-	}
-
-	public void stop() throws IOException{
-		
-		updateLog("Final state: " + gameStatus.toString());
-		
-		String path = ".\\log.txt";
-		FileOutputStream logFile = new FileOutputStream(path);
-        writeLog = new PrintStream(logFile);
-        writeLog.print(log);
-		System.out.println(log);
-
-		System.exit(0);
 	}
 	
-	private void checkGameStatus() throws AWTException{
+	public GameStatus getGameStatus() {
+	    return gameStatus;
+	}
+	public void setGameStatus(GameStatus gameStatus) {
+	    this.gameStatus = gameStatus;
+	}
+	public ChestStatus getFirstChestStatus() {
+	    return firstChestStatus;
+	}
+	public void setFirstChestStatus(ChestStatus firstChestStatus) {
+	    this.firstChestStatus = firstChestStatus;
+	}
+	public ChestStatus getSecondChestStatus() {
+	    return secondChestStatus;
+	}
+	public void setSecondChestStatus(ChestStatus secondChestStatus) {
+	    this.secondChestStatus = secondChestStatus;
+	}
+	public ChestStatus getThirdChestStatus() {
+	    return thirdChestStatus;
+	}
+	public void setThirdChestStatus(ChestStatus thirdChestStatus) {
+	    this.thirdChestStatus = thirdChestStatus;
+	}
+	public ChestStatus getFourthChestStatus() {
+	    return fourthChestStatus;
+	}
+	public void setFourthChestStatus(ChestStatus fourthChestStatus) {
+	    this.fourthChestStatus = fourthChestStatus;
+	}
+	public ChestStatus getFreeChestStatus() {
+	    return freeChestStatus;
+	}
+	public void setFreeChestStatus(ChestStatus freeChestStatus) {
+	    this.freeChestStatus = freeChestStatus;
+	}
+	public ChestStatus getCrownChestStatus() {
+	    return crownChestStatus;
+	}
+	public void setCrownChestStatus(ChestStatus crownChestStatus) {
+	    this.crownChestStatus = crownChestStatus;
+	}
+	public CollectingStatus getCollectingStatus() {
+	    return collectingStatus;
+	}
+	public void setCollectingStatus(CollectingStatus collectingStatus) {
+	    this.collectingStatus = collectingStatus;
+	}
+	
+	public void checkGameStatus() throws AWTException{
 		
 		BufferedImage capturedBattleMenu = imageCapturer.captureBattleMenu();
 		BufferedImage capturedTournamentsMenu = imageCapturer.captureTournamentsMenu();
@@ -191,7 +109,6 @@ public class AutoPlayer{
 		BufferedImage shopMenu = imageStore.getShopMenu();
 		BufferedImage cardsMenu = imageStore.getCardsMenu();
 		
-		pointOutside();
 		
 		if (imageComparison.imgEqual(battleMenu, capturedBattleMenu, 3)) 
 			gameStatus = GameStatus.BATTLE_MENU;
@@ -297,9 +214,8 @@ public class AutoPlayer{
 		
 		updateLog("Action: checkSecondChestStatus, the state is " + secondChestStatus.toString());
 	}
-
 	private void checkThirdChestStatus() throws AWTException{
-	
+		
 		thirdChestStatus = ChestStatus.UNKNOWN;
 	
 		BufferedImage lockedSilverChest = imageStore.getLockedSilverChest();
@@ -420,7 +336,6 @@ public class AutoPlayer{
 		updateLog("Action: checkCrownChestStatus, the state is " + crownChestStatus.toString());
 		
 	}
-	
 	private void checkCollectingStatus() throws AWTException{
 		
 		collectingStatus = CollectingStatus.UNKNOWN;
@@ -459,6 +374,151 @@ public class AutoPlayer{
 		
 		updateLog("Action: checkCollectingStatus, the state is " + collectingStatus.toString());
 	}
+    }
+
+	private Robot robot;
+	
+	private String resolution;
+	private final static String DEFAULT_RESOLUTION = "1920x1080";
+	
+	private String log = "";
+	private PrintStream writeLog;
+	
+	GameStatusController gameController = new GameStatusController(resolution);
+	
+	public AutoPlayer(String screenResolution) throws Exception{
+		if(screenResolution == "1920x1080" || screenResolution == "1366x768")
+			this.resolution = screenResolution;
+		else
+			throw new Exception("Resolution mismatch");
+		
+		updateLog("ScreenResolution: " + resolution);
+	}
+	
+	public AutoPlayer() throws Exception{
+		this(DEFAULT_RESOLUTION);
+		updateLog("ScreenResolution: " + resolution);
+	}
+
+	private void init() throws Exception{
+		robot = new Robot();
+		
+		robot.delay(10000);
+		this.gameController.checkGameStatus();
+		
+		updateLog("Initial state: " + this.gameController.getGameStatus().toString());
+	}
+
+	
+	public void start() throws Exception{
+		init();
+
+		
+		while(this.gameController.getGameStatus() != GameStatus.UNKNOWN){
+		    this.gameController.checkGameStatus();
+			switch(this.gameController.getGameStatus().toString()){
+			
+				case "UNKNOWN" : break;
+			
+				case "BATTLE_MENU" : {
+					this.gameController.checkFirstChestStatus();
+					this.gameController.checkSecondChestStatus();
+					this.gameController.checkThirdChestStatus();
+					this.gameController.checkFourthChestStatus();
+					this.gameController.checkFreeChestStatus();
+					this.gameController.checkCrownChestStatus();
+					
+					if(this.gameController.getFirstChestStatus() == ChestStatus.UNLOCKABLE){
+						openFirstChest();
+						break;
+					}
+					if(this.gameController.getSecondChestStatus() == ChestStatus.UNLOCKABLE){
+						openSecondChest();
+						break;
+					}
+					if(this.gameController.getThirdChestStatus() == ChestStatus.UNLOCKABLE){
+						openThirdChest();
+						break;
+					}
+					if(this.gameController.getFourthChestStatus() == ChestStatus.UNLOCKABLE){
+						openFourthChest();
+						break;
+					}
+					if(this.gameController.getFreeChestStatus() == ChestStatus.UNLOCKABLE){
+						openFreeChest();
+						break;
+					}
+					if(this.gameController.getCrownChestStatus() == ChestStatus.UNLOCKABLE){
+						openCrownChest();
+						break;
+					}
+					if(
+							this.gameController.getFirstChestStatus() != ChestStatus.UNLOCKING &&
+							this.gameController.getSecondChestStatus() != ChestStatus.UNLOCKING &&
+							this.gameController.getThirdChestStatus() != ChestStatus.UNLOCKING &&
+								this.gameController.getFourthChestStatus() != ChestStatus.UNLOCKING)
+					{
+						if(this.gameController.getFirstChestStatus() == ChestStatus.LOCKED)
+							unlockFirstChest();
+						else
+							if(this.gameController.getSecondChestStatus() == ChestStatus.LOCKED)
+								unlockSecondChest();
+							else
+								if(this.gameController.getThirdChestStatus() == ChestStatus.LOCKED)
+									unlockThirdChest();
+								else
+									if(this.gameController.getFourthChestStatus() == ChestStatus.LOCKED)
+										unlockFourthChest();
+					}
+					
+					robot.delay(3000);
+					this.gameController.checkGameStatus();
+					break;
+				}
+				
+				case "TOURNAMENTS_MENU" : {
+					switchMenu("BATTLE_MENU");
+					break;
+				}
+				
+				case "SOCIAL_MENU" : {
+					switchMenu("BATTLE_MENU");
+					break;
+				}
+				
+				case "SHOP_MENU" : {
+					switchMenu("BATTLE_MENU");
+					break;
+				}
+				
+				case "CARDS_MENU" : {
+					switchMenu("BATTLE_MENU");
+					break;
+				}
+			
+			}
+		}
+		this.stop();
+	}
+
+	public void stop() throws IOException{
+		
+		updateLog("Final state: " + this.gameController.getGameStatus().toString());
+		
+		String path = ".\\log.txt";
+		FileOutputStream logFile = new FileOutputStream(path);
+        writeLog = new PrintStream(logFile);
+        writeLog.print(log);
+		System.out.println(log);
+
+		System.exit(0);
+	}
+	
+	
+
+	
+	
+	
 	
 	private void tap(int x, int y){
 		robot.mouseMove(x, y);
@@ -659,11 +719,11 @@ public class AutoPlayer{
 		tapFirstChest();
 		updateLog("Action: open first chest");
 		robot.delay(3000);
-		checkCollectingStatus();
-		while(collectingStatus != CollectingStatus.UNKNOWN){
+		this.gameController.checkCollectingStatus();
+		while(this.gameController.collectingStatus != CollectingStatus.UNKNOWN){
 			tapCentre();
 			robot.delay(3000);
-			checkCollectingStatus();
+			this.gameController.checkCollectingStatus();
 		}
 	}
 	
@@ -671,11 +731,11 @@ public class AutoPlayer{
 		tapSecondChest();
 		updateLog("Action: open second chest");
 		robot.delay(3000);
-		checkCollectingStatus();
-		while(collectingStatus != CollectingStatus.UNKNOWN){
+		this.gameController.checkCollectingStatus();
+		while(this.gameController.collectingStatus != CollectingStatus.UNKNOWN){
 			tapCentre();
 			robot.delay(3000);
-			checkCollectingStatus();
+			this.gameController.checkCollectingStatus();
 		}
 	}
 	
@@ -683,11 +743,11 @@ public class AutoPlayer{
 		tapThirdChest();
 		updateLog("Action: open third chest");
 		robot.delay(3000);
-		checkCollectingStatus();
-		while(collectingStatus != CollectingStatus.UNKNOWN){
+		this.gameController.checkCollectingStatus();
+		while(this.gameController.collectingStatus != CollectingStatus.UNKNOWN){
 			tapCentre();
 			robot.delay(3000);
-			checkCollectingStatus();
+			this.gameController.checkCollectingStatus();
 		}
 	}
 	
@@ -695,11 +755,11 @@ public class AutoPlayer{
 		tapFourthChest();
 		updateLog("Action: open fourth chest");
 		robot.delay(3000);
-		checkCollectingStatus();
-		while(collectingStatus != CollectingStatus.UNKNOWN){
+		this.gameController.checkCollectingStatus();
+		while(this.gameController.collectingStatus != CollectingStatus.UNKNOWN){
 			tapCentre();
 			robot.delay(3000);
-			checkCollectingStatus();
+			this.gameController.checkCollectingStatus();
 		}
 	}
 	
@@ -707,11 +767,11 @@ public class AutoPlayer{
 		tapFreeChest();
 		updateLog("Action: open free chest");
 		robot.delay(3000);
-		checkCollectingStatus();
-		while(collectingStatus != CollectingStatus.UNKNOWN){
+		this.gameController.checkCollectingStatus();
+		while(this.gameController.collectingStatus != CollectingStatus.UNKNOWN){
 			tapCentre();
 			robot.delay(3000);
-			checkCollectingStatus();
+			this.gameController.checkCollectingStatus();
 		}
 	}
 	
@@ -719,11 +779,11 @@ public class AutoPlayer{
 		tapCrownChest();
 		updateLog("Action: open crown chest");
 		robot.delay(3000);
-		checkCollectingStatus();
-		while(collectingStatus != CollectingStatus.UNKNOWN){
+		this.gameController.checkCollectingStatus();
+		while(this.gameController.collectingStatus != CollectingStatus.UNKNOWN){
 			tapCentre();
 			robot.delay(3000);
-			checkCollectingStatus();
+			this.gameController.checkCollectingStatus();
 		}
 	}
 	
@@ -760,54 +820,54 @@ public class AutoPlayer{
 	}
 	
 	private void switchMenu(String menuToGo) throws AWTException{
-		checkGameStatus();
-		String oldMenu = gameStatus.toString();
+	    this.gameController.checkGameStatus();
+		String oldMenu = this.gameController.gameStatus.toString();
 		
 		switch(menuToGo){
 		
 		case "BATTLE_MENU" : {
-			if(gameStatus != GameStatus.BATTLE_MENU){
+			if(this.gameController.gameStatus != GameStatus.BATTLE_MENU){
 				tapBattleMenu();
 				robot.delay(3000);
-				checkGameStatus();
-				updateLog("Action: switched from " + oldMenu + " to " + gameStatus.toString());
+				this.gameController.checkGameStatus();
+				updateLog("Action: switched from " + oldMenu + " to " + this.gameController.gameStatus.toString());
 			}
 			break;
 		}
 		
 		case "TOURNAMENTS_MENU" : {
-			if(gameStatus != GameStatus.TOURNAMENTS_MENU){
+			if(this.gameController.gameStatus != GameStatus.TOURNAMENTS_MENU){
 				tapTournamentsMenu();
 				robot.delay(3000);
-				checkGameStatus();
-				updateLog("Action: switched from " + oldMenu + " to " + gameStatus.toString());
+				this.gameController.checkGameStatus();
+				updateLog("Action: switched from " + oldMenu + " to " + this.gameController.gameStatus.toString());
 			}
 		}
 		
 		case "SOCIAL_MENU" : {
-			if(gameStatus != GameStatus.SOCIAL_MENU){
+			if(this.gameController.gameStatus != GameStatus.SOCIAL_MENU){
 				tapSocialMenu();
 				robot.delay(3000);
-				checkGameStatus();
-				updateLog("Action: switched from " + oldMenu + " to " + gameStatus.toString());
+				this.gameController.checkGameStatus();
+				updateLog("Action: switched from " + oldMenu + " to " + this.gameController.gameStatus.toString());
 			}
 		}
 		
 		case "SHOP_MENU" : {
-			if(gameStatus != GameStatus.SHOP_MENU){
+			if(this.gameController.gameStatus != GameStatus.SHOP_MENU){
 				tapShopMenu();
 				robot.delay(3000);
-				checkGameStatus();
-				updateLog("Action: switched from " + oldMenu + " to " + gameStatus.toString());
+				this.gameController.checkGameStatus();
+				updateLog("Action: switched from " + oldMenu + " to " + this.gameController.gameStatus.toString());
 				}
 		}
 		
 		case "CARDS_MENU" : {
-			if(gameStatus != GameStatus.CARDS_MENU){
+			if(this.gameController.gameStatus != GameStatus.CARDS_MENU){
 				tapCardsMenu();
 				robot.delay(3000);
-				checkGameStatus();
-				updateLog("Action: switched from " + oldMenu + " to " + gameStatus.toString());
+				this.gameController.checkGameStatus();
+				updateLog("Action: switched from " + oldMenu + " to " + this.gameController.gameStatus.toString());
 			}
 		}
 		}
