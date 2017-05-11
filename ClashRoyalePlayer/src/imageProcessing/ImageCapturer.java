@@ -14,10 +14,10 @@ public class ImageCapturer{
 	private Robot robot = new Robot();
 	
 	private String resolution;
-	private final String DEFAULT_RESOLUTION = "1920x1080";
+	private final static String DEFAULT_RESOLUTION = "1920x1080";
 	
-	public ImageCapturer() throws AWTException {
-		resolution = DEFAULT_RESOLUTION;
+	public ImageCapturer() throws Exception {
+		this(DEFAULT_RESOLUTION);
 	}
 
 	public ImageCapturer(String screenResolution) throws Exception {

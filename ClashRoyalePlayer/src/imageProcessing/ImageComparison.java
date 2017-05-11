@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 
 public class ImageComparison {
 
-	private final double DEFAULT_TOLLERANCE = 5.0;
+	private static final double DEFAULT_TOLLERANCE = 5.0;
 
 	public double compare(BufferedImage img1, BufferedImage img2)
 	{

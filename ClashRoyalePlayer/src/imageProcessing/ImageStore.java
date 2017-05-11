@@ -8,103 +8,72 @@ import javax.imageio.ImageIO;
 
 public class ImageStore {
 
-	private BufferedImage battleButton = null;
-	private BufferedImage emptyChestSlot = null;
-	private BufferedImage lockedSilverChest = null;
-	private BufferedImage unlockingSilverChest = null;
-	private BufferedImage openSilverChest = null;
-	private BufferedImage openCrownChest = null;
-	private BufferedImage openFreeChestx1 = null;
-	private BufferedImage lockedCrownChest = null;
-	private BufferedImage lockedFreeChest = null;
-	private BufferedImage lockedGoldChest = null;
-	private BufferedImage unlockingGoldChest = null;
-	private BufferedImage openFreeChestx2 = null;
-	private BufferedImage collectingFreeChest = null;
-	private BufferedImage collectedFreeChest = null;
-	private BufferedImage collectingGoldChest = null;
-	private BufferedImage collectedGoldChest = null;
-	private BufferedImage collectingCrwonChest = null;
-	private BufferedImage collectedCrownChest = null;
-	private BufferedImage battleMenu = null;
-	private BufferedImage cardsMenu = null;
-	private BufferedImage shopMenu = null;
-	private BufferedImage socialMenu = null;
-	private BufferedImage tournamentsMenu = null;
-	private BufferedImage lockedMagicChest = null;
-	private BufferedImage unlockingMagicChest = null;
-	private BufferedImage openGoldChest = null;
-	private BufferedImage openMagicChest = null;
-	private BufferedImage collectingMagicChest = null;
-	private BufferedImage collectedMagicChest = null;
-	private BufferedImage collectingSilverChest = null;
-	private BufferedImage collectedSilverChest = null;
+	private BufferedImage battleButton;
+	private BufferedImage emptyChestSlot;
+	private BufferedImage lockedSilverChest;
+	private BufferedImage unlockingSilverChest;
+	private BufferedImage openSilverChest;
+	private BufferedImage openCrownChest;
+	private BufferedImage openFreeChestx1;
+	private BufferedImage lockedCrownChest;
+	private BufferedImage lockedFreeChest;
+	private BufferedImage lockedGoldChest;
+	private BufferedImage unlockingGoldChest;
+	private BufferedImage openFreeChestx2;
+	private BufferedImage collectingFreeChest;
+	private BufferedImage collectedFreeChest;
+	private BufferedImage collectingGoldChest;
+	private BufferedImage collectedGoldChest;
+	private BufferedImage collectingCrwonChest;
+	private BufferedImage collectedCrownChest;
+	private BufferedImage battleMenu;
+	private BufferedImage cardsMenu;
+	private BufferedImage shopMenu;
+	private BufferedImage socialMenu;
+	private BufferedImage tournamentsMenu;
+	private BufferedImage lockedMagicChest;
+	private BufferedImage unlockingMagicChest;
+	private BufferedImage openGoldChest;
+	private BufferedImage openMagicChest;
+	private BufferedImage collectingMagicChest;
+	private BufferedImage collectedMagicChest;
+	private BufferedImage collectingSilverChest;
+	private BufferedImage collectedSilverChest;
 	
-	public ImageStore(
-			String battleButtonPath, 
-			String emptyChestSlotPath, 
-			String lockedSilverChestPath,
-			String unlockingSilverChestPath,
-			String openSilverChestPath,
-			String openCrownChestPath,
-			String openFreeChestx1Path,
-			String lockedCrownChestPath,
-			String lockedFreeChestPath,
-			String lockedGoldChestPath,
-			String unlockingGoldChestPath,
-			String openFreeChestx2Path,
-			String collectingFreeChestPath,
-			String collectedFreeChestPath,
-			String collectingGoldChestPath,
-			String collectedGoldChestPath,
-			String collectingCrownChestPath,
-			String collectedCrownChestPath,
-			String battleMenuPath,
-			String cardsMenuPath,
-			String shopMenuPath,
-			String socialMenuPath, 
-			String tournamentsMenuPath,
-			String lockedMagicChestPath,
-			String unlockingMagicChestPath,
-			String openGoldChestPath,
-			String openMagicChestPath,
-			String collectingMagicChestPath,
-			String collectedMagicChestPath,
-			String collectingSilverChestPath,
-			String collectedSilverChestPath) 
+	public ImageStore(String basePath) 
 					throws IOException
 	{
-		this.setBattleButton(battleButtonPath);
-		this.setEmptyChestSlot(emptyChestSlotPath);
-		this.setLockedSilverChest(lockedSilverChestPath);
-		this.setUnlockingSilverChest(unlockingSilverChestPath);
-		this.setOpenSilverChest(openSilverChestPath);
-		this.setOpenCrownChest(openCrownChestPath);
-		this.setLockedCrownChest(lockedCrownChestPath);
-		this.setLockedFreeChest(lockedFreeChestPath);
-		this.setLockedGoldChest(lockedGoldChestPath);
-		this.setOpenFreeChestx1(openFreeChestx1Path);
-		this.setUnlockingGoldChest(unlockingGoldChestPath);
-		this.setOpenFreeChestx2(openFreeChestx2Path);
-		this.setCollectingFreeChest(collectingFreeChestPath);
-		this.setCollectedFreeChest(collectedFreeChestPath);
-		this.setCollectingGoldChest(collectingGoldChestPath);
-		this.setCollectedGoldChest(collectedGoldChestPath);
-		this.setCollectingCrwonChest(collectingCrownChestPath);
-		this.setCollectedCrownChest(collectedCrownChestPath);
-		this.setBattleMenu(battleMenuPath);
-		this.setCardsMenu(cardsMenuPath);
-		this.setShopMenu(shopMenuPath);
-		this.setSocialMenu(socialMenuPath);
-		this.setTournamentsMenu(tournamentsMenuPath);
-		this.setLockedMagicChest(lockedMagicChestPath);
-		this.setUnlockingMagicChest(unlockingMagicChestPath);
-		this.setOpenGoldChest(openGoldChestPath);
-		this.setOpenMagicChest(openMagicChestPath);
-		this.setCollectingMagicChest(collectingMagicChestPath);
-		this.setCollectedMagicChest(collectedMagicChestPath);
-		this.setCollectingSilverChest(collectingSilverChestPath);
-		this.setCollectedSilverChest(collectedSilverChestPath);
+		this.setBattleButton(basePath + "battleButton.img");
+		this.setEmptyChestSlot(basePath + "emptyChestSlot");
+		this.setLockedSilverChest(basePath + "lockedSilverChest");
+		this.setUnlockingSilverChest(basePath + "unlockingSilverChest");
+		this.setOpenSilverChest(basePath + "openSilverChest");
+		this.setOpenCrownChest(basePath + "openCrownChest");
+		this.setLockedCrownChest(basePath + "lockedCrownChest");
+		this.setLockedFreeChest(basePath + "lockedFreeChest");
+		this.setLockedGoldChest(basePath + "lockedGoldChest");
+		this.setOpenFreeChestx1(basePath + "openFreeChestx1");
+		this.setUnlockingGoldChest(basePath + "unlockingGoldChest");
+		this.setOpenFreeChestx2(basePath + "openFreeChestx2");
+		this.setCollectingFreeChest(basePath + "collectingFreeChest");
+		this.setCollectedFreeChest(basePath + "collectedFreeChest");
+		this.setCollectingGoldChest(basePath + "collectingGoldChest");
+		this.setCollectedGoldChest(basePath + "collectedGoldChest");
+		this.setCollectingCrwonChest(basePath + "collectingCrownChest");
+		this.setCollectedCrownChest(basePath + "collectedCrownChest");
+		this.setBattleMenu(basePath + "battleMenu");
+		this.setCardsMenu(basePath + "cardsMenu");
+		this.setShopMenu(basePath + "shopMenu");
+		this.setSocialMenu(basePath + "socialMenu");
+		this.setTournamentsMenu(basePath + "tournamentsMenu");
+		this.setLockedMagicChest(basePath + "lockedMagicChest");
+		this.setUnlockingMagicChest(basePath + "unlockingMagicChest");
+		this.setOpenGoldChest(basePath + "openGoldChest");
+		this.setOpenMagicChest(basePath + "openMagicChest");
+		this.setCollectingMagicChest(basePath + "collectingMagicChest");
+		this.setCollectedMagicChest(basePath + "collectedMagicChest");
+		this.setCollectingSilverChest(basePath + "collectingSilverChest");
+		this.setCollectedSilverChest(basePath + "collectedSilverChest");
 		
 	}
 	

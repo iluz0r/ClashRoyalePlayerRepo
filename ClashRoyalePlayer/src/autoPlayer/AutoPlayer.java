@@ -4,6 +4,7 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -18,7 +19,7 @@ public class AutoPlayer{
 	private ImageStore imageStore;
 	
 	private String resolution;
-	private final String DEFAULT_RESOLUTION = "1920x1080";
+	private final static String DEFAULT_RESOLUTION = "1920x1080";
 	
 	private String log = "";
 	private PrintStream writeLog;
@@ -55,8 +56,8 @@ public class AutoPlayer{
 		updateLog("ScreenResolution: " + resolution);
 	}
 	
-	public AutoPlayer(){
-		resolution = DEFAULT_RESOLUTION;
+	public AutoPlayer() throws Exception{
+		this(DEFAULT_RESOLUTION);
 		updateLog("ScreenResolution: " + resolution);
 	}
 
@@ -64,38 +65,7 @@ public class AutoPlayer{
 		robot = new Robot();
 		imageCapturer = new ImageCapturer(resolution);
 		imageComparison = new ImageComparison();
-		imageStore = new ImageStore(
-				".\\images" + resolution + "\\battleButton.jpg", 
-				".\\images" + resolution + "\\emptyChestSlot.jpg", 
-				".\\images" + resolution + "\\lockedSilverChest.jpg", 
-				".\\images" + resolution + "\\unlockingSilverChest.jpg",
-				".\\images" + resolution + "\\openSilverChest.jpg",
-				".\\images" + resolution + "\\openCrownChest.jpg",
-				".\\images" + resolution + "\\openFreeChestx1.jpg",
-				".\\images" + resolution + "\\lockedCrownChest.jpg",
-				".\\images" + resolution + "\\lockedFreeChest.jpg",
-				".\\images" + resolution + "\\lockedGoldChest.jpg",
-				".\\images" + resolution + "\\unlockingGoldChest.jpg",
-				".\\images" + resolution + "\\openFreeChestx2.jpg",
-				".\\images" + resolution + "\\collectingFreeChest.jpg",
-				".\\images" + resolution + "\\collectedFreeChest.jpg",
-				".\\images" + resolution + "\\collectingGoldChest.jpg",
-				".\\images" + resolution + "\\collectedGoldChest.jpg",
-				".\\images" + resolution + "\\collectingCrownChest.jpg",
-				".\\images" + resolution + "\\collectedCrownChest.jpg",
-				".\\images" + resolution + "\\battleMenu.jpg",
-				".\\images" + resolution + "\\cardsMenu.jpg",
-				".\\images" + resolution + "\\shopMenu.jpg",
-				".\\images" + resolution + "\\socialMenu.jpg",
-				".\\images" + resolution + "\\tournamentsMenu.jpg",
-				".\\images" + resolution + "\\lockedMagicChest.jpg",
-				".\\images" + resolution + "\\unlockingMagicChest.jpg",
-				".\\images" + resolution + "\\openGoldChest.jpg",
-				".\\images" + resolution + "\\openMagicChest.jpg",
-				".\\images" + resolution + "\\collectingMagicChest.jpg",
-				".\\images" + resolution + "\\collectedMagicChest.jpg",
-				".\\images" + resolution + "\\collectingSilverChest.jpg",
-				".\\images" + resolution + "\\collectedSilverChest.jpg");
+		imageStore = new ImageStore(resolution);
 		
 		robot.delay(10000);
 		checkGameStatus();
