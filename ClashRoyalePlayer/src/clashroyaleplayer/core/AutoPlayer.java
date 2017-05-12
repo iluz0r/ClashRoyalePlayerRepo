@@ -76,11 +76,11 @@ public class AutoPlayer{
 		
 		while(this.gameController.getGameStatus() != GameStatusController.GameStatus.UNKNOWN){
 		    this.gameController.checkGameStatus();
-			switch(this.gameController.getGameStatus().toString()){
+			switch(gameController.getGameStatus()){
 			
-				case "UNKNOWN" : break;
+				case UNKNOWN : break;
 			
-				case "BATTLE_MENU" : {
+				case BATTLE_MENU : {
 					this.gameController.checkFirstChestStatus();
 					this.gameController.checkSecondChestStatus();
 					this.gameController.checkThirdChestStatus();
@@ -136,22 +136,22 @@ public class AutoPlayer{
 					break;
 				}
 				
-				case "TOURNAMENTS_MENU" : {
+				case TOURNAMENTS_MENU : {
 					actions.switchMenu("BATTLE_MENU");
 					break;
 				}
 				
-				case "SOCIAL_MENU" : {
+				case SOCIAL_MENU : {
 					actions.switchMenu("BATTLE_MENU");
 					break;
 				}
 				
-				case "SHOP_MENU" : {
+				case SHOP_MENU : {
 					actions.switchMenu("BATTLE_MENU");
 					break;
 				}
 				
-				case "CARDS_MENU" : {
+				case CARDS_MENU : {
 					actions.switchMenu("BATTLE_MENU");
 					break;
 				}
