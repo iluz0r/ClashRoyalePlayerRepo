@@ -1,10 +1,10 @@
-package autoPlayer;
+package clashroyaleplayer.core;
 
 import java.awt.AWTException;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
-public class ImageCapturer extends imageProcessing.ImageCapturer{
+public class ImageCapturer extends clashroyaleplayer.imageprocessing.ImageCapturer{
 	
 	private AutoPlayer autoPlayer;
 	

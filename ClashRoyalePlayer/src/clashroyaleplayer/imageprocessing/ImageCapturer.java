@@ -1,4 +1,4 @@
-package imageProcessing;
+package clashroyaleplayer.imageprocessing;
 
 import java.awt.AWTException;
 import java.awt.Rectangle;

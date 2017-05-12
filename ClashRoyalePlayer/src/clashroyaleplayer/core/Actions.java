@@ -1,4 +1,4 @@
-package autoPlayer;
+package clashroyaleplayer.core;
 
 import java.awt.AWTException;
 import java.awt.event.InputEvent;

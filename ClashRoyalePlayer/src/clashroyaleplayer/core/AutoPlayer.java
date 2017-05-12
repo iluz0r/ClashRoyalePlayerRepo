@@ -1,4 +1,4 @@
-package autoPlayer;
+package clashroyaleplayer.core;
 
 import java.awt.Robot;
 import java.io.FileOutputStream;

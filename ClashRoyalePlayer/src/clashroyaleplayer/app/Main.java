@@ -1,4 +1,4 @@
-package driver;
+package clashroyaleplayer.app;
 
 import java.awt.AWTException;
 import java.awt.MouseInfo;
@@ -10,12 +10,12 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import autoPlayer.AutoPlayer;
-import autoPlayer.ImageStore;
-import imageProcessing.ImageComparison;
-import imageProcessing.ImageCapturer;
+import clashroyaleplayer.core.AutoPlayer;
+import clashroyaleplayer.core.ImageStore;
+import clashroyaleplayer.imageprocessing.ImageCapturer;
+import clashroyaleplayer.imageprocessing.ImageComparison;
 
-public class Driver {
+public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		
@@ -121,10 +121,10 @@ public class Driver {
 		System.out.println("Lo stato in cui siamo è: " + status.toString() + "\n");
 		*/
 		
-		
+		/*
 		AutoPlayer player = new AutoPlayer();
 		player.start();
-		
+		*/
 		
 	}
 

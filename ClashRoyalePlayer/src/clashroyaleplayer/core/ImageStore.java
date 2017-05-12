@@ -1,4 +1,4 @@
-package autoPlayer;
+package clashroyaleplayer.core;
 
 import java.awt.image.BufferedImage;
 import java.io.File;

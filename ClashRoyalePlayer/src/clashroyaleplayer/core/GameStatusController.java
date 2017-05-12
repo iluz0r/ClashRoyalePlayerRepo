@@ -1,10 +1,10 @@
-package autoPlayer;
+package clashroyaleplayer.core;
 
 import java.awt.AWTException;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
-import imageProcessing.ImageComparison;
+import clashroyaleplayer.imageprocessing.ImageComparison;
 
 public class GameStatusController {
 	
