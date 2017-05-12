@@ -2,6 +2,7 @@ package autoPlayer;
 
 import java.awt.AWTException;
 import java.awt.image.BufferedImage;
+import java.io.File;
 
 import imageProcessing.ImageComparison;
 
@@ -38,7 +39,7 @@ public class GameStatusController {
 			this.autoPlayer = autoPlayer;
 			imageCapturer = new ImageCapturer(autoPlayer);
 			imageComparison = new ImageComparison();
-			imageStore = new ImageStore(autoPlayer);
+			imageStore = new ImageStore("." + File.separator + "images" + autoPlayer.resolutionToString() + File.separator);
 		}
 		
 		public GameStatus getGameStatus() {
