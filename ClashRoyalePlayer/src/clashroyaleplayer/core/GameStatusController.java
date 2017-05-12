@@ -113,6 +113,8 @@ public class GameStatusController {
 			BufferedImage okButton = imageStore.getOkButton();
 			BufferedImage lowBarArenaInfo = imageStore.getLowBarArenaInfo();
 			BufferedImage rewardLimitReached = imageStore.getRewardLimitReached();
+			
+			autoPlayer.actions.pointOutside();
 
 			if(imageComparison.imgEqual(emotesIcon, capturedEmotesIcon, 3)){
 				if(imageComparison.imgEqual(okButton, capturedOkButton, 3))
