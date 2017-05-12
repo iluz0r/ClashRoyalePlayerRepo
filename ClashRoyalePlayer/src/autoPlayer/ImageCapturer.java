@@ -284,23 +284,83 @@ public class ImageCapturer extends imageProcessing.ImageCapturer{
 	}
 	
 	public BufferedImage captureTournamentsMenu() throws AWTException {
-		
+
 		Rectangle captureRect = null;
-		
+
 		switch(autoPlayer.resolution){
-		
+
 		case R_1920X1080 : 
 			captureRect = new Rectangle(1038, 953, 182, 73);
 			break;
-		
+
 		case R_1366X768 : 
 			captureRect = new Rectangle(734, 661, 128, 65);
 			break;
-		
+
 		}
-		
+
 		BufferedImage capturedImage = captureImage(captureRect);
 		return capturedImage;
 	}
-	
+
+	public BufferedImage captureEmotesIcon() throws AWTException {
+
+		Rectangle captureRect = null;
+
+		switch(autoPlayer.resolution){
+
+		case R_1920X1080 : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
+
+		case R_1366X768 : 
+			captureRect = new Rectangle(485, 602, 42, 31);
+			break;
+
+		}
+
+		BufferedImage capturedImage = captureImage(captureRect);
+		return capturedImage;
+	}
+
+	public BufferedImage captureOkButton() throws AWTException {
+
+		Rectangle captureRect = null;
+
+		switch(autoPlayer.resolution){
+
+		case R_1920X1080 : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
+
+		case R_1366X768 : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
+
+		}
+
+		BufferedImage capturedImage = captureImage(captureRect);
+		return capturedImage;
+	}
+
+	public BufferedImage captureRewardLimitReached() throws AWTException {
+
+		Rectangle captureRect = null;
+
+		switch(autoPlayer.resolution){
+
+		case R_1920X1080 : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
+
+		case R_1366X768 : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
+
+		}
+
+		BufferedImage capturedImage = captureImage(captureRect);
+		return capturedImage;
+	}
+
 }
