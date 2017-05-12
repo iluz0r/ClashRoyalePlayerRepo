@@ -155,6 +155,11 @@ public class AutoPlayer{
 					actions.switchMenu("BATTLE_MENU");
 					break;
 				}
+				
+				case ARENA_INFO : {
+					actions.closeArenaInfo();
+					break;
+				}
 			
 			}
 		}
