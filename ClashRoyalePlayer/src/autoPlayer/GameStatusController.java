@@ -36,9 +36,9 @@ public class GameStatusController {
 		public GameStatusController(AutoPlayer autoPlayer) throws Exception{
 			
 			this.autoPlayer = autoPlayer;
-			imageCapturer = new ImageCapturer(autoPlayer.resolution);
+			imageCapturer = new ImageCapturer(autoPlayer);
 			imageComparison = new ImageComparison();
-			imageStore = new ImageStore(autoPlayer.resolution);
+			imageStore = new ImageStore(autoPlayer);
 		}
 		
 		public GameStatus getGameStatus() {

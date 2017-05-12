@@ -7,10 +7,14 @@ import java.io.PrintStream;
 
 public class AutoPlayer{
 	
+	public enum Resolution{
+		R_1920X1080, R_1366X768 
+	}
+	
 	protected Robot robot;
 	
-	protected String resolution;
-	protected final static String DEFAULT_RESOLUTION = "1920x1080";
+	protected Resolution resolution;
+	protected final static Resolution DEFAULT_RESOLUTION = Resolution.R_1920X1080;
 	
 	private String log = "";
 	private PrintStream writeLog;
@@ -18,13 +22,37 @@ public class AutoPlayer{
 	GameStatusController gameController = new GameStatusController(this);
 	Actions actions = new Actions(this);
 	
+	protected String resolutionToString(){
+		String resolutionToString = "";
+		switch(resolution){
+		case R_1920X1080 : {
+			resolutionToString = "1920x1080";
+			break;
+		}
+		case R_1366X768 : {
+			resolutionToString = "1366x768";
+			break;
+		}
+		}
+		return resolutionToString;
+	}
 	
-	public AutoPlayer(String screenResolution) throws Exception{
-		if(screenResolution == "1920x1080" || screenResolution == "1366x768")
-			this.resolution = screenResolution;
-		else
-			throw new Exception("Resolution mismatch");
+	public AutoPlayer(Resolution screenResolution) throws Exception{
 		
+		switch(screenResolution){
+		
+		case R_1366X768 : {
+			this.resolution = screenResolution;
+			break;
+		}
+		
+		case R_1920X1080 : {
+			this.resolution = screenResolution;
+			break;
+		}
+		
+		default : throw new Exception("Resolution mismatch");
+		}
 		updateLog("ScreenResolution: " + resolution);
 	}
 	

@@ -25,10 +25,10 @@ public class Actions {
 	
 	protected void tapBattleButton(){
 		switch(autoPlayer.resolution){
-		case "1920x1080" : 
+		case R_1920X1080 : 
 			this.tap(944, 668);
 			break;
-		case "1366x768" : 
+		case R_1366X768 : 
 			this.tap(661, 476);
 			break;
 		default: break;
@@ -37,10 +37,10 @@ public class Actions {
 	
 	protected void tapFirstChest(){
 		switch(autoPlayer.resolution){
-		case "1920x1080" : 
+		case R_1920X1080 : 
 			this.tap(739, 847);
 			break;
-		case "1366x768" : 
+		case R_1366X768 : 
 			this.tap(523, 600);
 			break;
 		default: break;
@@ -49,10 +49,10 @@ public class Actions {
 	
 	protected void tapSecondChest(){
 		switch(autoPlayer.resolution){
-		case "1920x1080" : 
+		case R_1920X1080 : 
 			this.tap(873, 847);
 			break;
-		case "1366x768" : 
+		case R_1366X768 : 
 			this.tap(619, 600);
 			break;
 		default: break;
@@ -61,10 +61,10 @@ public class Actions {
 	
 	protected void tapThirdChest(){
 		switch(autoPlayer.resolution){
-		case "1920x1080" : 
+		case R_1920X1080 : 
 			this.tap(1013, 847);
 			break;
-		case "1366x768" : 
+		case R_1366X768 : 
 			this.tap(716, 600);
 			break;
 		default: break;
@@ -73,10 +73,10 @@ public class Actions {
 	
 	protected void tapFourthChest(){
 		switch(autoPlayer.resolution){
-		case "1920x1080" : 
+		case R_1920X1080 : 
 			this.tap(1153, 847);
 			break;
-		case "1366x768" : 
+		case R_1366X768 : 
 			this.tap(808, 600);
 			break;
 		default: break;
@@ -85,10 +85,10 @@ public class Actions {
 	
 	protected void pointOutside(){
 		switch(autoPlayer.resolution){
-		case "1920x1080" : 
+		case R_1920X1080 : 
 			this.point(1400, 500);
 			break;
-		case "1366x768" : 
+		case R_1366X768 : 
 			this.point(1082, 305);
 			break;
 		default: break;
@@ -97,10 +97,10 @@ public class Actions {
 	
 	protected void tapCentre(){
 		switch(autoPlayer.resolution){
-		case "1920x1080" : 
+		case R_1920X1080 : 
 			this.tap(937, 465);
 			break;
-		case "1366x768" : 
+		case R_1366X768 : 
 			this.tap(661, 348);
 			break;
 		default: break;
@@ -109,10 +109,10 @@ public class Actions {
 	
 	protected void tapStartUnlock(){
 		switch(autoPlayer.resolution){
-		case "1920x1080" : 
+		case R_1920X1080 : 
 			this.tap(939, 684);
 			break;
-		case "1366x768" : 
+		case R_1366X768 : 
 			this.tap(0, 0);
 			break;
 		default: break;
@@ -121,10 +121,10 @@ public class Actions {
 	
 	protected void tapFreeChest(){
 		switch(autoPlayer.resolution){
-		case "1920x1080" : 
+		case R_1920X1080 : 
 			this.tap(811, 214);
 			break;
-		case "1366x768" : 
+		case R_1366X768 : 
 			this.tap(585, 159);
 			break;
 		default: break;
@@ -133,10 +133,10 @@ public class Actions {
 	
 	protected void tapCrownChest(){
 		switch(autoPlayer.resolution){
-		case "1920x1080" : 
+		case R_1920X1080 : 
 			this.tap(1070, 214);
 			break;
-		case "1366x768" : 
+		case R_1366X768 : 
 			this.tap(760, 161);
 			break;
 		default: break;
@@ -145,10 +145,10 @@ public class Actions {
 	
 	protected void tapBattleMenu(){
 		switch(autoPlayer.resolution){
-		case "1920x1080" : 
+		case R_1920X1080 : 
 			this.tap(945, 975);
 			break;
-		case "1366x768" : 
+		case R_1366X768 : 
 			this.tap(664, 697);
 			break;
 		default: break;
@@ -157,10 +157,10 @@ public class Actions {
 	
 	protected void tapCardsMenu() {
 		switch(autoPlayer.resolution){
-		case "1920x1080" : 
+		case R_1920X1080 : 
 			this.tap(861, 990);
 			break;
-		case "1366x768" : 
+		case R_1366X768 : 
 			this.tap(593, 708);
 			break;
 		default: break;
@@ -170,10 +170,10 @@ public class Actions {
 
 	protected void tapShopMenu() {
 		switch(autoPlayer.resolution){
-		case "1920x1080" : 
+		case R_1920X1080 : 
 			this.tap(685, 918);
 			break;
-		case "1366x768" : 
+		case R_1366X768 : 
 			this.tap(481, 699);
 			break;
 		default: break;
@@ -183,10 +183,10 @@ public class Actions {
 
 	protected void tapSocialMenu() {
 		switch(autoPlayer.resolution){
-		case "1920x1080" : 
+		case R_1920X1080 : 
 			this.tap(945, 975);
 			break;
-		case "1366x768" : 
+		case R_1366X768 : 
 			this.tap(729, 701);
 			break;
 		default: break;
@@ -196,10 +196,10 @@ public class Actions {
 
 	protected void tapTournamentsMenu() {
 		switch(autoPlayer.resolution){
-		case "1920x1080" : 
+		case R_1920X1080 : 
 			this.tap(1017, 1004);
 			break;
-		case "1366x768" : 
+		case R_1366X768 : 
 			this.tap(850, 694);
 			break;
 		default: break;
