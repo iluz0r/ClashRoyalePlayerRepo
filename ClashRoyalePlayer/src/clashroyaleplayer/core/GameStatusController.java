@@ -99,30 +99,50 @@ public class GameStatusController {
 			BufferedImage capturedSocialMenu = imageCapturer.captureSocialMenu();
 			BufferedImage capturedShopMenu = imageCapturer.captureShopMenu();
 			BufferedImage capturedCardsMenu = imageCapturer.captureCardsMenu();
+			BufferedImage capturedEmotesIcon = imageCapturer.captureEmotesIcon();
+			BufferedImage capturedOkButton = imageCapturer.captureOkButton();
+			BufferedImage capturedLowBarArenaInfo = imageCapturer.captureLowBarArenaInfo();
+			BufferedImage capturedRewardLimitReached = imageCapturer.captureRewardLimitReached();
 			
 			BufferedImage battleMenu = imageStore.getBattleMenu();
 			BufferedImage tournamentsMenu = imageStore.getTournamentsMenu();
 			BufferedImage socialMenu = imageStore.getSocialMenu();
 			BufferedImage shopMenu = imageStore.getShopMenu();
 			BufferedImage cardsMenu = imageStore.getCardsMenu();
-			
-			
-			if (imageComparison.imgEqual(battleMenu, capturedBattleMenu, 3)) 
-				gameStatus = GameStatus.BATTLE_MENU;
-			else
-				if(imageComparison.imgEqual(shopMenu, capturedShopMenu, 3)) 
-					gameStatus = GameStatus.SHOP_MENU;
+			BufferedImage emotesIcon = imageStore.getEmotesIcon();
+			BufferedImage okButton = imageStore.getOkButton();
+			BufferedImage lowBarArenaInfo = imageStore.getLowBarArenaInfo();
+			BufferedImage rewardLimitReached = imageStore.getRewardLimitReached();
+
+			if(imageComparison.imgEqual(emotesIcon, capturedEmotesIcon, 3)){
+				if(imageComparison.imgEqual(okButton, capturedOkButton, 3))
+					gameStatus = GameStatus.END_BATTLE;
 				else
-					if(imageComparison.imgEqual(socialMenu, capturedSocialMenu, 3)) 
-						gameStatus = GameStatus.SOCIAL_MENU;
+					gameStatus = GameStatus.IN_BATTLE;
+			}
+			else
+				if (imageComparison.imgEqual(battleMenu, capturedBattleMenu, 3)) 
+					gameStatus = GameStatus.BATTLE_MENU;
+				else
+					if(imageComparison.imgEqual(lowBarArenaInfo, capturedLowBarArenaInfo, 3))
+						gameStatus = GameStatus.ARENA_INFO;
 					else
-						if(imageComparison.imgEqual(tournamentsMenu, capturedTournamentsMenu, 3)) 
-							gameStatus = GameStatus.TOURNAMENTS_MENU;
+						if(imageComparison.imgEqual(rewardLimitReached, capturedRewardLimitReached, 3))
+							gameStatus = GameStatus.REWARD_LIMIT_REACHED;
 						else
-							if(imageComparison.imgEqual(cardsMenu, capturedCardsMenu, 3)) 
-								gameStatus = GameStatus.CARDS_MENU;
+							if(imageComparison.imgEqual(shopMenu, capturedShopMenu, 3)) 
+								gameStatus = GameStatus.SHOP_MENU;
 							else
-								gameStatus = GameStatus.UNKNOWN;
+								if(imageComparison.imgEqual(socialMenu, capturedSocialMenu, 3)) 
+									gameStatus = GameStatus.SOCIAL_MENU;
+								else
+									if(imageComparison.imgEqual(tournamentsMenu, capturedTournamentsMenu, 3)) 
+										gameStatus = GameStatus.TOURNAMENTS_MENU;
+									else
+										if(imageComparison.imgEqual(cardsMenu, capturedCardsMenu, 3)) 
+											gameStatus = GameStatus.CARDS_MENU;
+										else
+											gameStatus = GameStatus.UNKNOWN;
 			autoPlayer.updateLog("Action: check gameStatus, game state: " + gameStatus.toString());
 		}
 		
