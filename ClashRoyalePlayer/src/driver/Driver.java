@@ -11,9 +11,9 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import autoPlayer.AutoPlayer;
+import autoPlayer.ImageStore;
 import imageProcessing.ImageComparison;
 import imageProcessing.ImageCapturer;
-import imageProcessing.ImageStore;
 
 public class Driver {
 	

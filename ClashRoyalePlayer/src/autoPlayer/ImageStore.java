@@ -76,254 +76,252 @@ public class ImageStore {
 		
 	}
 	
-	public ImageStore(){
-	}
 	
-	public BufferedImage getBattleButton() {
+	protected BufferedImage getBattleButton() {
 		return battleButton;
 	}
 
-	public void setBattleButton(String battleButtonPath) throws IOException {
+	protected void setBattleButton(String battleButtonPath) throws IOException {
 		this.battleButton = ImageIO.read(new File(battleButtonPath));
 	}
 	
-	public BufferedImage getLockedSilverChest(){
+	protected BufferedImage getLockedSilverChest(){
 		return this.lockedSilverChest;
 	}
 	
-	public void setLockedSilverChest(String lockedSilverChestPath) throws IOException{
+	protected void setLockedSilverChest(String lockedSilverChestPath) throws IOException{
 		this.lockedSilverChest = ImageIO.read(new File(lockedSilverChestPath));
 	}
 	
-	public BufferedImage getEmptyChestSlot(){
+	protected BufferedImage getEmptyChestSlot(){
 		return this.emptyChestSlot;
 	}
 	
-	public void setEmptyChestSlot(String emptyChestSlotPath) throws IOException{
+	protected void setEmptyChestSlot(String emptyChestSlotPath) throws IOException{
 		this.emptyChestSlot = ImageIO.read(new File(emptyChestSlotPath));
 	}
 	
-	public BufferedImage getUnlockingSilverChest(){
+	protected BufferedImage getUnlockingSilverChest(){
 		return this.unlockingSilverChest;
 	}
 	
-	public void setUnlockingSilverChest(String unlockingSilverChestPath) throws IOException{
+	protected void setUnlockingSilverChest(String unlockingSilverChestPath) throws IOException{
 		this.unlockingSilverChest = ImageIO.read(new File(unlockingSilverChestPath));
 	}
 	
-	public BufferedImage getOpenSilverChest() {
+	protected BufferedImage getOpenSilverChest() {
 		return this.openSilverChest;
 	}
 	
-	public void setOpenSilverChest(String openSilverChestPath) throws IOException{
+	protected void setOpenSilverChest(String openSilverChestPath) throws IOException{
 		this.openSilverChest = ImageIO.read(new File(openSilverChestPath));
 	}
 	
-	public BufferedImage getOpenCrownChest() {
+	protected BufferedImage getOpenCrownChest() {
 		return this.openCrownChest;
 	}
 	
-	public void setOpenCrownChest(String openCrownChestPath) throws IOException{
+	protected void setOpenCrownChest(String openCrownChestPath) throws IOException{
 		this.openCrownChest = ImageIO.read(new File(openCrownChestPath));
 	}
 	
-	public BufferedImage getLockedCrownChest() {
+	protected BufferedImage getLockedCrownChest() {
 		return this.lockedCrownChest;
 	}
 	
-	public void setLockedCrownChest(String lockedCrownChestPath) throws IOException{
+	protected void setLockedCrownChest(String lockedCrownChestPath) throws IOException{
 		this.lockedCrownChest = ImageIO.read(new File(lockedCrownChestPath));
 	}
 	
-	public BufferedImage getLockedFreeChest() {
+	protected BufferedImage getLockedFreeChest() {
 		return this.lockedFreeChest;
 	}
 	
-	public void setLockedFreeChest(String lockedFreeChestPath) throws IOException{
+	protected void setLockedFreeChest(String lockedFreeChestPath) throws IOException{
 		this.lockedFreeChest = ImageIO.read(new File(lockedFreeChestPath));
 	}
 	
-	public BufferedImage getLockedGoldChest() {
+	protected BufferedImage getLockedGoldChest() {
 		return this.lockedGoldChest;
 	}
 	
-	public void setLockedGoldChest(String lockedGoldChestPath) throws IOException{
+	protected void setLockedGoldChest(String lockedGoldChestPath) throws IOException{
 		this.lockedGoldChest = ImageIO.read(new File(lockedGoldChestPath));
 	}
 	
-	public BufferedImage getOpenFreeChestx1() {
+	protected BufferedImage getOpenFreeChestx1() {
 		return this.openFreeChestx1;
 	}
 	
-	public void setOpenFreeChestx1(String openFreeChestx1Path) throws IOException{
+	protected void setOpenFreeChestx1(String openFreeChestx1Path) throws IOException{
 		this.openFreeChestx1 = ImageIO.read(new File(openFreeChestx1Path));
 	}
 	
-	public BufferedImage getUnlockingGoldChest() {
+	protected BufferedImage getUnlockingGoldChest() {
 		return this.unlockingGoldChest;
 	}
 	
-	public void setUnlockingGoldChest(String unlockingGoldChestPath) throws IOException{
+	protected void setUnlockingGoldChest(String unlockingGoldChestPath) throws IOException{
 		this.unlockingGoldChest = ImageIO.read(new File(unlockingGoldChestPath));
 	}
 	
-	public BufferedImage getOpenFreeChestx2() {
+	protected BufferedImage getOpenFreeChestx2() {
 		return this.openFreeChestx2;
 	}
 	
-	public void setOpenFreeChestx2(String openFreeChestx2Path) throws IOException{
+	protected void setOpenFreeChestx2(String openFreeChestx2Path) throws IOException{
 		this.openFreeChestx2 = ImageIO.read(new File(openFreeChestx2Path));
 	}
 
-	public BufferedImage getCollectingFreeChest() {
+	protected BufferedImage getCollectingFreeChest() {
 		return collectingFreeChest;
 	}
 
-	public void setCollectingFreeChest(String collectingFreeChestPath) throws IOException {
+	protected void setCollectingFreeChest(String collectingFreeChestPath) throws IOException {
 		this.collectingFreeChest = ImageIO.read(new File(collectingFreeChestPath));
 	}
 
-	public BufferedImage getCollectedFreeChest() {
+	protected BufferedImage getCollectedFreeChest() {
 		return collectedFreeChest;
 	}
 
-	public void setCollectedFreeChest(String collectedFreeChestPath) throws IOException {
+	protected void setCollectedFreeChest(String collectedFreeChestPath) throws IOException {
 		this.collectedFreeChest = ImageIO.read(new File(collectedFreeChestPath));
 	}
 
-	public BufferedImage getCollectingGoldChest() {
+	protected BufferedImage getCollectingGoldChest() {
 		return collectingGoldChest;
 	}
 
-	public void setCollectingGoldChest(String collectingGoldChestPath) throws IOException {
+	protected void setCollectingGoldChest(String collectingGoldChestPath) throws IOException {
 		this.collectingGoldChest = ImageIO.read(new File(collectingGoldChestPath));
 	}
 
-	public BufferedImage getCollectedGoldChest() {
+	protected BufferedImage getCollectedGoldChest() {
 		return collectedGoldChest;
 	}
 
-	public void setCollectedGoldChest(String collectedGoldChestPath) throws IOException {
+	protected void setCollectedGoldChest(String collectedGoldChestPath) throws IOException {
 		this.collectedGoldChest = ImageIO.read(new File(collectedGoldChestPath));
 	}
 
-	public BufferedImage getCollectingCrwonChest() {
+	protected BufferedImage getCollectingCrwonChest() {
 		return collectingCrwonChest;
 	}
 
-	public void setCollectingCrwonChest(String collectingCrwonChestPath) throws IOException {
+	protected void setCollectingCrwonChest(String collectingCrwonChestPath) throws IOException {
 		this.collectingCrwonChest = ImageIO.read(new File(collectingCrwonChestPath));
 	}
 
-	public BufferedImage getCollectedCrownChest() {
+	protected BufferedImage getCollectedCrownChest() {
 		return collectedCrownChest;
 	}
 
-	public void setCollectedCrownChest(String collectedCrownChestPath) throws IOException {
+	protected void setCollectedCrownChest(String collectedCrownChestPath) throws IOException {
 		this.collectedCrownChest = ImageIO.read(new File(collectedCrownChestPath));
 	}
 
-	public BufferedImage getBattleMenu() {
+	protected BufferedImage getBattleMenu() {
 		return battleMenu;
 	}
 
-	public void setBattleMenu(String battleMenuPath) throws IOException {
+	protected void setBattleMenu(String battleMenuPath) throws IOException {
 		this.battleMenu = ImageIO.read(new File(battleMenuPath));
 	}
 
-	public BufferedImage getCardsMenu() {
+	protected BufferedImage getCardsMenu() {
 		return cardsMenu;
 	}
 
-	public void setCardsMenu(String cardsMenuPath) throws IOException {
+	protected void setCardsMenu(String cardsMenuPath) throws IOException {
 		this.cardsMenu = ImageIO.read(new File(cardsMenuPath));
 	}
 
-	public BufferedImage getShopMenu() {
+	protected BufferedImage getShopMenu() {
 		return shopMenu;
 	}
 
-	public void setShopMenu(String shopMenuPath) throws IOException {
+	protected void setShopMenu(String shopMenuPath) throws IOException {
 		this.shopMenu = ImageIO.read(new File(shopMenuPath));
 	}
 
-	public BufferedImage getSocialMenu() {
+	protected BufferedImage getSocialMenu() {
 		return socialMenu;
 	}
 
-	public void setSocialMenu(String socialMenuPath) throws IOException {
+	protected void setSocialMenu(String socialMenuPath) throws IOException {
 		this.socialMenu = ImageIO.read(new File(socialMenuPath));
 	}
 
-	public BufferedImage getTournamentsMenu() {
+	protected BufferedImage getTournamentsMenu() {
 		return tournamentsMenu;
 	}
 
-	public void setTournamentsMenu(String tournamentsMenuPath) throws IOException {
+	protected void setTournamentsMenu(String tournamentsMenuPath) throws IOException {
 		this.tournamentsMenu = ImageIO.read(new File(tournamentsMenuPath));
 	}
 
-	public BufferedImage getLockedMagicChest() {
+	protected BufferedImage getLockedMagicChest() {
 		return lockedMagicChest;
 	}
 
-	public void setLockedMagicChest(String lockedMagicChestPath) throws IOException {
+	protected void setLockedMagicChest(String lockedMagicChestPath) throws IOException {
 		this.lockedMagicChest = ImageIO.read(new File(lockedMagicChestPath));
 	}
 
-	public BufferedImage getUnlockingMagicChest() {
+	protected BufferedImage getUnlockingMagicChest() {
 		return unlockingMagicChest;
 	}
 
-	public void setUnlockingMagicChest(String unlockingMagicChestPath) throws IOException {
+	protected void setUnlockingMagicChest(String unlockingMagicChestPath) throws IOException {
 		this.unlockingMagicChest = ImageIO.read(new File(unlockingMagicChestPath));
 	}
 
-	public BufferedImage getOpenGoldChest() {
+	protected BufferedImage getOpenGoldChest() {
 		return openGoldChest;
 	}
 
-	public void setOpenGoldChest(String openGoldChestPath) throws IOException {
+	protected void setOpenGoldChest(String openGoldChestPath) throws IOException {
 		this.openGoldChest = ImageIO.read(new File(openGoldChestPath));
 	}
 
-	public BufferedImage getOpenMagicChest() {
+	protected BufferedImage getOpenMagicChest() {
 		return openMagicChest;
 	}
 
-	public void setOpenMagicChest(String openMagicChestPath) throws IOException {
+	protected void setOpenMagicChest(String openMagicChestPath) throws IOException {
 		this.openMagicChest = ImageIO.read(new File(openMagicChestPath));
 	}
 
-	public BufferedImage getCollectingMagicChest() {
+	protected BufferedImage getCollectingMagicChest() {
 		return collectingMagicChest;
 	}
 
-	public void setCollectingMagicChest(String collectingMagicChestPath) throws IOException {
+	protected void setCollectingMagicChest(String collectingMagicChestPath) throws IOException {
 		this.collectingMagicChest = ImageIO.read(new File(collectingMagicChestPath));
 	}
 
-	public BufferedImage getCollectedMagicChest() {
+	protected BufferedImage getCollectedMagicChest() {
 		return collectedMagicChest;
 	}
 
-	public void setCollectedMagicChest(String collectedMagicChestPath) throws IOException {
+	protected void setCollectedMagicChest(String collectedMagicChestPath) throws IOException {
 		this.collectedMagicChest = ImageIO.read(new File(collectedMagicChestPath));
 	}
 
-	public BufferedImage getCollectingSilverChest() {
+	protected BufferedImage getCollectingSilverChest() {
 		return collectingSilverChest;
 	}
 
-	public void setCollectingSilverChest(String collectingSilverChestPath) throws IOException {
+	protected void setCollectingSilverChest(String collectingSilverChestPath) throws IOException {
 		this.collectingSilverChest = ImageIO.read(new File(collectingSilverChestPath));
 	}
 
-	public BufferedImage getCollectedSilverChest() {
+	protected BufferedImage getCollectedSilverChest() {
 		return collectedSilverChest;
 	}
 
-	public void setCollectedSilverChest(String collectedSilverChestPath) throws IOException {
+	protected void setCollectedSilverChest(String collectedSilverChestPath) throws IOException {
 		this.collectedSilverChest = ImageIO.read(new File(collectedSilverChestPath));
 	}
 }
