@@ -14,7 +14,8 @@ public class GameStatusController {
 	private AutoPlayer autoPlayer;
 	
 	public static enum GameStatus {
-		BATTLE_MENU, TOURNAMENTS_MENU, SOCIAL_MENU, SHOP_MENU, CARDS_MENU, BATTLE, ARENA_INFO, UNKNOWN
+		BATTLE_MENU, TOURNAMENTS_MENU, SOCIAL_MENU, SHOP_MENU, CARDS_MENU,
+		IN_BATTLE, END_BATTLE, ARENA_INFO, REWARD_LIMIT_REACHED, UNKNOWN
 	    }
 
 	    public static enum ChestStatus {
