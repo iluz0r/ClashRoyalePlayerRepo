@@ -3,6 +3,7 @@ package clashroyaleplayer.app;
 import java.awt.AWTException;
 import java.awt.MouseInfo;
 import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -69,8 +70,9 @@ public class Main {
 		Robot robot = new Robot();
 		ImageCapturer imageCapturer = new ImageCapturer();
 		robot.delay(10000);
-		BufferedImage image = imageCapturer.captureCollectedChest();
-		imageCapturer.saveImage(image, "collectedSilverChest", "jpg");
+		Rectangle captureRect = new Rectangle(662, 936, 558, 92);
+		BufferedImage image = imageCapturer.captureImage(captureRect);
+		imageCapturer.saveImage(image, ".\\images1920x1080\\" ,"lowBarArenaInfo", "jpg");
 		*/
 		
 		/*

@@ -203,7 +203,7 @@ public class ImageCapturer extends clashroyaleplayer.imageprocessing.ImageCaptur
 		return capturedImage;
 	}
 	
-	public BufferedImage captureBattleMenu() throws AWTException {
+	protected BufferedImage captureBattleMenu() throws AWTException {
 		
 		Rectangle captureRect = null;
 		
@@ -223,7 +223,7 @@ public class ImageCapturer extends clashroyaleplayer.imageprocessing.ImageCaptur
 		return capturedImage;
 	}
 	
-	public BufferedImage captureCardsMenu() throws AWTException {
+	protected BufferedImage captureCardsMenu() throws AWTException {
 		
 		Rectangle captureRect = null;
 		
@@ -243,7 +243,7 @@ public class ImageCapturer extends clashroyaleplayer.imageprocessing.ImageCaptur
 		return capturedImage;
 	}
 	
-	public BufferedImage captureShopMenu() throws AWTException {
+	protected BufferedImage captureShopMenu() throws AWTException {
 		
 		Rectangle captureRect = null;
 		
@@ -263,7 +263,7 @@ public class ImageCapturer extends clashroyaleplayer.imageprocessing.ImageCaptur
 		return capturedImage;
 	}
 	
-	public BufferedImage captureSocialMenu() throws AWTException {
+	protected BufferedImage captureSocialMenu() throws AWTException {
 		
 		Rectangle captureRect = null;
 		
@@ -283,7 +283,7 @@ public class ImageCapturer extends clashroyaleplayer.imageprocessing.ImageCaptur
 		return capturedImage;
 	}
 	
-	public BufferedImage captureTournamentsMenu() throws AWTException {
+	protected BufferedImage captureTournamentsMenu() throws AWTException {
 
 		Rectangle captureRect = null;
 
@@ -303,14 +303,14 @@ public class ImageCapturer extends clashroyaleplayer.imageprocessing.ImageCaptur
 		return capturedImage;
 	}
 
-	public BufferedImage captureEmotesIcon() throws AWTException {
+	protected BufferedImage captureEmotesIcon() throws AWTException {
 
 		Rectangle captureRect = null;
 
 		switch(autoPlayer.resolution){
 
 		case R_1920X1080 : 
-			captureRect = new Rectangle(0, 0, 0, 0);
+			captureRect = new Rectangle(686, 854, 53, 36);
 			break;
 
 		case R_1366X768 : 
@@ -323,7 +323,27 @@ public class ImageCapturer extends clashroyaleplayer.imageprocessing.ImageCaptur
 		return capturedImage;
 	}
 
-	public BufferedImage captureOkButton() throws AWTException {
+	protected BufferedImage captureOkButton() throws AWTException {
+
+		Rectangle captureRect = null;
+
+		switch(autoPlayer.resolution){
+
+		case R_1920X1080 : 
+			captureRect = new Rectangle(876, 881, 130, 57);
+			break;
+
+		case R_1366X768 : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
+
+		}
+
+		BufferedImage capturedImage = captureImage(captureRect);
+		return capturedImage;
+	}
+
+	protected BufferedImage captureRewardLimitReached() throws AWTException {
 
 		Rectangle captureRect = null;
 
@@ -342,15 +362,15 @@ public class ImageCapturer extends clashroyaleplayer.imageprocessing.ImageCaptur
 		BufferedImage capturedImage = captureImage(captureRect);
 		return capturedImage;
 	}
-
-	public BufferedImage captureRewardLimitReached() throws AWTException {
+	
+	protected BufferedImage captureLowBarArenaInfo() throws AWTException {
 
 		Rectangle captureRect = null;
 
 		switch(autoPlayer.resolution){
 
 		case R_1920X1080 : 
-			captureRect = new Rectangle(0, 0, 0, 0);
+			captureRect = new Rectangle(662, 936, 558, 92);
 			break;
 
 		case R_1366X768 : 

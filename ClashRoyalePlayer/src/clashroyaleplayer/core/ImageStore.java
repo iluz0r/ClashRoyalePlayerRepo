@@ -39,6 +39,10 @@ public class ImageStore {
 	private BufferedImage collectedMagicChest;
 	private BufferedImage collectingSilverChest;
 	private BufferedImage collectedSilverChest;
+	private BufferedImage emotesIcon;
+	private BufferedImage okButton;
+	private BufferedImage lowBarArenaInfo;
+	private BufferedImage rewardLimitReached;
 	
 	public ImageStore(String basePath) throws IOException {
 		
@@ -73,6 +77,10 @@ public class ImageStore {
 		this.setCollectedMagicChest(basePath + "collectedMagicChest.jpg");
 		this.setCollectingSilverChest(basePath + "collectingSilverChest.jpg");
 		this.setCollectedSilverChest(basePath + "collectedSilverChest.jpg");
+		this.setEmotesIcon(basePath + "emotesIcon");
+		this.setOkButton(basePath + "okButton");
+		this.setLowBarArenaInfo(basePath + "lowBarArenaInfo");
+		this.setRewardLimitReached(basePath + "rewardLimitReached");
 		
 	}
 	
@@ -323,5 +331,45 @@ public class ImageStore {
 
 	protected void setCollectedSilverChest(String collectedSilverChestPath) throws IOException {
 		this.collectedSilverChest = ImageIO.read(new File(collectedSilverChestPath));
+	}
+
+
+	protected BufferedImage getEmotesIcon() {
+		return emotesIcon;
+	}
+
+
+	protected void setEmotesIcon(String emotesIconPath) throws IOException {
+		this.emotesIcon = ImageIO.read(new File(emotesIconPath));
+	}
+
+
+	protected BufferedImage getOkButton() {
+		return okButton;
+	}
+
+
+	protected void setOkButton(String okButtonPath) throws IOException {
+		this.okButton = ImageIO.read(new File(okButtonPath));
+	}
+
+
+	protected BufferedImage getLowBarArenaInfo() {
+		return lowBarArenaInfo;
+	}
+
+
+	protected void setLowBarArenaInfo(String lowBarArenaInfoPath) throws IOException {
+		this.lowBarArenaInfo = ImageIO.read(new File(lowBarArenaInfoPath));
+	}
+
+
+	protected BufferedImage getRewardLimitReached() {
+		return rewardLimitReached;
+	}
+
+
+	protected void setRewardLimitReached(String rewardLimitReachedPath) throws IOException {
+		this.rewardLimitReached = ImageIO.read(new File(rewardLimitReachedPath));
 	}
 }
