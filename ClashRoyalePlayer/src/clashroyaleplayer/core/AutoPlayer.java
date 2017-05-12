@@ -160,6 +160,11 @@ public class AutoPlayer{
 					actions.closeArenaInfo();
 					break;
 				}
+				
+				case END_BATTLE : {
+					actions.closeBattle();
+					break;
+				}
 			
 			}
 		}

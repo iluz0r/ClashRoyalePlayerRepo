@@ -75,13 +75,13 @@ public class Main {
 		imageCapturer.saveImage(image, ".\\images1920x1080\\" ,"lowBarArenaInfo", "jpg");
 		*/
 		
-		/*
+	
 		//get pointed coord
 		Robot robot = new Robot();
 		robot.delay(10000);
 		Point coord = MouseInfo.getPointerInfo().getLocation();
 		System.out.println("X: " + coord.getX() + " Y: " + coord.getY());
-		*/
+		
 		
 		/*
 		robot.delay(10000);

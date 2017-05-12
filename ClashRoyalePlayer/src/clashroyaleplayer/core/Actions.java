@@ -218,6 +218,18 @@ public class Actions {
 		}	
 	}
 	
+	protected void tapOkButton() {
+		switch(autoPlayer.resolution){
+		case R_1920X1080 : 
+			this.tap(944, 908);
+			break;
+		case R_1366X768 : 
+			this.tap(0, 0);
+			break;
+		default: break;
+		}	
+	}
+	
 	protected void openFirstChest() throws AWTException{
 		tapFirstChest();
 		autoPlayer.updateLog("Action: open first chest");
@@ -376,9 +388,16 @@ public class Actions {
 		}
 	}
 
-	public void closeArenaInfo() {
+	protected void closeArenaInfo() {
 		autoPlayer.robot.delay(2000);
 		tapCloseArenaInfoButton();
+		autoPlayer.robot.delay(2000);
+	}
+	
+	protected void closeBattle(){
+		autoPlayer.robot.delay(2000);		
+		tapOkButton();
+		autoPlayer.robot.delay(2000);
 	}
 
 }
