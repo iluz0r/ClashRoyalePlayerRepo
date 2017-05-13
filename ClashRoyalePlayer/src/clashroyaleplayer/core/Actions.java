@@ -405,30 +405,27 @@ public class Actions {
 	protected void closeArenaInfo() {
 		autoPlayer.robot.delay(2000);
 		tapCloseArenaInfoButton();
-		autoPlayer.robot.delay(2000);
+		autoPlayer.robot.delay(5000);
 		autoPlayer.updateLog("Action: closeArenaInfo");
 	}
 	
 	protected void closeBattle(){
 		autoPlayer.robot.delay(2000);		
 		tapOkButton();
-		autoPlayer.robot.delay(2000);
+		autoPlayer.robot.delay(5000);
 		autoPlayer.updateLog("Action: closeBattle");
 	}
 	
 	protected void startBattle(){
+		autoPlayer.robot.delay(2000);
 		switch(autoPlayer.gameController.gameStatus){
 		case BATTLE_MENU : {
-			autoPlayer.robot.delay(2000);
 			tapBattleButton();
-			autoPlayer.robot.delay(2000);
 			break;
 		}
 		
 		case REWARD_LIMIT_REACHED : {
-			autoPlayer.robot.delay(2000);
 			tapYesButton();
-			autoPlayer.robot.delay(2000);
 			break;
 		}
 		
@@ -436,6 +433,7 @@ public class Actions {
 
 		}
 		autoPlayer.updateLog("Action: startBattle");
+		autoPlayer.robot.delay(10000);
 	}
 	
 

@@ -119,7 +119,7 @@ public class AutoPlayer{
 							this.gameController.getFirstChestStatus() != GameStatusController.ChestStatus.UNLOCKING &&
 							this.gameController.getSecondChestStatus() != GameStatusController.ChestStatus.UNLOCKING &&
 							this.gameController.getThirdChestStatus() != GameStatusController.ChestStatus.UNLOCKING &&
-								this.gameController.getFourthChestStatus() != GameStatusController.ChestStatus.UNLOCKING)
+							this.gameController.getFourthChestStatus() != GameStatusController.ChestStatus.UNLOCKING)
 					{
 						if(this.gameController.getFirstChestStatus() == GameStatusController.ChestStatus.LOCKED)
 							actions.unlockFirstChest();
@@ -132,10 +132,10 @@ public class AutoPlayer{
 								else
 									if(this.gameController.getFourthChestStatus() == GameStatusController.ChestStatus.LOCKED)
 										actions.unlockFourthChest();
+						break;
 					}
 					
-					robot.delay(3000);
-					this.gameController.checkGameStatus();
+					actions.startBattle();
 					break;
 				}
 				
@@ -175,7 +175,8 @@ public class AutoPlayer{
 				}
 				
 				case IN_BATTLE : {
-					robot.delay(120000);
+					updateLog("Action: waiting one minute");
+					robot.delay(60000);
 					break;
 				}
 			
