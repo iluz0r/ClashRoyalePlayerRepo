@@ -406,12 +406,14 @@ public class Actions {
 		autoPlayer.robot.delay(2000);
 		tapCloseArenaInfoButton();
 		autoPlayer.robot.delay(2000);
+		autoPlayer.updateLog("Action: closeArenaInfo");
 	}
 	
 	protected void closeBattle(){
 		autoPlayer.robot.delay(2000);		
 		tapOkButton();
 		autoPlayer.robot.delay(2000);
+		autoPlayer.updateLog("Action: closeBattle");
 	}
 	
 	protected void startBattle(){
@@ -431,7 +433,10 @@ public class Actions {
 		}
 		
 		default : break;
+
 		}
+		autoPlayer.updateLog("Action: startBattle");
 	}
+	
 
 }

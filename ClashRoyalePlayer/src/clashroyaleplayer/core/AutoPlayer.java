@@ -19,23 +19,8 @@ public class AutoPlayer{
 	private String log = "";
 	private PrintStream writeLog;
 	
-	GameStatusController gameController = new GameStatusController(this);
-	Actions actions = new Actions(this);
-	
-	protected String resolutionToString(){
-		String resolutionToString = "";
-		switch(resolution){
-		case R_1920X1080 : {
-			resolutionToString = "1920x1080";
-			break;
-		}
-		case R_1366X768 : {
-			resolutionToString = "1366x768";
-			break;
-		}
-		}
-		return resolutionToString;
-	}
+	GameStatusController gameController;
+	Actions actions;
 	
 	public AutoPlayer(Resolution screenResolution) throws Exception{
 		
@@ -54,12 +39,30 @@ public class AutoPlayer{
 		default : throw new Exception("Resolution mismatch");
 		}
 		updateLog("ScreenResolution: " + resolution);
+		
+		gameController = new GameStatusController(this);
+		actions = new Actions(this);
 	}
 	
 	public AutoPlayer() throws Exception{
 		this(DEFAULT_RESOLUTION);
 	}
 
+	protected String resolutionToString(){
+		String resolutionToString = "";
+		switch(resolution){
+		case R_1920X1080 : {
+			resolutionToString = "1920x1080";
+			break;
+		}
+		case R_1366X768 : {
+			resolutionToString = "1366x768";
+			break;
+		}
+		}
+		return resolutionToString;
+	}
+	
 	private void init() throws Exception{
 		robot = new Robot();
 		
