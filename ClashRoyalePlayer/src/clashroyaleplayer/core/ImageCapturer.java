@@ -350,7 +350,7 @@ public class ImageCapturer extends clashroyaleplayer.imageprocessing.ImageCaptur
 		switch(autoPlayer.resolution){
 
 		case R_1920X1080 : 
-			captureRect = new Rectangle(0, 0, 0, 0);
+			captureRect = new Rectangle(690, 338, 501, 389);
 			break;
 
 		case R_1366X768 : 
@@ -371,6 +371,26 @@ public class ImageCapturer extends clashroyaleplayer.imageprocessing.ImageCaptur
 
 		case R_1920X1080 : 
 			captureRect = new Rectangle(662, 936, 558, 92);
+			break;
+
+		case R_1366X768 : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
+
+		}
+
+		BufferedImage capturedImage = captureImage(captureRect);
+		return capturedImage;
+	}
+	
+	protected BufferedImage captureRewardLimitReachedMini() throws AWTException {
+
+		Rectangle captureRect = null;
+
+		switch(autoPlayer.resolution){
+
+		case R_1920X1080 : 
+			captureRect = new Rectangle(868, 441, 142, 105);
 			break;
 
 		case R_1366X768 : 

@@ -102,7 +102,7 @@ public class GameStatusController {
 			BufferedImage capturedEmotesIcon = imageCapturer.captureEmotesIcon();
 			BufferedImage capturedOkButton = imageCapturer.captureOkButton();
 			BufferedImage capturedLowBarArenaInfo = imageCapturer.captureLowBarArenaInfo();
-			BufferedImage capturedRewardLimitReached = imageCapturer.captureRewardLimitReached();
+			BufferedImage capturedRewardLimitReachedMini = imageCapturer.captureRewardLimitReachedMini();
 			
 			BufferedImage battleMenu = imageStore.getBattleMenu();
 			BufferedImage tournamentsMenu = imageStore.getTournamentsMenu();
@@ -112,7 +112,7 @@ public class GameStatusController {
 			BufferedImage emotesIcon = imageStore.getEmotesIcon();
 			BufferedImage okButton = imageStore.getOkButton();
 			BufferedImage lowBarArenaInfo = imageStore.getLowBarArenaInfo();
-			BufferedImage rewardLimitReached = imageStore.getRewardLimitReached();
+			BufferedImage rewardLimitReachedMini = imageStore.getRewardLimitReachedMini();
 			
 			autoPlayer.actions.pointOutside();
 
@@ -129,7 +129,7 @@ public class GameStatusController {
 					if(imageComparison.imgEqual(lowBarArenaInfo, capturedLowBarArenaInfo, 3))
 						gameStatus = GameStatus.ARENA_INFO;
 					else
-						if(imageComparison.imgEqual(rewardLimitReached, capturedRewardLimitReached, 3))
+						if(imageComparison.imgEqual(rewardLimitReachedMini, capturedRewardLimitReachedMini, 3))
 							gameStatus = GameStatus.REWARD_LIMIT_REACHED;
 						else
 							if(imageComparison.imgEqual(shopMenu, capturedShopMenu, 3)) 

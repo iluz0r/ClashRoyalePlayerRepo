@@ -43,6 +43,9 @@ public class ImageStore {
 	private BufferedImage okButton;
 	private BufferedImage lowBarArenaInfo;
 	private BufferedImage rewardLimitReached;
+	private BufferedImage rewardLimitReachedMini;
+	private BufferedImage lockedLegendaryChest;
+	private BufferedImage unlockingLegendaryChest;
 	
 	public ImageStore(String basePath) throws IOException {
 		
@@ -77,10 +80,13 @@ public class ImageStore {
 		this.setCollectedMagicChest(basePath + "collectedMagicChest.jpg");
 		this.setCollectingSilverChest(basePath + "collectingSilverChest.jpg");
 		this.setCollectedSilverChest(basePath + "collectedSilverChest.jpg");
-		this.setEmotesIcon(basePath + "emotesIcon");
-		this.setOkButton(basePath + "okButton");
-		this.setLowBarArenaInfo(basePath + "lowBarArenaInfo");
-		this.setRewardLimitReached(basePath + "rewardLimitReached");
+		this.setEmotesIcon(basePath + "emotesIcon.jpg");
+		this.setOkButton(basePath + "okButton.jpg");
+		this.setLowBarArenaInfo(basePath + "lowBarArenaInfo.jpg");
+		this.setRewardLimitReached(basePath + "rewardLimitReached.jpg");
+		this.setRewardLimitReachedMini(basePath + "rewardLimitReachedMini.jpg");
+		this.setLockedLegendaryChest(basePath + "lockedLegendaryChest.jpg");
+		this.setUnlockingLegendaryChest(basePath + "unlockingLegendaryChest.jpg");
 		
 	}
 	
@@ -371,5 +377,35 @@ public class ImageStore {
 
 	protected void setRewardLimitReached(String rewardLimitReachedPath) throws IOException {
 		this.rewardLimitReached = ImageIO.read(new File(rewardLimitReachedPath));
+	}
+
+
+	protected BufferedImage getRewardLimitReachedMini() {
+		return rewardLimitReachedMini;
+	}
+
+
+	protected void setRewardLimitReachedMini(String rewardLimitReachedMiniPath) throws IOException {
+		this.rewardLimitReachedMini = ImageIO.read(new File(rewardLimitReachedMiniPath));
+	}
+
+
+	protected BufferedImage getLockedLegendaryChest() {
+		return lockedLegendaryChest;
+	}
+
+
+	protected void setLockedLegendaryChest(String lockedLegendaryChestPath) throws IOException {
+		this.lockedLegendaryChest = ImageIO.read(new File(lockedLegendaryChestPath));
+	}
+
+
+	protected BufferedImage getUnlockingLegendaryChest() {
+		return unlockingLegendaryChest;
+	}
+
+
+	protected void setUnlockingLegendaryChest(String unlockingLegendaryChestPath) throws IOException {
+		this.unlockingLegendaryChest = ImageIO.read(new File(unlockingLegendaryChestPath));
 	}
 }

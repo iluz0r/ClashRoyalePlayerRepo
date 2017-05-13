@@ -165,6 +165,16 @@ public class AutoPlayer{
 					actions.closeBattle();
 					break;
 				}
+				
+				case REWARD_LIMIT_REACHED: {
+					actions.startBattle();
+					break;
+				}
+				
+				case IN_BATTLE : {
+					robot.delay(120000);
+					break;
+				}
 			
 			}
 		}

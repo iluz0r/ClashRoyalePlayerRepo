@@ -70,18 +70,18 @@ public class Main {
 		Robot robot = new Robot();
 		ImageCapturer imageCapturer = new ImageCapturer();
 		robot.delay(10000);
-		Rectangle captureRect = new Rectangle(662, 936, 558, 92);
+		Rectangle captureRect = new Rectangle(775, 390, 120, 96);
 		BufferedImage image = imageCapturer.captureImage(captureRect);
-		imageCapturer.saveImage(image, ".\\images1920x1080\\" ,"lowBarArenaInfo", "jpg");
+		imageCapturer.saveImage(image, ".\\images1366x768\\" ,"rewardLimitReachedMini", "jpg");
 		*/
 		
-	
+		/*
 		//get pointed coord
 		Robot robot = new Robot();
 		robot.delay(10000);
 		Point coord = MouseInfo.getPointerInfo().getLocation();
 		System.out.println("X: " + coord.getX() + " Y: " + coord.getY());
-		
+		*/
 		
 		/*
 		robot.delay(10000);

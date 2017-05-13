@@ -218,6 +218,20 @@ public class Actions {
 		}	
 	}
 	
+	//reward limit reached status
+	protected void tapYesButton() {
+		switch(autoPlayer.resolution){
+		case R_1920X1080 : 
+			this.tap(939, 662);
+			break;
+		case R_1366X768 : 
+			this.tap(0, 0);
+			break;
+		default: break;
+		}	
+	}
+	
+	//end battle status
 	protected void tapOkButton() {
 		switch(autoPlayer.resolution){
 		case R_1920X1080 : 
@@ -398,6 +412,26 @@ public class Actions {
 		autoPlayer.robot.delay(2000);		
 		tapOkButton();
 		autoPlayer.robot.delay(2000);
+	}
+	
+	protected void startBattle(){
+		switch(autoPlayer.gameController.gameStatus){
+		case BATTLE_MENU : {
+			autoPlayer.robot.delay(2000);
+			tapBattleButton();
+			autoPlayer.robot.delay(2000);
+			break;
+		}
+		
+		case REWARD_LIMIT_REACHED : {
+			autoPlayer.robot.delay(2000);
+			tapYesButton();
+			autoPlayer.robot.delay(2000);
+			break;
+		}
+		
+		default : break;
+		}
 	}
 
 }
