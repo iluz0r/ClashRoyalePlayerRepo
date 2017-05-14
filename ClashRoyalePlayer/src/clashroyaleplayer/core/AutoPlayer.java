@@ -5,6 +5,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 
+import clashroyaleplayer.core.Actions.CardPosition;
+import clashroyaleplayer.core.Actions.FieldPosition;
+
 public class AutoPlayer{
 	
 	public enum Resolution{

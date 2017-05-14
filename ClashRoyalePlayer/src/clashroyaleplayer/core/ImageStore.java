@@ -46,6 +46,7 @@ public class ImageStore {
 	private BufferedImage rewardLimitReachedMini;
 	private BufferedImage lockedLegendaryChest;
 	private BufferedImage unlockingLegendaryChest;
+	private BufferedImage openLegendaryChest;
 	
 	public ImageStore(String basePath) throws IOException {
 		
@@ -87,6 +88,7 @@ public class ImageStore {
 		this.setRewardLimitReachedMini(basePath + "rewardLimitReachedMini.jpg");
 		this.setLockedLegendaryChest(basePath + "lockedLegendaryChest.jpg");
 		this.setUnlockingLegendaryChest(basePath + "unlockingLegendaryChest.jpg");
+		this.setOpenLegendaryChest(basePath + "openLegendaryChest.jpg");
 		
 	}
 	
@@ -407,5 +409,15 @@ public class ImageStore {
 
 	protected void setUnlockingLegendaryChest(String unlockingLegendaryChestPath) throws IOException {
 		this.unlockingLegendaryChest = ImageIO.read(new File(unlockingLegendaryChestPath));
+	}
+
+
+	protected BufferedImage getOpenLegendaryChest() {
+		return openLegendaryChest;
+	}
+
+
+	protected void setOpenLegendaryChest(String openLegendaryChestPath) throws IOException {
+		this.openLegendaryChest = ImageIO.read(new File(openLegendaryChestPath));
 	}
 }

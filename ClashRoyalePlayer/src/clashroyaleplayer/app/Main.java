@@ -70,9 +70,9 @@ public class Main {
 		Robot robot = new Robot();
 		ImageCapturer imageCapturer = new ImageCapturer();
 		robot.delay(10000);
-		Rectangle captureRect = new Rectangle(775, 390, 120, 96);
+		Rectangle captureRect = new Rectangle(588, 404, 143, 127);
 		BufferedImage image = imageCapturer.captureImage(captureRect);
-		imageCapturer.saveImage(image, ".\\images1366x768\\" ,"rewardLimitReachedMini", "jpg");
+		imageCapturer.saveImage(image, ".\\images1366x768\\" ,"collectingLegendaryChest", "jpg");
 		*/
 		
 		/*

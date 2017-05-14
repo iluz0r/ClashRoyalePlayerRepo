@@ -444,7 +444,7 @@ public class Actions {
 		autoPlayer.updateLog("Action: startBattle");
 		autoPlayer.robot.delay(10000);
 	}
-	
+	/*
 	protected void playCard(CardPosition card, FieldPosition position){
 
 		switch(card){
@@ -499,6 +499,6 @@ public class Actions {
 
 		autoPlayer.updateLog("Action: play " + card.toString() + " card in position " + position.toString());
 	}
-	
+	*/
 
 }
