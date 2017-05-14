@@ -7,6 +7,15 @@ public class Actions {
 
 	protected AutoPlayer autoPlayer;
 	
+	protected static enum FieldPosition {
+		TOP_RIGHT, TOP_LEFT, MIDDLE_RIGHT, MIDDLE_LEFT,
+		DOWN_RIGHT, DOWN_LEFT, CENTRE
+	}
+	
+	protected static enum CardPosition {
+		FIRST, SECOND, THIRD, FOURTH
+	}
+	
 	protected Actions(AutoPlayer autoPlayer){
 		this.autoPlayer = autoPlayer;
 	}
@@ -434,6 +443,61 @@ public class Actions {
 		}
 		autoPlayer.updateLog("Action: startBattle");
 		autoPlayer.robot.delay(10000);
+	}
+	
+	protected void playCard(CardPosition card, FieldPosition position){
+
+		switch(card){
+		case FIRST : {
+			tapFirstCard();
+			break;
+		}
+		case SECOND : {
+			tapSecondCard();
+			break;
+		}
+		case THIRD : {
+			tapThirdCard();
+			break;
+		}
+		case FOURTH : {
+			tapFourthCard();
+			break;
+		}
+		
+		switch(position){
+		case CENTRE : {
+			tapFieldCentre();
+			break;
+		}
+		case DOWN_LEFT : {
+			tapFieldDownLeft();
+			break;
+		}
+		case DOWN_RIGHT : {
+			tapFieldDownRight();
+			break;
+		}
+		case MIDDLE_LEFT : {
+			tapFieldMiddleLeft();
+			break;
+		}
+		case MIDDLE_RIGHT : {
+			tapFieldMiddleRight();
+			break;
+		}
+		case TOP_LEFT : {
+			tapFieldTopLeft();
+			break;
+		}
+		case TOP_RIGHT : {
+			tapFieldTopRight();
+			break;
+		}
+		}
+		}
+
+		autoPlayer.updateLog("Action: play " + card.toString() + " card in position " + position.toString());
 	}
 	
 
