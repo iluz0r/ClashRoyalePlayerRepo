@@ -444,7 +444,141 @@ public class Actions {
 		autoPlayer.updateLog("Action: startBattle");
 		autoPlayer.robot.delay(10000);
 	}
-	/*
+	
+	protected void tapFirstCard() {
+		switch(autoPlayer.resolution){
+		case R_1920X1080 : 
+			this.tap(841, 916);
+			break;
+		case R_1366X768 : 
+			this.tap(0, 0);
+			break;
+		default: break;
+		}
+		
+	}
+	
+	protected void tapSecondCard() {
+		switch(autoPlayer.resolution){
+		case R_1920X1080 : 
+			this.tap(942, 916);
+			break;
+		case R_1366X768 : 
+			this.tap(0, 0);
+			break;
+		default: break;
+		}
+		
+	}
+	
+	protected void tapThirdCard() {
+		switch(autoPlayer.resolution){
+		case R_1920X1080 : 
+			this.tap(1045, 916);
+			break;
+		case R_1366X768 : 
+			this.tap(0, 0);
+			break;
+		default: break;
+		}
+	}
+	
+	protected void tapFourthCard() {
+		switch(autoPlayer.resolution){
+		case R_1920X1080 : 
+			this.tap(1158, 916);
+			break;
+		case R_1366X768 : 
+			this.tap(0, 0);
+			break;
+		default: break;
+		}
+	}
+	
+	protected void tapFieldCentre() {
+		switch(autoPlayer.resolution){
+		case R_1920X1080 : 
+			this.tap(953, 557);
+			break;
+		case R_1366X768 : 
+			this.tap(0, 0);
+			break;
+		default: break;
+		}
+	}
+	
+	protected void tapFieldDownLeft() {
+		switch(autoPlayer.resolution){
+		case R_1920X1080 : 
+			this.tap(927, 792);
+			break;
+		case R_1366X768 : 
+			this.tap(0, 0);
+			break;
+		default: break;
+		}
+	}
+	
+	protected void tapFieldDownRight() {
+		switch(autoPlayer.resolution){
+		case R_1920X1080 : 
+			this.tap(955, 792);
+			break;
+		case R_1366X768 : 
+			this.tap(0, 0);
+			break;
+		default: break;
+		}
+	}
+	
+	protected void tapFieldMiddleLeft() {
+		switch(autoPlayer.resolution){
+		case R_1920X1080 : 
+			this.tap(796, 490);
+			break;
+		case R_1366X768 : 
+			this.tap(0, 0);
+			break;
+		default: break;
+		}
+	}
+	
+	protected void tapFieldMiddleRight() {
+		switch(autoPlayer.resolution){
+		case R_1920X1080 : 
+			this.tap(1088, 490);
+			break;
+		case R_1366X768 : 
+			this.tap(0, 0);
+			break;
+		default: break;
+		}
+	}
+	
+	protected void tapFieldTopLeft() {
+		switch(autoPlayer.resolution){
+		case R_1920X1080 : 
+			this.tap(795, 297);
+			break;
+		case R_1366X768 : 
+			this.tap(0, 0);
+			break;
+		default: break;
+		}
+	}
+	
+	protected void tapFieldTopRight() {
+		switch(autoPlayer.resolution){
+		case R_1920X1080 : 
+			this.tap(1089, 297);
+			break;
+		case R_1366X768 : 
+			this.tap(0, 0);
+			break;
+		default: break;
+		}
+	}
+	
 	protected void playCard(CardPosition card, FieldPosition position){
 
 		switch(card){
@@ -464,6 +598,9 @@ public class Actions {
 			tapFourthCard();
 			break;
 		}
+		}
+		
+		autoPlayer.robot.delay(500);
 		
 		switch(position){
 		case CENTRE : {
@@ -495,10 +632,6 @@ public class Actions {
 			break;
 		}
 		}
-		}
-
 		autoPlayer.updateLog("Action: play " + card.toString() + " card in position " + position.toString());
 	}
-	*/
-
 }

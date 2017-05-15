@@ -4,9 +4,11 @@ import java.awt.Robot;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.Random;
 
 import clashroyaleplayer.core.Actions.CardPosition;
 import clashroyaleplayer.core.Actions.FieldPosition;
+import clashroyaleplayer.core.GameStatusController.GameStatus;
 
 public class AutoPlayer{
 	
@@ -178,8 +180,32 @@ public class AutoPlayer{
 				}
 				
 				case IN_BATTLE : {
-					updateLog("Action: waiting one minute");
-					robot.delay(60000);
+					
+					int randomCard;
+					Random random = new Random();
+					while(gameController.gameStatus == GameStatus.IN_BATTLE){
+					randomCard = random.nextInt(3);
+					switch(randomCard){
+					case 0 : {
+						actions.playCard(CardPosition.FIRST, FieldPosition.TOP_RIGHT);
+						break;
+					}
+					case 1 : {
+						actions.playCard(CardPosition.SECOND, FieldPosition.TOP_RIGHT);
+						break;
+					}
+					case 2 : {
+						actions.playCard(CardPosition.THIRD, FieldPosition.TOP_RIGHT);
+						break;
+					}
+					case 3 : {
+						actions.playCard(CardPosition.FOURTH, FieldPosition.TOP_RIGHT);
+						break;
+					}
+					}
+					robot.delay(1000);
+					gameController.checkGameStatus();
+					}
 					break;
 				}
 			

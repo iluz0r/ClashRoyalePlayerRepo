@@ -92,7 +92,7 @@ public class GameStatusController {
 		    this.collectingStatus = collectingStatus;
 		}
 		
-		public void checkGameStatus() throws AWTException{
+		protected void checkGameStatus() throws AWTException{
 			
 			BufferedImage capturedBattleMenu = imageCapturer.captureBattleMenu();
 			BufferedImage capturedTournamentsMenu = imageCapturer.captureTournamentsMenu();
