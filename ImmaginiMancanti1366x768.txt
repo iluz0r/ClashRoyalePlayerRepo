@@ -7,3 +7,6 @@ OpenGiantChest, CollectingGiantChest, CollectedGiantChest.
 
 LEGENDARY
 CollectingLegendaryChest, CollectedLegendaryChest.
+
+OTHERS
+RewardLimitReached, RewardLimitReachedMini, EmotesIcon, LowBarArenaInfo, OkButton

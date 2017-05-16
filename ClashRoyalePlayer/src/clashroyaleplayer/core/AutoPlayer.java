@@ -183,6 +183,7 @@ public class AutoPlayer{
 					
 					int randomCard;
 					Random random = new Random();
+					
 					while(gameController.gameStatus == GameStatus.IN_BATTLE){
 					randomCard = random.nextInt(3);
 					switch(randomCard){
@@ -203,9 +204,11 @@ public class AutoPlayer{
 						break;
 					}
 					}
-					robot.delay(1000);
+					robot.delay(3000);
 					gameController.checkGameStatus();
 					}
+					robot.delay(5000);
+					gameController.checkGameStatus();
 					break;
 				}
 			
