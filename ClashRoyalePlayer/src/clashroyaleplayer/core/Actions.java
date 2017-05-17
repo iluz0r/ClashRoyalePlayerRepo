@@ -234,7 +234,7 @@ public class Actions {
 			this.tap(939, 662);
 			break;
 		case R_1366X768 : 
-			this.tap(0, 0);
+			this.tap(662, 466);
 			break;
 		default: break;
 		}	
@@ -247,7 +247,7 @@ public class Actions {
 			this.tap(944, 908);
 			break;
 		case R_1366X768 : 
-			this.tap(0, 0);
+			this.tap(666, 640);
 			break;
 		default: break;
 		}	
