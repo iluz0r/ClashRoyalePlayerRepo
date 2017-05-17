@@ -8,6 +8,10 @@ public class ImageCapturer extends clashroyaleplayer.imageprocessing.ImageCaptur
 	
 	private AutoPlayer autoPlayer;
 	
+	public enum ElisirBar {
+		SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHTH, NINTH, TENTH
+	}
+	
 	protected ImageCapturer(AutoPlayer autoPlayer) throws Exception {
 		super();
 		this.autoPlayer = autoPlayer;

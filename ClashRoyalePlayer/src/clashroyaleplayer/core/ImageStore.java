@@ -49,6 +49,9 @@ public class ImageStore {
 	private BufferedImage openLegendaryChest;
 	private BufferedImage lockedGiantChest;
 	private BufferedImage unlockngGiantChest;
+	private BufferedImage openGiantChest;
+	private BufferedImage collectingGiantChest;
+	private BufferedImage collectedGiantChest;
 	
 	public ImageStore(String basePath) throws IOException {
 		
@@ -93,6 +96,9 @@ public class ImageStore {
 		this.setOpenLegendaryChest(basePath + "openLegendaryChest.jpg");
 		this.setLockedGiantChest(basePath + "lockedGiantChest.jpg");
 		this.setUnlockngGiantChest(basePath + "unlockingGiantChest.jpg");
+		this.setOpenGiantChest(basePath + "openGiantChest.jpg");
+		this.setCollectingGiantChest(basePath + "collectingGiantChest.jpg");
+		this.setCollectedGiantChest(basePath + "collectedGiantChest.jpg");
 		
 		
 	}
@@ -444,5 +450,35 @@ public class ImageStore {
 
 	protected void setUnlockngGiantChest(String unlockngGiantChestPath) throws IOException {
 		this.unlockngGiantChest = ImageIO.read(new File(unlockngGiantChestPath));
+	}
+
+
+	public BufferedImage getOpenGiantChest() {
+		return openGiantChest;
+	}
+
+
+	public void setOpenGiantChest(String openGiantChestPath) throws IOException {
+		this.openGiantChest = ImageIO.read(new File(openGiantChestPath));;
+	}
+
+
+	public BufferedImage getCollectingGiantChest() {
+		return collectingGiantChest;
+	}
+
+
+	public void setCollectingGiantChest(String collectingGiantChestPath) throws IOException {
+		this.collectingGiantChest = ImageIO.read(new File(collectingGiantChestPath));;
+	}
+
+
+	public BufferedImage getCollectedGiantChest() {
+		return collectedGiantChest;
+	}
+
+
+	public void setCollectedGiantChest(String collectedGiantChestPath) throws IOException {
+		this.collectedGiantChest = ImageIO.read(new File(collectedGiantChestPath));;
 	}
 }
