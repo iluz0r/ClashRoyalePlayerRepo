@@ -2,9 +2,6 @@ SUPERMAGIC
 LockedSuperMagicChest, UnlockingSuperMagicChest, OpenSuperMagicChest, CollectingSuperMagicChest, 
 CollectedSuperMagicChest.
 
-GIANT
-OpenGiantChest, CollectingGiantChest, CollectedGiantChest.
-
 LEGENDARY
 CollectingLegendaryChest, CollectedLegendaryChest.
 
