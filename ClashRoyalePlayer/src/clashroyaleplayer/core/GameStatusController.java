@@ -161,6 +161,9 @@ public class GameStatusController {
 			BufferedImage lockedMagicChest = imageStore.getLockedMagicChest();
 			BufferedImage unlockingMagicChest = imageStore.getUnlockingMagicChest();
 			BufferedImage openMagicChest = imageStore.getOpenMagicChest();
+			BufferedImage lockedGiantChest = imageStore.getLockedGiantChest();
+			BufferedImage unlockingGiantChest = imageStore.getUnlockingGiantChest();
+			BufferedImage openGiantChest = imageStore.getOpenGiantChest();
 			BufferedImage emptyChest = imageStore.getEmptyChestSlot();
 			
 			BufferedImage capturedFirstChest = imageCapturer.captureFirstChest();
@@ -170,23 +173,34 @@ public class GameStatusController {
 			if(
 					imageComparison.imgEqual(lockedSilverChest, capturedFirstChest, 10) ||
 					imageComparison.imgEqual(lockedGoldChest, capturedFirstChest, 10) ||
-					imageComparison.imgEqual(lockedMagicChest, capturedFirstChest, 10)) 
-				firstChestStatus = ChestStatus.LOCKED;
+					imageComparison.imgEqual(lockedMagicChest, capturedFirstChest, 10) ||
+					imageComparison.imgEqual(lockedGiantChest, capturedFirstChest, 10))
+			{
+				fourthChestStatus = ChestStatus.LOCKED;
+			}
 			else
 				if(
 						imageComparison.imgEqual(unlockingSilverChest, capturedFirstChest, 10) ||
 						imageComparison.imgEqual(unlockingGoldChest, capturedFirstChest, 10) ||
-						imageComparison.imgEqual(unlockingMagicChest, capturedFirstChest, 10))
-					firstChestStatus = ChestStatus.UNLOCKING;
+						imageComparison.imgEqual(unlockingMagicChest, capturedFirstChest, 10) ||
+						imageComparison.imgEqual(unlockingGiantChest, capturedFirstChest, 10))
+				{
+					fourthChestStatus = ChestStatus.UNLOCKING;
+				}
 				else
 					if(
 							imageComparison.imgEqual(openSilverChest, capturedFirstChest, 10) ||
 							imageComparison.imgEqual(openGoldChest, capturedFirstChest, 10) ||
-							imageComparison.imgEqual(openMagicChest, capturedFirstChest, 10))
-						firstChestStatus = ChestStatus.UNLOCKABLE;
+							imageComparison.imgEqual(openMagicChest, capturedFirstChest, 10) ||
+							imageComparison.imgEqual(openGiantChest, capturedFirstChest, 10))
+					{
+						fourthChestStatus = ChestStatus.UNLOCKABLE;
+					}
 					else
 						if(imageComparison.imgEqual(emptyChest, capturedFirstChest, 10))
-							firstChestStatus = ChestStatus.EMPTY;
+						{
+							fourthChestStatus = ChestStatus.EMPTY;
+						}
 			
 			autoPlayer.updateLog("Action: checkFirstChestStatus, the state is " + firstChestStatus.toString());
 		}
@@ -204,6 +218,9 @@ public class GameStatusController {
 			BufferedImage lockedMagicChest = imageStore.getLockedMagicChest();
 			BufferedImage unlockingMagicChest = imageStore.getUnlockingMagicChest();
 			BufferedImage openMagicChest = imageStore.getOpenMagicChest();
+			BufferedImage lockedGiantChest = imageStore.getLockedGiantChest();
+			BufferedImage unlockingGiantChest = imageStore.getUnlockingGiantChest();
+			BufferedImage openGiantChest = imageStore.getOpenGiantChest();
 			BufferedImage emptyChest = imageStore.getEmptyChestSlot();
 			
 			BufferedImage capturedSecondChest = imageCapturer.captureSecondChest();
@@ -213,23 +230,34 @@ public class GameStatusController {
 			if(
 					imageComparison.imgEqual(lockedSilverChest, capturedSecondChest, 10) ||
 					imageComparison.imgEqual(lockedGoldChest, capturedSecondChest, 10) ||
-					imageComparison.imgEqual(lockedMagicChest, capturedSecondChest, 10)) 
-				secondChestStatus = ChestStatus.LOCKED;
+					imageComparison.imgEqual(lockedMagicChest, capturedSecondChest, 10) ||
+					imageComparison.imgEqual(lockedGiantChest, capturedSecondChest, 10))
+			{
+				fourthChestStatus = ChestStatus.LOCKED;
+			}
 			else
 				if(
 						imageComparison.imgEqual(unlockingSilverChest, capturedSecondChest, 10) ||
 						imageComparison.imgEqual(unlockingGoldChest, capturedSecondChest, 10) ||
-						imageComparison.imgEqual(unlockingMagicChest, capturedSecondChest, 10))
-					secondChestStatus = ChestStatus.UNLOCKING;
+						imageComparison.imgEqual(unlockingMagicChest, capturedSecondChest, 10) ||
+						imageComparison.imgEqual(unlockingGiantChest, capturedSecondChest, 10))
+				{
+					fourthChestStatus = ChestStatus.UNLOCKING;
+				}
 				else
 					if(
 							imageComparison.imgEqual(openSilverChest, capturedSecondChest, 10) ||
 							imageComparison.imgEqual(openGoldChest, capturedSecondChest, 10) ||
-							imageComparison.imgEqual(openMagicChest, capturedSecondChest, 10))
-						secondChestStatus = ChestStatus.UNLOCKABLE;
+							imageComparison.imgEqual(openMagicChest, capturedSecondChest, 10) ||
+							imageComparison.imgEqual(openGiantChest, capturedSecondChest, 10))
+					{
+						fourthChestStatus = ChestStatus.UNLOCKABLE;
+					}
 					else
 						if(imageComparison.imgEqual(emptyChest, capturedSecondChest, 10))
-							secondChestStatus = ChestStatus.EMPTY;
+						{
+							fourthChestStatus = ChestStatus.EMPTY;
+						}
 			
 			autoPlayer.updateLog("Action: checkSecondChestStatus, the state is " + secondChestStatus.toString());
 		}
@@ -246,6 +274,9 @@ public class GameStatusController {
 			BufferedImage lockedMagicChest = imageStore.getLockedMagicChest();
 			BufferedImage unlockingMagicChest = imageStore.getUnlockingMagicChest();
 			BufferedImage openMagicChest = imageStore.getOpenMagicChest();
+			BufferedImage lockedGiantChest = imageStore.getLockedGiantChest();
+			BufferedImage unlockingGiantChest = imageStore.getUnlockingGiantChest();
+			BufferedImage openGiantChest = imageStore.getOpenGiantChest();
 			BufferedImage emptyChest = imageStore.getEmptyChestSlot();
 		
 			BufferedImage capturedThirdChest = imageCapturer.captureThirdChest();
@@ -255,23 +286,34 @@ public class GameStatusController {
 			if(
 					imageComparison.imgEqual(lockedSilverChest, capturedThirdChest, 10) ||
 					imageComparison.imgEqual(lockedGoldChest, capturedThirdChest, 10) ||
-					imageComparison.imgEqual(lockedMagicChest, capturedThirdChest, 10)) 
-				thirdChestStatus = ChestStatus.LOCKED;
+					imageComparison.imgEqual(lockedMagicChest, capturedThirdChest, 10) ||
+					imageComparison.imgEqual(lockedGiantChest, capturedThirdChest, 10))
+			{
+				fourthChestStatus = ChestStatus.LOCKED;
+			}
 			else
 				if(
 						imageComparison.imgEqual(unlockingSilverChest, capturedThirdChest, 10) ||
 						imageComparison.imgEqual(unlockingGoldChest, capturedThirdChest, 10) ||
-						imageComparison.imgEqual(unlockingMagicChest, capturedThirdChest, 10))
-					thirdChestStatus = ChestStatus.UNLOCKING;
+						imageComparison.imgEqual(unlockingMagicChest, capturedThirdChest, 10) ||
+						imageComparison.imgEqual(unlockingGiantChest, capturedThirdChest, 10))
+				{
+					fourthChestStatus = ChestStatus.UNLOCKING;
+				}
 				else
 					if(
 							imageComparison.imgEqual(openSilverChest, capturedThirdChest, 10) ||
 							imageComparison.imgEqual(openGoldChest, capturedThirdChest, 10) ||
-							imageComparison.imgEqual(openMagicChest, capturedThirdChest, 10))
-						thirdChestStatus = ChestStatus.UNLOCKABLE;
+							imageComparison.imgEqual(openMagicChest, capturedThirdChest, 10) ||
+							imageComparison.imgEqual(openGiantChest, capturedThirdChest, 10))
+					{
+						fourthChestStatus = ChestStatus.UNLOCKABLE;
+					}
 					else
 						if(imageComparison.imgEqual(emptyChest, capturedThirdChest, 10))
-							thirdChestStatus = ChestStatus.EMPTY;
+						{
+							fourthChestStatus = ChestStatus.EMPTY;
+						}
 		
 			autoPlayer.updateLog("Action: checkThirdChestStatus, the state is " + thirdChestStatus.toString());
 		}
@@ -289,6 +331,9 @@ public class GameStatusController {
 			BufferedImage lockedMagicChest = imageStore.getLockedMagicChest();
 			BufferedImage unlockingMagicChest = imageStore.getUnlockingMagicChest();
 			BufferedImage openMagicChest = imageStore.getOpenMagicChest();
+			BufferedImage lockedGiantChest = imageStore.getLockedGiantChest();
+			BufferedImage unlockingGiantChest = imageStore.getUnlockingGiantChest();
+			BufferedImage openGiantChest = imageStore.getOpenGiantChest();
 			BufferedImage emptyChest = imageStore.getEmptyChestSlot();
 		
 			BufferedImage capturedFourthChest = imageCapturer.captureFourthChest();
@@ -298,24 +343,35 @@ public class GameStatusController {
 			if(
 					imageComparison.imgEqual(lockedSilverChest, capturedFourthChest, 10) ||
 					imageComparison.imgEqual(lockedGoldChest, capturedFourthChest, 10) ||
-					imageComparison.imgEqual(lockedMagicChest, capturedFourthChest, 10)) 
+					imageComparison.imgEqual(lockedMagicChest, capturedFourthChest, 10) ||
+					imageComparison.imgEqual(lockedGiantChest, capturedFourthChest, 10))
+			{
 				fourthChestStatus = ChestStatus.LOCKED;
+			}
 			else
 				if(
 						imageComparison.imgEqual(unlockingSilverChest, capturedFourthChest, 10) ||
 						imageComparison.imgEqual(unlockingGoldChest, capturedFourthChest, 10) ||
-						imageComparison.imgEqual(unlockingMagicChest, capturedFourthChest, 10))
+						imageComparison.imgEqual(unlockingMagicChest, capturedFourthChest, 10) ||
+						imageComparison.imgEqual(unlockingGiantChest, capturedFourthChest, 10))
+				{
 					fourthChestStatus = ChestStatus.UNLOCKING;
+				}
 				else
 					if(
 							imageComparison.imgEqual(openSilverChest, capturedFourthChest, 10) ||
 							imageComparison.imgEqual(openGoldChest, capturedFourthChest, 10) ||
-							imageComparison.imgEqual(openMagicChest, capturedFourthChest, 10))
+							imageComparison.imgEqual(openMagicChest, capturedFourthChest, 10) ||
+							imageComparison.imgEqual(openGiantChest, capturedFourthChest, 10))
+					{
 						fourthChestStatus = ChestStatus.UNLOCKABLE;
+					}
 					else
 						if(imageComparison.imgEqual(emptyChest, capturedFourthChest, 10))
+						{
 							fourthChestStatus = ChestStatus.EMPTY;
-			autoPlayer.updateLog("Action: checkFouthChestStatus, the state is " + fourthChestStatus.toString());
+						}
+			autoPlayer.updateLog("Action: checkFourthChestStatus, the state is " + fourthChestStatus.toString());
 		}
 		
 		protected void checkFreeChestStatus() throws AWTException{
@@ -365,11 +421,13 @@ public class GameStatusController {
 			BufferedImage collectingSilverChest = imageStore.getCollectingSilverChest();
 			BufferedImage collectingGoldChest = imageStore.getCollectingGoldChest();
 			BufferedImage collectingMagicChest = imageStore.getCollectingMagicChest();
+			BufferedImage collectingGiantChest = imageStore.getCollectingGiantChest();
 			BufferedImage collectingFreeChest = imageStore.getCollectingFreeChest();
 			BufferedImage collectingCrownChest = imageStore.getCollectingCrwonChest();
 			BufferedImage collectedSilverChest = imageStore.getCollectedSilverChest();
 			BufferedImage collectedGoldChest = imageStore.getCollectedGoldChest();
 			BufferedImage collectedMagicChest = imageStore.getCollectedMagicChest();
+			BufferedImage collectedGiantChest = imageStore.getCollectedGiantChest();
 			BufferedImage collectedFreeChest = imageStore.getCollectedFreeChest();
 			BufferedImage collectedCrownChest = imageStore.getCollectedCrownChest();
 			
@@ -380,16 +438,22 @@ public class GameStatusController {
 					imageComparison.imgEqual(capturedCollectingChest, collectingGoldChest, 15) ||
 					imageComparison.imgEqual(capturedCollectingChest, collectingMagicChest, 15) ||
 					imageComparison.imgEqual(capturedCollectingChest, collectingCrownChest, 15) ||
-					imageComparison.imgEqual(capturedCollectingChest, collectingFreeChest,15))
+					imageComparison.imgEqual(capturedCollectingChest, collectingFreeChest,15) ||
+					imageComparison.imgEqual(capturedCollectingChest, collectingGiantChest))
+			{
 				collectingStatus = CollectingStatus.COLLECTING;
+			}
 				else
 					if(
 							imageComparison.imgEqual(capturedCollectedChest, collectedSilverChest, 15) ||
 							imageComparison.imgEqual(capturedCollectedChest, collectedGoldChest,15) ||
 							imageComparison.imgEqual(capturedCollectedChest, collectedMagicChest, 15) ||
 							imageComparison.imgEqual(capturedCollectedChest, collectedCrownChest, 15) ||
-							imageComparison.imgEqual(capturedCollectedChest, collectedFreeChest, 15))
+							imageComparison.imgEqual(capturedCollectedChest, collectedFreeChest, 15) ||
+							imageComparison.imgEqual(capturedCollectedChest, collectedGiantChest, 15))
+					{
 						collectingStatus = CollectingStatus.COLLECTED;
+					}
 			
 			autoPlayer.updateLog("Action: checkCollectingStatus, the state is " + collectingStatus.toString());
 		}

@@ -48,7 +48,7 @@ public class ImageStore {
 	private BufferedImage unlockingLegendaryChest;
 	private BufferedImage openLegendaryChest;
 	private BufferedImage lockedGiantChest;
-	private BufferedImage unlockngGiantChest;
+	private BufferedImage unlockingGiantChest;
 	private BufferedImage openGiantChest;
 	private BufferedImage collectingGiantChest;
 	private BufferedImage collectedGiantChest;
@@ -443,13 +443,13 @@ public class ImageStore {
 	}
 
 
-	protected BufferedImage getUnlockngGiantChest() {
-		return unlockngGiantChest;
+	protected BufferedImage getUnlockingGiantChest() {
+		return unlockingGiantChest;
 	}
 
 
-	protected void setUnlockngGiantChest(String unlockngGiantChestPath) throws IOException {
-		this.unlockngGiantChest = ImageIO.read(new File(unlockngGiantChestPath));
+	protected void setUnlockngGiantChest(String unlockingGiantChestPath) throws IOException {
+		this.unlockingGiantChest = ImageIO.read(new File(unlockingGiantChestPath));
 	}
 
 
