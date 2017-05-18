@@ -28,7 +28,7 @@ public class Main {
 		robot.delay(10000);
 		Rectangle captureRect = new Rectangle(613, 309, 106, 85);
 		BufferedImage image = imageCapturer.captureImage(captureRect);
-		imageCapturer.saveImage(image, ".\\images1366x768\\" ,"rewardLimitReachedMini", "jpg");
+		imageCapturer.saveImage(image, ".\\images1080x1920\\battle\\" ,"immagini", "jpg");
 		*/
 		
 		/*
