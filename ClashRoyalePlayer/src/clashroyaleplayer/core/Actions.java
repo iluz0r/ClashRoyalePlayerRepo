@@ -3,6 +3,8 @@ package clashroyaleplayer.core;
 import java.awt.AWTException;
 import java.awt.event.InputEvent;
 
+import clashroyaleplayer.core.GameStatusController.GameStatus;
+
 public class Actions {
 
 	protected AutoPlayer autoPlayer;
@@ -416,7 +418,8 @@ public class Actions {
 		autoPlayer.updateLog("Action: closeBattle");
 	}
 	
-	protected void startBattle(){
+	protected void startBattle() throws AWTException{
+		boolean foundBattle = false;
 		autoPlayer.robot.delay(2000);
 		switch(autoPlayer.gameController.gameStatus){
 		case BATTLE_MENU : {
@@ -433,6 +436,23 @@ public class Actions {
 
 		}
 		autoPlayer.updateLog("Action: startBattle");
-		autoPlayer.robot.delay(10000);
+		for(int i = 0; i < 20; i++) {
+			autoPlayer.robot.delay(1000);
+			autoPlayer.gameController.checkGameStatus();
+			if(autoPlayer.gameController.gameStatus == GameStatus.IN_BATTLE)
+			{
+				i = 100;
+				foundBattle = true;
+			}
+		}
+		
+		if(foundBattle)
+		{
+			autoPlayer.updateLog("Battle started!");
+		}
+		else
+		{
+			autoPlayer.updateLog("Couldn't find any battle!");
+		}
 	}
 }
