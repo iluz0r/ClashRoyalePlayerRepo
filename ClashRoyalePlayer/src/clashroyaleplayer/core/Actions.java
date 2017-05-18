@@ -122,7 +122,7 @@ public class Actions {
 			this.tap(939, 684);
 			break;
 		case R_1366X768 : 
-			this.tap(0, 0);
+			this.tap(662, 477);
 			break;
 		default: break;
 		}
@@ -221,7 +221,7 @@ public class Actions {
 			this.tap(943, 979);
 			break;
 		case R_1366X768 : 
-			this.tap(0, 0);
+			this.tap(665, 682);
 			break;
 		default: break;
 		}	
@@ -451,7 +451,7 @@ public class Actions {
 			this.tap(841, 916);
 			break;
 		case R_1366X768 : 
-			this.tap(0, 0);
+			this.tap(592, 644);
 			break;
 		default: break;
 		}
@@ -464,7 +464,7 @@ public class Actions {
 			this.tap(942, 916);
 			break;
 		case R_1366X768 : 
-			this.tap(0, 0);
+			this.tap(664, 652);
 			break;
 		default: break;
 		}
@@ -477,7 +477,7 @@ public class Actions {
 			this.tap(1045, 916);
 			break;
 		case R_1366X768 : 
-			this.tap(0, 0);
+			this.tap(729, 641);
 			break;
 		default: break;
 		}
@@ -489,7 +489,7 @@ public class Actions {
 			this.tap(1158, 916);
 			break;
 		case R_1366X768 : 
-			this.tap(0, 0);
+			this.tap(806, 647);
 			break;
 		default: break;
 		}
@@ -501,7 +501,7 @@ public class Actions {
 			this.tap(953, 557);
 			break;
 		case R_1366X768 : 
-			this.tap(0, 0);
+			this.tap(653, 394);
 			break;
 		default: break;
 		}
@@ -513,7 +513,7 @@ public class Actions {
 			this.tap(927, 792);
 			break;
 		case R_1366X768 : 
-			this.tap(0, 0);
+			this.tap(654, 559);
 			break;
 		default: break;
 		}
@@ -525,7 +525,7 @@ public class Actions {
 			this.tap(955, 792);
 			break;
 		case R_1366X768 : 
-			this.tap(0, 0);
+			this.tap(675, 559);
 			break;
 		default: break;
 		}
@@ -537,7 +537,7 @@ public class Actions {
 			this.tap(796, 490);
 			break;
 		case R_1366X768 : 
-			this.tap(0, 0);
+			this.tap(570, 353);
 			break;
 		default: break;
 		}
@@ -549,7 +549,7 @@ public class Actions {
 			this.tap(1088, 490);
 			break;
 		case R_1366X768 : 
-			this.tap(0, 0);
+			this.tap(765, 353);
 			break;
 		default: break;
 		}
@@ -561,7 +561,7 @@ public class Actions {
 			this.tap(795, 297);
 			break;
 		case R_1366X768 : 
-			this.tap(0, 0);
+			this.tap(570, 251);
 			break;
 		default: break;
 		}
@@ -573,7 +573,7 @@ public class Actions {
 			this.tap(1089, 297);
 			break;
 		case R_1366X768 : 
-			this.tap(0, 0);
+			this.tap(765, 251);
 			break;
 		default: break;
 		}

@@ -26,17 +26,17 @@ public class Main {
 		//save image
 		ImageCapturer imageCapturer = new ImageCapturer();
 		robot.delay(10000);
-		Rectangle captureRect = new Rectangle(580, 200, 150, 150);
+		Rectangle captureRect = new Rectangle(613, 309, 106, 85);
 		BufferedImage image = imageCapturer.captureImage(captureRect);
-		imageCapturer.saveImage(image, ".\\images1366x768\\" ,"collectedGiantChest", "jpg");
+		imageCapturer.saveImage(image, ".\\images1366x768\\" ,"rewardLimitReachedMini", "jpg");
 		*/
 		
-		/*
+		
 		//get pointed coord
 		robot.delay(10000);
 		Point coord = MouseInfo.getPointerInfo().getLocation();
 		System.out.println("X: " + coord.getX() + " Y: " + coord.getY());
-		*/
+		
 		
 		/*
 		AutoPlayer player = new AutoPlayer();

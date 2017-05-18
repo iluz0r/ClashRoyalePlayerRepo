@@ -6,4 +6,4 @@ LEGENDARY
 CollectingLegendaryChest, CollectedLegendaryChest.
 
 OTHERS
-RewardLimitReached, RewardLimitReachedMini, EmotesIcon, LowBarArenaInfo, OkButton
+RewardLimitReached, RewardLimitReachedMini
