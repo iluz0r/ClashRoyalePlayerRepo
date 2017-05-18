@@ -31,12 +31,12 @@ public class Main {
 		imageCapturer.saveImage(image, ".\\images1366x768\\" ,"rewardLimitReachedMini", "jpg");
 		*/
 		
-		
+		/*
 		//get pointed coord
 		robot.delay(10000);
 		Point coord = MouseInfo.getPointerInfo().getLocation();
 		System.out.println("X: " + coord.getX() + " Y: " + coord.getY());
-		
+		*/
 		
 		/*
 		AutoPlayer player = new AutoPlayer();

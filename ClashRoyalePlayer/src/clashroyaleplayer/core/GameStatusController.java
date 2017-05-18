@@ -8,10 +8,10 @@ import clashroyaleplayer.imageprocessing.ImageComparison;
 
 public class GameStatusController {
 	
-	private ImageCapturer imageCapturer;
-	private ImageComparison imageComparison;
-	private ImageStore imageStore;
-	private AutoPlayer autoPlayer;
+	protected ImageCapturer imageCapturer;
+	protected ImageComparison imageComparison;
+	protected ImageStore imageStore;
+	protected AutoPlayer autoPlayer;
 	
 	public static enum GameStatus {
 		BATTLE_MENU, TOURNAMENTS_MENU, SOCIAL_MENU, SHOP_MENU, CARDS_MENU,

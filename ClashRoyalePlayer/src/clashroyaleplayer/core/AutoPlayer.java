@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Random;
 
-import clashroyaleplayer.core.Actions.CardPosition;
-import clashroyaleplayer.core.Actions.FieldPosition;
+import clashroyaleplayer.core.BattleActions.CardPosition;
+import clashroyaleplayer.core.BattleActions.FieldPosition;
 import clashroyaleplayer.core.GameStatusController.GameStatus;
 
 public class AutoPlayer{
@@ -26,6 +26,7 @@ public class AutoPlayer{
 	
 	GameStatusController gameController;
 	Actions actions;
+	BattleActions battleActions;
 	
 	public AutoPlayer(Resolution screenResolution) throws Exception{
 		
@@ -47,6 +48,7 @@ public class AutoPlayer{
 		
 		gameController = new GameStatusController(this);
 		actions = new Actions(this);
+		battleActions = new BattleActions(this);
 	}
 	
 	public AutoPlayer() throws Exception{
@@ -188,19 +190,19 @@ public class AutoPlayer{
 					randomCard = random.nextInt(3);
 					switch(randomCard){
 					case 0 : {
-						actions.playCard(CardPosition.FIRST, FieldPosition.TOP_RIGHT);
+						battleActions.playCard(CardPosition.FIRST, FieldPosition.TOP_RIGHT);
 						break;
 					}
 					case 1 : {
-						actions.playCard(CardPosition.SECOND, FieldPosition.TOP_RIGHT);
+						battleActions.playCard(CardPosition.SECOND, FieldPosition.TOP_RIGHT);
 						break;
 					}
 					case 2 : {
-						actions.playCard(CardPosition.THIRD, FieldPosition.TOP_RIGHT);
+						battleActions.playCard(CardPosition.THIRD, FieldPosition.TOP_RIGHT);
 						break;
 					}
 					case 3 : {
-						actions.playCard(CardPosition.FOURTH, FieldPosition.TOP_RIGHT);
+						battleActions.playCard(CardPosition.FOURTH, FieldPosition.TOP_RIGHT);
 						break;
 					}
 					}
