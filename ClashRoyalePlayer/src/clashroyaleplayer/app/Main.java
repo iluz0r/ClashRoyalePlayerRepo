@@ -26,9 +26,9 @@ public class Main {
 		//save image
 		ImageCapturer imageCapturer = new ImageCapturer();
 		robot.delay(10000);
-		Rectangle captureRect = new Rectangle(613, 309, 106, 85);
+		Rectangle captureRect = new Rectangle(814, 983, 28, 20);
 		BufferedImage image = imageCapturer.captureImage(captureRect);
-		imageCapturer.saveImage(image, ".\\images1080x1920\\battle\\" ,"immagini", "jpg");
+		imageCapturer.saveImage(image, ".\\images1920x1080\\battle\\" ,"immagine", "jpg");
 		*/
 		
 		/*

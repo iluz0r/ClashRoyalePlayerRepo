@@ -25,6 +25,7 @@ public class AutoPlayer{
 	private PrintStream writeLog;
 	
 	GameStatusController gameController;
+	BattleStatusController battleController;
 	Actions actions;
 	BattleActions battleActions;
 	
@@ -47,6 +48,7 @@ public class AutoPlayer{
 		updateLog("ScreenResolution: " + resolution);
 		
 		gameController = new GameStatusController(this);
+		battleController = new BattleStatusController(this);
 		actions = new Actions(this);
 		battleActions = new BattleActions(this);
 	}
@@ -98,27 +100,33 @@ public class AutoPlayer{
 					this.gameController.checkFreeChestStatus();
 					this.gameController.checkCrownChestStatus();
 					
-					if(this.gameController.getFirstChestStatus() == GameStatusController.ChestStatus.UNLOCKABLE){
+					if(this.gameController.getFirstChestStatus() == GameStatusController.ChestStatus.UNLOCKABLE)
+					{
 						actions.openFirstChest();
 						break;
 					}
-					if(this.gameController.getSecondChestStatus() == GameStatusController.ChestStatus.UNLOCKABLE){
+					if(this.gameController.getSecondChestStatus() == GameStatusController.ChestStatus.UNLOCKABLE)
+					{
 						actions.openSecondChest();
 						break;
 					}
-					if(this.gameController.getThirdChestStatus() == GameStatusController.ChestStatus.UNLOCKABLE){
+					if(this.gameController.getThirdChestStatus() == GameStatusController.ChestStatus.UNLOCKABLE)
+					{
 						actions.openThirdChest();
 						break;
 					}
-					if(this.gameController.getFourthChestStatus() == GameStatusController.ChestStatus.UNLOCKABLE){
+					if(this.gameController.getFourthChestStatus() == GameStatusController.ChestStatus.UNLOCKABLE)
+					{
 						actions.openFourthChest();
 						break;
 					}
-					if(this.gameController.getFreeChestStatus() == GameStatusController.ChestStatus.UNLOCKABLE){
+					if(this.gameController.getFreeChestStatus() == GameStatusController.ChestStatus.UNLOCKABLE)
+					{
 						actions.openFreeChest();
 						break;
 					}
-					if(this.gameController.getCrownChestStatus() == GameStatusController.ChestStatus.UNLOCKABLE){
+					if(this.gameController.getCrownChestStatus() == GameStatusController.ChestStatus.UNLOCKABLE)
+					{
 						actions.openCrownChest();
 						break;
 					}
@@ -129,17 +137,28 @@ public class AutoPlayer{
 							this.gameController.getFourthChestStatus() != GameStatusController.ChestStatus.UNLOCKING)
 					{
 						if(this.gameController.getFirstChestStatus() == GameStatusController.ChestStatus.LOCKED)
+						{
 							actions.unlockFirstChest();
+							break;
+						}
 						else
 							if(this.gameController.getSecondChestStatus() == GameStatusController.ChestStatus.LOCKED)
+							{
 								actions.unlockSecondChest();
+								break;
+							}
 							else
 								if(this.gameController.getThirdChestStatus() == GameStatusController.ChestStatus.LOCKED)
+								{
 									actions.unlockThirdChest();
+									break;
+								}
 								else
 									if(this.gameController.getFourthChestStatus() == GameStatusController.ChestStatus.LOCKED)
+									{
 										actions.unlockFourthChest();
-						break;
+										break;
+									}
 					}
 					
 					actions.startBattle();
@@ -182,32 +201,15 @@ public class AutoPlayer{
 				}
 				
 				case IN_BATTLE : {
-					
+					/*
 					int randomCard;
 					Random random = new Random();
+					*/
 					
 					while(gameController.gameStatus == GameStatus.IN_BATTLE){
-					randomCard = random.nextInt(3);
-					switch(randomCard){
-					case 0 : {
-						battleActions.playCard(CardPosition.FIRST, FieldPosition.TOP_RIGHT);
-						break;
-					}
-					case 1 : {
-						battleActions.playCard(CardPosition.SECOND, FieldPosition.TOP_RIGHT);
-						break;
-					}
-					case 2 : {
-						battleActions.playCard(CardPosition.THIRD, FieldPosition.TOP_RIGHT);
-						break;
-					}
-					case 3 : {
-						battleActions.playCard(CardPosition.FOURTH, FieldPosition.TOP_RIGHT);
-						break;
-					}
-					}
-					robot.delay(3000);
-					gameController.checkGameStatus();
+						robot.delay(1000);
+						battleController.checkElisir();
+						gameController.checkGameStatus();
 					}
 					robot.delay(5000);
 					gameController.checkGameStatus();
