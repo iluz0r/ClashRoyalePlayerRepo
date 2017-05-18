@@ -4,10 +4,8 @@ import java.awt.Robot;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.util.Random;
 
-import clashroyaleplayer.core.BattleActions.CardPosition;
-import clashroyaleplayer.core.BattleActions.FieldPosition;
+import clashroyaleplayer.core.BattleActions;
 import clashroyaleplayer.core.GameStatusController.GameStatus;
 
 public class AutoPlayer{
@@ -84,7 +82,6 @@ public class AutoPlayer{
 	
 	public void start() throws Exception{
 		init();
-
 		
 		while(this.gameController.getGameStatus() != GameStatusController.GameStatus.UNKNOWN){
 		    this.gameController.checkGameStatus();
@@ -93,12 +90,7 @@ public class AutoPlayer{
 				case UNKNOWN : break;
 			
 				case BATTLE_MENU : {
-					this.gameController.checkFirstChestStatus();
-					this.gameController.checkSecondChestStatus();
-					this.gameController.checkThirdChestStatus();
-					this.gameController.checkFourthChestStatus();
-					this.gameController.checkFreeChestStatus();
-					this.gameController.checkCrownChestStatus();
+					gameController.checkAllChestStatus();
 					
 					if(this.gameController.getFirstChestStatus() == GameStatusController.ChestStatus.UNLOCKABLE)
 					{
@@ -201,10 +193,6 @@ public class AutoPlayer{
 				}
 				
 				case IN_BATTLE : {
-					/*
-					int randomCard;
-					Random random = new Random();
-					*/
 					
 					while(gameController.gameStatus == GameStatus.IN_BATTLE){
 						robot.delay(1000);

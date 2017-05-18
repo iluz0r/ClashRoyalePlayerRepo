@@ -6,10 +6,10 @@ public class BattleActions extends Actions{
 		TOP_RIGHT, TOP_LEFT, MIDDLE_RIGHT, MIDDLE_LEFT,
 		DOWN_RIGHT, DOWN_LEFT, CENTRE
 	}
-	
 	protected static enum CardPosition {
 		FIRST, SECOND, THIRD, FOURTH
 	}
+	
 	
 	protected BattleActions(AutoPlayer autoPlayer) {
 		super(autoPlayer);
@@ -172,6 +172,7 @@ public class BattleActions extends Actions{
 		
 		autoPlayer.robot.delay(500);
 		
+
 		switch(position){
 		case CENTRE : {
 			tapFieldCentre();
@@ -203,5 +204,6 @@ public class BattleActions extends Actions{
 		}
 		}
 		autoPlayer.updateLog("Action: play " + card.toString() + " card in position " + position.toString());
+
 	}
 }

@@ -411,6 +411,15 @@ public class GameStatusController {
 			autoPlayer.updateLog("Action: checkCrownChestStatus, the state is " + crownChestStatus.toString());
 			
 		}
+		
+		protected void checkAllChestStatus() throws AWTException {
+			checkFirstChestStatus();
+			checkSecondChestStatus();
+			checkThirdChestStatus();
+			checkFourthChestStatus();
+			checkFreeChestStatus();
+			checkCrownChestStatus();
+		}
 		protected void checkCollectingStatus() throws AWTException{
 			
 			collectingStatus = CollectingStatus.UNKNOWN;

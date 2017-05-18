@@ -32,5 +32,85 @@ public class BattleImageCapturer extends clashroyaleplayer.imageprocessing.Image
 		return capturedImage;
 		
 	}
+	
+	protected BufferedImage captureFirstCard() throws AWTException{
+		Rectangle captureRect = null;
+		
+		switch(autoPlayer.resolution){
+		
+		case R_1920X1080 : 
+			captureRect = new Rectangle(791, 864, 93, 109);
+			break;
+			
+		case R_1366X768 : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
+		
+		}
+		
+		BufferedImage capturedImage = captureImage(captureRect);
+		return capturedImage;
+		
+	}
+	
+	protected BufferedImage captureSecondCard() throws AWTException{
+		Rectangle captureRect = null;
+		
+		switch(autoPlayer.resolution){
+		
+		case R_1920X1080 : 
+			captureRect = new Rectangle(896, 864, 93, 109);
+			break;
+			
+		case R_1366X768 : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
+		
+		}
+		
+		BufferedImage capturedImage = captureImage(captureRect);
+		return capturedImage;
+		
+	}
+	
+	protected BufferedImage captureThirdCard() throws AWTException{
+		Rectangle captureRect = null;
+		
+		switch(autoPlayer.resolution){
+		
+		case R_1920X1080 : 
+			captureRect = new Rectangle(1002, 864, 93, 109);
+			break;
+			
+		case R_1366X768 : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
+		
+		}
+		
+		BufferedImage capturedImage = captureImage(captureRect);
+		return capturedImage;
+		
+	}
+	
+	protected BufferedImage captureFourthCard() throws AWTException{
+		Rectangle captureRect = null;
+		
+		switch(autoPlayer.resolution){
+		
+		case R_1920X1080 : 
+			captureRect = new Rectangle(1107, 866, 93, 109);
+			break;
+			
+		case R_1366X768 : 
+			captureRect = new Rectangle(0, 0, 0, 0);
+			break;
+		
+		}
+		
+		BufferedImage capturedImage = captureImage(captureRect);
+		return capturedImage;
+		
+	}
 
 }

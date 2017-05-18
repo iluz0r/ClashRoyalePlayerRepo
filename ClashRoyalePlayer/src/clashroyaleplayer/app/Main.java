@@ -26,9 +26,23 @@ public class Main {
 		//save image
 		ImageCapturer imageCapturer = new ImageCapturer();
 		robot.delay(10000);
-		Rectangle captureRect = new Rectangle(814, 983, 28, 20);
+		Rectangle captureRect = new Rectangle(791, 864, 93, 109);
 		BufferedImage image = imageCapturer.captureImage(captureRect);
-		imageCapturer.saveImage(image, ".\\images1920x1080\\battle\\" ,"immagine", "jpg");
+		imageCapturer.saveImage(image, ".\\images1920x1080\\battle\\" ,"card1", "jpg");
+		*/
+		
+		/*
+		captureRect = new Rectangle(896, 864, 93, 109);
+		image = imageCapturer.captureImage(captureRect);
+		imageCapturer.saveImage(image, ".\\images1920x1080\\battle\\" ,"card2", "jpg");
+		
+		captureRect = new Rectangle(1002, 864, 93, 109);
+		image = imageCapturer.captureImage(captureRect);
+		imageCapturer.saveImage(image, ".\\images1920x1080\\battle\\" ,"card3", "jpg");
+		
+		captureRect = new Rectangle(1107, 866, 93, 109);
+		image = imageCapturer.captureImage(captureRect);
+		imageCapturer.saveImage(image, ".\\images1920x1080\\battle\\" ,"card4", "jpg");
 		*/
 		
 		/*
