@@ -188,96 +188,96 @@ public class BattleImageStore{
 
 
 
-	public BufferedImage getArrows() {
+	protected BufferedImage getArrows() {
 		return arrows;
 	}
 
 
 
-	public void setArrows(String arrowsPath) throws IOException {
+	protected void setArrows(String arrowsPath) throws IOException {
 		this.arrows = ImageIO.read(new File(arrowsPath));;
 	}
 
 
 
-	public BufferedImage getBabyDragon() {
+	protected BufferedImage getBabyDragon() {
 		return babyDragon;
 	}
 
 
 
-	public void setBabyDragon(String babyDragonPath) throws IOException {
+	protected void setBabyDragon(String babyDragonPath) throws IOException {
 		this.babyDragon = ImageIO.read(new File(babyDragonPath));
 	}
 
 
 
-	public BufferedImage getBalloon() {
+	protected BufferedImage getBalloon() {
 		return balloon;
 	}
 
 
 
-	public void setBalloon(String balloonPath) throws IOException {
+	protected void setBalloon(String balloonPath) throws IOException {
 		this.balloon = ImageIO.read(new File(balloonPath));
 	}
 
 
-	public BufferedImage getEliteBarbarians() {
+	protected BufferedImage getEliteBarbarians() {
 		return eliteBarbarians;
 	}
 
 
 
-	public void setEliteBarbarians(String eliteBarbariansPath) throws IOException {
+	protected void setEliteBarbarians(String eliteBarbariansPath) throws IOException {
 		this.eliteBarbarians = ImageIO.read(new File(eliteBarbariansPath));
 	}
 
 
 
-	public BufferedImage getFireSpirits() {
+	protected BufferedImage getFireSpirits() {
 		return fireSpirits;
 	}
 
 
 
-	public void setFireSpirits(String fireSpiritsPath) throws IOException {
+	protected void setFireSpirits(String fireSpiritsPath) throws IOException {
 		this.fireSpirits = ImageIO.read(new File(fireSpiritsPath));
 	}
 
 
 
-	public BufferedImage getFurnace() {
+	protected BufferedImage getFurnace() {
 		return furnace;
 	}
 
 
 
-	public void setFurnace(String furnacePath) throws IOException {
+	protected void setFurnace(String furnacePath) throws IOException {
 		this.furnace = ImageIO.read(new File(furnacePath));
 	}
 
 
 
-	public BufferedImage getGiant() {
+	protected BufferedImage getGiant() {
 		return giant;
 	}
 
 
 
-	public void setGiant(String giantPath) throws IOException {
+	protected void setGiant(String giantPath) throws IOException {
 		this.giant =ImageIO.read(new File(giantPath));
 	}
 
 
 
-	public BufferedImage getValkyre() {
+	protected BufferedImage getValkyre() {
 		return valkyre;
 	}
 
 
 
-	public void setValkyre(String valkyrePath) throws IOException {
+	protected void setValkyre(String valkyrePath) throws IOException {
 		this.valkyre = ImageIO.read(new File(valkyrePath));
 	}
 

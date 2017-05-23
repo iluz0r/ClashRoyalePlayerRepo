@@ -94,6 +94,8 @@ public class GameStatusController {
 		
 		protected void checkGameStatus() throws AWTException{
 			
+			autoPlayer.actions.pointOutside();
+			
 			BufferedImage capturedBattleMenu = imageCapturer.captureBattleMenu();
 			BufferedImage capturedTournamentsMenu = imageCapturer.captureTournamentsMenu();
 			BufferedImage capturedSocialMenu = imageCapturer.captureSocialMenu();
@@ -114,7 +116,6 @@ public class GameStatusController {
 			BufferedImage lowBarArenaInfo = imageStore.getLowBarArenaInfo();
 			BufferedImage rewardLimitReachedMini = imageStore.getRewardLimitReachedMini();
 			
-			autoPlayer.actions.pointOutside();
 
 			if(imageComparison.imgEqual(emotesIcon, capturedEmotesIcon, 3)){
 				if(imageComparison.imgEqual(okButton, capturedOkButton, 3))
@@ -150,6 +151,8 @@ public class GameStatusController {
 		
 		protected void checkFirstChestStatus() throws AWTException{
 			
+			autoPlayer.actions.pointOutside();
+			
 			firstChestStatus = ChestStatus.UNKNOWN;
 			
 			BufferedImage lockedSilverChest = imageStore.getLockedSilverChest();
@@ -168,7 +171,6 @@ public class GameStatusController {
 			
 			BufferedImage capturedFirstChest = imageCapturer.captureFirstChest();
 			
-			autoPlayer.actions.pointOutside();
 			
 			if(
 					imageComparison.imgEqual(lockedSilverChest, capturedFirstChest, 15) ||
@@ -207,6 +209,8 @@ public class GameStatusController {
 		
 		protected void checkSecondChestStatus() throws AWTException{
 			
+			autoPlayer.actions.pointOutside();
+			
 			secondChestStatus = ChestStatus.UNKNOWN;
 			
 			BufferedImage lockedSilverChest = imageStore.getLockedSilverChest();
@@ -225,7 +229,6 @@ public class GameStatusController {
 			
 			BufferedImage capturedSecondChest = imageCapturer.captureSecondChest();
 			
-			autoPlayer.actions.pointOutside();
 			
 			if(
 					imageComparison.imgEqual(lockedSilverChest, capturedSecondChest, 15) ||
@@ -263,6 +266,8 @@ public class GameStatusController {
 		}
 		protected void checkThirdChestStatus() throws AWTException{
 			
+			autoPlayer.actions.pointOutside();
+			
 			thirdChestStatus = ChestStatus.UNKNOWN;
 		
 			BufferedImage lockedSilverChest = imageStore.getLockedSilverChest();
@@ -281,7 +286,6 @@ public class GameStatusController {
 		
 			BufferedImage capturedThirdChest = imageCapturer.captureThirdChest();
 			
-			autoPlayer.actions.pointOutside();
 		
 			if(
 					imageComparison.imgEqual(lockedSilverChest, capturedThirdChest, 15) ||
@@ -320,6 +324,8 @@ public class GameStatusController {
 		
 		protected void checkFourthChestStatus() throws AWTException{
 			
+			autoPlayer.actions.pointOutside();
+			
 			fourthChestStatus = ChestStatus.UNKNOWN;
 		
 			BufferedImage lockedSilverChest = imageStore.getLockedSilverChest();
@@ -338,7 +344,6 @@ public class GameStatusController {
 		
 			BufferedImage capturedFourthChest = imageCapturer.captureFourthChest();
 			
-			autoPlayer.actions.pointOutside();
 		
 			if(
 					imageComparison.imgEqual(lockedSilverChest, capturedFourthChest, 15) ||
@@ -375,6 +380,9 @@ public class GameStatusController {
 		}
 		
 		protected void checkFreeChestStatus() throws AWTException{
+			
+			autoPlayer.actions.pointOutside();
+			
 			freeChestStatus = ChestStatus.UNKNOWN;
 			
 			BufferedImage openFreeChestx1 = imageStore.getOpenFreeChestx1();
@@ -382,7 +390,6 @@ public class GameStatusController {
 			
 			BufferedImage capturedFreeChest = imageCapturer.captureFreeChest();
 			
-			autoPlayer.actions.pointOutside();
 			
 			if(
 					imageComparison.imgEqual(capturedFreeChest, openFreeChestx1) ||
@@ -422,6 +429,8 @@ public class GameStatusController {
 		}
 		protected void checkCollectingStatus() throws AWTException{
 			
+			autoPlayer.actions.pointOutside();
+			
 			collectingStatus = CollectingStatus.UNKNOWN;
 			
 			BufferedImage capturedCollectingChest = imageCapturer.captureCollectingChest();
@@ -440,7 +449,6 @@ public class GameStatusController {
 			BufferedImage collectedFreeChest = imageStore.getCollectedFreeChest();
 			BufferedImage collectedCrownChest = imageStore.getCollectedCrownChest();
 			
-			autoPlayer.actions.pointOutside();
 			
 			if(
 					imageComparison.imgEqual(capturedCollectingChest, collectingSilverChest, 15) ||
