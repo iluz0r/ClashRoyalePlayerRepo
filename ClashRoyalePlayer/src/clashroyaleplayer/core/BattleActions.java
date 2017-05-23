@@ -206,4 +206,31 @@ public class BattleActions extends Actions{
 		autoPlayer.updateLog("Action: play " + card.toString() + " card in position " + position.toString());
 
 	}
+	
+	protected void playCard(BattleStatusController.Card card, FieldPosition position){
+	
+		if(card == autoPlayer.battleController.firstCard) 
+		{
+			playCard(CardPosition.FIRST, position);
+			autoPlayer.updateLog("Action: play " + card.toString() + " card in position " + position.toString());
+		} else
+			if(card == autoPlayer.battleController.secondCard)
+			{
+				playCard(CardPosition.SECOND, position);
+				autoPlayer.updateLog("Action: play " + card.toString() + " card in position " + position.toString());
+			} else
+				if(card == autoPlayer.battleController.thirdCard)
+				{
+					playCard(CardPosition.THIRD, position);
+					autoPlayer.updateLog("Action: play " + card.toString() + " card in position " + position.toString());
+				}
+				else if(card == autoPlayer.battleController.fourthCard)
+				{
+					playCard(CardPosition.FOURTH, position);
+					autoPlayer.updateLog("Action: play " + card.toString() + " card in position " + position.toString());
+				} else
+				{
+					autoPlayer.updateLog("Action: failed to play " + card.toString() + " card in position " + position.toString());
+				}
+	}
 }
