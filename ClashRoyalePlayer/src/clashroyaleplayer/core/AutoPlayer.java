@@ -196,7 +196,7 @@ public class AutoPlayer{
 					
 					while(gameController.gameStatus == GameStatus.IN_BATTLE){
 						robot.delay(1000);
-						battleController.checkElisir();
+						battleController.checkAllCards();
 						gameController.checkGameStatus();
 					}
 					robot.delay(5000);

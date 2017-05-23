@@ -207,42 +207,42 @@ public class BattleStatusController{
 		BufferedImage furnace = battleImageStore.getFurnace();
 		BufferedImage giant = battleImageStore.getGiant();
 
-		if(imageComparison.imgEqual(capturedCard, arrows, 3))
+		if(imageComparison.imgEqual(capturedCard, arrows, 6))
 		{
 			success = true;
 			this.firstCard = Card.ARROWS;
 		} else
-			if(imageComparison.imgEqual(capturedCard, babyDragon, 3))
+			if(imageComparison.imgEqual(capturedCard, babyDragon, 6))
 			{
 				success = true;
 				this.firstCard = Card.BABY_DRAGON;
 			} else
-					if(imageComparison.imgEqual(capturedCard, balloon, 3))
+					if(imageComparison.imgEqual(capturedCard, balloon, 6))
 					{
 						success = true;
 						this.firstCard = Card.BALLOON;
 					} else
-						if(imageComparison.imgEqual(capturedCard, valkyre, 3))
+						if(imageComparison.imgEqual(capturedCard, valkyre, 6))
 						{
 							success = true;
 							this.firstCard = Card.VALKYRE;
 						} else
-							if(imageComparison.imgEqual(capturedCard, eliteBarbarians, 3))
+							if(imageComparison.imgEqual(capturedCard, eliteBarbarians, 6))
 							{
 								success = true;
 								this.firstCard = Card.ELITE_BARBARIANS;
 							} else
-								if(imageComparison.imgEqual(capturedCard, fireSpirits, 3))
+								if(imageComparison.imgEqual(capturedCard, fireSpirits, 6))
 								{
 									success = true;
 									this.firstCard = Card.FIRE_SPIRITS;
 								} else
-									if(imageComparison.imgEqual(capturedCard, furnace, 3))
+									if(imageComparison.imgEqual(capturedCard, furnace, 6))
 									{
 										success = true;
 										this.firstCard = Card.FURNACE;
 									} else
-										if(imageComparison.imgEqual(capturedCard, giant, 3))
+										if(imageComparison.imgEqual(capturedCard, giant, 6))
 										{
 											success = true;
 											this.firstCard = Card.GIANT;
@@ -270,42 +270,42 @@ public class BattleStatusController{
 		BufferedImage furnace = battleImageStore.getFurnace();
 		BufferedImage giant = battleImageStore.getGiant();
 
-		if(imageComparison.imgEqual(capturedCard, arrows, 3))
+		if(imageComparison.imgEqual(capturedCard, arrows, 6))
 		{
 			success = true;
 			this.secondCard = Card.ARROWS;
 		} else
-			if(imageComparison.imgEqual(capturedCard, babyDragon, 3))
+			if(imageComparison.imgEqual(capturedCard, babyDragon, 6))
 			{
 				success = true;
 				this.secondCard = Card.BABY_DRAGON;
 			} else
-					if(imageComparison.imgEqual(capturedCard, balloon, 3))
+					if(imageComparison.imgEqual(capturedCard, balloon, 6))
 					{
 						success = true;
 						this.secondCard = Card.BALLOON;
 					} else
-						if(imageComparison.imgEqual(capturedCard, valkyre, 3))
+						if(imageComparison.imgEqual(capturedCard, valkyre, 6))
 						{
 							success = true;
 							this.secondCard = Card.VALKYRE;
 						} else
-							if(imageComparison.imgEqual(capturedCard, eliteBarbarians, 3))
+							if(imageComparison.imgEqual(capturedCard, eliteBarbarians, 6))
 							{
 								success = true;
 								this.secondCard = Card.ELITE_BARBARIANS;
 							} else
-								if(imageComparison.imgEqual(capturedCard, fireSpirits, 3))
+								if(imageComparison.imgEqual(capturedCard, fireSpirits, 6))
 								{
 									success = true;
 									this.secondCard = Card.FIRE_SPIRITS;
 								} else
-									if(imageComparison.imgEqual(capturedCard, furnace, 3))
+									if(imageComparison.imgEqual(capturedCard, furnace, 6))
 									{
 										success = true;
 										this.secondCard = Card.FURNACE;
 									} else
-										if(imageComparison.imgEqual(capturedCard, giant, 3))
+										if(imageComparison.imgEqual(capturedCard, giant, 6))
 										{
 											success = true;
 											this.secondCard = Card.GIANT;
@@ -333,42 +333,42 @@ public class BattleStatusController{
 		BufferedImage furnace = battleImageStore.getFurnace();
 		BufferedImage giant = battleImageStore.getGiant();
 
-		if(imageComparison.imgEqual(capturedCard, arrows, 3))
+		if(imageComparison.imgEqual(capturedCard, arrows, 6))
 		{
 			success = true;
 			this.thirdCard = Card.ARROWS;
 		} else
-			if(imageComparison.imgEqual(capturedCard, babyDragon, 3))
+			if(imageComparison.imgEqual(capturedCard, babyDragon, 6))
 			{
 				success = true;
 				this.thirdCard = Card.BABY_DRAGON;
 			} else
-					if(imageComparison.imgEqual(capturedCard, balloon, 3))
+					if(imageComparison.imgEqual(capturedCard, balloon, 6))
 					{
 						success = true;
 						this.thirdCard = Card.BALLOON;
 					} else
-						if(imageComparison.imgEqual(capturedCard, valkyre, 3))
+						if(imageComparison.imgEqual(capturedCard, valkyre, 6))
 						{
 							success = true;
 							this.thirdCard = Card.VALKYRE;
 						} else
-							if(imageComparison.imgEqual(capturedCard, eliteBarbarians, 3))
+							if(imageComparison.imgEqual(capturedCard, eliteBarbarians, 6))
 							{
 								success = true;
 								this.thirdCard = Card.ELITE_BARBARIANS;
 							} else
-								if(imageComparison.imgEqual(capturedCard, fireSpirits, 3))
+								if(imageComparison.imgEqual(capturedCard, fireSpirits, 6))
 								{
 									success = true;
 									this.thirdCard = Card.FIRE_SPIRITS;
 								} else
-									if(imageComparison.imgEqual(capturedCard, furnace, 3))
+									if(imageComparison.imgEqual(capturedCard, furnace, 6))
 									{
 										success = true;
 										this.thirdCard = Card.FURNACE;
 									} else
-										if(imageComparison.imgEqual(capturedCard, giant, 3))
+										if(imageComparison.imgEqual(capturedCard, giant, 6))
 										{
 											success = true;
 											this.thirdCard = Card.GIANT;
@@ -396,42 +396,42 @@ public class BattleStatusController{
 		BufferedImage furnace = battleImageStore.getFurnace();
 		BufferedImage giant = battleImageStore.getGiant();
 
-		if(imageComparison.imgEqual(capturedCard, arrows, 3))
+		if(imageComparison.imgEqual(capturedCard, arrows, 6))
 		{
 			success = true;
 			this.fourthCard = Card.ARROWS;
 		} else
-			if(imageComparison.imgEqual(capturedCard, babyDragon, 3))
+			if(imageComparison.imgEqual(capturedCard, babyDragon, 6))
 			{
 				success = true;
 				this.fourthCard = Card.BABY_DRAGON;
 			} else
-					if(imageComparison.imgEqual(capturedCard, balloon, 3))
+					if(imageComparison.imgEqual(capturedCard, balloon, 6))
 					{
 						success = true;
 						this.fourthCard = Card.BALLOON;
 					} else
-						if(imageComparison.imgEqual(capturedCard, valkyre, 3))
+						if(imageComparison.imgEqual(capturedCard, valkyre, 6))
 						{
 							success = true;
 							this.fourthCard = Card.VALKYRE;
 						} else
-							if(imageComparison.imgEqual(capturedCard, eliteBarbarians, 3))
+							if(imageComparison.imgEqual(capturedCard, eliteBarbarians, 6))
 							{
 								success = true;
 								this.fourthCard = Card.ELITE_BARBARIANS;
 							} else
-								if(imageComparison.imgEqual(capturedCard, fireSpirits, 3))
+								if(imageComparison.imgEqual(capturedCard, fireSpirits, 6))
 								{
 									success = true;
 									this.fourthCard = Card.FIRE_SPIRITS;
 								} else
-									if(imageComparison.imgEqual(capturedCard, furnace, 3))
+									if(imageComparison.imgEqual(capturedCard, furnace, 6))
 									{
 										success = true;
 										this.fourthCard = Card.FURNACE;
 									} else
-										if(imageComparison.imgEqual(capturedCard, giant, 3))
+										if(imageComparison.imgEqual(capturedCard, giant, 6))
 										{
 											success = true;
 											this.fourthCard = Card.GIANT;

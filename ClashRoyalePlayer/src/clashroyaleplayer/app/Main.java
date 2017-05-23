@@ -66,18 +66,20 @@ public class Main {
 		System.out.println("X: " + coord.getX() + " Y: " + coord.getY());
 		*/
 		
+	
 		/*
-		AutoPlayer player = new AutoPlayer();
-		player.start();
-		*/
-		
-		/*
+		robot.delay(5000);
 		ImageCapturer imageCapturer = new ImageCapturer();
-		BufferedImage image1 = ImageIO.read(new File(".\\images1920x1080\\test\\eliteBarbariansGrey1.jpg"));
-		BufferedImage image2 = ImageIO.read(new File(".\\images1920x1080\\test\\eliteBarbariansGrey50.jpg"));
+		BufferedImage image1 = imageCapturer.captureImage(new Rectangle(791, 864, 93, 109));
+		BufferedImage image2 = ImageIO.read(new File(".\\images1920x1080\\battle\\eliteBarbarians.jpg"));
 		ImageComparison imageComparison = new ImageComparison();
 		double difference = imageComparison.compare(image1, image2);
 		System.out.println(difference);
+		*/
+		
+		/*
+		AutoPlayer player = new AutoPlayer();
+		player.start();
 		*/
 		
 		
