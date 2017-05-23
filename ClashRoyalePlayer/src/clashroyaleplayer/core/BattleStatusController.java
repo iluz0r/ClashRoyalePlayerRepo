@@ -34,7 +34,7 @@ public class BattleStatusController{
 		}
 	}
 	
-	protected static enum Card {
+	public static enum Card {
 		UNKNOWN, ARROWS, BABY_DRAGON, BALLOON, ELITE_BARBARIANS, FIRE_SPIRITS, FURNACE, VALKYRE, GIANT
 	}
 
@@ -510,4 +510,19 @@ public class BattleStatusController{
 		return success;
 	}
 
+	protected boolean haveCard(Card card){
+		if(
+				firstCard == card ||
+				secondCard == card ||
+				thirdCard == card ||
+				fourthCard == card
+				)
+		{
+			return true;
+		} else
+		{
+			return false;
+		}
+	}
+				
 }
