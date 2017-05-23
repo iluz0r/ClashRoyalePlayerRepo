@@ -161,5 +161,12 @@ public class BattleStatusController{
 		
 		autoPlayer.updateLog("Action: checkElisir, the elisir is " + elisir.toString());
 	}
+	
+	protected void checkFirstCard() throws AWTException{
+		BufferedImage capturedFirstCard = battleImageCapturer.captureFirstCard();
+		
+		
+		autoPlayer.actions.pointOutside();
+	}
 
 }

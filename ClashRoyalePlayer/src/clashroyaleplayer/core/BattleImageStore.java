@@ -20,6 +20,15 @@ public class BattleImageStore{
 	private BufferedImage nineElisir;
 	private BufferedImage tenElisir;
 	
+	private BufferedImage arrows;
+	private BufferedImage babyDragon;
+	private BufferedImage balloon;
+	private BufferedImage valkyre;
+	private BufferedImage eliteBarbarians;
+	private BufferedImage fireSpirits;
+	private BufferedImage furnace;
+	private BufferedImage giant;
+	
 	
 	
 	protected BattleImageStore(String basePath) throws IOException {
@@ -34,6 +43,15 @@ public class BattleImageStore{
 		this.setEightElisir(basePath + "8.jpg");
 		this.setNineElisir(basePath + "9.jpg");
 		this.setTenElisir(basePath + "10.jpg");
+		
+		this.setArrows(basePath + "arrows.jpg");
+		this.setBabyDragon(basePath + "babyDragon.jpg");
+		this.setValkyre(basePath + "valkyre.jpg");
+		this.setBalloon(basePath + "balloon.jpg");
+		this.setEliteBarbarians(basePath + "eliteBarbarians.jpg");
+		this.setFireSpirits(basePath + "fireSpirits.jpg");
+		this.setFurnace(basePath + "furnace.jpg");
+		this.setGiant(basePath + "giant.jpg");
 	}
 
 
@@ -166,6 +184,101 @@ public class BattleImageStore{
 
 	protected void setTenElisir(String tenElisirPath) throws IOException {
 		this.tenElisir = ImageIO.read(new File(tenElisirPath));
+	}
+
+
+
+	public BufferedImage getArrows() {
+		return arrows;
+	}
+
+
+
+	public void setArrows(String arrowsPath) throws IOException {
+		this.arrows = ImageIO.read(new File(arrowsPath));;
+	}
+
+
+
+	public BufferedImage getBabyDragon() {
+		return babyDragon;
+	}
+
+
+
+	public void setBabyDragon(String babyDragonPath) throws IOException {
+		this.babyDragon = ImageIO.read(new File(babyDragonPath));
+	}
+
+
+
+	public BufferedImage getBalloon() {
+		return balloon;
+	}
+
+
+
+	public void setBalloon(String balloonPath) throws IOException {
+		this.balloon = ImageIO.read(new File(balloonPath));
+	}
+
+
+	public BufferedImage getEliteBarbarians() {
+		return eliteBarbarians;
+	}
+
+
+
+	public void setEliteBarbarians(String eliteBarbariansPath) throws IOException {
+		this.eliteBarbarians = ImageIO.read(new File(eliteBarbariansPath));
+	}
+
+
+
+	public BufferedImage getFireSpirits() {
+		return fireSpirits;
+	}
+
+
+
+	public void setFireSpirits(String fireSpiritsPath) throws IOException {
+		this.fireSpirits = ImageIO.read(new File(fireSpiritsPath));
+	}
+
+
+
+	public BufferedImage getFurnace() {
+		return furnace;
+	}
+
+
+
+	public void setFurnace(String furnacePath) throws IOException {
+		this.furnace = ImageIO.read(new File(furnacePath));
+	}
+
+
+
+	public BufferedImage getGiant() {
+		return giant;
+	}
+
+
+
+	public void setGiant(String giantPath) throws IOException {
+		this.giant =ImageIO.read(new File(giantPath));
+	}
+
+
+
+	public BufferedImage getValkyre() {
+		return valkyre;
+	}
+
+
+
+	public void setValkyre(String valkyrePath) throws IOException {
+		this.valkyre = ImageIO.read(new File(valkyrePath));
 	}
 
 }
