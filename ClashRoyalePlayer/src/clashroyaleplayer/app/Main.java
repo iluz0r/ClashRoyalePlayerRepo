@@ -12,6 +12,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import clashroyaleplayer.core.AutoPlayer;
+import clashroyaleplayer.core.AutoPlayer.Resolution;
 import clashroyaleplayer.core.ImageStore;
 import clashroyaleplayer.imageprocessing.ImageCapturer;
 import clashroyaleplayer.imageprocessing.ImageComparison;
@@ -26,7 +27,7 @@ public class Main {
 		//save image
 		ImageCapturer imageCapturer = new ImageCapturer();
 		robot.delay(10000);
-		Rectangle captureRect = new Rectangle(791, 864, 93, 109);
+		Rectangle captureRect = new Rectangle(560, 610, 64, 79);
 		BufferedImage image = imageCapturer.captureImage(captureRect);
 		
 		
@@ -34,28 +35,27 @@ public class Main {
 		int k = 200;
 		int l = 300;
 		for(int i=0; i<100; i++){
-		
-		
-		robot.delay(500);
-			
-		imageCapturer.saveImage(image, ".\\images1920x1080\\test\\" ,"card" + i, "jpg");
-		
-		
-		
-		captureRect = new Rectangle(896, 864, 93, 109);
-		image = imageCapturer.captureImage(captureRect);
-		imageCapturer.saveImage(image, ".\\images1920x1080\\test\\" ,"card" + j, "jpg");
-		
-		captureRect = new Rectangle(1002, 864, 93, 109);
-		image = imageCapturer.captureImage(captureRect);
-		imageCapturer.saveImage(image, ".\\images1920x1080\\test\\" ,"card3" + k, "jpg");
-		
-		captureRect = new Rectangle(1107, 866, 93, 109);
-		image = imageCapturer.captureImage(captureRect);
-		imageCapturer.saveImage(image, ".\\images1920x1080\\test\\" ,"card" + l, "jpg");
-		j++;
-		k++;
-		l++;
+
+			robot.delay(500);
+
+			captureRect = new Rectangle(578, 693, 17, 15);
+			image = imageCapturer.captureImage(captureRect);
+			imageCapturer.saveImage(image, ".\\images1366x768\\test\\" ,"card" + i, "jpg");
+
+			captureRect = new Rectangle(578, 693, 17, 15);
+			image = imageCapturer.captureImage(captureRect);
+			imageCapturer.saveImage(image, ".\\images1366x768\\test\\" ,"card" + j, "jpg");
+
+			captureRect = new Rectangle(578, 693, 17, 15);
+			image = imageCapturer.captureImage(captureRect);
+			imageCapturer.saveImage(image, ".\\images1366x768\\test\\" ,"card" + k, "jpg");
+
+			captureRect = new Rectangle(578, 693, 17, 15);
+			image = imageCapturer.captureImage(captureRect);
+			imageCapturer.saveImage(image, ".\\images1366x768\\test\\" ,"card" + l, "jpg");
+			j++;
+			k++;
+			l++;
 		}
 		*/
 		
@@ -70,17 +70,17 @@ public class Main {
 		/*
 		robot.delay(5000);
 		ImageCapturer imageCapturer = new ImageCapturer();
-		BufferedImage image1 = imageCapturer.captureImage(new Rectangle(791, 864, 93, 109));
-		BufferedImage image2 = ImageIO.read(new File(".\\images1920x1080\\battle\\eliteBarbarians.jpg"));
+		BufferedImage image1 = ImageIO.read(new File(".\\images1366x768\\test\\61.jpg"));
+		BufferedImage image2 = ImageIO.read(new File(".\\images1366x768\\test\\6.jpg"));
 		ImageComparison imageComparison = new ImageComparison();
 		double difference = imageComparison.compare(image1, image2);
 		System.out.println(difference);
 		*/
 		
-		/*
-		AutoPlayer player = new AutoPlayer();
+		
+		AutoPlayer player = new AutoPlayer(Resolution.R_1366X768);
 		player.start();
-		*/
+		
 		
 		
 	}

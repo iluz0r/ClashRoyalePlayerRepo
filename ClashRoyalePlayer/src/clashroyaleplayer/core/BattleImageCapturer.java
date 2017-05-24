@@ -43,7 +43,7 @@ public class BattleImageCapturer extends clashroyaleplayer.imageprocessing.Image
 			break;
 			
 		case R_1366X768 : 
-			captureRect = new Rectangle(0, 0, 0, 0);
+			captureRect = new Rectangle(560, 610, 64, 79);
 			break;
 		
 		}
@@ -63,7 +63,7 @@ public class BattleImageCapturer extends clashroyaleplayer.imageprocessing.Image
 			break;
 			
 		case R_1366X768 : 
-			captureRect = new Rectangle(0, 0, 0, 0);
+			captureRect = new Rectangle(632, 610, 64, 79);
 			break;
 		
 		}
@@ -83,7 +83,7 @@ public class BattleImageCapturer extends clashroyaleplayer.imageprocessing.Image
 			break;
 			
 		case R_1366X768 : 
-			captureRect = new Rectangle(0, 0, 0, 0);
+			captureRect = new Rectangle(705, 610, 64, 79);
 			break;
 		
 		}
@@ -103,7 +103,7 @@ public class BattleImageCapturer extends clashroyaleplayer.imageprocessing.Image
 			break;
 			
 		case R_1366X768 : 
-			captureRect = new Rectangle(0, 0, 0, 0);
+			captureRect = new Rectangle(779, 610, 64, 79);
 			break;
 		
 		}

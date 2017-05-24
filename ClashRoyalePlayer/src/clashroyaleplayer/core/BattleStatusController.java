@@ -50,7 +50,7 @@ public class BattleStatusController{
 		battleImageCapturer = new BattleImageCapturer(autoPlayer);
 		imageComparison = new ImageComparison();
 		battleImageStore = new BattleImageStore(
-				"." + 
+						"." + 
 						File.separator + 
 						"images" + 
 						autoPlayer.resolutionToString() + 

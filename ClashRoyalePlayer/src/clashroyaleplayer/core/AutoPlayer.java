@@ -153,7 +153,7 @@ public class AutoPlayer{
 									}
 					}
 					
-					actions.startBattle();
+					//actions.startBattle();
 					break;
 				}
 				
