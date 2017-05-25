@@ -8,6 +8,7 @@ import java.io.PrintStream;
 
 import clashroyaleplayer.core.BattleActions;
 import clashroyaleplayer.core.BattleStatusController.Card;
+import clashroyaleplayer.core.BattleStatusController.Elisir;
 import clashroyaleplayer.core.GameStatusController.GameStatus;
 
 public class AutoPlayer{
@@ -204,17 +205,11 @@ public class AutoPlayer{
 				case IN_BATTLE : {
 					
 					while(gameController.gameStatus == GameStatus.IN_BATTLE){
-						robot.delay(500);
-						playStrategie(scope);
-						switch(scope){
-						case OFFENSIVE : {
-							scope = StrategieScope.DEFENSIVE;
-							break;
-						}
-						case DEFENSIVE : {
-							scope = StrategieScope.OFFENSIVE;
-							break;
-						}
+						robot.delay(1000);
+						battleController.checkElisir();
+						if(Elisir.toInt(battleController.elisir) >= 5)
+						{
+							playStrategie(scope);
 						}
 						gameController.checkGameStatus();
 					}
@@ -242,155 +237,264 @@ public class AutoPlayer{
 	}
 	
 	private void playStrategie(StrategieScope scope) throws AWTException{
+		boolean switchScope = false;
 		battleController.checkAllCards();
 		battleController.checkElisir();
 		switch(scope){
 		case OFFENSIVE : {
 			if(battleController.haveCard(Card.FURNACE))
 			{
-				strategies.furnace();
+				if(strategies.furnace())
+				{
+					switchScope = true;
+				}
 			}
 			else
 				if(battleController.haveCard(Card.ELITE_BARBARIANS) && battleController.haveCard(Card.VALKYRE))
 				{
-					strategies.barbariansValkyre();
+					if(strategies.barbariansValkyre())
+					{
+						switchScope = true;
+					}
 				}
 				else
 					if(battleController.haveCard(Card.BALLOON) && battleController.haveCard(Card.FIRE_SPIRITS))
 					{
-						strategies.baloonSpirits();
+						if(strategies.baloonSpirits())
+						{
+							switchScope = true;
+						}
 					}
 					else
 						if(battleController.haveCard(Card.ELITE_BARBARIANS) && battleController.haveCard(Card.FIRE_SPIRITS))
 						{
-							strategies.barbariansSpirits();
+							if(strategies.barbariansSpirits())
+							{
+								switchScope = true;
+							}
 						}
 						else
 							if(battleController.haveCard(Card.BALLOON) && battleController.haveCard(Card.ARROWS))
 							{
-								strategies.balloonArrows();
+								if(strategies.balloonArrows())
+								{
+									switchScope = true;
+								}
 							}
 							else
 								if(battleController.haveCard(Card.GIANT) && battleController.haveCard(Card.FIRE_SPIRITS))
 								{
-									strategies.giantSpirits();
+									if(strategies.giantSpirits())
+									{
+										switchScope = true;
+									}
 								}
 								else
 									if(battleController.haveCard(Card.ELITE_BARBARIANS) && battleController.haveCard(Card.BABY_DRAGON))
 									{
-										strategies.barbariansDragon();
+										if(strategies.barbariansDragon())
+										{
+											switchScope = true;
+										}
 									}
 									else
 										if(battleController.haveCard(Card.BALLOON))
 										{
-											strategies.balloon();
+											if(strategies.balloon())
+											{
+												switchScope = true;
+											}
 										}
 										else
 											if(battleController.haveCard(Card.GIANT) && battleController.haveCard(Card.BABY_DRAGON))
 											{
-												strategies.giantDragon();
+												if(strategies.giantDragon())
+												{
+													switchScope = true;
+												}
 											}
 											else
 												if(battleController.haveCard(Card.ELITE_BARBARIANS) && battleController.haveCard(Card.ARROWS))
 												{
-													strategies.barbariansArrows();
+													if(strategies.barbariansArrows())
+													{
+														switchScope = true;
+													}
 												}
 												else
 													if(battleController.haveCard(Card.BALLOON) && battleController.haveCard(Card.BABY_DRAGON))
 													{
-														strategies.balloonDragon();
+														if(strategies.balloonDragon())
+														{
+															switchScope = true;
+														}
 													}
 													else
 														if(battleController.haveCard(Card.BALLOON) && battleController.haveCard(Card.GIANT))
 														{
-															strategies.balloonGiant();
+															if(strategies.balloonGiant())
+															{
+																switchScope = true;
+															}
 														}
 														else
 															if(battleController.haveCard(Card.VALKYRE) && battleController.haveCard(Card.BABY_DRAGON))
 															{
-																strategies.valkyreDragon();
+																if(strategies.valkyreDragon())
+																{
+																	switchScope = true;
+																}
 															}
+			break;
 		}
 		case DEFENSIVE : {
 			if(battleController.haveCard(Card.FURNACE))
 			{
-				strategies.furnace();
+				if(strategies.furnace())
+				{
+					switchScope = true;
+				}
 			}
 			else
 				if(battleController.haveCard(Card.BABY_DRAGON))
 				{
-					strategies.babyDragon();
+					if(strategies.babyDragon())
+					{
+						switchScope = true;
+					}
 				}
 				else
 					if(battleController.haveCard(Card.VALKYRE))
 					{
-						strategies.valkyre();
+						if(strategies.valkyre())
+						{
+							switchScope = true;
+						}
 					}
 					else
 						if(battleController.haveCard(Card.ELITE_BARBARIANS) && battleController.haveCard(Card.VALKYRE))
 						{
-							strategies.barbariansValkyre();
+							if(strategies.barbariansValkyre())
+							{
+								switchScope = true;
+							}
 						}
 						else
 							if(battleController.haveCard(Card.BALLOON) && battleController.haveCard(Card.FIRE_SPIRITS))
 							{
-								strategies.baloonSpirits();
+								if(strategies.baloonSpirits())
+								{
+									switchScope = true;
+								}
 							}
 							else
 								if(battleController.haveCard(Card.ELITE_BARBARIANS) && battleController.haveCard(Card.FIRE_SPIRITS))
 								{
-									strategies.barbariansSpirits();
+									if(strategies.barbariansSpirits())
+									{
+										switchScope = true;
+									}
 								}
 								else
 									if(battleController.haveCard(Card.BALLOON) && battleController.haveCard(Card.ARROWS))
 									{
-										strategies.balloonArrows();
+										if(strategies.balloonArrows())
+										{
+											switchScope = true;
+										}
 									}
 									else
 										if(battleController.haveCard(Card.GIANT) && battleController.haveCard(Card.FIRE_SPIRITS))
 										{
-											strategies.giantSpirits();
+											if(strategies.giantSpirits())
+											{
+												switchScope = true;
+											}
 										}
 										else
 											if(battleController.haveCard(Card.ELITE_BARBARIANS) && battleController.haveCard(Card.BABY_DRAGON))
 											{
-												strategies.barbariansDragon();
+												if(strategies.barbariansDragon())
+												{
+													switchScope = true;
+												}
 											}
 											else
 												if(battleController.haveCard(Card.BALLOON))
 												{
-													strategies.balloon();
+													if(strategies.balloon())
+													{
+														switchScope = true;
+													}
 												}
 												else
 													if(battleController.haveCard(Card.GIANT) && battleController.haveCard(Card.BABY_DRAGON))
 													{
-														strategies.giantDragon();
+														if(strategies.giantDragon())
+														{
+															switchScope = true;
+														}
 													}
 													else
 														if(battleController.haveCard(Card.ELITE_BARBARIANS) && battleController.haveCard(Card.ARROWS))
 														{
-															strategies.barbariansArrows();
+															if(strategies.barbariansArrows())
+															{
+																switchScope = true;
+															}
 														}
 														else
 															if(battleController.haveCard(Card.BALLOON) && battleController.haveCard(Card.BABY_DRAGON))
 															{
-																strategies.balloonDragon();
+																if(strategies.balloonDragon())
+																{
+																	switchScope = true;
+																}
 															}
 															else
 																if(battleController.haveCard(Card.BALLOON) && battleController.haveCard(Card.GIANT))
 																{
-																	strategies.balloonGiant();
+																	if(strategies.balloonGiant())
+																	{
+																		switchScope = true;
+																	}
 																}
 																else
 																	if(battleController.haveCard(Card.VALKYRE) && battleController.haveCard(Card.BABY_DRAGON))
 																	{
-																		strategies.valkyreDragon();
+																		if(strategies.valkyreDragon())
+																		{
+																			switchScope = true;
+																		}
 																	}
+			break;
 
 		}
+		}
+
+		if(switchScope)
+		{
+			switchStrategieScope();
 		}
 	}
 
+	private void switchStrategieScope(){
+		StrategieScope oldScope = scope;
+		switch(scope){
+			case OFFENSIVE : 
+			{
+				scope = StrategieScope.DEFENSIVE;
+				break;
+			}
+			case DEFENSIVE :
+			{
+				scope = StrategieScope.OFFENSIVE;
+				break;
+			}
+		}
+		updateLog("Action: switched scope from " + oldScope.toString() + " to " + scope.toString());
+	}
+	
 	protected void updateLog(String update){
 		log += update + ";\n";
 	}

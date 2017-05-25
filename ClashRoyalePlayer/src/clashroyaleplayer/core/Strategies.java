@@ -11,7 +11,8 @@ public class Strategies {
 		this.autoPlayer = autoPlayer;
 	}
 	
-	protected void furnace() {
+	protected boolean furnace() {
+		boolean success = true;
 		if(Elisir.toInt(autoPlayer.battleController.elisir) >= 4)
 		{
 			autoPlayer.battleActions.playCard(Card.FURNACE, FieldPosition.CENTRE);
@@ -19,11 +20,14 @@ public class Strategies {
 		}
 		else
 		{
+			success = false;
 			autoPlayer.updateLog("Action: failed to play strategie furnace");
 		}
+		return success;
 	}
 	
-	protected void barbariansValkyre() {
+	protected boolean barbariansValkyre() {
+		boolean success = true;
 		if(Elisir.toInt(autoPlayer.battleController.elisir) >= 10)
 		{
 			autoPlayer.battleActions.playCard(Card.VALKYRE, FieldPosition.TOP_RIGHT);
@@ -32,11 +36,14 @@ public class Strategies {
 		}
 		else
 		{
+			success = false;
 			autoPlayer.updateLog("Action: failed to play strategie barbariansValkyre");
 		}
+		return success;
 	}
 
-	protected void baloonSpirits() {
+	protected boolean baloonSpirits() {
+		boolean success = true;
 		if(Elisir.toInt(autoPlayer.battleController.elisir) >= 7)
 		{
 			autoPlayer.battleActions.playCard(Card.BALLOON, FieldPosition.TOP_RIGHT);
@@ -45,11 +52,14 @@ public class Strategies {
 		}
 		else
 		{
+			success = false;
 			autoPlayer.updateLog("Action: failed to play strategie baloonSpirits");
 		}		
+		return success;
 	}
 
-	protected void barbariansSpirits() {
+	protected boolean barbariansSpirits() {
+		boolean success = true;
 		if(Elisir.toInt(autoPlayer.battleController.elisir) >= 8)
 		{
 			autoPlayer.battleActions.playCard(Card.ELITE_BARBARIANS, FieldPosition.TOP_RIGHT);
@@ -58,11 +68,14 @@ public class Strategies {
 		}
 		else
 		{
+			success = false;
 			autoPlayer.updateLog("Action: failed to play strategie barbariansSpirits");
 		}
+		return success;
 	}
 
-	protected void balloonArrows() {
+	protected boolean balloonArrows() {
+		boolean success = true;
 		if(Elisir.toInt(autoPlayer.battleController.elisir) >= 7)
 		{
 			autoPlayer.battleActions.playCard(Card.BALLOON, FieldPosition.TOP_RIGHT);
@@ -72,11 +85,14 @@ public class Strategies {
 		}
 		else
 		{
+			success = false;
 			autoPlayer.updateLog("Action: failed to play strategie balloonArrows");
 		}
+		return success;
 	}
 
-	protected void giantSpirits() {
+	protected boolean giantSpirits() {
+		boolean success = true;
 		if(Elisir.toInt(autoPlayer.battleController.elisir) >= 7)
 		{
 			autoPlayer.battleActions.playCard(Card.GIANT, FieldPosition.TOP_RIGHT);
@@ -85,11 +101,14 @@ public class Strategies {
 		}
 		else
 		{
+			success = false;
 			autoPlayer.updateLog("Action: failed to play strategie giantSpirits");
 		}
+		return success;
 	}
 
-	protected void barbariansDragon() {
+	protected boolean barbariansDragon() {
+		boolean success = true;
 		if(Elisir.toInt(autoPlayer.battleController.elisir) >= 7)
 		{
 			autoPlayer.battleActions.playCard(Card.BABY_DRAGON, FieldPosition.DOWN_RIGHT);
@@ -99,11 +118,14 @@ public class Strategies {
 		}
 		else
 		{
+			success = false;
 			autoPlayer.updateLog("Action: failed to play strategie barbariansDragon");
 		}
+		return success;
 	}
 
-	protected void balloon() {
+	protected boolean balloon() {
+		boolean success = true;
 		if(Elisir.toInt(autoPlayer.battleController.elisir) >= 5)
 		{
 			autoPlayer.battleActions.playCard(Card.BALLOON, FieldPosition.TOP_RIGHT);
@@ -111,12 +133,14 @@ public class Strategies {
 		}
 		else
 		{
+			success = false;
 			autoPlayer.updateLog("Action: failed to play strategie balloon");
 		}
-		
+		return success;
 	}
 
-	protected void giantDragon() {
+	protected boolean giantDragon() {
+		boolean success = true;
 		if(Elisir.toInt(autoPlayer.battleController.elisir) >= 6)
 		{
 			autoPlayer.battleActions.playCard(Card.BABY_DRAGON, FieldPosition.DOWN_RIGHT);
@@ -126,11 +150,14 @@ public class Strategies {
 		}
 		else
 		{
+			success = false;
 			autoPlayer.updateLog("Action: failed to play strategie giantDragon");
 		}		
+		return success;
 	}
 
-	protected void barbariansArrows() {
+	protected boolean barbariansArrows() {
+		boolean success = true;
 		if(Elisir.toInt(autoPlayer.battleController.elisir) >= 8)
 		{
 			autoPlayer.battleActions.playCard(Card.ELITE_BARBARIANS, FieldPosition.TOP_RIGHT);
@@ -140,11 +167,14 @@ public class Strategies {
 		}
 		else
 		{
+			success = false;
 			autoPlayer.updateLog("Action: failed to play strategie barbariansArrows");
 		}	
+		return success;
 	}
 
-	protected void balloonDragon() {
+	protected boolean balloonDragon() {
+		boolean success = true;
 		if(Elisir.toInt(autoPlayer.battleController.elisir) >= 6)
 		{
 			autoPlayer.battleActions.playCard(Card.BABY_DRAGON, FieldPosition.DOWN_RIGHT);
@@ -154,11 +184,14 @@ public class Strategies {
 		}
 		else
 		{
+			success = false;
 			autoPlayer.updateLog("Action: failed to play strategie balloonDragon");
 		}
+		return success;
 	}
 
-	protected void balloonGiant() {
+	protected boolean balloonGiant() {
+		boolean success = true;
 		if(Elisir.toInt(autoPlayer.battleController.elisir) >= 10)
 		{
 			autoPlayer.battleActions.playCard(Card.GIANT, FieldPosition.TOP_RIGHT);
@@ -168,11 +201,14 @@ public class Strategies {
 		}
 		else
 		{
+			success = false;
 			autoPlayer.updateLog("Action: failed to play strategie balloonGiant");
 		}
+		return success; 
 	}
 
-	protected void valkyreDragon() {
+	protected boolean valkyreDragon() {
+		boolean success = true;
 		if(Elisir.toInt(autoPlayer.battleController.elisir) >= 5)
 		{
 			autoPlayer.battleActions.playCard(Card.BABY_DRAGON, FieldPosition.DOWN_RIGHT);
@@ -182,11 +218,14 @@ public class Strategies {
 		}
 		else
 		{
+			success = false;
 			autoPlayer.updateLog("Action: failed to play strategie valkyreDragon");
 		}
+		return success;
 	}
 
-	protected void babyDragon() {
+	protected boolean babyDragon() {
+		boolean success = true;
 		if(Elisir.toInt(autoPlayer.battleController.elisir) >= 4)
 		{
 			autoPlayer.battleActions.playCard(Card.BABY_DRAGON, FieldPosition.DOWN_RIGHT);
@@ -194,11 +233,14 @@ public class Strategies {
 		}
 		else
 		{
+			success = false;
 			autoPlayer.updateLog("Action: failed to play strategie babyDragon");
 		}
+		return success;
 	}
 
-	protected void valkyre() {
+	protected boolean valkyre() {
+		boolean success = true;
 		if(Elisir.toInt(autoPlayer.battleController.elisir) >= 4)
 		{
 			autoPlayer.battleActions.playCard(Card.VALKYRE, FieldPosition.MIDDLE_RIGHT);
@@ -206,7 +248,9 @@ public class Strategies {
 		}
 		else
 		{
+			success = false;
 			autoPlayer.updateLog("Action: failed to play strategie valkyre");
 		}
+		return success;
 	}
 }
