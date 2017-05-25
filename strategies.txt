@@ -1,0 +1,32 @@
+
+=SE(O(A2="fornace"; B2="fornace"; C2="fornace"; D2="fornace"); "FO"; 
+	SE(E(O(A2="valchiria"; B2="valchiria"; C2="valchiria"; D2="valchiria"); O(A2="barbariS"; B2="barbariS"; C2="barbariS"; D2="barbariS")); "BS_V"; 
+		SE(E(O(A2="spiriti"; B2="spiriti"; C2="spiriti"; D2="spiriti"); O(A2="barbariS"; B2="barbariS"; C2="barbariS"; D2="barbariS")); "BS_S"; 
+			SE(E(O(A2="drago"; B2="drago"; C2="drago"; D2="drago"); O(A2="barbariS"; B2="barbariS"; C2="barbariS"; D2="barbariS")); "BS_D"; 
+				SE(E(O(A2="mongolfiera"; B2="mongolfiera"; C2="mongolfiera"; D2="mongolfiera"); O(A2="spiriti"; B2="spiriti"; C2="spiriti"; D2="spiriti")); "M_S"; 
+					SE(E(O(A2="mongolfiera"; B2="mongolfiera"; C2="mongolfiera"; D2="mongolfiera"); O(A2="frecce"; B2="frecce"; C2="frecce"; D2="frecce")); "M_F"; 
+						SE(E(O(A2="mongolfiera"; B2="mongolfiera"; C2="mongolfiera"; D2="mongolfiera"); O(A2="gigante"; B2="gigante"; C2="gigante"; D2="gigante")); "M_G"; 
+							SE(E(O(A2="mongolfiera"; B2="mongolfiera"; C2="mongolfiera"; D2="mongolfiera"); O(A2="drago"; B2="drago"; C2="drago"; D2="drago")); "M_D"; 
+								SE(E(O(A2="gigante"; B2="gigante"; C2="gigante"; D2="gigante"); O(A2="spiriti"; B2="spiriti"; C2="spiriti"; D2="spiriti")); "G_S"; 
+									SE(O(A2="mongolfiera"; B2="mongolfiera"; C2="mongolfiera"; D2="mongolfiera"); "M";
+										SE(E(O(A2="gigante"; B2="gigante"; C2="gigante"; D2="gigante"); O(A2="drago"; B2="drago"; C2="drago"; D2="drago")); "G_D"; 
+											SE(E(O(A2="barbariS"; B2="barbariS"; C2="barbariS"; D2="barbariS"); O(A2="frecce"; B2="frecce"; C2="frecce"; D2="frecce")); "BS_F"; 
+												"NESSUNA_STRATEGIA"))))))))))
+
+=SE(O(A2="fornace"; B2="fornace"; C2="fornace"; D2="fornace"); "FO"; 
+	SE(E(O(A2="valchiria"; B2="valchiria"; C2="valchiria"; D2="valchiria"); O(A2="barbariS"; B2="barbariS"; C2="barbariS"; D2="barbariS")); "BS_V";
+		SE(E(O(A2="mongolfiera"; B2="mongolfiera"; C2="mongolfiera"; D2="mongolfiera"); O(A2="spiriti"; B2="spiriti"; C2="spiriti"; D2="spiriti")); "M_S";
+			SE(E(O(A2="spiriti"; B2="spiriti"; C2="spiriti"; D2="spiriti"); O(A2="barbariS"; B2="barbariS"; C2="barbariS"; D2="barbariS")); "BS_S";
+				SE(E(O(A2="mongolfiera"; B2="mongolfiera"; C2="mongolfiera"; D2="mongolfiera"); O(A2="frecce"; B2="frecce"; C2="frecce"; D2="frecce")); "M_F";
+					SE(E(O(A2="gigante"; B2="gigante"; C2="gigante"; D2="gigante"); O(A2="spiriti"; B2="spiriti"; C2="spiriti"; D2="spiriti")); "G_S";
+						SE(E(O(A2="drago"; B2="drago"; C2="drago"; D2="drago"); O(A2="barbariS"; B2="barbariS"; C2="barbariS"; D2="barbariS")); "BS_D";
+							SE(O(A2="mongolfiera"; B2="mongolfiera"; C2="mongolfiera"; D2="mongolfiera"); "M";
+								SE(E(O(A2="gigante"; B2="gigante"; C2="gigante"; D2="gigante"); O(A2="drago"; B2="drago"; C2="drago"; D2="drago")); "G_D";
+									SE(E(O(A2="barbariS"; B2="barbariS"; C2="barbariS"; D2="barbariS"); O(A2="frecce"; B2="frecce"; C2="frecce"; D2="frecce")); "BS_F";
+										SE(E(O(A2="mongolfiera"; B2="mongolfiera"; C2="mongolfiera"; D2="mongolfiera"); O(A2="drago"; B2="drago"; C2="drago"; D2="drago")); "M_D";
+											SE(E(O(A2="mongolfiera"; B2="mongolfiera"; C2="mongolfiera"; D2="mongolfiera"); O(A2="gigante"; B2="gigante"; C2="gigante"; D2="gigante")); "M_G";
+												"NESSUNA_STRATEGIA"))))))))))))
+
+=SE(O(A2="fornace"; B2="fornace"; C2="fornace"; D2="fornace"); "FO"; SE(E(O(A2="valchiria"; B2="valchiria"; C2="valchiria"; D2="valchiria"); O(A2="barbariS"; B2="barbariS"; C2="barbariS"; D2="barbariS")); "BS_V"; SE(E(O(A2="mongolfiera"; B2="mongolfiera"; C2="mongolfiera"; D2="mongolfiera"); O(A2="spiriti"; B2="spiriti"; C2="spiriti"; D2="spiriti"; "M_S")) SE(E(O(A2="spiriti"; B2="spiriti"; C2="spiriti"; D2="spiriti"); O(A2="barbariS"; B2="barbariS"; C2="barbariS"; D2="barbariS")); "BS_S"; SE(E(O(A2="mongolfiera"; B2="mongolfiera"; C2="mongolfiera"; D2="mongolfiera"); O(A2="frecce"; B2="frecce"; C2="frecce"; D2="frecce")); "M_F"; SE(E(O(A2="gigante"; B2="gigante"; C2="gigante"; D2="gigante"); O(A2="spiriti"; B2="spiriti"; C2="spiriti"; D2="spiriti")); "G_S"; SE(E(O(A2="drago"; B2="drago"; C2="drago"; D2="drago"); O(A2="barbariS"; B2="barbariS"; C2="barbariS"; D2="barbariS")); "BS_D"; SE(O(A2="mongolfiera"; B2="mongolfiera"; C2="mongolfiera"; D2="mongolfiera"); "M"; SE(E(O(A2="gigante"; B2="gigante"; C2="gigante"; D2="gigante"); O(A2="drago"; B2="drago"; C2="drago"; D2="drago")); "G_D"; SE(E(O(A2="barbariS"; B2="barbariS"; C2="barbariS"; D2="barbariS"); O(A2="frecce"; B2="frecce"; C2="frecce"; D2="frecce")); "BS_F"; SE(E(O(A2="mongolfiera"; B2="mongolfiera"; C2="mongolfiera"; D2="mongolfiera"); O(A2="drago"; B2="drago"; C2="drago"; D2="drago")); "M_D"; SE(E(O(A2="mongolfiera"; B2="mongolfiera"; C2="mongolfiera"; D2="mongolfiera"); O(A2="gigante"; B2="gigante"; C2="gigante"; D2="gigante")); "M_G"; "NESSUNA_STRATEGIA"))))))))))))
+
+=PIU.SE(O(A2="fornace"; B2="fornace"; C2="fornace"; D2="fornace"); "FO"; E(O(A2="valchiria"; B2="valchiria"; C2="valchiria"; D2="valchiria"); O(A2="barbariS"; B2="barbariS"; C2="barbariS"; D2="barbariS")); "BS_V"; E(O(A2="mongolfiera"; B2="mongolfiera"; C2="mongolfiera"; D2="mongolfiera"); O(A2="spiriti"; B2="spiriti"; C2="spiriti"; D2="spiriti")); "M_S"; E(O(A2="spiriti"; B2="spiriti"; C2="spiriti"; D2="spiriti"); O(A2="barbariS"; B2="barbariS"; C2="barbariS"; D2="barbariS")); "BS_S"; E(O(A2="mongolfiera"; B2="mongolfiera"; C2="mongolfiera"; D2="mongolfiera"); O(A2="frecce"; B2="frecce"; C2="frecce"; D2="frecce")); "M_F"; E(O(A2="gigante"; B2="gigante"; C2="gigante"; D2="gigante"); O(A2="spiriti"; B2="spiriti"; C2="spiriti"; D2="spiriti")); "G_S"; E(O(A2="drago"; B2="drago"; C2="drago"; D2="drago"); O(A2="barbariS"; B2="barbariS"; C2="barbariS"; D2="barbariS")); "BS_D"; O(A2="mongolfiera"; B2="mongolfiera"; C2="mongolfiera"; D2="mongolfiera"); "M"; E(O(A2="gigante"; B2="gigante"; C2="gigante"; D2="gigante"); O(A2="drago"; B2="drago"; C2="drago"; D2="drago")); "G_D"; E(O(A2="barbariS"; B2="barbariS"; C2="barbariS"; D2="barbariS"); O(A2="frecce"; B2="frecce"; C2="frecce"; D2="frecce")); "BS_F"; E(O(A2="mongolfiera"; B2="mongolfiera"; C2="mongolfiera"; D2="mongolfiera"); O(A2="drago"; B2="drago"; C2="drago"; D2="drago")); "M_D"; E(O(A2="mongolfiera"; B2="mongolfiera"; C2="mongolfiera"; D2="mongolfiera"); O(A2="gigante"; B2="gigante"; C2="gigante"; D2="gigante")); "M_G";
