@@ -71,7 +71,7 @@ public class BattleActions extends Actions{
 			this.tap(953, 557);
 			break;
 		case R_1366X768 : 
-			this.tap(653, 394);
+			this.tap(676, 394);
 			break;
 		default: break;
 		}
