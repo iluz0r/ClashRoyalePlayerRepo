@@ -78,7 +78,7 @@ public class Main {
 		*/
 		
 		
-		AutoPlayer player = new AutoPlayer(Resolution.R_1366X768);
+		AutoPlayer player = new AutoPlayer();
 		player.start();
 		
 		

@@ -1,23 +1,30 @@
 package clashroyaleplayer.core;
 
+import java.awt.AWTException;
 import java.awt.Robot;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 
 import clashroyaleplayer.core.BattleActions;
+import clashroyaleplayer.core.BattleStatusController.Card;
 import clashroyaleplayer.core.GameStatusController.GameStatus;
 
 public class AutoPlayer{
 	
-	public enum Resolution{
+	public static enum Resolution{
 		R_1920X1080, R_1366X768 
+	}
+	
+	public static enum StrategieScope {
+		OFFENSIVE, DEFENSIVE
 	}
 	
 	protected Robot robot;
 	
 	protected Resolution resolution;
 	protected final static Resolution DEFAULT_RESOLUTION = Resolution.R_1920X1080;
+	private StrategieScope scope = StrategieScope.OFFENSIVE;
 	
 	private String log = "";
 	private PrintStream writeLog;
@@ -26,6 +33,7 @@ public class AutoPlayer{
 	BattleStatusController battleController;
 	Actions actions;
 	BattleActions battleActions;
+	Strategies strategies;
 	
 	public AutoPlayer(Resolution screenResolution) throws Exception{
 		
@@ -49,6 +57,7 @@ public class AutoPlayer{
 		battleController = new BattleStatusController(this);
 		actions = new Actions(this);
 		battleActions = new BattleActions(this);
+		strategies = new Strategies(this);
 	}
 	
 	public AutoPlayer() throws Exception{
@@ -153,7 +162,7 @@ public class AutoPlayer{
 									}
 					}
 					
-					//actions.startBattle();
+					actions.startBattle();
 					break;
 				}
 				
@@ -195,8 +204,18 @@ public class AutoPlayer{
 				case IN_BATTLE : {
 					
 					while(gameController.gameStatus == GameStatus.IN_BATTLE){
-						robot.delay(1000);
-						battleController.checkAllCards();
+						robot.delay(500);
+						playStrategie(scope);
+						switch(scope){
+						case OFFENSIVE : {
+							scope = StrategieScope.DEFENSIVE;
+							break;
+						}
+						case DEFENSIVE : {
+							scope = StrategieScope.OFFENSIVE;
+							break;
+						}
+						}
 						gameController.checkGameStatus();
 					}
 					robot.delay(5000);
@@ -222,8 +241,159 @@ public class AutoPlayer{
 		System.exit(0);
 	}
 	
+	private void playStrategie(StrategieScope scope) throws AWTException{
+		battleController.checkAllCards();
+		battleController.checkElisir();
+		switch(scope){
+		case OFFENSIVE : {
+			if(battleController.haveCard(Card.FURNACE))
+			{
+				strategies.furnace();
+			}
+			else
+				if(battleController.haveCard(Card.ELITE_BARBARIANS) && battleController.haveCard(Card.VALKYRE))
+				{
+					strategies.barbariansValkyre();
+				}
+				else
+					if(battleController.haveCard(Card.BALLOON) && battleController.haveCard(Card.FIRE_SPIRITS))
+					{
+						strategies.baloonSpirits();
+					}
+					else
+						if(battleController.haveCard(Card.ELITE_BARBARIANS) && battleController.haveCard(Card.FIRE_SPIRITS))
+						{
+							strategies.barbariansSpirits();
+						}
+						else
+							if(battleController.haveCard(Card.BALLOON) && battleController.haveCard(Card.ARROWS))
+							{
+								strategies.balloonArrows();
+							}
+							else
+								if(battleController.haveCard(Card.GIANT) && battleController.haveCard(Card.FIRE_SPIRITS))
+								{
+									strategies.giantSpirits();
+								}
+								else
+									if(battleController.haveCard(Card.ELITE_BARBARIANS) && battleController.haveCard(Card.BABY_DRAGON))
+									{
+										strategies.barbariansDragon();
+									}
+									else
+										if(battleController.haveCard(Card.BALLOON))
+										{
+											strategies.balloon();
+										}
+										else
+											if(battleController.haveCard(Card.GIANT) && battleController.haveCard(Card.BABY_DRAGON))
+											{
+												strategies.giantDragon();
+											}
+											else
+												if(battleController.haveCard(Card.ELITE_BARBARIANS) && battleController.haveCard(Card.ARROWS))
+												{
+													strategies.barbariansArrows();
+												}
+												else
+													if(battleController.haveCard(Card.BALLOON) && battleController.haveCard(Card.BABY_DRAGON))
+													{
+														strategies.balloonDragon();
+													}
+													else
+														if(battleController.haveCard(Card.BALLOON) && battleController.haveCard(Card.GIANT))
+														{
+															strategies.balloonGiant();
+														}
+														else
+															if(battleController.haveCard(Card.VALKYRE) && battleController.haveCard(Card.BABY_DRAGON))
+															{
+																strategies.valkyreDragon();
+															}
+		}
+		case DEFENSIVE : {
+			if(battleController.haveCard(Card.FURNACE))
+			{
+				strategies.furnace();
+			}
+			else
+				if(battleController.haveCard(Card.BABY_DRAGON))
+				{
+					strategies.babyDragon();
+				}
+				else
+					if(battleController.haveCard(Card.VALKYRE))
+					{
+						strategies.valkyre();
+					}
+					else
+						if(battleController.haveCard(Card.ELITE_BARBARIANS) && battleController.haveCard(Card.VALKYRE))
+						{
+							strategies.barbariansValkyre();
+						}
+						else
+							if(battleController.haveCard(Card.BALLOON) && battleController.haveCard(Card.FIRE_SPIRITS))
+							{
+								strategies.baloonSpirits();
+							}
+							else
+								if(battleController.haveCard(Card.ELITE_BARBARIANS) && battleController.haveCard(Card.FIRE_SPIRITS))
+								{
+									strategies.barbariansSpirits();
+								}
+								else
+									if(battleController.haveCard(Card.BALLOON) && battleController.haveCard(Card.ARROWS))
+									{
+										strategies.balloonArrows();
+									}
+									else
+										if(battleController.haveCard(Card.GIANT) && battleController.haveCard(Card.FIRE_SPIRITS))
+										{
+											strategies.giantSpirits();
+										}
+										else
+											if(battleController.haveCard(Card.ELITE_BARBARIANS) && battleController.haveCard(Card.BABY_DRAGON))
+											{
+												strategies.barbariansDragon();
+											}
+											else
+												if(battleController.haveCard(Card.BALLOON))
+												{
+													strategies.balloon();
+												}
+												else
+													if(battleController.haveCard(Card.GIANT) && battleController.haveCard(Card.BABY_DRAGON))
+													{
+														strategies.giantDragon();
+													}
+													else
+														if(battleController.haveCard(Card.ELITE_BARBARIANS) && battleController.haveCard(Card.ARROWS))
+														{
+															strategies.barbariansArrows();
+														}
+														else
+															if(battleController.haveCard(Card.BALLOON) && battleController.haveCard(Card.BABY_DRAGON))
+															{
+																strategies.balloonDragon();
+															}
+															else
+																if(battleController.haveCard(Card.BALLOON) && battleController.haveCard(Card.GIANT))
+																{
+																	strategies.balloonGiant();
+																}
+																else
+																	if(battleController.haveCard(Card.VALKYRE) && battleController.haveCard(Card.BABY_DRAGON))
+																	{
+																		strategies.valkyreDragon();
+																	}
+
+		}
+		}
+	}
+
 	protected void updateLog(String update){
 		log += update + ";\n";
 	}
-	
+
+
 }
