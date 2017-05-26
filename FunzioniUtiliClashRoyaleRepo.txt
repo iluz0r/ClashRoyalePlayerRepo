@@ -1,0 +1,53 @@
+		/*
+		//save image
+		ImageCapturer imageCapturer = new ImageCapturer();
+		robot.delay(10000);
+		Rectangle captureRect = new Rectangle(560, 610, 64, 79);
+		BufferedImage image = imageCapturer.captureImage(captureRect);
+		
+		
+		int j= 100;
+		int k = 200;
+		int l = 300;
+		for(int i=0; i<100; i++){
+
+			robot.delay(500);
+
+			captureRect = new Rectangle(578, 693, 17, 15);
+			image = imageCapturer.captureImage(captureRect);
+			imageCapturer.saveImage(image, ".\\images1366x768\\test\\" ,"card" + i, "jpg");
+
+			captureRect = new Rectangle(578, 693, 17, 15);
+			image = imageCapturer.captureImage(captureRect);
+			imageCapturer.saveImage(image, ".\\images1366x768\\test\\" ,"card" + j, "jpg");
+
+			captureRect = new Rectangle(578, 693, 17, 15);
+			image = imageCapturer.captureImage(captureRect);
+			imageCapturer.saveImage(image, ".\\images1366x768\\test\\" ,"card" + k, "jpg");
+
+			captureRect = new Rectangle(578, 693, 17, 15);
+			image = imageCapturer.captureImage(captureRect);
+			imageCapturer.saveImage(image, ".\\images1366x768\\test\\" ,"card" + l, "jpg");
+			j++;
+			k++;
+			l++;
+		}
+		*/
+		
+		/*
+		//get pointed coord
+		robot.delay(10000);
+		Point coord = MouseInfo.getPointerInfo().getLocation();
+		System.out.println("X: " + coord.getX() + " Y: " + coord.getY());
+		*/
+		
+	
+		/*
+		robot.delay(5000);
+		ImageCapturer imageCapturer = new ImageCapturer();
+		BufferedImage image1 = ImageIO.read(new File(".\\images1366x768\\test\\61.jpg"));
+		BufferedImage image2 = ImageIO.read(new File(".\\images1366x768\\test\\6.jpg"));
+		ImageComparison imageComparison = new ImageComparison();
+		double difference = imageComparison.compare(image1, image2);
+		System.out.println(difference);
+		*/
