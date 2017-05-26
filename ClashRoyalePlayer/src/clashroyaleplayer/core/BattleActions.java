@@ -1,7 +1,5 @@
 package clashroyaleplayer.core;
 
-import javax.sql.rowset.CachedRowSet;
-
 public class BattleActions extends Actions{
 
 	protected static enum FieldPosition {
