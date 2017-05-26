@@ -244,7 +244,7 @@ public class AutoPlayer{
 	}
 	
 	private void playStrategie(StrategieScope scope) throws AWTException{
-		boolean switchScope = false;
+		boolean switchScope = true;
 		battleController.checkAllCards();
 		battleController.checkElisir();
 		switch(scope){
@@ -253,7 +253,7 @@ public class AutoPlayer{
 			{
 				if(strategies.furnace())
 				{
-					switchScope = true;
+					switchScope = false;
 				}
 			}
 			else
