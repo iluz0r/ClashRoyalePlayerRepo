@@ -239,12 +239,12 @@ public class Strategies {
 		return success;
 	}
 
-	protected boolean giant() {
+	protected boolean valkyre() {
 		boolean success = true;
-		if(Elisir.toInt(autoPlayer.battleController.elisir) >= 5)
+		if(Elisir.toInt(autoPlayer.battleController.elisir) >= 4)
 		{
-			autoPlayer.battleActions.playCard(Card.GIANT, FieldPosition.IN_FRONT_OF_TOWER_RIGHT);
-			autoPlayer.updateLog("Action: play strategie giant");
+			autoPlayer.battleActions.playCard(Card.VALKYRE, FieldPosition.IN_FRONT_OF_TOWER_RIGHT);
+			autoPlayer.updateLog("Action: play strategie valkyre");
 		}
 		else
 		{
