@@ -19,63 +19,68 @@ public class BattleActions extends Actions{
 	
 	protected void tapFirstCard() {
 		switch(autoPlayer.resolution){
-		case R_1920X1080 : 
+		case R_1920X1080 : {
 			this.tap(841, 916);
 			break;
-		case R_1366X768 : 
+		}
+		case R_1366X768 : { 
 			this.tap(592, 644);
 			break;
-		default: break;
+		}
 		}
 		
 	}
 	
 	protected void tapSecondCard() {
 		switch(autoPlayer.resolution){
-		case R_1920X1080 : 
+		case R_1920X1080 : {
 			this.tap(942, 916);
 			break;
-		case R_1366X768 : 
+		}
+		case R_1366X768 : {
 			this.tap(664, 652);
 			break;
-		default: break;
+		}
 		}
 		
 	}
 	
 	protected void tapThirdCard() {
 		switch(autoPlayer.resolution){
-		case R_1920X1080 : 
+		case R_1920X1080 : {
 			this.tap(1045, 916);
 			break;
-		case R_1366X768 : 
+		}
+		case R_1366X768 : {
 			this.tap(729, 641);
 			break;
-		default: break;
+		}
 		}
 	}
 	
 	protected void tapFourthCard() {
 		switch(autoPlayer.resolution){
-		case R_1920X1080 : 
+		case R_1920X1080 : {
 			this.tap(1158, 916);
 			break;
-		case R_1366X768 : 
+		}
+		case R_1366X768 : {
 			this.tap(806, 647);
 			break;
-		default: break;
+		}
 		}
 	}
 	
 	protected void tapFieldCentre() {
 		switch(autoPlayer.resolution){
-		case R_1920X1080 : 
+		case R_1920X1080 : {
 			this.tap(953, 557);
 			break;
-		case R_1366X768 : 
+		}
+		case R_1366X768 : {
 			this.tap(676, 394);
 			break;
-		default: break;
+		}
 		}
 	}
 	
@@ -160,7 +165,7 @@ public class BattleActions extends Actions{
 	protected void tapFieldInFrontOfTowerRight() {
 		switch(autoPlayer.resolution){
 			case R_1920X1080 : {
-				this.tap(0, 0);
+				this.tap(1084, 594);
 				break;
 			}
 			case R_1366X768 : {
@@ -174,7 +179,7 @@ public class BattleActions extends Actions{
 	protected void tapFieldInFrontOfTowerLeft() {
 		switch(autoPlayer.resolution){
 			case R_1920X1080 : {
-				this.tap(0, 0);
+				this.tap(797, 594);
 				break;
 			}
 			case R_1366X768 : {
