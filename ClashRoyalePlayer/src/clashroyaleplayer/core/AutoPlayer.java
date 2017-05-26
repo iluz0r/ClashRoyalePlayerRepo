@@ -213,11 +213,18 @@ public class AutoPlayer{
 						}
 						gameController.checkGameStatus();
 					}
-					robot.delay(5000);
-					gameController.checkGameStatus();
+					for(int i=0; i < 5; i++){
+						robot.delay(1000);
+						if(gameController.gameStatus != GameStatus.END_BATTLE)
+						{
+							gameController.checkGameStatus();
+						}else{
+							break;
+						}
+					}
 					break;
 				}
-			
+
 			}
 		}
 		this.stop();
