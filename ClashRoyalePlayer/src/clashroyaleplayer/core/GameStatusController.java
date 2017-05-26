@@ -392,8 +392,8 @@ public class GameStatusController {
 			
 			
 			if(
-					imageComparison.imgEqual(capturedFreeChest, openFreeChestx1) ||
-					imageComparison.imgEqual(capturedFreeChest, openFreeChestx2))
+					imageComparison.imgEqual(capturedFreeChest, openFreeChestx1, 15) ||
+					imageComparison.imgEqual(capturedFreeChest, openFreeChestx2, 15))
 				freeChestStatus = ChestStatus.UNLOCKABLE;
 			else
 				freeChestStatus = ChestStatus.UNLOCKING;
@@ -410,7 +410,7 @@ public class GameStatusController {
 			
 			autoPlayer.actions.pointOutside();
 			
-			if(imageComparison.imgEqual(capturedCrownChest, openCrownChest))
+			if(imageComparison.imgEqual(capturedCrownChest, openCrownChest, 15))
 				crownChestStatus = ChestStatus.UNLOCKABLE;
 			else
 				crownChestStatus = ChestStatus.UNLOCKING;

@@ -27,10 +27,11 @@ public class Main {
 		//save image
 		ImageCapturer imageCapturer = new ImageCapturer();
 		robot.delay(10000);
-		Rectangle captureRect = new Rectangle(560, 610, 64, 79);
+		Rectangle captureRect = new Rectangle(478, 130, 183, 60);
 		BufferedImage image = imageCapturer.captureImage(captureRect);
-		
-		
+		imageCapturer.saveImage(image, ".\\images1366x768\\test\\" ,"card", "jpg");
+		*/
+		/*
 		int j= 100;
 		int k = 200;
 		int l = 300;
@@ -77,10 +78,10 @@ public class Main {
 		System.out.println(difference);
 		*/
 		
-		
-		AutoPlayer player = new AutoPlayer();
+		/*
+		AutoPlayer player = new AutoPlayer(Resolution.R_1366X768);
 		player.start();
-		
+		*/
 		
 		
 	}
