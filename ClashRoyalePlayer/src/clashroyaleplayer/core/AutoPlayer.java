@@ -93,8 +93,19 @@ public class AutoPlayer{
 	public void start() throws Exception{
 		init();
 		
-		while(this.gameController.getGameStatus() != GameStatusController.GameStatus.UNKNOWN){
-		    this.gameController.checkGameStatus();
+		while(gameController.gameStatus != GameStatus.UNKNOWN){
+			robot.delay(1000);
+			gameController.checkGameStatus();
+			for(int i=0; i < 2; i++){
+				robot.delay(1000);
+				if(gameController.gameStatus == GameStatus.UNKNOWN)
+				{
+					gameController.checkGameStatus();
+				}else
+				{
+					i = 100;
+				}
+			}
 			switch(gameController.getGameStatus()){
 			
 				case UNKNOWN : break;
@@ -218,6 +229,9 @@ public class AutoPlayer{
 						if(gameController.gameStatus != GameStatus.END_BATTLE)
 						{
 							gameController.checkGameStatus();
+						}else
+						{
+							i = 100;
 						}
 					}
 					break;
@@ -242,7 +256,7 @@ public class AutoPlayer{
 	}
 	
 	private void playStrategie(StrategieScope scope) throws AWTException{
-		boolean switchScope = true;
+		boolean switchScope = false;
 		battleController.checkAllCards();
 		battleController.checkElisir();
 		switch(scope){
