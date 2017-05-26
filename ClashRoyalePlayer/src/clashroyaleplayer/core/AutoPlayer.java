@@ -213,13 +213,11 @@ public class AutoPlayer{
 						}
 						gameController.checkGameStatus();
 					}
-					for(int i=0; i < 5; i++){
+					for(int i=0; i < 10; i++){
 						robot.delay(1000);
 						if(gameController.gameStatus != GameStatus.END_BATTLE)
 						{
 							gameController.checkGameStatus();
-						}else{
-							break;
 						}
 					}
 					break;
