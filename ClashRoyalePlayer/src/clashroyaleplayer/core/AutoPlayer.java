@@ -366,7 +366,7 @@ public class AutoPlayer{
 				else
 					if(battleController.haveCard(Card.VALKYRE))
 					{
-						if(strategies.valkyre())
+						if(strategies.giant())
 						{
 							switchScope = true;
 						}

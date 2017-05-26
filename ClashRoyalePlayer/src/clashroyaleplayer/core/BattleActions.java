@@ -1,10 +1,12 @@
 package clashroyaleplayer.core;
 
+import javax.sql.rowset.CachedRowSet;
+
 public class BattleActions extends Actions{
 
 	protected static enum FieldPosition {
 		TOP_RIGHT, TOP_LEFT, MIDDLE_RIGHT, MIDDLE_LEFT,
-		DOWN_RIGHT, DOWN_LEFT, CENTRE
+		DOWN_RIGHT, DOWN_LEFT, CENTRE, IN_FRONT_OF_TOWER_RIGHT, IN_FRONT_OF_TOWER_LEFT
 	}
 	protected static enum CardPosition {
 		FIRST, SECOND, THIRD, FOURTH
@@ -79,73 +81,107 @@ public class BattleActions extends Actions{
 	
 	protected void tapFieldDownLeft() {
 		switch(autoPlayer.resolution){
-		case R_1920X1080 : 
+		case R_1920X1080 : {
 			this.tap(927, 792);
 			break;
-		case R_1366X768 : 
+		}
+		case R_1366X768 : {
 			this.tap(654, 559);
 			break;
-		default: break;
+		}
 		}
 	}
 	
 	protected void tapFieldDownRight() {
 		switch(autoPlayer.resolution){
-		case R_1920X1080 : 
+		case R_1920X1080 : {
 			this.tap(955, 792);
 			break;
-		case R_1366X768 : 
+		}
+		case R_1366X768 : {
 			this.tap(675, 559);
 			break;
-		default: break;
+		}
 		}
 	}
 	
 	protected void tapFieldMiddleLeft() {
 		switch(autoPlayer.resolution){
-		case R_1920X1080 : 
+		case R_1920X1080 : {
 			this.tap(796, 490);
 			break;
-		case R_1366X768 : 
+		}
+		case R_1366X768 : {
 			this.tap(570, 353);
 			break;
-		default: break;
+		}
 		}
 	}
 	
 	protected void tapFieldMiddleRight() {
 		switch(autoPlayer.resolution){
-		case R_1920X1080 : 
+		case R_1920X1080 : {
 			this.tap(1088, 490);
 			break;
-		case R_1366X768 : 
+		}
+		case R_1366X768 : {
 			this.tap(765, 353);
 			break;
-		default: break;
+		}
 		}
 	}
 	
 	protected void tapFieldTopLeft() {
 		switch(autoPlayer.resolution){
-		case R_1920X1080 : 
+		case R_1920X1080 : {
 			this.tap(795, 297);
 			break;
-		case R_1366X768 : 
+		}
+		case R_1366X768 : {
 			this.tap(570, 251);
 			break;
-		default: break;
+		}
 		}
 	}
 	
 	protected void tapFieldTopRight() {
 		switch(autoPlayer.resolution){
-		case R_1920X1080 : 
+		case R_1920X1080 : {
 			this.tap(1089, 297);
 			break;
-		case R_1366X768 : 
+		}
+		case R_1366X768 : {
 			this.tap(765, 251);
 			break;
-		default: break;
+		}
+		}
+	}
+	
+	protected void tapFieldInFrontOfTowerRight() {
+		switch(autoPlayer.resolution){
+			case R_1920X1080 : {
+				this.tap(0, 0);
+				break;
+			}
+			case R_1366X768 : {
+				this.tap(764, 427);
+				break;
+			}
+		
+		}
+	}
+	
+	protected void tapFieldInFrontOfTowerLeft() {
+		switch(autoPlayer.resolution){
+			case R_1920X1080 : {
+				this.tap(0, 0);
+				break;
+			}
+			case R_1366X768 : {
+				this.tap(563, 427);
+				break;
+			}
+		
 		}
 	}
 	
@@ -200,6 +236,14 @@ public class BattleActions extends Actions{
 		}
 		case TOP_RIGHT : {
 			tapFieldTopRight();
+			break;
+		}
+		case IN_FRONT_OF_TOWER_RIGHT : {
+			tapFieldInFrontOfTowerRight();
+			break;
+		}
+		case IN_FRONT_OF_TOWER_LEFT : {
+			tapFieldInFrontOfTowerLeft();
 			break;
 		}
 		}
