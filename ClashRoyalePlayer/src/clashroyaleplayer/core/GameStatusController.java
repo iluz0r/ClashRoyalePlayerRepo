@@ -117,8 +117,8 @@ public class GameStatusController {
 			BufferedImage rewardLimitReachedMini = imageStore.getRewardLimitReachedMini();
 			
 
-			if(imageComparison.imgEqual(emotesIcon, capturedEmotesIcon, 3)){
-				if(imageComparison.imgEqual(okButton, capturedOkButton, 3))
+			if(imageComparison.imgEqual(emotesIcon, capturedEmotesIcon, 10)){
+				if(imageComparison.imgEqual(okButton, capturedOkButton, 10))
 					gameStatus = GameStatus.END_BATTLE;
 				else
 					gameStatus = GameStatus.IN_BATTLE;
@@ -456,7 +456,7 @@ public class GameStatusController {
 					imageComparison.imgEqual(capturedCollectingChest, collectingMagicChest, 15) ||
 					imageComparison.imgEqual(capturedCollectingChest, collectingCrownChest, 15) ||
 					imageComparison.imgEqual(capturedCollectingChest, collectingFreeChest,15) ||
-					imageComparison.imgEqual(capturedCollectingChest, collectingGiantChest))
+					imageComparison.imgEqual(capturedCollectingChest, collectingGiantChest, 15))
 			{
 				collectingStatus = CollectingStatus.COLLECTING;
 			}
