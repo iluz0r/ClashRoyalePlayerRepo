@@ -94,8 +94,6 @@ public class GameStatusController {
 		
 		protected void checkGameStatus() throws AWTException{
 			
-			autoPlayer.actions.pointOutside();
-			
 			BufferedImage capturedBattleMenu = imageCapturer.captureBattleMenu();
 			BufferedImage capturedTournamentsMenu = imageCapturer.captureTournamentsMenu();
 			BufferedImage capturedSocialMenu = imageCapturer.captureSocialMenu();
@@ -150,8 +148,6 @@ public class GameStatusController {
 		}
 		
 		protected void checkFirstChestStatus() throws AWTException{
-			
-			autoPlayer.actions.pointOutside();
 			
 			firstChestStatus = ChestStatus.UNKNOWN;
 			
@@ -209,8 +205,6 @@ public class GameStatusController {
 		
 		protected void checkSecondChestStatus() throws AWTException{
 			
-			autoPlayer.actions.pointOutside();
-			
 			secondChestStatus = ChestStatus.UNKNOWN;
 			
 			BufferedImage lockedSilverChest = imageStore.getLockedSilverChest();
@@ -265,8 +259,6 @@ public class GameStatusController {
 			autoPlayer.updateLog("Action: checkSecondChestStatus, the state is " + secondChestStatus.toString());
 		}
 		protected void checkThirdChestStatus() throws AWTException{
-			
-			autoPlayer.actions.pointOutside();
 			
 			thirdChestStatus = ChestStatus.UNKNOWN;
 		
@@ -324,8 +316,6 @@ public class GameStatusController {
 		
 		protected void checkFourthChestStatus() throws AWTException{
 			
-			autoPlayer.actions.pointOutside();
-			
 			fourthChestStatus = ChestStatus.UNKNOWN;
 		
 			BufferedImage lockedSilverChest = imageStore.getLockedSilverChest();
@@ -381,8 +371,6 @@ public class GameStatusController {
 		
 		protected void checkFreeChestStatus() throws AWTException{
 			
-			autoPlayer.actions.pointOutside();
-			
 			freeChestStatus = ChestStatus.UNKNOWN;
 			
 			BufferedImage openFreeChestx1 = imageStore.getOpenFreeChestx1();
@@ -408,8 +396,6 @@ public class GameStatusController {
 			
 			BufferedImage capturedCrownChest = imageCapturer.captureCrownChest();
 			
-			autoPlayer.actions.pointOutside();
-			
 			if(imageComparison.imgEqual(capturedCrownChest, openCrownChest, 15))
 				crownChestStatus = ChestStatus.UNLOCKABLE;
 			else
@@ -428,8 +414,6 @@ public class GameStatusController {
 			checkCrownChestStatus();
 		}
 		protected void checkCollectingStatus() throws AWTException{
-			
-			autoPlayer.actions.pointOutside();
 			
 			collectingStatus = CollectingStatus.UNKNOWN;
 			

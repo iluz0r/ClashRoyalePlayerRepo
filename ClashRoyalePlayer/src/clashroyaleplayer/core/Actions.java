@@ -20,11 +20,6 @@ public class Actions {
 		autoPlayer.robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
 	}
 	
-	private void point(int x, int y){
-		autoPlayer.robot.mouseMove(x, y);
-	}
-	
-	
 	protected void tapBattleButton(){
 		switch(autoPlayer.resolution){
 		case R_1920X1080 : 
@@ -80,18 +75,6 @@ public class Actions {
 			break;
 		case R_1366X768 : 
 			this.tap(808, 600);
-			break;
-		default: break;
-		}
-	}
-	
-	protected void pointOutside(){
-		switch(autoPlayer.resolution){
-		case R_1920X1080 : 
-			this.point(1400, 500);
-			break;
-		case R_1366X768 : 
-			this.point(1082, 305);
 			break;
 		default: break;
 		}

@@ -60,7 +60,6 @@ public class BattleStatusController{
 	}
 
 	protected void checkElisir() throws AWTException{
-		autoPlayer.actions.pointOutside();
 
 		BufferedImage capturedElisir = battleImageCapturer.captureElisir();
 
@@ -194,8 +193,6 @@ public class BattleStatusController{
 		boolean success = false;
 		this.firstCard = Card.UNKNOWN;
 
-		autoPlayer.actions.pointOutside();
-
 		BufferedImage capturedCard = battleImageCapturer.captureFirstCard();
 
 		BufferedImage arrows = battleImageStore.getArrows();
@@ -256,8 +253,6 @@ public class BattleStatusController{
 
 		boolean success = false;
 		this.secondCard = Card.UNKNOWN;
-
-		autoPlayer.actions.pointOutside();
 
 		BufferedImage capturedCard = battleImageCapturer.captureSecondCard();
 
@@ -320,8 +315,6 @@ public class BattleStatusController{
 		boolean success = false;
 		this.thirdCard = Card.UNKNOWN;
 
-		autoPlayer.actions.pointOutside();
-
 		BufferedImage capturedCard = battleImageCapturer.captureThirdCard();
 
 		BufferedImage arrows = battleImageStore.getArrows();
@@ -382,8 +375,6 @@ public class BattleStatusController{
 
 		boolean success = false;
 		this.fourthCard = Card.UNKNOWN;
-
-		autoPlayer.actions.pointOutside();
 
 		BufferedImage capturedCard = battleImageCapturer.captureFourthCard();
 
