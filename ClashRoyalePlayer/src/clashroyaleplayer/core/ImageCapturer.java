@@ -318,7 +318,7 @@ public class ImageCapturer extends clashroyaleplayer.imageprocessing.ImageCaptur
 			break;
 
 		case R_1366X768 : 
-			captureRect = new Rectangle(485, 602, 42, 31);
+			captureRect = new Rectangle(488, 605, 35, 25);
 			break;
 
 		}
