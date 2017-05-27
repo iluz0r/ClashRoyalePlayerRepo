@@ -424,26 +424,40 @@ public class Actions {
 		switch(autoPlayer.gameController.gameStatus){
 		case BATTLE_MENU : {
 			tapBattleButton();
+			autoPlayer.updateLog("Action: startBattle");
+			for(int i = 0; i < 10; i++) {
+				autoPlayer.robot.delay(1000);
+				autoPlayer.gameController.checkGameStatus();
+				if(autoPlayer.gameController.gameStatus == GameStatus.IN_BATTLE)
+				{
+					i = 100;
+					foundBattle = true;
+				}
+				if(autoPlayer.gameController.gameStatus == GameStatus.REWARD_LIMIT_REACHED)
+				{
+					i = 100;
+				}
+			}
 			break;
 		}
 		
 		case REWARD_LIMIT_REACHED : {
 			tapYesButton();
+			autoPlayer.updateLog("Action: startBattle");
+			for(int i = 0; i < 10; i++) {
+				autoPlayer.robot.delay(1000);
+				autoPlayer.gameController.checkGameStatus();
+				if(autoPlayer.gameController.gameStatus == GameStatus.IN_BATTLE)
+				{
+					i = 100;
+					foundBattle = true;
+				}
+			}
 			break;
 		}
 		
 		default : break;
 
-		}
-		autoPlayer.updateLog("Action: startBattle");
-		for(int i = 0; i < 10; i++) {
-			autoPlayer.robot.delay(1000);
-			autoPlayer.gameController.checkGameStatus();
-			if(autoPlayer.gameController.gameStatus == GameStatus.IN_BATTLE)
-			{
-				i = 100;
-				foundBattle = true;
-			}
 		}
 		
 		if(foundBattle)
