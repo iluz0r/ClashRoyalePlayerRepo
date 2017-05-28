@@ -435,23 +435,23 @@ public class GameStatusController {
 			
 			
 			if(
-					imageComparison.imgEqual(capturedCollectingChest, collectingSilverChest, 15) ||
-					imageComparison.imgEqual(capturedCollectingChest, collectingGoldChest, 15) ||
-					imageComparison.imgEqual(capturedCollectingChest, collectingMagicChest, 15) ||
-					imageComparison.imgEqual(capturedCollectingChest, collectingCrownChest, 15) ||
-					imageComparison.imgEqual(capturedCollectingChest, collectingFreeChest,15) ||
-					imageComparison.imgEqual(capturedCollectingChest, collectingGiantChest, 15))
+					imageComparison.imgEqual(capturedCollectingChest, collectingSilverChest, 20) ||
+					imageComparison.imgEqual(capturedCollectingChest, collectingGoldChest, 20) ||
+					imageComparison.imgEqual(capturedCollectingChest, collectingMagicChest, 20) ||
+					imageComparison.imgEqual(capturedCollectingChest, collectingCrownChest, 20) ||
+					imageComparison.imgEqual(capturedCollectingChest, collectingFreeChest, 20) ||
+					imageComparison.imgEqual(capturedCollectingChest, collectingGiantChest, 20))
 			{
 				collectingStatus = CollectingStatus.COLLECTING;
 			}
 				else
 					if(
-							imageComparison.imgEqual(capturedCollectedChest, collectedSilverChest, 15) ||
-							imageComparison.imgEqual(capturedCollectedChest, collectedGoldChest,15) ||
-							imageComparison.imgEqual(capturedCollectedChest, collectedMagicChest, 15) ||
-							imageComparison.imgEqual(capturedCollectedChest, collectedCrownChest, 15) ||
-							imageComparison.imgEqual(capturedCollectedChest, collectedFreeChest, 15) ||
-							imageComparison.imgEqual(capturedCollectedChest, collectedGiantChest, 15))
+							imageComparison.imgEqual(capturedCollectedChest, collectedSilverChest, 20) ||
+							imageComparison.imgEqual(capturedCollectedChest, collectedGoldChest, 20) ||
+							imageComparison.imgEqual(capturedCollectedChest, collectedMagicChest, 20) ||
+							imageComparison.imgEqual(capturedCollectedChest, collectedCrownChest, 20) ||
+							imageComparison.imgEqual(capturedCollectedChest, collectedFreeChest, 20) ||
+							imageComparison.imgEqual(capturedCollectedChest, collectedGiantChest, 20))
 					{
 						collectingStatus = CollectingStatus.COLLECTED;
 					}
