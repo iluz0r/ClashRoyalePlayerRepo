@@ -515,7 +515,9 @@ public class AutoPlayer{
 	}
 	
 	protected void updateLog(String update){
-		log += update + ";\n";
+		update +=";\n";
+		System.out.print(update);
+		log += update;
 	}
 
 
