@@ -220,7 +220,7 @@ public class AutoPlayer{
 						battleController.checkElisir();
 						if(Elisir.toInt(battleController.elisir) >= 5)
 						{
-							playStrategie(scope);
+							playStrategie();
 						}
 						gameController.checkGameStatus();
 					}
@@ -255,7 +255,7 @@ public class AutoPlayer{
 		System.exit(0);
 	}
 	
-	private void playStrategie(StrategieScope scope) throws AWTException{
+	private void playStrategie() throws AWTException{
 		boolean switchScope = false;
 		battleController.checkAllCards();
 		battleController.checkElisir();
