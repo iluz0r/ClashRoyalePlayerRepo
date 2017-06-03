@@ -122,25 +122,25 @@ public class GameStatusController {
 					gameStatus = GameStatus.IN_BATTLE;
 			}
 			else
-				if (imageComparison.imgEqual(battleMenu, capturedBattleMenu, 3)) 
+				if (imageComparison.imgEqual(battleMenu, capturedBattleMenu, 5)) 
 					gameStatus = GameStatus.BATTLE_MENU;
 				else
-					if(imageComparison.imgEqual(lowBarArenaInfo, capturedLowBarArenaInfo, 3))
+					if(imageComparison.imgEqual(lowBarArenaInfo, capturedLowBarArenaInfo, 5))
 						gameStatus = GameStatus.ARENA_INFO;
 					else
-						if(imageComparison.imgEqual(rewardLimitReachedMini, capturedRewardLimitReachedMini, 3))
+						if(imageComparison.imgEqual(rewardLimitReachedMini, capturedRewardLimitReachedMini, 5))
 							gameStatus = GameStatus.REWARD_LIMIT_REACHED;
 						else
-							if(imageComparison.imgEqual(shopMenu, capturedShopMenu, 3)) 
+							if(imageComparison.imgEqual(shopMenu, capturedShopMenu, 5)) 
 								gameStatus = GameStatus.SHOP_MENU;
 							else
-								if(imageComparison.imgEqual(socialMenu, capturedSocialMenu, 3)) 
+								if(imageComparison.imgEqual(socialMenu, capturedSocialMenu, 5)) 
 									gameStatus = GameStatus.SOCIAL_MENU;
 								else
-									if(imageComparison.imgEqual(tournamentsMenu, capturedTournamentsMenu, 3)) 
+									if(imageComparison.imgEqual(tournamentsMenu, capturedTournamentsMenu, 5)) 
 										gameStatus = GameStatus.TOURNAMENTS_MENU;
 									else
-										if(imageComparison.imgEqual(cardsMenu, capturedCardsMenu, 3)) 
+										if(imageComparison.imgEqual(cardsMenu, capturedCardsMenu, 5)) 
 											gameStatus = GameStatus.CARDS_MENU;
 										else
 											gameStatus = GameStatus.UNKNOWN;
