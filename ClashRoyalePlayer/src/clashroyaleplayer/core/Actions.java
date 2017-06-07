@@ -336,6 +336,7 @@ public class Actions {
 	protected void switchMenu(String menuToGo) throws AWTException{
 		autoPlayer.gameController.checkGameStatus();
 		String oldMenu = autoPlayer.gameController.gameStatus.toString();
+		final String logStart = "Action : switched from ";
 		
 		switch(menuToGo){
 		
@@ -344,7 +345,7 @@ public class Actions {
 				tapBattleMenu();
 				autoPlayer.robot.delay(3000);
 				autoPlayer.gameController.checkGameStatus();
-				autoPlayer.updateLog("Action: switched from " + oldMenu + " to " + autoPlayer.gameController.gameStatus.toString());
+				autoPlayer.updateLog(logStart + oldMenu + " to " + autoPlayer.gameController.gameStatus.toString());
 			}
 			break;
 		}
@@ -354,8 +355,9 @@ public class Actions {
 				tapTournamentsMenu();
 				autoPlayer.robot.delay(3000);
 				autoPlayer.gameController.checkGameStatus();
-				autoPlayer.updateLog("Action: switched from " + oldMenu + " to " + autoPlayer.gameController.gameStatus.toString());
+				autoPlayer.updateLog(logStart + oldMenu + " to " + autoPlayer.gameController.gameStatus.toString());
 			}
+			break;
 		}
 		
 		case "SOCIAL_MENU" : {
@@ -363,8 +365,9 @@ public class Actions {
 				tapSocialMenu();
 				autoPlayer.robot.delay(3000);
 				autoPlayer.gameController.checkGameStatus();
-				autoPlayer.updateLog("Action: switched from " + oldMenu + " to " + autoPlayer.gameController.gameStatus.toString());
+				autoPlayer.updateLog(logStart + oldMenu + " to " + autoPlayer.gameController.gameStatus.toString());
 			}
+			break;
 		}
 		
 		case "SHOP_MENU" : {
@@ -372,8 +375,9 @@ public class Actions {
 				tapShopMenu();
 				autoPlayer.robot.delay(3000);
 				autoPlayer.gameController.checkGameStatus();
-				autoPlayer.updateLog("Action: switched from " + oldMenu + " to " + autoPlayer.gameController.gameStatus.toString());
+				autoPlayer.updateLog(logStart + oldMenu + " to " + autoPlayer.gameController.gameStatus.toString());
 				}
+			break;
 		}
 		
 		case "CARDS_MENU" : {
@@ -381,8 +385,9 @@ public class Actions {
 				tapCardsMenu();
 				autoPlayer.robot.delay(3000);
 				autoPlayer.gameController.checkGameStatus();
-				autoPlayer.updateLog("Action: switched from " + oldMenu + " to " + autoPlayer.gameController.gameStatus.toString());
+				autoPlayer.updateLog(logStart + oldMenu + " to " + autoPlayer.gameController.gameStatus.toString());
 			}
+			break;
 		}
 		}
 	}
