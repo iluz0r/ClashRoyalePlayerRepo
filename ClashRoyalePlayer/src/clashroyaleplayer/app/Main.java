@@ -1,6 +1,7 @@
 package clashroyaleplayer.app;
 
 import clashroyaleplayer.core.AutoPlayer;
+import clashroyaleplayer.core.AutoPlayer.Resolution;
 
 public class Main {
 	

@@ -1,4 +1,12 @@
-		/*
+//save image
+		clashroyaleplayer.imageprocessing.ImageCapturer imageCapturer = new clashroyaleplayer.imageprocessing.ImageCapturer();
+		java.awt.Robot robot = new java.awt.Robot();
+		robot .delay(10000);
+		java.awt.Rectangle captureRect = new java.awt.Rectangle(1090, 767, 123, 152);
+		java.awt.image.BufferedImage image = imageCapturer.captureImage(captureRect);
+		imageCapturer.saveImage(image, ".\\images1920x1080\\" , "unlockingEpicChest", "jpg");		
+
+/*
 		//save image
 		ImageCapturer imageCapturer = new ImageCapturer();
 		robot.delay(10000);
