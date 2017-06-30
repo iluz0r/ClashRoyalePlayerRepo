@@ -250,7 +250,6 @@ public class AutoPlayer{
 		FileOutputStream logFile = new FileOutputStream(path);
         writeLog = new PrintStream(logFile);
         writeLog.print(log);
-		System.out.println(log);
 
 		System.exit(0);
 	}

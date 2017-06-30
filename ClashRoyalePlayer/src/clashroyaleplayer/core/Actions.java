@@ -23,10 +23,34 @@ public class Actions {
 	protected void tapBattleButton(){
 		switch(autoPlayer.resolution){
 		case R_1920X1080 : 
-			this.tap(944, 668);
+			this.tap(846, 668);
 			break;
 		case R_1366X768 : 
 			this.tap(661, 476);
+			break;
+		default: break;
+		}
+	}
+	
+	protected void tap2v2Battle(){
+		switch(autoPlayer.resolution){
+		case R_1920X1080 : 
+			this.tap(0, 0);
+			break;
+		case R_1366X768 : 
+			this.tap(0, 0);
+			break;
+		default: break;
+		}
+	}
+	
+	protected void tapQuickMatch() {
+		switch(autoPlayer.resolution){
+		case R_1920X1080 : 
+			this.tap(0, 0);
+			break;
+		case R_1366X768 : 
+			this.tap(0, 0);
 			break;
 		default: break;
 		}
@@ -413,7 +437,7 @@ public class Actions {
 		case BATTLE_MENU : {
 			tapBattleButton();
 			autoPlayer.updateLog("Action: startBattle");
-			for(int i = 0; i < 10; i++) {
+			for(int i = 0; i < 40; i++) {
 				autoPlayer.robot.delay(1000);
 				autoPlayer.gameController.checkGameStatus();
 				if(autoPlayer.gameController.gameStatus == GameStatus.IN_BATTLE)
@@ -432,7 +456,7 @@ public class Actions {
 		case REWARD_LIMIT_REACHED : {
 			tapYesButton();
 			autoPlayer.updateLog("Action: startBattle");
-			for(int i = 0; i < 10; i++) {
+			for(int i = 0; i < 40; i++) {
 				autoPlayer.robot.delay(1000);
 				autoPlayer.gameController.checkGameStatus();
 				if(autoPlayer.gameController.gameStatus == GameStatus.IN_BATTLE)
