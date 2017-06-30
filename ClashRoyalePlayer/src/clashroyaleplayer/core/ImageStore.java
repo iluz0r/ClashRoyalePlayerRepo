@@ -8,7 +8,6 @@ import javax.imageio.ImageIO;
 
 public class ImageStore {
 
-	private BufferedImage battleButton;
 	private BufferedImage emptyChestSlot;
 	private BufferedImage lockedSilverChest;
 	private BufferedImage unlockingSilverChest;
@@ -55,7 +54,6 @@ public class ImageStore {
 	
 	protected ImageStore(String basePath) throws IOException {
 		
-		this.setBattleButton(basePath + "battleButton.jpg");
 		this.setEmptyChestSlot(basePath + "emptyChestSlot.jpg");
 		this.setLockedSilverChest(basePath + "lockedSilverChest.jpg");
 		this.setUnlockingSilverChest(basePath + "unlockingSilverChest.jpg");
@@ -101,15 +99,6 @@ public class ImageStore {
 		this.setCollectedGiantChest(basePath + "collectedGiantChest.jpg");
 		
 		
-	}
-	
-	
-	protected BufferedImage getBattleButton() {
-		return battleButton;
-	}
-
-	protected void setBattleButton(String battleButtonPath) throws IOException {
-		this.battleButton = ImageIO.read(new File(battleButtonPath));
 	}
 	
 	protected BufferedImage getLockedSilverChest(){

@@ -101,28 +101,6 @@ public class ImageCapturer extends clashroyaleplayer.imageprocessing.ImageCaptur
 	
 	}
 	
-	
-	protected BufferedImage captureBattleButton() throws AWTException {
-		
-		Rectangle captureRect = null;
-		
-		switch(autoPlayer.resolution){
-		
-		case R_1920X1080 : 
-			captureRect = new Rectangle(831, 619, 222, 108);
-			break;
-		
-		case R_1366X768 : 
-			captureRect = new Rectangle(587, 440, 157, 76);
-			break;
-		
-		}
-		
-		BufferedImage capturedImage = captureImage(captureRect);
-		return capturedImage;
-		
-	}
-	
 	protected BufferedImage captureFreeChest() throws AWTException {
 		
 		Rectangle captureRect = null;
