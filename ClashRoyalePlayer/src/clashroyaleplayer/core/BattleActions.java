@@ -72,7 +72,7 @@ public class BattleActions extends Actions{
 	protected void tapFieldCentre() {
 		switch(autoPlayer.resolution){
 		case R_1920X1080 : {
-			this.tap(953, 557);
+			this.tap(951, 578);
 			break;
 		}
 		case R_1366X768 : {
