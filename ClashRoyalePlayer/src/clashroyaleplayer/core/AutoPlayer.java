@@ -2,6 +2,7 @@ package clashroyaleplayer.core;
 
 import java.awt.AWTException;
 import java.awt.Robot;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -246,7 +247,7 @@ public class AutoPlayer{
 		
 		updateLog("Final state: " + this.gameController.getGameStatus().toString());
 		
-		String path = ".\\log.txt";
+		String path = "." + File.separator + "lastSession.log";
 		FileOutputStream logFile = new FileOutputStream(path);
         writeLog = new PrintStream(logFile);
         writeLog.print(log);
