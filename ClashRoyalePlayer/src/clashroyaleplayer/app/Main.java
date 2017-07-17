@@ -1,7 +1,6 @@
 package clashroyaleplayer.app;
 
 import clashroyaleplayer.core.AutoPlayer;
-import clashroyaleplayer.core.AutoPlayer.Resolution;
 
 public class Main {
 	
@@ -10,7 +9,6 @@ public class Main {
 		AutoPlayer player = new AutoPlayer();
 		player.start();
 		
-
 	}
 
 }
