@@ -3,6 +3,3 @@
 
 # log file #
 *.log
-
-# path to other .gitignore file#
-/bin/
