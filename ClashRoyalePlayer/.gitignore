@@ -1,2 +1,6 @@
+# Compiled source #
+*.class
+
+# Main class is variable #
+Main.java
 /bin/
-/*.txt
