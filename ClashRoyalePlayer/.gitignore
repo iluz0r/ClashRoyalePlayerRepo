@@ -1,5 +1,11 @@
 # Compiled source #
 *.class
 
-# log file #
+# log files #
 *.log
+
+# execution files #
+*.jar
+*.exe
+*.bat
+*.sh
