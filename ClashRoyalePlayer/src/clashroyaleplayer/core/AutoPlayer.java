@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 import clashroyaleplayer.core.BattleActions;
 import clashroyaleplayer.core.BattleStatusController.Card;
@@ -247,7 +249,7 @@ public class AutoPlayer{
 		
 		updateLog("Final state: " + this.gameController.getGameStatus().toString());
 		
-		String path = "." + File.separator + "lastSession.log";
+		String path = "." + File.separator + "log" + File.separator + LocalDate.now().toString()+ "_" + LocalTime.now().toString().replaceAll(":", "-") + ".log";
 		FileOutputStream logFile = new FileOutputStream(path);
         writeLog = new PrintStream(logFile);
         writeLog.print(log);
