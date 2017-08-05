@@ -30,7 +30,7 @@ public class AutoPlayer{
 	protected final static Resolution DEFAULT_RESOLUTION = Resolution.R_1920X1080;
 	private StrategieScope scope = StrategieScope.OFFENSIVE;
 	
-	private String log = "";
+	private FileOutputStream logFile;
 	private PrintStream writeLog;
 	
 	GameStatusController gameController;
@@ -40,6 +40,10 @@ public class AutoPlayer{
 	Strategies strategies;
 	
 	public AutoPlayer(Resolution screenResolution) throws Exception{
+		
+		String path = "." + File.separator + "log" + File.separator + LocalDate.now().toString()+ "_" + LocalTime.now().toString().replaceAll(":", "-") + ".log";
+		this.logFile = new FileOutputStream(path);
+        writeLog = new PrintStream(logFile);
 		
 		switch(screenResolution){
 		
@@ -246,14 +250,7 @@ public class AutoPlayer{
 	}
 
 	public void stop() throws IOException{
-		
 		updateLog("Final state: " + this.gameController.getGameStatus().toString());
-		
-		String path = "." + File.separator + "log" + File.separator + LocalDate.now().toString()+ "_" + LocalTime.now().toString().replaceAll(":", "-") + ".log";
-		FileOutputStream logFile = new FileOutputStream(path);
-        writeLog = new PrintStream(logFile);
-        writeLog.print(log);
-
 		System.exit(0);
 	}
 	
@@ -519,7 +516,7 @@ public class AutoPlayer{
 	protected void updateLog(String update){
 		update +=";\n";
 		System.out.print(update);
-		log += update;
+		writeLog.print(update);
 	}
 
 
