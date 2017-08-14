@@ -1,9 +1,0 @@
-SUPERMAGIC
-LockedSuperMagicChest, UnlockingSuperMagicChest, OpenSuperMagicChest, CollectingSuperMagicChest, 
-CollectedSuperMagicChest.
-
-LEGENDARY
-CollectingLegendaryChest, CollectedLegendaryChest.
-
-OTHERS
-RewardLimitReached, RewardLimitReachedMini

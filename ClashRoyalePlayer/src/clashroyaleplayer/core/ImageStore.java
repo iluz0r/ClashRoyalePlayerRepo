@@ -53,7 +53,6 @@ public class ImageStore {
 	private BufferedImage collectedGiantChest;
 	
 	protected ImageStore(String basePath) throws IOException {
-		
 		this.setEmptyChestSlot(basePath + "emptyChestSlot.jpg");
 		this.setLockedSilverChest(basePath + "lockedSilverChest.jpg");
 		this.setUnlockingSilverChest(basePath + "unlockingSilverChest.jpg");
@@ -97,8 +96,6 @@ public class ImageStore {
 		this.setOpenGiantChest(basePath + "openGiantChest.jpg");
 		this.setCollectingGiantChest(basePath + "collectingGiantChest.jpg");
 		this.setCollectedGiantChest(basePath + "collectedGiantChest.jpg");
-		
-		
 	}
 	
 	protected BufferedImage getLockedSilverChest(){
