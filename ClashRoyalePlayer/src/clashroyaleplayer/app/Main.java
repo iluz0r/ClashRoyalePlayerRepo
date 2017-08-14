@@ -2,15 +2,12 @@ package clashroyaleplayer.app;
 
 import java.awt.MouseInfo;
 import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.image.BufferedImage;
 
 import com.sun.jna.platform.win32.User32;
 import com.sun.jna.platform.win32.WinDef.HWND;
 import com.sun.jna.platform.win32.WinDef.RECT;
 
 import clashroyaleplayer.core.AutoPlayer;
-import clashroyaleplayer.imageprocessing.ImageCapturer;
 
 public class Main {
 
