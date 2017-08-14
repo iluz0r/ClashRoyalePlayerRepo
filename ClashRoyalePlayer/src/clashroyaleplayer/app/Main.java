@@ -2,12 +2,15 @@ package clashroyaleplayer.app;
 
 import java.awt.MouseInfo;
 import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
 
 import com.sun.jna.platform.win32.User32;
 import com.sun.jna.platform.win32.WinDef.HWND;
 import com.sun.jna.platform.win32.WinDef.RECT;
 
 import clashroyaleplayer.core.AutoPlayer;
+import clashroyaleplayer.imageprocessing.ImageCapturer;
 
 public class Main {
 
@@ -24,12 +27,12 @@ public class Main {
 			User32.INSTANCE.SetForegroundWindow(noxHandle);
 
 			//findPosInWnd();
-			//ImageCapturer capt = new ImageCapturer();
-			//BufferedImage img = capt.captureImage(new Rectangle(190, 713, 102, 42));
-			//capt.saveImage(img, "images/", "okButton", "jpg");
+			ImageCapturer capt = new ImageCapturer();
+			BufferedImage img = capt.captureImage(new Rectangle(140, 470, 196, 135));
+			capt.saveImage(img, "images/", "collectedCrownChest", "jpg");
 
-			AutoPlayer player = new AutoPlayer();
-			player.start();
+			//AutoPlayer player = new AutoPlayer();
+			//player.start();
 		}
 	}
 
