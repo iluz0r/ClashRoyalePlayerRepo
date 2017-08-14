@@ -26,10 +26,11 @@ public class Main {
 			// Set the focus on Nox window
 			User32.INSTANCE.SetForegroundWindow(noxHandle);
 
-			//findPosInWnd();
-			//ImageCapturer capt = new ImageCapturer();
-			//BufferedImage img = capt.captureImage(new Rectangle(140, 470, 196, 135));
-			//capt.saveImage(img, "images/", "collectedCrownChest", "jpg");
+			// findPosInWnd();
+			// ImageCapturer capt = new ImageCapturer();
+			// BufferedImage img = capt.captureImage(new Rectangle(140, 470,
+			// 196, 135));
+			// capt.saveImage(img, "images/", "collectedCrownChest", "jpg");
 
 			AutoPlayer player = new AutoPlayer();
 			player.start();
