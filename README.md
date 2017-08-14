@@ -3,14 +3,11 @@ A very simple java auto player for ClashRoyale game app, based on image processi
 
 Emulator Information
 Name: NOX App Player
-Verion: V_3.8.0.3
-Emulator Resolution: 720x1280 (Phone)
-Graphics Rendering Mode: Compatible(OpenGL)
-Dimension: Maximized
+Verion: V_5.0.0.0
+Emulator Resolution: 480x800 (Phone)
+Dimension: Windowed
+Nox window name: NoxPlayer 1
 
 Screen Information
 Resolution: 1920x1080
 Size: 15.6-inch
-
-
-
