@@ -5,7 +5,7 @@
 *.log
 
 # execution files #
-*.jar
+run.jar
 *.exe
 *.bat
 *.sh
