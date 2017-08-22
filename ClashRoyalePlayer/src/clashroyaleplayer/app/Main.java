@@ -28,8 +28,9 @@ public class Main {
 
 			// findPosInWnd();
 			// ImageCapturer capt = new ImageCapturer();
-			// BufferedImage img = capt.captureImage(new Rectangle(28, 639, 95, 80));
-			// capt.saveImage(img, "images/", "lockedMagicChest", "jpg");
+			// BufferedImage img = capt.captureImage(new Rectangle(39, 274, 402,
+			// 311));
+			// capt.saveImage(img, "images/", "rewardLimitReached", "jpg");
 
 			AutoPlayer player = new AutoPlayer();
 			player.start();
@@ -50,6 +51,7 @@ public class Main {
 	// elisir: 136, 790, 30, 20
 	// okButton: 190, 713, 102, 42
 	// lowBarArenaInfo: 3, 758, 474, 67
+	// rewardLimitReached: 39, 274, 402, 311
 	// Method that prints the mouse position relative to the Nox window
 	@SuppressWarnings("unused")
 	private static void findPosInWnd() {
