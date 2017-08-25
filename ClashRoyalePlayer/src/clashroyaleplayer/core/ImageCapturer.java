@@ -141,7 +141,7 @@ public class ImageCapturer extends clashroyaleplayer.imageprocessing.ImageCaptur
 
 		switch (autoPlayer.resolution) {
 		case R_1920X1080:
-			captureRect = new Rectangle(140, 470, 196, 135);
+			captureRect = new Rectangle(140, 295, 196, 135);
 			break;
 
 		case R_1366X768:

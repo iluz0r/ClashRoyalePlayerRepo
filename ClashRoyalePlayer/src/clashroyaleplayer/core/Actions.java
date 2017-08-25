@@ -18,7 +18,7 @@ public class Actions {
 		this.autoPlayer = autoPlayer;
 
 		// Search for NoxPlayer window
-		HWND noxHandle = User32.INSTANCE.FindWindow(null, "NoxPlayer 1");
+		HWND noxHandle = User32.INSTANCE.FindWindow(null, "NoxPlayer 2");
 
 		// Get the RECT representing the Nox window
 		noxWndRect = new RECT();

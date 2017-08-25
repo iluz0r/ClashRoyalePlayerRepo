@@ -16,7 +16,7 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 		// Search for NoxPlayer window
-		HWND noxHandle = User32.INSTANCE.FindWindow(null, "NoxPlayer 1");
+		HWND noxHandle = User32.INSTANCE.FindWindow(null, "NoxPlayer 2");
 
 		if (noxHandle == null) {
 			System.err.println("Window not found. Exit.");
@@ -26,11 +26,10 @@ public class Main {
 			// Set the focus on Nox window
 			User32.INSTANCE.SetForegroundWindow(noxHandle);
 
-			// findPosInWnd();
-			// ImageCapturer capt = new ImageCapturer();
-			// BufferedImage img = capt.captureImage(new Rectangle(39, 274, 402,
-			// 311));
-			// capt.saveImage(img, "images/", "rewardLimitReached", "jpg");
+			//findPosInWnd();
+			//ImageCapturer capt = new ImageCapturer();
+			//BufferedImage img = capt.captureImage(new Rectangle(140, 295, 196, 135));
+			//capt.saveImage(img, "images/", "collectedGoldChest", "jpg");
 
 			AutoPlayer player = new AutoPlayer();
 			player.start();
@@ -45,6 +44,7 @@ public class Main {
 	// lockedFreeChest: 32, 145, 198, 58
 	// lockedCrownChest: 250, 145, 198, 58
 	// collectingGoldChest: 140, 470, 196, 135
+	// collectedFreeChest: 140, 295, 196, 135
 	// firstChest: 28, 639, 95, 80 shift between chests -> 112
 	// emotesIcon: 36, 690, 40, 26
 	// firstCard: 124, 700, 63, 81 shift between cards -> 85
@@ -56,7 +56,7 @@ public class Main {
 	@SuppressWarnings("unused")
 	private static void findPosInWnd() {
 		// Search for NoxPlayer window
-		HWND noxHandle = User32.INSTANCE.FindWindow(null, "NoxPlayer 1");
+		HWND noxHandle = User32.INSTANCE.FindWindow(null, "NoxPlayer 2");
 
 		// Print every 5 seconds the mouse position relative to Nox window
 		while (true) {
