@@ -28,8 +28,8 @@ public class Main {
 
 			//findPosInWnd();
 			//ImageCapturer capt = new ImageCapturer();
-			//BufferedImage img = capt.captureImage(new Rectangle(180, 348, 124, 96));
-			//capt.saveImage(img, "images/", "lockedSuperMagicChest", "jpg");
+			//BufferedImage img = capt.captureImage(new Rectangle(28 + 112*3, 639, 95, 80));
+			//capt.saveImage(img, "images/", "unlockingMagicChest", "jpg");
 
 			AutoPlayer player = new AutoPlayer();
 			player.start();
