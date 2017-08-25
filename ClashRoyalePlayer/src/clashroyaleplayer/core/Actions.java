@@ -257,12 +257,11 @@ public class Actions {
 		}
 	}
 
-	// TODO
 	// reward limit reached status
 	protected void tapYesButton() {
 		switch (autoPlayer.resolution) {
 		case R_1920X1080:
-			this.tap(939, 662);
+			this.tap(244, 532);
 			break;
 		case R_1366X768:
 			this.tap(662, 466);
