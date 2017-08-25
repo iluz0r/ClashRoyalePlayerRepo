@@ -29,7 +29,7 @@ public class Main {
 			//findPosInWnd();
 			//ImageCapturer capt = new ImageCapturer();
 			//BufferedImage img = capt.captureImage(new Rectangle(180, 348, 124, 96));
-			//capt.saveImage(img, "images/", "rewardLimitReachedMini", "jpg");
+			//capt.saveImage(img, "images/", "lockedSuperMagicChest", "jpg");
 
 			AutoPlayer player = new AutoPlayer();
 			player.start();
