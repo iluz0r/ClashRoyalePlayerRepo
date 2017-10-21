@@ -136,7 +136,7 @@ public class GameStatusController {
 			gameStatus = GameStatus.BATTLE_MENU;
 		else if (imageComparison.imgEqual(lowBarArenaInfo, capturedLowBarArenaInfo, 5))
 			gameStatus = GameStatus.ARENA_INFO;
-		else if (imageComparison.imgEqual(rewardLimitReachedMini, capturedRewardLimitReachedMini, 5))
+		else if (imageComparison.imgEqual(rewardLimitReachedMini, capturedRewardLimitReachedMini, 20))
 			gameStatus = GameStatus.REWARD_LIMIT_REACHED;
 		else if (imageComparison.imgEqual(shopMenu, capturedShopMenu, 5))
 			gameStatus = GameStatus.SHOP_MENU;
